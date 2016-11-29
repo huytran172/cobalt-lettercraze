@@ -18,7 +18,7 @@ public class CustomLevelButton extends JButton {
 	private int stars;
 	
 	// Add later
-	//	private Model model;
+	// private Model model;
 
 	// TODO: Retrieve data from the model to display in the button
 	// e.g current level number, number of stars

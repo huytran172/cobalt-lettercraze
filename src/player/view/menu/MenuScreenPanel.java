@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class MenuScreenPanel extends JPanel {
-	private JButton[] btnLevel = new JButton[16];
+	private CustomLevelButton[] btnLevel = new CustomLevelButton[16];
 
 	MenuScreenPanel() {
 		GridBagLayout gbl_contentPane = new GridBagLayout();
@@ -22,7 +22,7 @@ public class MenuScreenPanel extends JPanel {
 		int currentGridY = 2;
 		
 		for (int i = 1; i < 16; i++){
-			btnLevel[i] = new JButton("Level "+i);
+			btnLevel[i] = new CustomLevelButton(i, 0);
 			GridBagConstraints gbc_btnLevel = new GridBagConstraints();
 			gbc_btnLevel.insets = new Insets(0, 0, 5, 5);
 			

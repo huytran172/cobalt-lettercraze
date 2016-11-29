@@ -24,6 +24,7 @@ public class SplashScreenWindow extends JWindow{
 	    int x = (screen.width-width)/2;
 	    int y = (screen.height-height)/2;
 	    setBounds(x,y,width,height);
+	    content.add(new SplashScreenPanel());
 	    
 		setVisible(true);
 		try {

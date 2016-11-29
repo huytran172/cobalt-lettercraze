@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Images/SplashScreen.png</name>
+			<type>1</type>
+			<location>/Users/khuyencao1/Desktop/SplashScreen.png</location>
+		</link>
+	</linkedResources>
 </projectDescription>

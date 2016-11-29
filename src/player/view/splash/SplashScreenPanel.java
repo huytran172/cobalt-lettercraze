@@ -14,7 +14,7 @@ public class SplashScreenPanel extends JPanel {
 
 	public SplashScreenPanel() {
 		try {                
-			splashScreen = ImageIO.read(new File("/cobalt-lettercraze/Images/SplashScreen.png"));
+			splashScreen = ImageIO.read(new File("Images/SplashScreen.png"));
 		} catch (IOException ex) {
 			System.out.println(ex.getMessage());
 		}

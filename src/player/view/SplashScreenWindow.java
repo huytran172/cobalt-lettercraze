@@ -1,5 +1,8 @@
 package player.view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import javax.swing.JPanel;
 import javax.swing.JWindow;
 
@@ -13,7 +16,15 @@ public class SplashScreenWindow extends JWindow{
 
 	public void showSplash() {
 		JPanel content = (JPanel) getContentPane();
-		setBounds(0,0,500,500);
+		
+		// Set the window's bounds, centering the window
+	    int width = 800;
+	    int height = 600;
+	    Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+	    int x = (screen.width-width)/2;
+	    int y = (screen.height-height)/2;
+	    setBounds(x,y,width,height);
+	    
 		setVisible(true);
 		try {
 			Thread.sleep(duration);

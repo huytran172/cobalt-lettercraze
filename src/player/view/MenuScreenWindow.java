@@ -15,6 +15,7 @@ import java.awt.Insets;
 public class MenuScreenWindow extends JFrame {
 
 	private JPanel contentPane;
+	private JButton[] btnLevel = new JButton[16];
 
 	/**
 	 * Launch the application.
@@ -31,7 +32,7 @@ public class MenuScreenWindow extends JFrame {
 			}
 		});
 	}
-
+	
 	/**
 	 * Create the frame.
 	 */
@@ -48,110 +49,24 @@ public class MenuScreenWindow extends JFrame {
 		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
-		JButton btnLevel = new JButton("Level 1");
-		GridBagConstraints gbc_btnLevel = new GridBagConstraints();
-		gbc_btnLevel.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel.gridx = 1;
-		gbc_btnLevel.gridy = 2;
-		contentPane.add(btnLevel, gbc_btnLevel);
+		int currentGridX = 1;
+		int currentGridY = 2;
 		
-		JButton btnLevel_1 = new JButton("Level 2");
-		GridBagConstraints gbc_btnLevel_1 = new GridBagConstraints();
-		gbc_btnLevel_1.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_1.gridx = 3;
-		gbc_btnLevel_1.gridy = 2;
-		contentPane.add(btnLevel_1, gbc_btnLevel_1);
-		
-		JButton btnLevel_2 = new JButton("Level 3");
-		GridBagConstraints gbc_btnLevel_2 = new GridBagConstraints();
-		gbc_btnLevel_2.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_2.gridx = 5;
-		gbc_btnLevel_2.gridy = 2;
-		contentPane.add(btnLevel_2, gbc_btnLevel_2);
-		
-		JButton btnLevel_3 = new JButton("Level 4");
-		GridBagConstraints gbc_btnLevel_3 = new GridBagConstraints();
-		gbc_btnLevel_3.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_3.gridx = 7;
-		gbc_btnLevel_3.gridy = 2;
-		contentPane.add(btnLevel_3, gbc_btnLevel_3);
-		
-		JButton btnLevel_4 = new JButton("Level 5");
-		GridBagConstraints gbc_btnLevel_4 = new GridBagConstraints();
-		gbc_btnLevel_4.insets = new Insets(0, 0, 5, 0);
-		gbc_btnLevel_4.gridx = 9;
-		gbc_btnLevel_4.gridy = 2;
-		contentPane.add(btnLevel_4, gbc_btnLevel_4);
-		
-		JButton btnLevel_5 = new JButton("Level 6");
-		GridBagConstraints gbc_btnLevel_5 = new GridBagConstraints();
-		gbc_btnLevel_5.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_5.gridx = 1;
-		gbc_btnLevel_5.gridy = 4;
-		contentPane.add(btnLevel_5, gbc_btnLevel_5);
-		
-		JButton btnLevel_6 = new JButton("Level 7");
-		GridBagConstraints gbc_btnLevel_6 = new GridBagConstraints();
-		gbc_btnLevel_6.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_6.gridx = 3;
-		gbc_btnLevel_6.gridy = 4;
-		contentPane.add(btnLevel_6, gbc_btnLevel_6);
-		
-		JButton btnLevel_7 = new JButton("Level 8");
-		GridBagConstraints gbc_btnLevel_7 = new GridBagConstraints();
-		gbc_btnLevel_7.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_7.gridx = 5;
-		gbc_btnLevel_7.gridy = 4;
-		contentPane.add(btnLevel_7, gbc_btnLevel_7);
-		
-		JButton btnLevel_8 = new JButton("Level 9");
-		GridBagConstraints gbc_btnLevel_8 = new GridBagConstraints();
-		gbc_btnLevel_8.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_8.gridx = 7;
-		gbc_btnLevel_8.gridy = 4;
-		contentPane.add(btnLevel_8, gbc_btnLevel_8);
-		
-		JButton btnLevel_9 = new JButton("Level 10");
-		GridBagConstraints gbc_btnLevel_9 = new GridBagConstraints();
-		gbc_btnLevel_9.insets = new Insets(0, 0, 5, 0);
-		gbc_btnLevel_9.gridx = 9;
-		gbc_btnLevel_9.gridy = 4;
-		contentPane.add(btnLevel_9, gbc_btnLevel_9);
-		
-		JButton btnLevel_10 = new JButton("Level 11");
-		GridBagConstraints gbc_btnLevel_10 = new GridBagConstraints();
-		gbc_btnLevel_10.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_10.gridx = 1;
-		gbc_btnLevel_10.gridy = 6;
-		contentPane.add(btnLevel_10, gbc_btnLevel_10);
-		
-		JButton btnLevel_11 = new JButton("Level 12");
-		GridBagConstraints gbc_btnLevel_11 = new GridBagConstraints();
-		gbc_btnLevel_11.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_11.gridx = 3;
-		gbc_btnLevel_11.gridy = 6;
-		contentPane.add(btnLevel_11, gbc_btnLevel_11);
-		
-		JButton btnLevel_12 = new JButton("Level 13");
-		GridBagConstraints gbc_btnLevel_12 = new GridBagConstraints();
-		gbc_btnLevel_12.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_12.gridx = 5;
-		gbc_btnLevel_12.gridy = 6;
-		contentPane.add(btnLevel_12, gbc_btnLevel_12);
-		
-		JButton btnLevel_13 = new JButton("Level 14");
-		GridBagConstraints gbc_btnLevel_13 = new GridBagConstraints();
-		gbc_btnLevel_13.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLevel_13.gridx = 7;
-		gbc_btnLevel_13.gridy = 6;
-		contentPane.add(btnLevel_13, gbc_btnLevel_13);
-		
-		JButton btnLevel_14 = new JButton("Level 15");
-		GridBagConstraints gbc_btnLevel_14 = new GridBagConstraints();
-		gbc_btnLevel_14.insets = new Insets(0, 0, 5, 0);
-		gbc_btnLevel_14.gridx = 9;
-		gbc_btnLevel_14.gridy = 6;
-		contentPane.add(btnLevel_14, gbc_btnLevel_14);
+		for (int i = 1; i < 16; i++){
+			btnLevel[i] = new JButton("Level "+i);
+			GridBagConstraints gbc_btnLevel = new GridBagConstraints();
+			gbc_btnLevel.insets = new Insets(0, 0, 5, 5);
+			
+			gbc_btnLevel.gridx = currentGridX;
+			gbc_btnLevel.gridy = currentGridY;
+			contentPane.add(btnLevel[i], gbc_btnLevel);
+			
+			currentGridX = currentGridX + 2;
+			if ((i % 5) == 0){
+				currentGridX = 1;
+				currentGridY = currentGridY + 2;
+			}
+		}
 		
 		JButton btnHelp = new JButton("Help");
 		GridBagConstraints gbc_btnHelp = new GridBagConstraints();

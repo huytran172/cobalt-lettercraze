@@ -1,3 +1,4 @@
+// REVIEW AND REMOVE, ALREADY REFACTOR INTO 2 FILES
 package player.view;
 
 import java.awt.BorderLayout;

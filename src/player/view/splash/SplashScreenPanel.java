@@ -1,4 +1,4 @@
-package player.view;
+package player.view.splash;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

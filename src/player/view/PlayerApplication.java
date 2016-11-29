@@ -2,6 +2,9 @@ package player.view;
 
 import java.awt.EventQueue;
 
+import player.view.menu.MenuScreenFrame;
+import player.view.splash.SplashScreenWindow;
+
 public class PlayerApplication {
 	public static void main(String[] args) {
 		SplashScreenWindow splashScreen = new SplashScreenWindow(1000);

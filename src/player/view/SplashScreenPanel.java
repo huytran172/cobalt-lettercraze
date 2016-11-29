@@ -10,19 +10,19 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class SplashScreenPanel extends JPanel {
-	 private BufferedImage splashScreen;
+	private BufferedImage splashScreen;
 
-	    public SplashScreenPanel() {
-	       try {                
-	          splashScreen = ImageIO.read(new File("/cobalt-lettercraze/Images/SplashScreen.png"));
-	       } catch (IOException ex) {
-	    	   	System.out.println(ex.getMessage());
-	       }
-	    }
+	public SplashScreenPanel() {
+		try {                
+			splashScreen = ImageIO.read(new File("/cobalt-lettercraze/Images/SplashScreen.png"));
+		} catch (IOException ex) {
+			System.out.println(ex.getMessage());
+		}
+	}
 
-	    @Override
-	    protected void paintComponent(Graphics g) {
-	        super.paintComponent(g);
-	        g.drawImage(splashScreen, 0, 0, this); // see javadoc for more info on the parameters            
-	    }
+	@Override
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.drawImage(splashScreen, 0, 0, this); // see javadoc for more info on the parameters            
+	}
 }

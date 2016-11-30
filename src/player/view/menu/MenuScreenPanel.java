@@ -25,7 +25,7 @@ public class MenuScreenPanel extends JPanel {
 		
 		for (int i = 1; i < 16; i++) {
 
-			btnLevel[i] = new CustomLevelButton(i, 0, true);
+			btnLevel[i] = new CustomLevelButton(i, 0, false);
 			GridBagConstraints gbc_btnLevel = new GridBagConstraints();
 			gbc_btnLevel.insets = new Insets(20, 30, 20, 28);
 			
@@ -40,7 +40,9 @@ public class MenuScreenPanel extends JPanel {
 			}
 		}
 
-		btnLevel[15].setActive(false);
+		for (int i = 1; i <= 6; i++) {
+			btnLevel[i].setActive(true);
+		}
 		
 		JButton btnHelp = new JButton("Help");
 		GridBagConstraints gbc_btnHelp = new GridBagConstraints();

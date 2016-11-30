@@ -34,7 +34,7 @@ public class FeaturePanel extends JPanel {
 			break;
 		}
 		
-		feature.setFont(new Font(feature.getFont().getName(), Font.PLAIN, 28));
+		feature.setFont(new Font(feature.getFont().getName(), Font.PLAIN, 20));
 		add(feature);
 	}
 }

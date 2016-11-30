@@ -57,6 +57,9 @@ public class CustomLevelButton extends JButton implements ActionListener {
 	public void setActive(boolean active) {
 		this.active = active;
 		setEnabled(this.active);
+		if (active) {
+			drawStarsToButton();
+		}
 		redrawLevelButton();
 	}
 	
@@ -76,7 +79,7 @@ public class CustomLevelButton extends JButton implements ActionListener {
 		setIconTextGap(30);
 	    setPreferredSize(new Dimension(100, 100));
 		setText("Level " + this.level);
-		drawStarsToButton();
+		// drawStarsToButton();
 	}
 	
 	/**

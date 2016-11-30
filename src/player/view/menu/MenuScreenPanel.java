@@ -12,10 +12,10 @@ public class MenuScreenPanel extends JPanel {
 
 	MenuScreenPanel() {
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_contentPane.rowHeights = new int[]{57, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+//		gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+//		gbl_contentPane.rowHeights = new int[]{57, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+//		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+//		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gbl_contentPane);
 		
 		int currentGridX = 1;
@@ -24,7 +24,7 @@ public class MenuScreenPanel extends JPanel {
 		for (int i = 1; i < 16; i++) {
 			btnLevel[i] = new CustomLevelButton(i, 0);
 			GridBagConstraints gbc_btnLevel = new GridBagConstraints();
-			gbc_btnLevel.insets = new Insets(0, 0, 5, 5);
+			gbc_btnLevel.insets = new Insets(20, 30, 20, 28);
 			
 			gbc_btnLevel.gridx = currentGridX;
 			gbc_btnLevel.gridy = currentGridY;

@@ -20,7 +20,7 @@ public class GamePanel extends JPanel {
 		this.setLayout(null);
 		
 		
-		boardPanel = new JPanel();
+		boardPanel = new BoardPanel();
 	    add(boardPanel);
 	    boardPanel.setBounds(60, 170, 510, 510);
 	    boardPanel.setBackground(Color.blue);

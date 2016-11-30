@@ -16,15 +16,13 @@ public class GameFrame extends JFrame {
 
 	public GameFrame(int level) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-<<<<<<< HEAD
 		int width = 1000;
 	    int height = 800;
 	    Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 	    int x = (screen.width-width)/2;
 	    int y = (screen.height-height)/2;
 	    setBounds(x,y,width,height);
-		contentPane = new GamePanel();
-=======
+
 		setBounds(500, 200, 1000, 800);
 		if (level % 3 == 1) {
 			contentPane = new GamePanelPuzzle();
@@ -35,7 +33,7 @@ public class GameFrame extends JFrame {
 		if (level % 3 == 0) {
 			contentPane = new GamePanelTheme();
 		}
->>>>>>> add mode specific panel
+
 		setContentPane(contentPane);
 	}
 

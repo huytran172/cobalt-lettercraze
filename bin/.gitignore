@@ -1,6 +1,9 @@
 /BuilderSplashScreen.png
-/PlayerSplashScreen.png
-/star-20.png
+/demo/
 /player/
+<<<<<<< HEAD
 /builder/
 /demo/
+=======
+/star-20.png
+>>>>>>> master

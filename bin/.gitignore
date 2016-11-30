@@ -3,7 +3,11 @@
 /demo/
 /star-20.png
 /BuilderSplashScreen.png
+<<<<<<< HEAD
 /PlayerSplashScreen.png
 =======
 /BuilderSplashScreen.png
 >>>>>>> Error with Commit, check later
+=======
+/player/
+>>>>>>> Builder committing

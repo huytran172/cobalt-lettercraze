@@ -45,5 +45,10 @@ public class CustomLevelButton extends JButton {
 		setVerticalAlignment(SwingConstants.TOP);
 	    setPreferredSize(new Dimension(100, 100));
 		setText("Level " + this.level);
+		//setEnabled(false);
+	}
+	
+	public void enableBtn(boolean state) {
+		this.setEnabled(state);
 	}
 }

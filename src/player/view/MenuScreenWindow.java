@@ -37,6 +37,7 @@ public class MenuScreenWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	/*
 	public MenuScreenWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 375);
@@ -75,5 +76,5 @@ public class MenuScreenWindow extends JFrame {
 		gbc_btnHelp.gridy = 8;
 		contentPane.add(btnHelp, gbc_btnHelp);
 	}
-
+*/
 }

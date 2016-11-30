@@ -1,4 +1,4 @@
-package player.view.splash;
+package builder.view.splash;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -9,12 +9,12 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-public class SplashScreenPanel extends JPanel {
+public class BuilderSplashPanel extends JPanel {
 	private BufferedImage splashScreen;
 
-	public SplashScreenPanel() {
+	public BuilderSplashPanel() {
 		try {                
-			splashScreen = ImageIO.read(new File("Images/PlayerSplashScreen.png"));
+			splashScreen = ImageIO.read(new File("Images/BuilderSplashScreen.png"));
 		} catch (IOException ex) {
 			System.out.println(ex.getMessage());
 		}

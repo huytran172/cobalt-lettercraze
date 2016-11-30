@@ -10,11 +10,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class SplashScreenPanel extends JPanel {
-	private BufferedImage splashScreen;
+	protected BufferedImage splashScreen;
 
 	public SplashScreenPanel() {
 		try {                
-			splashScreen = ImageIO.read(new File("/cobalt-lettercraze/Images/SplashScreen.png"));
+			splashScreen = ImageIO.read(new File("Images/SplashScreen.png"));
 		} catch (IOException ex) {
 			System.out.println(ex.getMessage());
 		}

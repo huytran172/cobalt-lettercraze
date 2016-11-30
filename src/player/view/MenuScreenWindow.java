@@ -7,6 +7,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import player.controller.StartLevelController;
+
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import javax.swing.JButton;
@@ -61,6 +64,8 @@ public class MenuScreenWindow extends JFrame {
 			gbc_btnLevel.gridx = currentGridX;
 			gbc_btnLevel.gridy = currentGridY;
 			contentPane.add(btnLevel[i], gbc_btnLevel);
+			StartLevelController startController = new StartLevelController(i);
+			btnLevel[i].addActionListener(startController);
 			
 			currentGridX = currentGridX + 2;
 			if ((i % 5) == 0){

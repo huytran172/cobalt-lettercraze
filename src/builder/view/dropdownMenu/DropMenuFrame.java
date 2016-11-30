@@ -64,12 +64,7 @@ public class DropMenuFrame extends JFrame {
 		JComboBox<String> comboBox = new JComboBox<String>(choices);
 		contentPane.add(comboBox);
 		
-		JButton btnNewButton = new JButton("OK!");
-		btnNewButton.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		CustomConfirmButton btnNewButton = new CustomConfirmButton();
 		contentPane.add(btnNewButton);
 	
 	}

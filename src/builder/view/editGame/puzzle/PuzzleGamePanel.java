@@ -1,14 +1,19 @@
-package builder.view.editGame;
+package builder.view.editGame.puzzle;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import builder.view.editGame.BoardPanel;
+import builder.view.editGame.StarPanel;
+import builder.view.editGame.TitlePanel;
+
 import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 
-public class GamePanel extends JPanel {
+public class PuzzleGamePanel extends JPanel {
 	
 
 	JPanel boardPanel;
@@ -16,7 +21,7 @@ public class GamePanel extends JPanel {
 	JPanel infoPanel;
 	JPanel starPanel;
 	
-	GamePanel(){
+	public PuzzleGamePanel(){
 		
 		this.setLayout(null);
 		
@@ -26,11 +31,11 @@ public class GamePanel extends JPanel {
 	    boardPanel.setBounds(60, 170, 510, 510);
 	    //boardPanel.setBackground(Color.blue);
 	    
-	    infoPanel = new InfoPanel();
+	    infoPanel = new PuzzleInfoPanel();
 	    add(infoPanel);
 	    
 	    
-	    titlePanel = new TitlePanel();
+	    titlePanel = new TitlePanel("Puzzle");
 	    add(titlePanel);
 	    titlePanel.setBounds(60, 20, 860, 85);
 	    //titlePanel.setBackground(Color.blue);
@@ -79,5 +84,6 @@ public class GamePanel extends JPanel {
 //		add(btnHelp, gbc_btnHelp);
 	
 }
+
 
 

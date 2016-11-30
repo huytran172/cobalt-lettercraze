@@ -12,34 +12,20 @@ public class MenuScreenPanel extends JPanel {
 
 	MenuScreenPanel() {
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> c5ea4cba3a51d581ecd915cf699a9d0dc93097fa
+
 		//gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		//gbl_contentPane.rowHeights = new int[]{57, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		//gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		//gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-<<<<<<< HEAD
->>>>>>> builder
-=======
->>>>>>> c5ea4cba3a51d581ecd915cf699a9d0dc93097fa
+
 		setLayout(gbl_contentPane);
 		
 		int currentGridX = 1;
 		int currentGridY = 2;
 		
 		for (int i = 1; i < 16; i++) {
-<<<<<<< HEAD
+
 			btnLevel[i] = new CustomLevelButton(i, 0, true);
-=======
-			btnLevel[i] = new CustomLevelButton(i, 0);
-			btnLevel[i].enableBtn(false);
-<<<<<<< HEAD
->>>>>>> builder
-=======
->>>>>>> c5ea4cba3a51d581ecd915cf699a9d0dc93097fa
 			GridBagConstraints gbc_btnLevel = new GridBagConstraints();
 			gbc_btnLevel.insets = new Insets(20, 30, 20, 28);
 			

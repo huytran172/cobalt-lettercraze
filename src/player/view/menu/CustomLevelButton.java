@@ -70,6 +70,7 @@ public class CustomLevelButton extends JButton {
 		setIconTextGap(30);
 	    setPreferredSize(new Dimension(100, 100));
 		setText("Level " + this.level);
+<<<<<<< HEAD
 		drawStarsToButton();
 	}
 	
@@ -84,5 +85,12 @@ public class CustomLevelButton extends JButton {
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
+=======
+		//setEnabled(false);
+	}
+	
+	public void enableBtn(boolean state) {
+		this.setEnabled(state);
+>>>>>>> builder
 	}
 }

@@ -49,6 +49,7 @@ public class InfoPanel extends JPanel {
 		 
 		 
 		 
+		 
 		 GroupLayout groupLayout = new GroupLayout(this);
 		 
 		 groupLayout.setVerticalGroup(

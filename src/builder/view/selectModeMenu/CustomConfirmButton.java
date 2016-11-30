@@ -1,4 +1,4 @@
-package builder.view.dropdownMenu;
+package builder.view.selectModeMenu;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -16,7 +16,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.SwingPropertyChangeSupport;
 
 import builder.view.editGame.GameFrame;
-import builder.view.selectModeMenu.SelectModeMenuFrame;
 
 /**
  * Class custom button
@@ -43,7 +42,7 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 	 * Will be removed later
 	 */
 	public CustomConfirmButton(int level) {
-		this.levelNum = level;
+		this.levelNum = level + 1;
 		addActionListener(this);
 		drawConfirmButton();
 
@@ -63,22 +62,16 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 		
 
 	public void actionPerformed(ActionEvent e) {
-		DropMenuFrame currentFrame = (DropMenuFrame) SwingUtilities.getRoot(this);
+		SelectModeMenuFrame currentFrame = (SelectModeMenuFrame) SwingUtilities.getRoot(this);
 		currentFrame.dispose();
 	
-		if (this.levelNum == 0){
-		SelectModeMenuFrame smFrame = new SelectModeMenuFrame();
-		smFrame.setVisible(true);
-		}
-		else{
 		GameFrame gframe = new GameFrame(this.levelNum);
 		gframe.setVisible(true);
-		}
 		
 	}
 	
 	public void setLevelNum(int l) {
-		this.levelNum = l;
+		this.levelNum = l + 1;
 	}
 	
 	public int getLevelNum() {

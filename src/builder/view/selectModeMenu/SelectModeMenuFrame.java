@@ -1,4 +1,4 @@
-package builder.view.dropdownMenu;
+package builder.view.selectModeMenu;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -22,7 +22,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JList;
 import java.awt.Font;
 
-public class DropMenuFrame extends JFrame {
+public class SelectModeMenuFrame extends JFrame {
 
 	private JPanel contentPane;
 
@@ -33,7 +33,7 @@ public class DropMenuFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DropMenuFrame frame = new DropMenuFrame();
+					SelectModeMenuFrame frame = new SelectModeMenuFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +45,7 @@ public class DropMenuFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public DropMenuFrame() {
+	public SelectModeMenuFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 	    int x = (screen.width-500)/2;
@@ -57,7 +57,7 @@ public class DropMenuFrame extends JFrame {
 
 		
 		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.LINE_AXIS));
-		JLabel lblChooseLevel = new JLabel("CHOOSE LEVEL");
+		JLabel lblChooseLevel = new JLabel("SELECT MODE");
 		lblChooseLevel.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		contentPane.add(lblChooseLevel);
 		
@@ -65,8 +65,7 @@ public class DropMenuFrame extends JFrame {
 //		JComboBox<Integer> comboBox = new JComboBox<Integer>(choices);
 //		contentPane.add(comboBox);
 				
-		String[] choices = {"ADD NEW LEVEL","LEVEL 1","LEVEL 2", "LEVEL 3", "LEVEL 4", "LEVEL 5", "LEVEL 6", "LEVEL 7", "LEVEL 8",
-				"LEVEL 9", "LEVEL 10", "LEVEL 11", "LEVEL 12", "LEVEL 13", "LEVEL 14", "LEVEL 15"};
+		String[] choices = {"PUZZLE", "LIGHTNING", "THEME"};
 		JComboBox<String> comboBox = new JComboBox<String>(choices);
 		contentPane.add(comboBox);
 		

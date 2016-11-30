@@ -1,4 +1,7 @@
 package player.view.game;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -13,7 +16,12 @@ public class GameFrame extends JFrame {
 
 	public GameFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 1000, 800);		
+		int width = 1000;
+	    int height = 800;
+	    Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+	    int x = (screen.width-width)/2;
+	    int y = (screen.height-height)/2;
+	    setBounds(x,y,width,height);
 		contentPane = new GamePanel();
 		setContentPane(contentPane);
 	}

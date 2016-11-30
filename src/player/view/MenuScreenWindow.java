@@ -2,6 +2,7 @@
 package player.view;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,6 +16,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Toolkit;
 
 public class MenuScreenWindow extends JFrame {
 
@@ -43,7 +45,12 @@ public class MenuScreenWindow extends JFrame {
 	/*
 	public MenuScreenWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 375);
+		int width = 600;
+	    int height = 375;
+	    Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+	    int x = (screen.width-width)/2;
+	    int y = (screen.height-height)/2;
+	    setBounds(x,y,width,height);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

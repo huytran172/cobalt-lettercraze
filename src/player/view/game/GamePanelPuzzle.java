@@ -14,14 +14,15 @@ public class GamePanelPuzzle extends JPanel {
 	JPanel boardPanel;
 	JPanel titlePanel;
 	JPanel infoPanel;
+	JPanel featurePanel;
 	
 	GamePanelPuzzle(){
 		
 		this.setLayout(null);
-		
-		
+				
 		boardPanel = new BoardPanel();
 	    add(boardPanel);
+
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
 	    
@@ -32,12 +33,12 @@ public class GamePanelPuzzle extends JPanel {
 	    titlePanel = new TitlePanel("Puzzle");
 	    add(titlePanel);
 	    titlePanel.setBounds(40, 20, 600, 60);
+
 	    //titlePanel.setBackground(Color.blue);
 	    
-	    
-	    //add(titlePanel);
-	   // add(infoPanel);
-		
+		featurePanel = new FeaturePanel("puzzle");
+		add(featurePanel);
+		featurePanel.setBounds(60 + boardPanel.getWidth() / 2, 115, 400, 50);
 	}
 	
 }

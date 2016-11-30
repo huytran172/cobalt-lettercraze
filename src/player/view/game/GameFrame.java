@@ -22,8 +22,7 @@ public class GameFrame extends JFrame {
 	    int x = (screen.width-width)/2;
 	    int y = (screen.height-height)/2;
 	    setBounds(x,y,width,height);
-
-		setBounds(500, 200, 1000, 800);
+	    
 		if (level % 3 == 1) {
 			contentPane = new GamePanelPuzzle();
 		}

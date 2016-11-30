@@ -37,12 +37,30 @@ public class CustomLevelButton extends JButton {
 	 * @param level current level number
 	 * @param stars numbers of star
 	 */
-	public CustomLevelButton(int level, int stars) {
+	public CustomLevelButton(int level, int stars, boolean active) {
 		this.level = level;
 		this.stars = stars;
+		this.active = active;
+		setActive(this.active);
+	}
+	
+	/**
+	 * Set status of the button and redraw the button
+	 * @param active button is active or not
+	 */
+	public void setActive(boolean active) {
+		this.active = active;
+		setEnabled(this.active);
 		redrawLevelButton();
 	}
 	
+	/**
+	 * Return whether the button is active or not
+	 */
+	public boolean isActive() {
+		return this.active;
+	}
+
 	/**
 	 * Redraw the button to show level 
 	 */
@@ -52,6 +70,14 @@ public class CustomLevelButton extends JButton {
 		setIconTextGap(30);
 	    setPreferredSize(new Dimension(100, 100));
 		setText("Level " + this.level);
+		drawStarsToButton();
+	}
+	
+	/**
+	 * Draw stars to the button
+	 * TODO draw number of stars according to the model
+	 */
+	private void drawStarsToButton() {
 		try {
 			Image img = ImageIO.read(new File("Images/star-20.png"));
 			setIcon(new ImageIcon(img));

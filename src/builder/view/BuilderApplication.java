@@ -7,7 +7,7 @@ import builder.view.splash.BuilderSplashWindow;
 
 public class BuilderApplication {
 	public static void main(String[] args) {
-		BuilderSplashWindow splashScreen = new BuilderSplashWindow(1000);
+		BuilderSplashWindow splashScreen = new BuilderSplashWindow(2000);
 		splashScreen.showSplash();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

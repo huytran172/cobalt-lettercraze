@@ -95,7 +95,7 @@ public class CustomLevelButton extends JButton implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		MenuScreenFrame currentFrame = (MenuScreenFrame) SwingUtilities.getRoot(this);
 		currentFrame.dispose();
-		GameFrame gframe = new GameFrame();
+		GameFrame gframe = new GameFrame(this.level);
 		gframe.setVisible(true);
 		
 	}

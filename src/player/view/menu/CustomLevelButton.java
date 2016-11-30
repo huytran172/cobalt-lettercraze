@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.event.SwingPropertyChangeSupport;
 
 import player.view.game.GameFrame;
@@ -92,7 +93,10 @@ public class CustomLevelButton extends JButton implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		MenuScreenFrame currentFrame = (MenuScreenFrame) SwingUtilities.getRoot(this);
+		currentFrame.dispose();
 		GameFrame gframe = new GameFrame();
 		gframe.setVisible(true);
+		
 	}
 }

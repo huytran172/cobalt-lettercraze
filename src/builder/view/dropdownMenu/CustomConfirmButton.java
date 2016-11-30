@@ -25,7 +25,8 @@ import builder.view.editGame.GameFrame;
 
 public class CustomConfirmButton extends JButton implements ActionListener {
 	// Remove later
-	private int level;
+	int levelNum;
+	
 	//private boolean active;
 
 	// Add later
@@ -40,10 +41,11 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 	 * Constructor
 	 * Will be removed later
 	 */
-	public CustomConfirmButton() {
-		this.level = level;
+	public CustomConfirmButton(int level) {
+		this.levelNum = level + 1;
 		addActionListener(this);
 		drawConfirmButton();
+
 	}
 	
 		/**
@@ -57,13 +59,22 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 			setText("OK!");
 		}
 	
-
+		
 
 	public void actionPerformed(ActionEvent e) {
 		DropMenuFrame currentFrame = (DropMenuFrame) SwingUtilities.getRoot(this);
 		currentFrame.dispose();
-		GameFrame gframe = new GameFrame(level);
+	
+		GameFrame gframe = new GameFrame(this.levelNum);
 		gframe.setVisible(true);
 		
+	}
+	
+	public void setLevelNum(int l) {
+		this.levelNum = l + 1;
+	}
+	
+	public int getLevelNum() {
+		return levelNum;
 	}
 }

@@ -15,8 +15,8 @@ public class BuilderApplication {
 				try {
 					DropMenuFrame frame = new DropMenuFrame();
 					frame.setVisible(true);
-					GameFrame gframe = new GameFrame();
-				    gframe.setVisible(true);
+					//GameFrame gframe = new GameFrame();
+				    //gframe.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

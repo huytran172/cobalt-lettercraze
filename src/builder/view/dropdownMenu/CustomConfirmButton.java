@@ -1,6 +1,7 @@
 package builder.view.dropdownMenu;
 
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -14,7 +15,7 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.event.SwingPropertyChangeSupport;
 
-import player.view.game.GameFrame;
+import builder.view.editGame.GameFrame;
 
 /**
  * Class custom button
@@ -38,45 +39,30 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 	/**
 	 * Constructor
 	 * Will be removed later
-	 * @param level current level number
-	 * @param stars numbers of star
 	 */
-	public CustomConfirmButton(int level) {
+	public CustomConfirmButton() {
 		this.level = level;
-		//this.active = active;
-		//setActive(this.active);
 		addActionListener(this);
-	}
-
-	/**
-	 * Redraw the button to show level 
-	 */
-	private void redrawLevelButton() {
-		setVerticalTextPosition(SwingConstants.TOP);
-		setHorizontalTextPosition(SwingConstants.CENTER);
-		setIconTextGap(30);
-	    setPreferredSize(new Dimension(100, 100));
-		setText("Level " + this.level);
-		drawStarsToButton();
+		drawConfirmButton();
 	}
 	
-	/**
-	 * Draw stars to the button
-	 * TODO draw number of stars according to the model
-	 */
-	private void drawStarsToButton() {
-		try {
-			Image img = ImageIO.read(new File("Images/star-20.png"));
-			setIcon(new ImageIcon(img));
-		} catch (Exception ex) {
-			System.out.println(ex.getMessage());
+		/**
+		 * Draw the button
+		 */
+		private void drawConfirmButton() {
+			setVerticalTextPosition(SwingConstants.TOP);
+			setHorizontalTextPosition(SwingConstants.CENTER);
+			setIconTextGap(30);
+		    setPreferredSize(new Dimension(100, 100));
+			setText("OK!");
 		}
-	}
 	
+
+
 	public void actionPerformed(ActionEvent e) {
 		DropMenuFrame currentFrame = (DropMenuFrame) SwingUtilities.getRoot(this);
 		currentFrame.dispose();
-		GameFrame gframe = new GameFrame();
+		GameFrame gframe = new GameFrame(level);
 		gframe.setVisible(true);
 		
 	}

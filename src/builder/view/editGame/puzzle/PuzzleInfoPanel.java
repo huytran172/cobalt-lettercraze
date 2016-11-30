@@ -1,4 +1,4 @@
-package builder.view.editGame;
+package builder.view.editGame.puzzle;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
-public class InfoPanel extends JPanel {
+public class PuzzleInfoPanel extends JPanel {
 	
 	JTextField textField;
 	JLabel maximumWords;
@@ -25,7 +25,7 @@ public class InfoPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public InfoPanel(){
+	public PuzzleInfoPanel(){
 		initialize();
 	}
 	

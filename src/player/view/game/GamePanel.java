@@ -25,10 +25,9 @@ public class GamePanel extends JPanel {
 	    boardPanel.setBounds(60, 170, 510, 510);
 	    boardPanel.setBackground(Color.blue);
 	    
-	    infoPanel = new JPanel();
+	    infoPanel = new InfoPanel();
 	    add(infoPanel);
-	    infoPanel.setBounds(660, 170, 260, 510);
-	    infoPanel.setBackground(Color.blue);
+	    
 	    
 	    titlePanel = new JPanel();
 	    add(titlePanel);

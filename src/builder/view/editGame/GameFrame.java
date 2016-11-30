@@ -16,10 +16,21 @@ public class GameFrame extends JFrame {
 	
 	private JPanel contentPane;
 
-	public GameFrame(int level) {
+	public GameFrame(int levelNum) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 1000, 800);		
-		contentPane = new ThemeGamePanel();
+		if (levelNum%3 == 1){
+			contentPane = new PuzzleGamePanel();
+		}
+		else if (levelNum%3 == 2){
+			contentPane = new LightningGamePanel();
+		}
+		else if (levelNum%3 == 0){
+			contentPane = new ThemeGamePanel();
+		}
+		else{
+			contentPane = new PuzzleGamePanel();
+		}
 		setContentPane(contentPane);
 	}
 

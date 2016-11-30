@@ -3,6 +3,8 @@ package player.view.menu;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 import javax.imageio.ImageIO;
@@ -11,13 +13,15 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import javax.swing.event.SwingPropertyChangeSupport;
 
+import player.view.game.GameFrame;
+
 /**
  * Class custom button
  * Redraw the level button in the menu screen
  * @author LUL
  */
 
-public class CustomLevelButton extends JButton {
+public class CustomLevelButton extends JButton implements ActionListener {
 	// Remove later
 	private int level;
 	private int stars;
@@ -42,6 +46,7 @@ public class CustomLevelButton extends JButton {
 		this.stars = stars;
 		this.active = active;
 		setActive(this.active);
+		addActionListener(this);
 	}
 	
 	/**
@@ -84,5 +89,10 @@ public class CustomLevelButton extends JButton {
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		GameFrame gframe = new GameFrame();
+		gframe.setVisible(true);
 	}
 }

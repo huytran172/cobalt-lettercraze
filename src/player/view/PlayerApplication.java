@@ -9,7 +9,6 @@ import player.view.splash.SplashScreenWindow;
 public class PlayerApplication {
 	public static void main(String[] args) {
 		SplashScreenWindow splashScreen = new SplashScreenWindow(2000);
-
 		splashScreen.showSplash();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

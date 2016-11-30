@@ -59,7 +59,7 @@ public class DropMenuFrame extends JFrame {
 		lblChooseLevel.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		contentPane.add(lblChooseLevel);
 	
-		String[] choices = { "LEVEL 1","LEVEL 2", "LEVEL 3", "LEVEL 4", "LEVEL 5", "LEVEL 6", "LEVEL 7", "LEVEL 8",
+		String[] choices = { "ADD NEW LEVEL","LEVEL 1","LEVEL 2", "LEVEL 3", "LEVEL 4", "LEVEL 5", "LEVEL 6", "LEVEL 7", "LEVEL 8",
 				"LEVEL 9", "LEVEL 10", "LEVEL 11", "LEVEL 12", "LEVEL 13", "LEVEL 14", "LEVEL 15"};
 		JComboBox<String> comboBox = new JComboBox<String>(choices);
 		contentPane.add(comboBox);

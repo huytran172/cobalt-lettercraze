@@ -15,14 +15,13 @@ import player.view.menu.MenuScreenFrame;
 
 public class TitlePanel extends JPanel{
 	private JLabel label;
-	private String mode = "It's a mystery";
-	//private GameFrame currentGameFrame;
+	private String mode;
 
 	/**
 	 * Create the panel.
 	 */
-	public TitlePanel() {
-		//this.mode = mode;
+	public TitlePanel(String mode) {
+		this.mode = mode;
 		//this.currentGameFrame = currentGameFrame;		
 		
 		JButton btnBack = new JButton("Back");

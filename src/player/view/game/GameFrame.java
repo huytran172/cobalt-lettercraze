@@ -14,8 +14,9 @@ public class GameFrame extends JFrame {
 	
 	private JPanel contentPane;
 
-	public GameFrame() {
+	public GameFrame(int level) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+<<<<<<< HEAD
 		int width = 1000;
 	    int height = 800;
 	    Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -23,6 +24,18 @@ public class GameFrame extends JFrame {
 	    int y = (screen.height-height)/2;
 	    setBounds(x,y,width,height);
 		contentPane = new GamePanel();
+=======
+		setBounds(500, 200, 1000, 800);
+		if (level % 3 == 1) {
+			contentPane = new GamePanelPuzzle();
+		}
+		if (level % 3 == 2) {
+			contentPane = new GamePanelLightning();
+		}
+		if (level % 3 == 0) {
+			contentPane = new GamePanelTheme();
+		}
+>>>>>>> add mode specific panel
 		setContentPane(contentPane);
 	}
 

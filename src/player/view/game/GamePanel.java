@@ -4,34 +4,40 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 
 public class GamePanel extends JPanel {
-	protected JLabel highScore;
-	protected JLabel currentScore;
-	protected JButton[] buttons = new JButton[3];
-	Container content = new Container();
+	
 
+	JPanel boardPanel;
+	JPanel titlePanel;
+	JPanel infoPanel;
 	
 	GamePanel(){
 		
-	    JLabel highScore = new JLabel("High score");
-		highScore.setBounds(50, 50, 200, 200);
-		add(highScore);
-		
-		JLabel currentScore = new JLabel("Current score");
-		add(currentScore);
-		currentScore.setLocation(200, 100);
+		this.setLayout(null);
 		
 		
-		JButton reset = new JButton("Reset");
-		JButton quit = new JButton("Quit");
-		JButton undo = new JButton("Undo");
-		
-		add(reset);
-		add(quit);
-		add(undo);
+		boardPanel = new JPanel();
+	    add(boardPanel);
+	    boardPanel.setBounds(60, 170, 510, 510);
+	    boardPanel.setBackground(Color.blue);
+	    
+	    infoPanel = new JPanel();
+	    add(infoPanel);
+	    infoPanel.setBounds(660, 170, 260, 510);
+	    infoPanel.setBackground(Color.blue);
+	    
+	    titlePanel = new JPanel();
+	    add(titlePanel);
+	    titlePanel.setBounds(60, 40, 860, 85);
+	    titlePanel.setBackground(Color.blue);
+	    
+	    
+	    //add(titlePanel);
+	   // add(infoPanel);
 		
 	}
 

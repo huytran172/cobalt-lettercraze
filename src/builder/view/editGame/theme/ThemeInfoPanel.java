@@ -33,7 +33,7 @@ public class ThemeInfoPanel extends JPanel {
 	private void initialize(){
 		setLayout(null);
 		setBounds(660, 170, 260, 510);
-		setBackground(Color.lightGray);
+		//setBackground(Color.lightGray);
 		
 		maximumWords = new JLabel("Theme:");
 		maximumWords.setBounds(90, 26, 125, 39);
@@ -49,15 +49,15 @@ public class ThemeInfoPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnPreview.setBounds(0, 404, 91, 29);
+		btnPreview.setBounds(0, 300, 91, 29);
 		add(btnPreview);
 		
-		JButton btnSaveLevel = new JButton("Save Level");
-		btnSaveLevel.setBounds(90, 404, 91, 29);
+		JButton btnSaveLevel = new JButton("Save");
+		btnSaveLevel.setBounds(90, 300, 91, 29);
 		add(btnSaveLevel);
 		
 		JButton btnQuit = new JButton("Quit");
-		btnQuit.setBounds(190, 404, 65, 29);
+		btnQuit.setBounds(180, 300, 91, 29);
 		btnQuit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

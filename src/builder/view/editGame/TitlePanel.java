@@ -39,7 +39,7 @@ public class TitlePanel extends JPanel{
 		
 		label = new JLabel();
 		label.setText("Mode: " + mode);
-		label.setFont(new Font(label.getFont().getName(), Font.PLAIN, 50));
+		label.setFont(new Font(label.getFont().getName(), Font.PLAIN, 30));
 		add(label);
 	}
 

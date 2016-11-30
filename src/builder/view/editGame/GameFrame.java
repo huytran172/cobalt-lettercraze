@@ -1,4 +1,7 @@
 package builder.view.editGame;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -18,7 +21,12 @@ public class GameFrame extends JFrame {
 
 	public GameFrame(int levelNum) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 1000, 800);		
+		int width = 800;
+	    int height = 600;
+	    Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+	    int x = (screen.width-width)/2;
+	    int y = (screen.height-height)/2;
+	    setBounds(x,y,width,height);	
 		if (levelNum%3 == 1){
 			contentPane = new PuzzleGamePanel();
 		}

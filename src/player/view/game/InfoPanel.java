@@ -30,7 +30,7 @@ public class InfoPanel extends JPanel {
 	private void initialize(){
 		
 		 setBounds(660, 170, 260, 510);
-		 setBackground(Color.lightGray);
+		 //setBackground(Color.lightGray);
 		 
 		 highScore = new JLabel("High score");
 		 highScore.setFont(highScore.getFont().deriveFont(18.0f));
@@ -63,7 +63,7 @@ public class InfoPanel extends JPanel {
 							//.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 							.addContainerGap(0, 0))
 							.addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, 158, GroupLayout.PREFERRED_SIZE)
-							.addGap(150)
+							.addGap(65)
 							.addGroup(groupLayout.createParallelGroup()
 									.addComponent(reset, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
 									.addComponent(undo, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)

@@ -22,16 +22,17 @@ public class GamePanelTheme extends JPanel {
 		
 		boardPanel = new BoardPanel();
 	    add(boardPanel);
-	    boardPanel.setBounds(60, 170, 510, 510);
+	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
 	    
 	    infoPanel = new InfoPanel();
 	    add(infoPanel);
+	    infoPanel.setBounds(480, 100, 280, 420);
 	    
 	    
 	    titlePanel = new TitlePanel("Theme");
 	    add(titlePanel);
-	    titlePanel.setBounds(60, 40, 860, 85);
+	    titlePanel.setBounds(40, 20, 600, 60);
 	    //titlePanel.setBackground(Color.blue);
 	    
 	    

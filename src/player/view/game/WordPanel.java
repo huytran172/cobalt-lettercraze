@@ -18,7 +18,7 @@ public class WordPanel extends JPanel {
 
 	public WordPanel() {
 		
-		setBackground(Color.lightGray);
+		//setBackground(Color.lightGray);
         console = new JTextArea(8, 20);
         console.setPreferredSize(new Dimension(300, 260));
         console.setLayout(new BoxLayout(console, BoxLayout.Y_AXIS));

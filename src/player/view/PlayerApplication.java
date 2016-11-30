@@ -8,15 +8,8 @@ import player.view.splash.SplashScreenWindow;
 
 public class PlayerApplication {
 	public static void main(String[] args) {
-<<<<<<< HEAD
-<<<<<<< HEAD
 		SplashScreenWindow splashScreen = new SplashScreenWindow(2000);
-=======
-		SplashScreenWindow splashScreen = new SplashScreenWindow(1000);
->>>>>>> builder add edit game view
-=======
-		SplashScreenWindow splashScreen = new SplashScreenWindow(1000);
->>>>>>> 6ab20db32ecca5c41786f6d6bcac539f4e293911
+
 		splashScreen.showSplash();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

@@ -10,17 +10,25 @@ public class Lightning extends Level{
 	}
 	
 	//End this current level, return to menu
+	@Override
 	boolean endLevel(){
 		return true;
 	}
 
 	//Reset board, score, list of words found
+	@Override
 	boolean reset(){
 		return false;
 	}
 
 	//Undo last move
+	@Override
 	boolean undo(){
 		return true;
+	}
+
+	@Override
+	void initialize() {
+		
 	}
 }

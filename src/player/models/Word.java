@@ -2,6 +2,7 @@ package player.models;
 
 import java.util.ArrayList;
 
+
 public class Word {
 	
 	ArrayList<Square> squares = new ArrayList<Square>();
@@ -10,13 +11,35 @@ public class Word {
 
 	}
 	
+	
+	//Convert the String from Squares
+	String getWord(){
+		ArrayList<String> list = new ArrayList<String>();
+		for (int i = 0; i < squares.size(); i++){
+			Letter letter = squares.get(i).letter;
+			list.add(letter.s);
+		}
+		String word = String.join(", ", list);
+		return word;
+	}
+	
 	//Check if the word is valid
 	boolean validWord(){
-		return true;
+		Dictionary dict = new Dictionary();
+		return dict.isWord(this.getWord());
 	}
 	
 	//Calculate the score of the selected word.
 	int calcWordScore(){
-		return 0;
+		
+		int score = 0;
+		
+		for (int i = 0; i < squares.size(); i++){
+			Letter letter = squares.get(i).letter;
+			score = score + letter.getScore();
+			
+		}
+		
+		return score;
 	}
 }

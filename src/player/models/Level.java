@@ -1,6 +1,6 @@
 package player.models;
 
-public class Level {
+public abstract class Level {
 	
 	Board board;
 	String wordsFound[];
@@ -21,20 +21,16 @@ public class Level {
 		
 	}
 	
+	//Initialize a level
+	abstract void initialize();
+	
+	
 	//End this current level (and 
-	boolean endLevel(){
-		
-		return true;
-		
-	}
+	abstract boolean endLevel();
 	
 	//Reset this level
-	boolean reset(){
-		return true;
-	}
+	abstract boolean reset();
 	
 	//Undo last move
-	boolean undo(){
-		return true;
-	}
+	abstract boolean undo();
 }

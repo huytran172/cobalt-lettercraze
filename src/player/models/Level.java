@@ -16,4 +16,25 @@ public class Level {
 	public Board getBoard() {
 		return board;
 	}
+	
+	void updateHighScore(int highscore){
+		
+	}
+	
+	//End this current level (and 
+	boolean endLevel(){
+		
+		return true;
+		
+	}
+	
+	//Reset this level
+	boolean reset(){
+		return true;
+	}
+	
+	//Undo last move
+	boolean undo(){
+		return true;
+	}
 }

@@ -6,20 +6,19 @@ public abstract class Level {
 	String wordsFound[];
 	boolean isComplete;
 	Dictionary dictionary;
-	int index[];
-	Score score;
+	int index;
 	
-	public void setBoard(Board b) {
-		board = b;
+	
+	Level(Board board){
+		this.board = board;
+		this.dictionary = new Dictionary();
 	}
+	
 
 	public Board getBoard() {
 		return board;
 	}
 	
-	void updateHighScore(int highscore){
-		
-	}
 	
 	//Initialize a level
 	abstract void initialize();

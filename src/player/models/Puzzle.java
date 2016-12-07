@@ -1,11 +1,16 @@
 package player.models;
 
+import player.models.score.ScorePuzzle;
 
 public class Puzzle extends Level{
 
 	int maxMoves;
-	Puzzle(int moves){
+	ScorePuzzle score;
+	
+	Puzzle(int moves, int threshold[]){
+		super(new Board());
 		this.maxMoves = moves;
+		this.score = new ScorePuzzle(threshold);
 
 	}
 
@@ -30,4 +35,6 @@ public class Puzzle extends Level{
 	void initialize() {
 		
 	}
+
+
 }

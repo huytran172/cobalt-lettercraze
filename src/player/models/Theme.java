@@ -1,12 +1,17 @@
 package player.models;
 
+import player.models.score.ScoreTheme;
+
 public class Theme extends Level{
 	String theme;
 	String wordsToFind[];
+	ScoreTheme score;
 	
-	public Theme(String theme, String wordsToFind[]){
+	public Theme(String theme, String wordsToFind[], int threshold[]){
+		super(new Board());
 		this.theme = theme;
 		this.wordsToFind = wordsToFind;
+		this.score = new ScoreTheme(threshold);
 	}
 	
 	@Override
@@ -30,4 +35,6 @@ public class Theme extends Level{
 	void initialize() {
 		
 	}
+	
+	
 }

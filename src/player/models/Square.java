@@ -7,8 +7,11 @@ public class Square {
 	int column;
 	boolean isEnabled;
 	
-	Square(int row, int column, boolean isEnabled){
-		
+	Square(Letter letter, int row, int column, boolean isEnabled){
+		this.letter = letter;
+		this.row = row;
+		this.column = column;
+		this.isEnabled = isEnabled;
 	}
 	
 	//Choose a square

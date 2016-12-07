@@ -1,11 +1,17 @@
 package player.models;
 
 import player.models.Timer;
+import player.models.score.ScoreLightning;
 
 public class Lightning extends Level{
-	
+
 	Timer timer;
-	Lightning(int time){
+	ScoreLightning score;
+	
+	
+	Lightning(int time, int[] threshold){
+		super(new Board());
+		this.score = new ScoreLightning(threshold);
 		
 	}
 	
@@ -31,4 +37,6 @@ public class Lightning extends Level{
 	void initialize() {
 		
 	}
+
+	
 }

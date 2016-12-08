@@ -41,4 +41,12 @@ public class Letter {
 			return 3;
 		}
 	}
+
+	public boolean isEmptyString() {
+		return this.s == "";
+	}
+
+	public void setStringEmpty() {
+		this.s = "";
+	}
 }

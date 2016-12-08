@@ -1,6 +1,10 @@
 package demo;
 
+import player.models.RandomLetter;
+
 public class demo {
-	// demo fucking demo
-	// abc123
+	public static void main(String[] args){
+		System.out.print(RandomLetter.generateLetter() + " ");
+		System.out.print(RandomLetter.generateLetter() + " ");
+	}
 }

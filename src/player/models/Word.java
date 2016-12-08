@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Word {
 	
 	ArrayList<Square> squares = new ArrayList<Square>();
+	final static Dictionary dict = new Dictionary();	
 	
 	public Word(ArrayList<Square> squares){
 		this.squares = squares;
@@ -13,7 +14,7 @@ public class Word {
 	
 	
 	//Convert the String from Squares
-	String getWord(){
+	public String getWord(){
 		StringBuilder somebody = new StringBuilder();
 		for (int i = 0; i < squares.size(); i++){
 			Letter letter = squares.get(i).letter;
@@ -23,20 +24,18 @@ public class Word {
 	}
 	
 	//Check if the word is valid
-	boolean validWord(){
-		Dictionary dict = new Dictionary();
+	public boolean validWord(){
 		return dict.isWord(this.getWord());
 	}
 	
 	//Calculate the score of the selected word.
 	public int calcWordScore(){
-		
 		int score = 0;
-		
-		for (int i = 0; i < squares.size(); i++){
+
+		int size = squares.size();
+		for (int i = 0; i < size; i++){
 			Letter letter = squares.get(i).letter;
 			score = score + letter.getScore();
-			
 		}
 		
 		return score;
@@ -44,7 +43,7 @@ public class Word {
 	
 	
 	
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Letter letter = new Letter("s");
 		Square square1 = new Square(letter,1,1,false);
 		Word word = new Word(new ArrayList<Square>());
@@ -54,5 +53,6 @@ public class Word {
 		Square square3 = new Square(letter2,1,1,false);
 		word.squares.add(square3);
 		System.out.println(word.getWord());
+		System.out.println(word.calcWordScore());
 	}
 }

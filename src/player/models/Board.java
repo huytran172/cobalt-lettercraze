@@ -11,13 +11,17 @@ import player.controller.Listener;
  */
 public class Board implements Iterable<Square> {
 	/** Squares in the board. */
-	ArrayList<Square> squares = new ArrayList<Square>();
+	private ArrayList<Square> squares = new ArrayList<Square>();
 	
-	/**Word being chosen. */
-	Word activeWord;
+	/**
+	 * Word being chosen.
+	 */
+	private Word activeWord;
 	
-	/** Listeners. */
-	ArrayList<Listener> listeners = new ArrayList<Listener>();
+	/** 
+	 * Listeners.
+	 */
+	private ArrayList<Listener> listeners = new ArrayList<Listener>();
 	
 	/** Add a listener. */
 	public void addListener (Listener list) {

@@ -59,7 +59,7 @@ public class Square {
 	}
 
 	/**
-	 * Clear sqaure 
+	 * Clear square 
 	 * Make the letter in the square become empty string
 	 */
 	public void clearSquare() {

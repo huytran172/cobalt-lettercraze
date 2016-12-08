@@ -42,6 +42,17 @@ public class Word {
 		return score;
 	}
 	
+	/**
+	 * Clear the word
+	 * @param args
+	 */
+	
+	public void clearWord(){
+		for (int i = 0; i < this.squares.size(); i++) {
+			this.squares.get(i).clearSquare();
+		}
+	}
+	
 	
 	
 	public static void main(String[] args){

@@ -11,21 +11,21 @@ import player.controller.Listener;
  */
 public class Board implements Iterable<Square> {
 	/** Squares in the board. */
-	ArrayList<Square> squares = new ArrayList<Square>();
+	private ArrayList<Square> squares = new ArrayList<Square>();
 	
 	/**Word being chosen. */
-	Word activeWord;
+	private Word activeWord;
 	
 	/** Listeners. */
-	ArrayList<Listener> listeners = new ArrayList<Listener>();
+	private ArrayList<Listener> listeners = new ArrayList<Listener>();
 	
 	/** Add a listener. */
-	public void addListener (Listener list) {
+	public void addListener(Listener list) {
 		listeners.add(list);
 	}
 	
 	/** Remove a listener. */
-	public void removeListener (Listener list) {
+	public void removeListener(Listener list) {
 		listeners.remove(list);
 	}
 	
@@ -74,6 +74,35 @@ public class Board implements Iterable<Square> {
 			for (Listener list : listeners) {
 				list.update();
 			}
+		}
+	}
+
+	public void toggleSquare(Square s) {
+		s.toggleSelect();
+	}
+	
+	/** Add a square to the list of squares being selected
+	 * 
+	 * @param square
+	 */
+	public boolean updateActiveWord(Square square){
+		
+		if (!this.activeWord.squares.contains(square)){
+			this.activeWord.squares.add(square);
+			return true;
+		}
+		
+		return false;
+
+	}
+	
+	public boolean updateBoard(){
+		if (this.activeWord.validWord()){
+			
+			activeWord.clearWord();
+			
+			
+			
 		}
 	}
 

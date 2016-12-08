@@ -1,5 +1,5 @@
 package player.models;
 
-public class Score {
+public class Timer {
 
 }

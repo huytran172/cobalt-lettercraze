@@ -1,19 +1,35 @@
 package player.models;
 
-public class Level {
+public abstract class Level {
 	
 	Board board;
 	String wordsFound[];
 	boolean isComplete;
 	Dictionary dictionary;
-	int index[];
-	Score score;
+	int index;
 	
-	public void setBoard(Board b) {
-		board = b;
+	
+	Level(Board board){
+		this.board = board;
+		this.dictionary = new Dictionary();
 	}
+	
 
 	public Board getBoard() {
 		return board;
 	}
+	
+	
+	//Initialize a level
+	abstract void initialize();
+	
+	
+	//End this current level (and 
+	abstract boolean endLevel();
+	
+	//Reset this level
+	abstract boolean reset();
+	
+	//Undo last move
+	abstract boolean undo();
 }

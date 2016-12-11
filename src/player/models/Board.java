@@ -11,13 +11,10 @@ import player.controller.Listener;
  */
 public class Board implements Iterable<Square> {
 	
-<<<<<<< HEAD
 	/** A list of words found */
 	Stack<Word> wordsFound;
 	
-=======
 	/** VARIABLE IN BOARD ENTITY **/
->>>>>>> refs/heads/board-generator
 	/** Squares in the board. */
 	private ArrayList<Square> squares = new ArrayList<Square>();
 
@@ -35,13 +32,8 @@ public class Board implements Iterable<Square> {
 	}
 	
 	/**Word being chosen. */
-<<<<<<< HEAD
+
 	private Word activeWord = null;
-=======
-	Word activeWord;
-	
-	
->>>>>>> refs/heads/board-generator
 	
 	/** Listeners. */
 	private ArrayList<Listener> listeners = new ArrayList<Listener>();
@@ -126,13 +118,13 @@ public class Board implements Iterable<Square> {
 
 	}
 	
-	public boolean updateBoard(){
-		if (this.activeWord.validWord()){
-			this.wordsFound.push(activeWord)
-;			activeWord.clearWord();
-		}
-		return true;
-	}
+//	public boolean updateBoard(){
+//		if (this.activeWord.validWord()){
+//			this.wordsFound.push(activeWord)
+// 			activeWord.clearWord();
+//		}
+//		return true;
+//	}
 	
 	public boolean undo(){
 		if (this.wordsFound.empty()){
@@ -162,25 +154,40 @@ public class Board implements Iterable<Square> {
 	 * Update Board: Call when a move is recently made and
 	 * squares move up to fill empty spaces
 	 */
-	public void updateBoard(){
-		// Going through the board in a 3D way
+	public boolean updateBoard(){
+		boolean checkStatus = false;
+		
+		// Going through the board in a 3D way and pull up all empty squares with existing letter
 		for (int row = 0; row < 5; row++){
 			for (int column = 0; column < 6; column++){
 				// Get current position matching 2D array
 				int pos = (row - 1) * 6 + column;
 				
-				if ((squares.get(pos).isEnabled) && (squares.get(pos).letter == null)){
+				if ((squares.get(pos).isEnabled) && (squares.get(pos).letter.isEmptyString())){
+					checkStatus = true;
 					for (int row2 = row + 1; row2 < 6; row++){
 						// Get position of square below
 						int newPos = pos + (row2 - row) * 6;
 						if ((squares.get(newPos).isEnabled) && (squares.get(newPos).letter != null)){
-							squares.get(pos).letter.setS = squares.get(newPos).letter.getS;
+							squares.get(pos).letter.setS(squares.get(newPos).letter.getS());
 							break;
 						}
 					}
 				}
 			}
 		}
+		
+		// Fill empty squares with letter
+		for (int row = 0; row < 5; row++){
+			for (int column = 0; column < 5; column++){
+				int pos = (row - 1) * 6 + column;
+				if (squares.get(pos).letter.isEmptyString()){
+					squares.get(pos).letter.setS(RandomLetter.generateLetter());
+				}
+			}
+		}
+		
+		return checkStatus;
 	}
 	
 }

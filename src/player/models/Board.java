@@ -11,6 +11,7 @@ import player.controller.Listener;
  */
 public class Board implements Iterable<Square> {
 	
+
 	/** A list of words found */
 	Stack<Word> wordsFound;
 	
@@ -32,6 +33,8 @@ public class Board implements Iterable<Square> {
 	
 	/**Word being chosen. */
 	private Word activeWord = null;
+	
+	
 	
 	/** Listeners. */
 	private ArrayList<Listener> listeners = new ArrayList<Listener>();
@@ -147,5 +150,30 @@ public class Board implements Iterable<Square> {
 //		
 //		return null;
 //	}
+	
+	/**
+	 * Update Board: Call when a move is recently made and
+	 * squares move up to fill empty spaces
+	 */
+	public void updateBoard(){
+		// Going through the board in a 3D way
+		for (int row = 0; row < 5; row++){
+			for (int column = 0; column < 6; column++){
+				// Get current position matching 2D array
+				int pos = (row - 1) * 6 + column;
+				
+				if ((squares.get(pos).isEnabled) && (squares.get(pos).letter == null)){
+					for (int row2 = row + 1; row2 < 6; row++){
+						// Get position of square below
+						int newPos = pos + (row2 - row) * 6;
+						if ((squares.get(newPos).isEnabled) && (squares.get(newPos).letter != null)){
+							squares.get(pos).letter.setS = squares.get(newPos).letter.getS;
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
 	
 }

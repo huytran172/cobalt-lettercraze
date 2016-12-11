@@ -99,11 +99,9 @@ public class Board implements Iterable<Square> {
 	public void updateBoard(){
 		if (this.activeWord.validWord()){
 			
-			activeWord.clearWord();
-			
-			
-			
+			activeWord.clearWord();	
 		}
+		return true;
 	}
 
 //	/**

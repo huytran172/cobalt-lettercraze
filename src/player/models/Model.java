@@ -5,7 +5,10 @@ public class Model {
 	
 	Level levels[];
 	
-	public Model(){
+	public Model() {
+		// STUB
 		levels = new Level[15];
+
+		
 	}
 }

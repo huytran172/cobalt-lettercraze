@@ -116,13 +116,10 @@ public class Board implements Iterable<Square> {
 
 	}
 	
-	public void updateBoard(){
+	public boolean updateBoard(){
 		if (this.activeWord.validWord()){
 			this.wordsFound.push(activeWord)
 ;			activeWord.clearWord();
-			
-			
-			
 		}
 		return true;
 	}

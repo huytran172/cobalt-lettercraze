@@ -196,7 +196,6 @@ public class TestPlayerEntity extends TestCase {
 	}
 	
 	public void testScore(){
-		Score score = new Score();
 		
 	}
 }

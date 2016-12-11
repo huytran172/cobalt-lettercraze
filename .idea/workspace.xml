@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d358ff0-50f3-4169-bb73-f11d96cbbbe2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/player/view/game/StarPanel.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Timer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/cobalt-lettercraze/builderTest/BuilderTestView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/cobalt-lettercraze/playerTest/PlayerTestView.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/player/view/menu/CustomHelpButton.class" afterPath="$PROJECT_DIR$/bin/player/view/menu/CustomHelpButton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/player/view/menu/CustomLevelButton.class" afterPath="$PROJECT_DIR$/bin/player/view/menu/CustomLevelButton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Board.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Board.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Letter.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Letter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Lightning.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Lightning.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Model.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Model.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Puzzle.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Puzzle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Theme.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Theme.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Word.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Word.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/Menu.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/Menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/game/SquarePanel.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/game/SquarePanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/HelpPanel$1.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/HelpPanel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/HelpPanel.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/HelpPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/models/Board.java" afterPath="$PROJECT_DIR$/src/player/models/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/game/BoardPanel.java" afterPath="$PROJECT_DIR$/src/player/view/game/BoardPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/game/InfoPanel.java" afterPath="$PROJECT_DIR$/src/player/view/game/InfoPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/menu/HelpPanel.java" afterPath="$PROJECT_DIR$/src/player/view/menu/HelpPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/playerTest/TestPlayerEntity.java" afterPath="$PROJECT_DIR$/test/playerTest/TestPlayerEntity.java" />
-    </list>
+    <list default="true" id="8d358ff0-50f3-4169-bb73-f11d96cbbbe2" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,12 +19,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="BoardPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BoardPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/player/view/game/BoardPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+            <state relative-caret-position="475">
+              <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StarPanel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/player/view/game/StarPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="639">
+              <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -551,7 +539,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -743,16 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/view/game/StarPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/player/view/game/InfoPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -789,9 +767,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/player/view/game/BoardPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        <state relative-caret-position="475">
+          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/view/game/StarPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

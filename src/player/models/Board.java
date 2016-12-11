@@ -101,7 +101,6 @@ public class Board implements Iterable<Square> {
 			
 			activeWord.clearWord();	
 		}
-		return true;
 	}
 
 //	/**

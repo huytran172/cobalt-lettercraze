@@ -15,7 +15,10 @@ public class InfoPanel extends JPanel {
 	JLabel highScore;
 	JLabel currentScore;
 	
-	CustomJProgressBar progressbar;
+	//CustomJProgressBar progressbar;
+	StarPanel star1;
+	StarPanel star2;
+	StarPanel star3;
 	
 	WordPanel wordsFound;
 	
@@ -37,7 +40,11 @@ public class InfoPanel extends JPanel {
 		 currentScore = new JLabel("Score");
 		 currentScore.setFont(highScore.getFont().deriveFont(18.0f));
 		 
-		 progressbar = new CustomJProgressBar();
+		 //progressbar = new CustomJProgressBar();
+		 star1 = new StarPanel(1, 0);
+		 star1.toggleStar();
+		 star2 = new StarPanel(2, 0);
+		 star3 = new StarPanel(3, 0);
 		 
 		 wordsFound = new WordPanel();
 		 
@@ -45,7 +52,7 @@ public class InfoPanel extends JPanel {
 		 undo = new JButton("undo");
 		 quit = new JButton ("quit");
 		 
-		 progressbar.setStringPainted(true);
+		 //progressbar.setStringPainted(true);
 		 
 		 
 		 
@@ -55,14 +62,16 @@ public class InfoPanel extends JPanel {
 		 groupLayout.setVerticalGroup(
 					groupLayout.createSequentialGroup()
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(highScore, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+							.addComponent(highScore, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 							//.addGap(18)
-							.addComponent(currentScore, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-							.addComponent(progressbar, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+							.addComponent(currentScore, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+							.addComponent(star1, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+							.addComponent(star2, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+							.addComponent(star3, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+							//.addComponent(progressbar, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
 							//.addPreferredGap(ComponentPlacement.RELATED)
-							//.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 							.addContainerGap(0, 0))
-							.addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, 158, GroupLayout.PREFERRED_SIZE)
+							.addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
 							.addGap(65)
 							.addGroup(groupLayout.createParallelGroup()
 									.addComponent(reset, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
@@ -75,7 +84,10 @@ public class InfoPanel extends JPanel {
 				 groupLayout.createParallelGroup()
 				 .addComponent(highScore, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(currentScore, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-				 .addComponent(progressbar, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
+				 //.addComponent(progressbar, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
+				 .addComponent(star1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+				 .addComponent(star2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+				 .addComponent(star3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, this.getWidth()/3, GroupLayout.PREFERRED_SIZE)

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Word {
 	
-	ArrayList<Square> squares = new ArrayList<Square>();
+	public ArrayList<Square> squares = new ArrayList<Square>();
 	
 	public Word(ArrayList<Square> squares){
 		this.squares = squares;
@@ -13,7 +13,7 @@ public class Word {
 	
 	
 	//Convert the String from Squares
-	String getWord(){
+	public String getWord(){
 		StringBuilder somebody = new StringBuilder();
 		for (int i = 0; i < squares.size(); i++){
 			Letter letter = squares.get(i).letter;
@@ -23,7 +23,7 @@ public class Word {
 	}
 	
 	//Check if the word is valid
-	boolean validWord(){
+	public boolean validWord(){
 		Dictionary dict = new Dictionary();
 		return dict.isWord(this.getWord());
 	}

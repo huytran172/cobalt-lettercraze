@@ -5,7 +5,7 @@ public class Model {
 	
 	Level levels[];
 	
-	Model(){
+	public Model(){
 		levels = new Level[15];
 	}
 }

@@ -177,17 +177,37 @@ public class Board implements Iterable<Square> {
 			}
 		}
 		
-		// Fill empty squares with letter
-		for (int row = 0; row < 5; row++){
-			for (int column = 0; column < 5; column++){
-				int pos = (row - 1) * 6 + column;
-				if (squares.get(pos).letter.isEmptyString()){
-					squares.get(pos).letter.setS(RandomLetter.generateLetter());
-				}
-			}
-		}
-		
 		return checkStatus;
 	}
 	
+	/**
+	 * Fill Empty Squares with random letter in Board
+	 * For Puzzle and Lightning
+	 */
+	public boolean fillEmptySquares(){
+		boolean isFillable = false;
+		for (int i = 0; i < 36; i++){
+			if ((squares.get(i).isEnabled) && (squares.get(i).letter.isEmptyString())){
+				isFillable = true;
+				squares.get(i).letter.setS(RandomLetter.generateLetter());
+			}
+		}
+		return isFillable;
+	}
+	
+	
+	/**
+	 * Reset Board - refill and randomize letters in Board
+	 * For Puzzle and Lightning
+	 */
+	public boolean resetBoard(){
+		boolean isAllDisabled = true;
+		for (int i = 0; i < 36; i++){
+			if (squares.get(i).isEnabled){
+				isAllDisabled = false;
+				squares.get(i).letter.setS(RandomLetter.generateLetter());
+			}
+		}
+		return !isAllDisabled;
+	}
 }

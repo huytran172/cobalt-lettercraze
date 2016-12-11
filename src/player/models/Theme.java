@@ -11,7 +11,7 @@ public class Theme extends Level{
 		super(new Board());
 		this.theme = theme;
 		this.wordsToFind = wordsToFind;
-		this.score = new ScoreTheme(threshold);
+		this.score = new ScoreTheme(threshold, super.highScoreList);
 	}
 	
 	@Override

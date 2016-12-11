@@ -11,7 +11,7 @@ public class Lightning extends Level{
 	
 	Lightning(int time, int[] threshold){
 		super(new Board());
-		this.score = new ScoreLightning(threshold);
+		this.score = new ScoreLightning(threshold, super.highScoreList);
 		
 	}
 	

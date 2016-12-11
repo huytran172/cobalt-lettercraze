@@ -3,12 +3,35 @@ package player.models;
 public class Square {
 	Letter letter;
 	int row;
+	public int getRow() {
+		return row;
+	}
+
+	public void setRow(int row) {
+		this.row = row;
+	}
+
+	public int getColumn() {
+		return column;
+	}
+
+	public void setColumn(int column) {
+		this.column = column;
+	}
+
 	int column;
 	boolean isSelected;
 	boolean isEnabled;
 	
 	public Square(Letter letter, int row, int column, boolean isEnabled) {
 		this.letter = letter;
+		this.row = row;
+		this.column = column;
+		this.isEnabled = isEnabled;
+	}
+	
+	public Square(int row, int column, boolean isEnabled) {
+		this.letter.setS(RandomLetter.generateLetter());
 		this.row = row;
 		this.column = column;
 		this.isEnabled = isEnabled;

@@ -118,14 +118,6 @@ public class Board implements Iterable<Square> {
 
 	}
 	
-//	public boolean updateBoard(){
-//		if (this.activeWord.validWord()){
-//			this.wordsFound.push(activeWord)
-// 			activeWord.clearWord();
-//		}
-//		return true;
-//	}
-	
 	public boolean undo(){
 		if (this.wordsFound.empty()){
 			return false;
@@ -134,6 +126,7 @@ public class Board implements Iterable<Square> {
 			this.wordsFound.pop();
 			return true;
 		}
+		return true;
 	}
 
 //	/**

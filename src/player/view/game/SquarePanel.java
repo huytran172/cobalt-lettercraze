@@ -1,5 +1,7 @@
 package player.view.game;
 
+import player.models.Square;
+
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -10,6 +12,7 @@ import javax.swing.SwingConstants;
 public class SquarePanel extends JPanel {
 	// Remove later
 			private boolean active;
+			private Square square;
 
 			// Add later
 			// private Model model;
@@ -28,6 +31,7 @@ public class SquarePanel extends JPanel {
 			public SquarePanel(boolean active) {
 				this.active = active;
 				setActive(this.active);
+				//square = new Square()
 			}
 			
 			/**

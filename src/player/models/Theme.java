@@ -15,24 +15,24 @@ public class Theme extends Level{
 	}
 	
 	@Override
-	boolean endLevel(){
+	public boolean endLevel(){
 		return true;
 	}
 
 	//Reset board, score, list of words found
 	@Override
-	boolean reset(){
+	public boolean reset(){
 		return false;
 	}
 
 	//Undo last move
 	@Override
-	boolean undo(){
+	public boolean undo(){
 		return true;
 	}
 
 	@Override
-	void initialize() {
+	public void initialize() {
 		
 	}
 	

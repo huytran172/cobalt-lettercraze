@@ -7,7 +7,7 @@ public class Puzzle extends Level{
 	int maxMoves;
 	ScorePuzzle score;
 	
-	Puzzle(int moves, int threshold[]){
+	public Puzzle(int moves, int threshold[]){
 		super(new Board());
 		this.maxMoves = moves;
 		this.score = new ScorePuzzle(threshold, super.highScoreList);
@@ -15,24 +15,24 @@ public class Puzzle extends Level{
 	}
 
 	@Override
-	boolean endLevel(){
+	public boolean endLevel(){
 		return true;
 	}
 
 	//Reset board, score, list of words found
 	@Override
-	boolean reset(){
+	public boolean reset(){
 		return false;
 	}
 
 	//Undo last move
 	@Override
-	boolean undo(){
+	public boolean undo(){
 		return true;
 	}
 
 	@Override
-	void initialize() {
+	public void initialize() {
 		
 	}
 

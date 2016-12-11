@@ -1,15 +1,15 @@
 package player.models;
 
-import player.models.Timer;
+import player.models.LightningTimer;
 import player.models.score.ScoreLightning;
 
 public class Lightning extends Level{
 
-	Timer timer;
+	LightningTimer timer;
 	ScoreLightning score;
 	
 	
-	Lightning(int time, int[] threshold){
+	public Lightning(int time, int[] threshold){
 		super(new Board());
 		this.score = new ScoreLightning(threshold, super.highScoreList);
 		
@@ -17,24 +17,24 @@ public class Lightning extends Level{
 	
 	//End this current level, return to menu
 	@Override
-	boolean endLevel(){
+	public boolean endLevel(){
 		return true;
 	}
 
 	//Reset board, score, list of words found
 	@Override
-	boolean reset(){
+	public boolean reset(){
 		return false;
 	}
 
 	//Undo last move
 	@Override
-	boolean undo(){
+	public boolean undo(){
 		return true;
 	}
 
 	@Override
-	void initialize() {
+	public void initialize() {
 		
 	}
 

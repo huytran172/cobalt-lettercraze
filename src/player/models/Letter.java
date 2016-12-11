@@ -3,6 +3,7 @@ package player.models;
 public class Letter {
 	String s;
 	
+
 	public String getS() {
 		return s;
 	}
@@ -11,12 +12,13 @@ public class Letter {
 		this.s = s;
 	}
 
-	Letter(String s){
+	public Letter(String s){
+
 		this.s = s;
 	}
 	
 	//Assign scores for each letter
-	int getScore(){
+	public int getScore(){
 		if (s == "e" || s == "t"){
 			return 1;
 		}

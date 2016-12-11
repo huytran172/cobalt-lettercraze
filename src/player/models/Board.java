@@ -89,7 +89,7 @@ public class Board implements Iterable<Square> {
 	 * 
 	 * During this event, no new changes can happen.
 	 */
-	void notifyListeners() {
+	public void notifyListeners() {
 		synchronized (listeners) {
 			for (Listener list : listeners) {
 				list.update();
@@ -116,7 +116,7 @@ public class Board implements Iterable<Square> {
 
 	}
 	
-	public boolean updateBoard(){
+	public void updateBoard(){
 		if (this.activeWord.validWord()){
 			this.wordsFound.push(activeWord)
 ;			activeWord.clearWord();

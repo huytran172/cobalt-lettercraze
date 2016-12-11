@@ -3,12 +3,22 @@ package player.models;
 public class Letter {
 	String s;
 	
-	Letter(String s){
+
+	public String getS() {
+		return s;
+	}
+
+	public void setS(String s) {
+		this.s = s;
+	}
+
+	public Letter(String s){
+
 		this.s = s;
 	}
 	
 	//Assign scores for each letter
-	int getScore(){
+	public int getScore(){
 		if (s == "e" || s == "t"){
 			return 1;
 		}
@@ -40,5 +50,13 @@ public class Letter {
 		else {
 			return 3;
 		}
+	}
+
+	public boolean isEmptyString() {
+		return this.s == "";
+	}
+
+	public void setStringEmpty() {
+		this.s = "";
 	}
 }

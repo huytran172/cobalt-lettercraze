@@ -11,25 +11,41 @@ import player.controller.Listener;
  */
 public class Board implements Iterable<Square> {
 	
-	/** VARIABLE IN BOARD ENTITY **/
+
+	/** A list of words found */
+	Stack<Word> wordsFound;
+	
 	/** Squares in the board. */
-	ArrayList<Square> squares = new ArrayList<Square>();
+	private ArrayList<Square> squares = new ArrayList<Square>();
+
+	public void initialize() {
+		int j = -1;
+		for (int i = 0; i < 36; i++) {
+			
+			squares.set(i, new Square(0,0, false));
+			squares.get(i).setColumn(i % 6);
+			if (i % 6 == 0) {
+				j++;
+			}
+			squares.get(i).setRow(j);
+		}
+	}
 	
 	/**Word being chosen. */
-	Word activeWord;
+	private Word activeWord = null;
 	
 	
 	
 	/** Listeners. */
-	ArrayList<Listener> listeners = new ArrayList<Listener>();
+	private ArrayList<Listener> listeners = new ArrayList<Listener>();
 	
 	/** Add a listener. */
-	public void addListener (Listener list) {
+	public void addListener(Listener list) {
 		listeners.add(list);
 	}
 	
 	/** Remove a listener. */
-	public void removeListener (Listener list) {
+	public void removeListener(Listener list) {
 		listeners.remove(list);
 	}
 	
@@ -52,6 +68,9 @@ public class Board implements Iterable<Square> {
 //		return new BoardMemento(shapes);
 //	}
 	
+	public void setActiveWord(Word w){
+		this.activeWord = w;
+	}
 
 	/** Return all shapes in the board. */
 	public Iterator<Square> iterator() {
@@ -73,11 +92,48 @@ public class Board implements Iterable<Square> {
 	 * 
 	 * During this event, no new changes can happen.
 	 */
-	void notifyListeners() {
+	public void notifyListeners() {
 		synchronized (listeners) {
 			for (Listener list : listeners) {
 				list.update();
 			}
+		}
+	}
+
+	public void toggleSquare(Square s) {
+		s.toggleSelect();
+	}
+	
+	/** Add a square to the list of squares being selected
+	 * 
+	 * @param square
+	 */
+	public boolean updateActiveWord(Square square){
+		
+		if (!this.activeWord.squares.contains(square)){
+			this.activeWord.squares.add(square);
+			return true;
+		}
+		
+		return false;
+
+	}
+	
+	public boolean updateBoard(){
+		if (this.activeWord.validWord()){
+			this.wordsFound.push(activeWord)
+;			activeWord.clearWord();
+		}
+		return true;
+	}
+	
+	public boolean undo(){
+		if (this.wordsFound.empty()){
+			return false;
+		}
+		else {
+			this.wordsFound.pop();
+			return true;
 		}
 	}
 

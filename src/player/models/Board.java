@@ -126,7 +126,6 @@ public class Board implements Iterable<Square> {
 			this.wordsFound.pop();
 			return true;
 		}
-		return true;
 	}
 
 //	/**

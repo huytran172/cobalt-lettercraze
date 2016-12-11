@@ -18,7 +18,7 @@ public class BoardPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public BoardPanel() {
-		GridLayout gridLayout = new GridLayout(6, 6);
+		GridLayout gridLayout = new GridLayout(6, 6, 10, 10);
 		//GridBagLayout gridLayout = new GridBagLayout();
 		setLayout(gridLayout);
 		

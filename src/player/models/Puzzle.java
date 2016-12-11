@@ -10,7 +10,7 @@ public class Puzzle extends Level{
 	public Puzzle(int moves, int threshold[]){
 		super(new Board());
 		this.maxMoves = moves;
-		this.score = new ScorePuzzle(threshold);
+		this.score = new ScorePuzzle(threshold, super.highScoreList);
 
 	}
 

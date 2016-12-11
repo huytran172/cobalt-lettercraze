@@ -10,11 +10,28 @@ import player.controller.Listener;
  * @author cobalt
  */
 public class Board implements Iterable<Square> {
+	
+	/** A list of words found */
+	Stack<Word> wordsFound;
+	
 	/** Squares in the board. */
 	private ArrayList<Square> squares = new ArrayList<Square>();
+
+	public void initialize() {
+		int j = -1;
+		for (int i = 0; i < 36; i++) {
+			
+			squares.set(i, new Square(0,0, false));
+			squares.get(i).setColumn(i % 6);
+			if (i % 6 == 0) {
+				j++;
+			}
+			squares.get(i).setRow(j);
+		}
+	}
 	
 	/**Word being chosen. */
-	private Word activeWord;
+	private Word activeWord = null;
 	
 	/** Listeners. */
 	private ArrayList<Listener> listeners = new ArrayList<Listener>();
@@ -48,6 +65,9 @@ public class Board implements Iterable<Square> {
 //		return new BoardMemento(shapes);
 //	}
 	
+	public void setActiveWord(Word w){
+		this.activeWord = w;
+	}
 
 	/** Return all shapes in the board. */
 	public Iterator<Square> iterator() {
@@ -98,11 +118,22 @@ public class Board implements Iterable<Square> {
 	
 	public void updateBoard(){
 		if (this.activeWord.validWord()){
+			this.wordsFound.push(activeWord)
+;			activeWord.clearWord();
 			
-			activeWord.clearWord();
 			
 			
-			
+		}
+		return true;
+	}
+	
+	public boolean undo(){
+		if (this.wordsFound.empty()){
+			return false;
+		}
+		else {
+			this.wordsFound.pop();
+			return true;
 		}
 	}
 

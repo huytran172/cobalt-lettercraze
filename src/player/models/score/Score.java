@@ -1,5 +1,7 @@
 package player.models.score;
 
+import java.util.Stack;
+
 import player.models.Word;
 
 public abstract class Score {
@@ -8,9 +10,15 @@ public abstract class Score {
 	protected int highScore;
 	protected int threshold[] = new int[3];
 	protected int star;
+	protected Stack<Integer> highScoreList;
 	
-	public Score(int threshold[]) {
+	public Stack<Integer> getHighScoreList() {
+		return highScoreList;
+	}
+
+	public Score(int threshold[], Stack<Integer> highScoreList) {
 		this.threshold = threshold;
+		this.highScoreList = highScoreList;
 	}
 	
 	/**
@@ -32,16 +40,58 @@ public abstract class Score {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return score
+	 */
+	
+	public int getScore(){
+		return this.score;
+	}
+	
+	/**
+	 * 
+	 * @return high score
+	 */
+	
+	public int getHighScore(){
+		return this.highScore;
+	}
+	
+	/**
+	 * 
+	 * @return score
+	 */
+	
+	public void setScore(int s){
+		this.score = s;
+	}
+	
+	/**
+	 * 
+	 * @return high score
+	 */
+	
+	public void setHighScore(int hs){
+		this.highScore = hs;
+	}
+	
 	abstract public void updateScore(Word w);
+	
+	abstract public void removeScore(Word w);
 	
 	public void addScore(int s) {
 		score += s;
 	}
 	
-	public void updateHighScore() {
+	public boolean updateHighScore() {
 		if (this.score > this.highScore) {
+			highScoreList.push(this.highScore); 
 			this.highScore = this.score;
+			return true;
 		}
+		
+		return false;
 	}
 
 }

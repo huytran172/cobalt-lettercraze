@@ -151,9 +151,7 @@ public class Board implements Iterable<Square> {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < 36; i++) {
-			if (i % 6 == 0 && i != 0) {
-				sb.append("\n");
-			}
+			
 			
 			sb.append(this.squares.get(i).isEnabled ? 1 : 0);
 			sb.append(" ");

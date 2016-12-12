@@ -1,8 +1,10 @@
 package player.models;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public abstract class Level {
@@ -81,6 +83,55 @@ public abstract class Level {
 	public void removeLastFoundWord(){
 		this.wordsFound.pop();
 	}*/
+
+	void writeToFile(File f){
+		BufferedWriter outputStream = null;
+		try {
+			outputStream = new BufferedWriter(new FileWriter(f));
+			// Level number
+			outputStream.write(this.index);
+			outputStream.write("\n");
+
+			//			// Skip feature info
+			//			outputStream.readLine();
+			outputStream.write("\n");
+			// Threshold
+
+			for (int i = 0; i < 3; i++){
+				outputStream.write(threshold[i] + " ");
+			}
+			outputStream.write("\n");
+
+			// High score
+			outputStream.write(this.highScore);
+			outputStream.write("\n");
+
+			// Is Complete
+			int complete = this.isComplete ? 1 : 0;
+			outputStream.write(complete);
+			outputStream.write("\n");
+
+
+			// Board shape
+			
+			outputStream.write(this.board.toString());
+			outputStream.write("\n");
+
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (outputStream != null) {
+				try {
+					outputStream.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		
+	}
 	
 	//Initialize a level
 	abstract void initialize();

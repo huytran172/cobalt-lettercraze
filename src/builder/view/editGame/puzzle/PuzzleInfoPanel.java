@@ -54,6 +54,11 @@ public class PuzzleInfoPanel extends JPanel {
 		JButton btnSaveLevel = new JButton("Save");
 		btnSaveLevel.setBounds(90, 300, 91, 29);
 		add(btnSaveLevel);
+		btnSaveLevel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.setBounds(180, 300, 91, 29);

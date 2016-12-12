@@ -33,8 +33,12 @@ public class GameFrame extends JFrame {
 	    int y = (screen.height-height)/2;
 	    setBounds(x,y,width,height);
 	    
+	    String str;
+	    str = String.format("../cobalt-lettercraze/levels/Level%d.txt", level);
 		if (level % 3 == 1) {
-			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/Level2.txt")));
+			
+		//contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/Level1.txt")));
+		contentPane = new GamePanelPuzzle(new Puzzle(new File(str)));
 		}
 		/*if (level % 3 == 2) {
 			contentPane = new GamePanelLightning(m.getLevels()[level]);

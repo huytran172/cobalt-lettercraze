@@ -6,7 +6,7 @@ import player.models.Word;
 
 public abstract class Score {
 	
-	protected int score;
+	protected int score = 0;
 	protected int highScore;
 	protected int threshold[] = new int[3];
 	protected int star;

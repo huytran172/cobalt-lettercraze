@@ -5,8 +5,16 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import player.models.Model;
+
+/**
+ * The panel where player plays the game
+ * @author cobalt
+ *
+ */
 
 public class GameFrame extends JFrame {
+	Model m;
 	/**
 	 * 
 	 */
@@ -24,13 +32,13 @@ public class GameFrame extends JFrame {
 	    setBounds(x,y,width,height);
 	    
 		if (level % 3 == 1) {
-			contentPane = new GamePanelPuzzle();
+			contentPane = new GamePanelPuzzle(m.getLevels()[level]);
 		}
 		if (level % 3 == 2) {
-			contentPane = new GamePanelLightning();
+			contentPane = new GamePanelLightning(m.getLevels()[level]);
 		}
 		if (level % 3 == 0) {
-			contentPane = new GamePanelTheme();
+			contentPane = new GamePanelTheme(m.getLevels()[level]);
 		}
 
 		setContentPane(contentPane);

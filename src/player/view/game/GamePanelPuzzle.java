@@ -3,6 +3,9 @@ package player.view.game;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import player.models.Level;
+
 import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.Container;
@@ -10,13 +13,13 @@ import java.awt.event.ActionEvent;
 
 public class GamePanelPuzzle extends JPanel {
 	
-
+	Level l;
 	JPanel boardPanel;
 	JPanel titlePanel;
 	JPanel infoPanel;
 	JPanel featurePanel;
 	
-	GamePanelPuzzle(){
+	GamePanelPuzzle(Level l){
 		
 		this.setLayout(null);
 				
@@ -26,7 +29,7 @@ public class GamePanelPuzzle extends JPanel {
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
 	    
-	    infoPanel = new InfoPanel();
+	    infoPanel = new InfoPanel(l);
 	    add(infoPanel);
 	    infoPanel.setBounds(480, 100, 280, 420);
 	    

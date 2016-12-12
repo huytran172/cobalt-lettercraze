@@ -15,6 +15,11 @@ public abstract class Level {
 	//Stack<Word> wordsFound;
 	
 	
+	public Score getScore() {
+		return score;
+	}
+
+
 	Level(Board board){
 		this.board = board;
 		this.dictionary = new Dictionary();

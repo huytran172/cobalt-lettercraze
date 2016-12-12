@@ -32,7 +32,7 @@ public class InfoPanel extends JPanel {
 	JButton quit;
 	
 	
-	public InfoPanel(){
+	public InfoPanel(Level l){
 		initialize();
 	}
 	
@@ -43,6 +43,8 @@ public class InfoPanel extends JPanel {
 		 
 		 highScore = new JLabel("High score");
 		 highScore.setFont(highScore.getFont().deriveFont(18.0f));
+		 
+		 //TO DO: FETCH HIGH SCORE FROM TEXT FILE
 		 thisHighScore = new JLabel("0");
 		 thisHighScore.setFont(thisHighScore.getFont().deriveFont(18.0f));
 		 currentScore = new JLabel("Score");

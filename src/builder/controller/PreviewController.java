@@ -20,7 +20,7 @@ public class PreviewController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JTextField tf = application.getFahrenheitField();
+		/*JTextField tf = application.getFahrenheitField();
 		
 		IMove move = new ModifyValue(model, Integer.valueOf(tf.getText()));
 		
@@ -28,6 +28,7 @@ public class PreviewController implements ActionListener {
 		if (move.execute()) {
 			UndoManager.instance().recordMove(move);
 			application.refresh();
-		}
+		}*/
 	}
+
 }

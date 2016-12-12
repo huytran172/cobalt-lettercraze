@@ -19,8 +19,7 @@ public class InfoPanel extends JPanel {
 	JLabel currentScore;
 	JLabel thisHighScore;
 	JLabel thisScore;
-	
-	//CustomJProgressBar progressbar;
+
 	StarPanel star1;
 	StarPanel star2;
 	StarPanel star3;
@@ -51,8 +50,7 @@ public class InfoPanel extends JPanel {
 		 currentScore.setFont(highScore.getFont().deriveFont(18.0f));
 		 thisScore = new JLabel("0");
 		 thisScore.setFont(thisScore.getFont().deriveFont(18.0f));
-		 
-		 //progressbar = new CustomJProgressBar();
+
 		 star1 = new StarPanel(1, 0);
 		 star1.toggleStar();
 		 star2 = new StarPanel(2, 0);
@@ -60,9 +58,9 @@ public class InfoPanel extends JPanel {
 		 
 		 wordsFound = new WordPanel();
 		 
-		 reset = new JButton("reset");
-		 undo = new JButton("undo");
-		 quit = new JButton ("quit");
+		 reset = new JButton("Reset");
+		 undo = new JButton("Undo");
+		 quit = new JButton ("Skip");
 		 
 		 //progressbar.setStringPainted(true);
 		 

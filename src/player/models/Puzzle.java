@@ -1,5 +1,10 @@
 package player.models;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 import player.models.score.ScorePuzzle;
 
 public class Puzzle extends Level{
@@ -7,11 +12,32 @@ public class Puzzle extends Level{
 	int maxMoves;
 	ScorePuzzle score;
 	
-	public Puzzle(int moves, int threshold[]){
-		super(new Board());
-		this.maxMoves = moves;
-		this.score = new ScorePuzzle(threshold, super.highScoreList);
-
+//	public Puzzle(int moves, int threshold[]){
+//		super(new Board());
+//		this.maxMoves = moves;
+//		this.score = new ScorePuzzle(threshold, super.highScoreList);
+//	}
+	
+	public Puzzle(File f) {
+		super(f);
+		this.score = new ScorePuzzle(super.threshold, super.highScore);
+		BufferedReader inputStream = null;
+		try {
+			inputStream = new BufferedReader(new FileReader(f));
+			inputStream.readLine();
+			this.maxMoves = Integer.parseInt(inputStream.readLine());
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (inputStream != null) {
+				try {
+					inputStream.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	
 	}
 
 	@Override
@@ -33,6 +59,12 @@ public class Puzzle extends Level{
 
 	@Override
 	public void initialize() {
+		
+	}
+
+	@Override
+	public void updateLevel() {
+		// TODO Auto-generated method stub
 		
 	}
 

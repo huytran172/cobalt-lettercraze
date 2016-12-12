@@ -16,19 +16,20 @@ public abstract class Score {
 		return highScoreList;
 	}
 
-	public Score(int threshold[], Stack<Integer> highScoreList) {
+	public Score(int threshold[], int highScore) {
 		this.threshold = threshold;
-		this.highScoreList = highScoreList;
+		this.highScoreList = new Stack<Integer>();
+		this.highScoreList.push(highScore);
+		this.highScore = highScore;
 	}
 	
 	/**
 	 * Calculate the star
 	 */
 	public void calculateStar() {
-		if (score < threshold[0]){
+		if (score < threshold[0]) {
 			star = 0;
 		}
-		
 		else if (score >= threshold[0] && score < threshold[1]) {
 			star = 1;
 		}

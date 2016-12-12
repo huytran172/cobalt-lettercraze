@@ -1,13 +1,11 @@
 package player.models.score;
 
-import java.util.Stack;
-
 import player.models.Word;
 
 public class ScorePuzzle extends Score {
 	
-	public ScorePuzzle(int threshold[], Stack<Integer> highScoreList) {
-		super(threshold, highScoreList);
+	public ScorePuzzle(int threshold[], int highScore) {
+		super(threshold, highScore);
 	}
 
 	@Override

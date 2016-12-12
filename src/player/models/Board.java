@@ -12,22 +12,27 @@ import player.controller.Listener;
 public class Board implements Iterable<Square> {
 	
 	/** A list of words found */
-	Stack<Word> wordsFound;
+	protected Stack<Word> wordsFound;
 	
 	/** VARIABLE IN BOARD ENTITY **/
 	/** Squares in the board. */
-	private ArrayList<Square> squares = new ArrayList<Square>();
+	protected ArrayList<Square> squares = new ArrayList<Square>(36);
 
-	public void initialize() {
+	public void initialize(String line) {
+		String squaresString[] = line.split(" ");
+
 		int j = -1;
+
 		for (int i = 0; i < 36; i++) {
-			
-			squares.set(i, new Square(0,0, false));
+			squares.add(i, new Square(0,0, false));
 			squares.get(i).setColumn(i % 6);
+
 			if (i % 6 == 0) {
 				j++;
 			}
+
 			squares.get(i).setRow(j);
+			squares.get(i).setEnabled(squaresString[i].equals("0") ? false : true);
 		}
 	}
 	
@@ -141,6 +146,20 @@ public class Board implements Iterable<Square> {
 //		
 //		return null;
 //	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < 36; i++) {
+			if (i % 6 == 0 && i != 0) {
+				sb.append("\n");
+			}
+			
+			sb.append(this.squares.get(i).isEnabled ? 1 : 0);
+			sb.append(" ");
+		}
+		return sb.toString();
+	}
 	
 	/**
 	 * Update Board: Call when a move is recently made and

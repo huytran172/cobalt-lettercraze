@@ -14,6 +14,7 @@ public class Board implements Iterable<Square> {
 	/** A list of words found */
 	protected Stack<Word> wordsFound;
 	
+	/** VARIABLE IN BOARD ENTITY **/
 	/** Squares in the board. */
 	protected ArrayList<Square> squares = new ArrayList<Square>(36);
 
@@ -36,6 +37,7 @@ public class Board implements Iterable<Square> {
 	}
 	
 	/**Word being chosen. */
+
 	private Word activeWord = null;
 	
 	/** Listeners. */
@@ -121,14 +123,6 @@ public class Board implements Iterable<Square> {
 
 	}
 	
-	public boolean updateBoard(){
-		if (this.activeWord.validWord()){
-			this.wordsFound.push(activeWord)
-;			activeWord.clearWord();
-		}
-		return true;
-	}
-	
 	public boolean undo(){
 		if (this.wordsFound.empty()){
 			return false;
@@ -167,4 +161,64 @@ public class Board implements Iterable<Square> {
 		return sb.toString();
 	}
 	
+	/**
+	 * Update Board: Call when a move is recently made and
+	 * squares move up to fill empty spaces
+	 */
+	public boolean updateBoard(){
+		boolean checkStatus = false;
+		
+		// Going through the board in a 3D way and pull up all empty squares with existing letter
+		for (int row = 0; row < 5; row++){
+			for (int column = 0; column < 6; column++){
+				// Get current position matching 2D array
+				int pos = (row - 1) * 6 + column;
+				
+				if ((squares.get(pos).isEnabled) && (squares.get(pos).letter.isEmptyString())){
+					checkStatus = true;
+					for (int row2 = row + 1; row2 < 6; row++){
+						// Get position of square below
+						int newPos = pos + (row2 - row) * 6;
+						if ((squares.get(newPos).isEnabled) && (squares.get(newPos).letter != null)){
+							squares.get(pos).letter.setS(squares.get(newPos).letter.getS());
+							break;
+						}
+					}
+				}
+			}
+		}
+		
+		return checkStatus;
+	}
+	
+	/**
+	 * Fill Empty Squares with random letter in Board
+	 * For Puzzle and Lightning
+	 */
+	public boolean fillEmptySquares(){
+		boolean isFillable = false;
+		for (int i = 0; i < 36; i++){
+			if ((squares.get(i).isEnabled) && (squares.get(i).letter.isEmptyString())){
+				isFillable = true;
+				squares.get(i).letter.setS(RandomLetter.generateLetter());
+			}
+		}
+		return isFillable;
+	}
+	
+	
+	/**
+	 * Reset Board - refill and randomize letters in Board
+	 * For Puzzle and Lightning
+	 */
+	public boolean resetBoard(){
+		boolean isAllDisabled = true;
+		for (int i = 0; i < 36; i++){
+			if (squares.get(i).isEnabled){
+				isAllDisabled = false;
+				squares.get(i).letter.setS(RandomLetter.generateLetter());
+			}
+		}
+		return !isAllDisabled;
+	}
 }

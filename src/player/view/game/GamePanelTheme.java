@@ -37,7 +37,7 @@ public class GamePanelTheme extends JPanel {
 
 	    //titlePanel.setBackground(Color.blue);
 	    
-	    featurePanel = new FeaturePanel("theme");
+	    featurePanel = new FeaturePanel("theme", "color");
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
 	    

@@ -44,7 +44,7 @@ public class MenuScreenPanel extends JPanel {
 			btnLevel[i].setActive(true);
 		}
 		
-		JButton btnHelp = new JButton("Help");
+		CustomHelpButton btnHelp = new CustomHelpButton();
 		GridBagConstraints gbc_btnHelp = new GridBagConstraints();
 		gbc_btnHelp.gridx = 9;
 		gbc_btnHelp.gridy = 8;

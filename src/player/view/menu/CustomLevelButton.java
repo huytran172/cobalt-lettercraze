@@ -100,6 +100,5 @@ public class CustomLevelButton extends JButton implements ActionListener {
 		currentFrame.dispose();
 		GameFrame gframe = new GameFrame(this.level);
 		gframe.setVisible(true);
-		
 	}
 }

@@ -23,6 +23,14 @@ public class Square {
 	boolean isSelected;
 	boolean isEnabled;
 	
+	public boolean isEnabled() {
+		return isEnabled;
+	}
+
+	public void setEnabled(boolean isEnabled) {
+		this.isEnabled = isEnabled;
+	}
+
 	public Square(Letter letter, int row, int column, boolean isEnabled) {
 		this.letter = letter;
 		this.row = row;
@@ -31,7 +39,7 @@ public class Square {
 	}
 	
 	public Square(int row, int column, boolean isEnabled) {
-		this.letter.setS(RandomLetter.generateLetter());
+		this.letter = new Letter(RandomLetter.generateLetter());
 		this.row = row;
 		this.column = column;
 		this.isEnabled = isEnabled;

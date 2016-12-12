@@ -11,7 +11,7 @@ public class Theme extends Level{
 		super(new Board());
 		this.theme = theme;
 		this.wordsToFind = wordsToFind;
-		this.score = new ScoreTheme(threshold, super.highScoreList);
+		this.score = new ScoreTheme(super.threshold, super.highScore);
 	}
 	
 	@Override
@@ -27,12 +27,18 @@ public class Theme extends Level{
 
 	//Undo last move
 	@Override
-	public boolean undo(){
+	public boolean undo() {
 		return true;
 	}
 
 	@Override
 	public void initialize() {
+		
+	}
+
+	@Override
+	public void updateLevel() {
+		// TODO Auto-generated method stub
 		
 	}
 	

@@ -1,14 +1,11 @@
 package player.models.score;
 
-import java.util.Stack;
-
 import player.models.Word;
 
 public class ScoreTheme extends Score {
 	
-	public ScoreTheme(int threshold[], Stack<Integer> highScoreList) {
-		super(threshold, highScoreList);
-
+	public ScoreTheme(int threshold[], int highScore) {
+		super(threshold, highScore);
 	}
 
 	@Override

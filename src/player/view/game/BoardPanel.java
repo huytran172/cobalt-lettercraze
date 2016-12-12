@@ -31,10 +31,10 @@ public class BoardPanel extends JPanel {
 		squareModels = board.getSquareList();
 
 		for (int i = 0; i < 36; i++) {
-			squarePanels[i] = new SquarePanel(squareModels.get(i), true);
+			squarePanels[i] = new SquarePanel(squareModels.get(i));
 			add(squarePanels[i]);
 			System.out.print(squareModels.get(i).isEnabled());
-			squarePanels[i].setEnable(squareModels.get(i).isEnabled());
+			//squarePanels[i].initialize(squareModels.get(i).isEnabled());
 			//squarePanels[i].setEnable(false);
 			/*
 			GridBagConstraints gbc_btnLevel = new GridBagConstraints();

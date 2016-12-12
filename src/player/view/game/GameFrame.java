@@ -1,11 +1,13 @@
 package player.view.game;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import player.models.Model;
+import player.models.Puzzle;
 
 /**
  * The panel where player plays the game
@@ -32,13 +34,16 @@ public class GameFrame extends JFrame {
 	    setBounds(x,y,width,height);
 	    
 		if (level % 3 == 1) {
-			contentPane = new GamePanelPuzzle(m.getLevels()[level]);
+			//contentPane = new GamePanelPuzzle(m.getLevels()[level]);
+			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
 		}
 		if (level % 3 == 2) {
-			contentPane = new GamePanelLightning(m.getLevels()[level]);
+			//contentPane = new GamePanelLightning(m.getLevels()[level]);
+			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
 		}
 		if (level % 3 == 0) {
-			contentPane = new GamePanelTheme(m.getLevels()[level]);
+			//contentPane = new GamePanelTheme(m.getLevels()[level]);
+			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
 		}
 
 		setContentPane(contentPane);

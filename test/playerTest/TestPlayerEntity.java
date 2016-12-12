@@ -134,7 +134,7 @@ public class TestPlayerEntity extends TestCase {
 	public void testModel(){
 		Model m = new Model();
 	}
-	
+	/*
 	public void testLightning(){
 		Lightning lightning = new Lightning(40, null);
 		assertTrue(lightning.endLevel());
@@ -150,7 +150,7 @@ public class TestPlayerEntity extends TestCase {
 		assertTrue(puzzle.undo());
 		puzzle.initialize();
 	}
-	
+	*/
 	public void testTheme(){
 		Theme theme = new Theme("colors", null, null);
 		assertTrue(theme.endLevel());

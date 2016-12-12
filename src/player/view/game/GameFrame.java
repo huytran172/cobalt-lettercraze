@@ -34,14 +34,18 @@ public class GameFrame extends JFrame {
 	    setBounds(x,y,width,height);
 	    
 		if (level % 3 == 1) {
-			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/Level2.txt")));
+			//contentPane = new GamePanelPuzzle(m.getLevels()[level]);
+			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
 		}
-		/*if (level % 3 == 2) {
-			contentPane = new GamePanelLightning(m.getLevels()[level]);
+		if (level % 3 == 2) {
+			//contentPane = new GamePanelLightning(m.getLevels()[level]);
+			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
 		}
 		if (level % 3 == 0) {
-			contentPane = new GamePanelTheme(m.getLevels()[level]);
-		}*/
+			//contentPane = new GamePanelTheme(m.getLevels()[level]);
+			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
+		}
+
 
 		setContentPane(contentPane);
 	}

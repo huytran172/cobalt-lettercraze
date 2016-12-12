@@ -135,7 +135,7 @@ public class TestPlayerEntity extends TestCase {
 	public void testModel(){
 		Model m = new Model();
 	}
-	
+	/*
 	public void testLightning(){
 		File f = new File("Level1.txt");
 		Lightning lightning = new Lightning(f);
@@ -153,7 +153,7 @@ public class TestPlayerEntity extends TestCase {
 		assertTrue(puzzle.undo());
 		puzzle.initialize();
 	}
-	
+	*/
 	public void testTheme(){
 		Theme theme = new Theme("colors", null, null);
 		assertTrue(theme.endLevel());

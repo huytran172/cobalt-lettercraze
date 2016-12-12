@@ -23,7 +23,7 @@ public class GamePanelPuzzle extends JPanel {
 		
 		this.setLayout(null);
 				
-		boardPanel = new BoardPanel();
+		boardPanel = new BoardPanel(l.getBoard());
 	    add(boardPanel);
 
 	    boardPanel.setBounds(40, 100, 420, 420);

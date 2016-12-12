@@ -219,4 +219,8 @@ public class Board implements Iterable<Square> {
 		}
 		return !isAllDisabled;
 	}
+
+	public ArrayList<Square> getSquareList() {
+		return squares;
+	}
 }

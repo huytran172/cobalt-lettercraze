@@ -1,17 +1,20 @@
 package player.view.game;
 
 import player.models.Square;
+import player.view.menu.MenuScreenFrame;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 
 public class SquarePanel extends JPanel {
 	// Remove later
-			private boolean active;
+			private boolean enabled;
 			private Square square;
 
 			// Add later
@@ -25,33 +28,87 @@ public class SquarePanel extends JPanel {
 			/**
 			 * Constructor
 			 * Will be removed later
-			 * @param level current level number
-			 * @param stars numbers of star
+			 * @param enabled state of SquarePanel
 			 */
-			public SquarePanel(boolean active) {
-				this.active = active;
-				setActive(this.active);
-				//square = new Square()
-			}
-			
-			/**
-			 * Set status of the button and redraw the button
-			 * @param active button is active or not
-			 */
-			public void setActive(boolean active) {
-				this.active = active;
-				setEnabled(this.active);
+			public SquarePanel(Square square) {
+				this.square = square;
+				this.enabled = square.isEnabled();
 				this.setBorder(BorderFactory.createLineBorder(Color.black));
 				this.setBackground(Color.WHITE);
+				putLetter();
+				initialize(this.enabled);
+				addMouseListener(new MouseListener() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						toggleEnableSquare();
+					}
+
+					@Override
+					public void mousePressed(MouseEvent e) {
+
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent e) {
+
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent e) {
+
+					}
+
+					@Override
+					public void mouseExited(MouseEvent e) {
+
+					}
+				});
+			}
+
+			public void putLetter() {
+				JLabel label = new JLabel();
+				label.setText(this.square.getLetter().getS());
+				label.setFont(label.getFont().deriveFont(25.0f));
+				this.add(label);
+			}
+
+			public void initialize(boolean enabled) {
+				this.enabled = enabled;
+				this.setVisible(this.enabled);
+				this.setEnabled(this.enabled);
+			}
+
+			/**
+			 * Set status of the button and redraw the button
+			 * @param enabled square is enabled or not
+			 */
+			public void enableSquare(boolean enabled) {
+				this.enabled = enabled;
+				this.setEnabled(this.enabled);
 				//redrawLevelButton();
 			}
-			
+
+			public void toggleEnableSquare() {
+				enabled = !enabled;
+				enableSquare(enabled);
+				toggleColor();
+			}
+
+			public void toggleColor() {
+				if (this.enabled) {
+					this.setBackground(Color.WHITE);
+				} else {
+					this.setBackground(Color.GRAY);
+				}
+			}
+
 			/**
 			 * Return whether the button is active or not
 			 */
-			public boolean isActive() {
-				return this.active;
+			public boolean isEnable() {
+				return this.enabled;
 			}
+			
 
 			/**
 			 * Redraw the button to show level 

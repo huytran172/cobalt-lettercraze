@@ -16,6 +16,6 @@ public class RandomLetter {
 		        break;
 		    }
 		}
-		return s;
+		return s.toUpperCase();
 	}
 }

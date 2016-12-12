@@ -36,7 +36,7 @@ public class GamePanelPuzzle extends JPanel {
 
 	    //titlePanel.setBackground(Color.blue);
 	    
-		featurePanel = new FeaturePanel("puzzle");
+		featurePanel = new FeaturePanel("puzzle", "20");
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
 	}

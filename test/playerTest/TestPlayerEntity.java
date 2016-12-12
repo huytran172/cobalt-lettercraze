@@ -1,5 +1,6 @@
 package playerTest;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -136,7 +137,8 @@ public class TestPlayerEntity extends TestCase {
 	}
 	/*
 	public void testLightning(){
-		Lightning lightning = new Lightning(40, null);
+		File f = new File("Level1.txt");
+		Lightning lightning = new Lightning(f);
 		assertTrue(lightning.endLevel());
 		assertFalse(lightning.reset());
 		assertTrue(lightning.undo());
@@ -144,7 +146,8 @@ public class TestPlayerEntity extends TestCase {
 	}
 	
 	public void testPuzzle(){
-		Puzzle puzzle = new Puzzle(40, null);
+		File f = new File("Level1.txt");
+		Puzzle puzzle = new Puzzle(f);
 		assertTrue(puzzle.endLevel());
 		assertFalse(puzzle.reset());
 		assertTrue(puzzle.undo());

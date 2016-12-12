@@ -46,6 +46,7 @@ public class GameFrame extends JFrame {
 			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
 		}
 
+
 		setContentPane(contentPane);
 	}
 

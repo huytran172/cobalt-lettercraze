@@ -35,7 +35,7 @@ public class GamePanelLightning extends JPanel {
 	    titlePanel.setBounds(40, 20, 600, 45);
 	    //titlePanel.setBackground(Color.blue);
 	    
-	    featurePanel = new FeaturePanel("lightning");
+	    featurePanel = new FeaturePanel("lightning", "5");
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
 	    	    

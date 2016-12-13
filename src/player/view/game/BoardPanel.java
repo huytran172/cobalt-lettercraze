@@ -75,12 +75,18 @@ public class BoardPanel extends JPanel {
 		for (int i = 0; i < wordSquares.size(); i++) {
 			index = squareModels.indexOf(wordSquares.get(i));
 			squarePanels[index].toggleColor();
-			squarePanels[index].putLetter();
-			System.out.print("fuck: " + squarePanels[index]);
+			//squarePanels[index].putLetter();
+			//System.out.print("fuck: " + squarePanels[index]);
 //			squarePanels[index].revalidate();
 //			squarePanels[index].repaint();
 		}
 	}
 
-
+	public void reputLetter() {
+		for (int i = 0; i < squarePanels.length; i++) {
+			squarePanels[i].putLetter();
+			squarePanels[i].revalidate();
+			squarePanels[i].repaint();
+		}
+	}
 }

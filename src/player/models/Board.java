@@ -285,15 +285,16 @@ public class Board implements Iterable<Square> {
 		for (int row = 0; row < 5; row++){
 			for (int column = 0; column < 6; column++){
 				// Get current position matching 2D array
-				int pos = (row - 1) * 6 + column;
+				int pos = squares.indexOf(this.getSquare(row, column));
 				
 				if ((squares.get(pos).isEnabled) && (squares.get(pos).letter.isEmptyString())){
 					checkStatus = true;
-					for (int row2 = row + 1; row2 < 6; row++){
+					for (int row2 = row + 1; row2 < 6; row2++){
 						// Get position of square below
-						int newPos = pos + (row2 - row) * 6;
-						if ((squares.get(newPos).isEnabled) && (squares.get(newPos).letter != null)){
+						int newPos = squares.indexOf(this.getSquare(row2, column));
+						if ((squares.get(newPos).isEnabled) && !(squares.get(newPos).letter.isEmptyString())){
 							squares.get(pos).letter.setS(squares.get(newPos).letter.getS());
+							squares.get(newPos).letter.setStringEmpty();
 							break;
 						}
 					}

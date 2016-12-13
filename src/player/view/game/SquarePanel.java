@@ -14,9 +14,7 @@ import javax.swing.*;
 
 public class SquarePanel extends JPanel {
 	// Remove later
-			private boolean enabled;
 			private Square square;
-			private boolean white;
 
 			// Add later
 			// private Model model;
@@ -33,11 +31,10 @@ public class SquarePanel extends JPanel {
 			 */
 			public SquarePanel(Square square) {
 				this.square = square;
-				this.enabled = square.isEnabled();
 				this.setBorder(BorderFactory.createLineBorder(Color.black));
 				this.setBackground(Color.WHITE);
 				putLetter();
-				initialize(this.enabled);
+				initialize(square.isEnabled());
 			}
 
 			public void putLetter() {
@@ -48,10 +45,8 @@ public class SquarePanel extends JPanel {
 			}
 
 			public void initialize(boolean enabled) {
-				this.enabled = enabled;
-				this.white = enabled;
-				this.setVisible(this.enabled);
-				this.setEnabled(this.enabled);
+				this.setVisible(enabled);
+				this.setEnabled(enabled);
 			}
 
 			/**
@@ -59,33 +54,26 @@ public class SquarePanel extends JPanel {
 			 * @param enabled square is enabled or not
 			 */
 			public void enableSquare(boolean enabled) {
-				this.enabled = enabled;
-				this.setEnabled(this.enabled);
+				this.square.setEnabled(enabled);
+				this.setEnabled(enabled);
 				//redrawLevelButton();
 			}
 
 			public void toggleEnableSquare() {
-				enabled = !enabled;
-				enableSquare(enabled);
+				this.square.toggleEnabled();
+				enableSquare(square.isEnabled());
 				toggleColor();
 			}
 
 			public void toggleColor() {
-				white = !white;
-				if (white) {
-					this.setBackground(Color.WHITE);
-				} else {
+				this.square.toggleSelect();
+				if (square.isSelected()) {
 					this.setBackground(Color.GRAY);
+				} else {
+					this.setBackground(Color.WHITE);
 				}
 			}
 
-			/**
-			 * Return whether the button is active or not
-			 */
-			public boolean isEnable() {
-				return this.enabled;
-			}
-			
 
 			/**
 			 * Redraw the button to show level 

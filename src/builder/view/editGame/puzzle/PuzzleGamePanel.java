@@ -44,7 +44,7 @@ public class PuzzleGamePanel extends JPanel {
 //	    add(starPanel);
 //	    starPanel.setBounds(60, 50, 800, 50);
 	    
-	    
+	 
 	    //add(titlePanel);
 	   // add(infoPanel);
 		

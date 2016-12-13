@@ -151,6 +151,23 @@ public class Board implements Iterable<Square> {
 		}
 	}
 	
+	public void initialize() {
+		
+
+		int j = -1;
+
+		for (int i = 0; i < 36; i++) {
+			squares.add(i, new Square(new Letter(""), 0,0, true));
+			squares.get(i).setColumn(i % 6);
+
+			if (i % 6 == 0) {
+				j++;
+			}
+
+			squares.get(i).setRow(j);
+		}
+	}
+	
 	/**Word being chosen. */
 
 	private Word activeWord = null;
@@ -268,7 +285,7 @@ public class Board implements Iterable<Square> {
 		for (int i = 0; i < 36; i++) {
 			
 			
-			sb.append(this.squares.get(i).isEnabled ? 1 : 0);
+			sb.append(this.squares.get(i).isSelected ? 1 : 0);
 			sb.append(" ");
 		}
 		return sb.toString();

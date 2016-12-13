@@ -5,8 +5,11 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import builder.controller.PreviewController;
+import builder.controller.SaveController;
 import builder.view.dropdownMenu.DropMenuFrame;
 import builder.view.editGame.GameFrame;
+import player.models.Board;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -21,7 +24,7 @@ public class PuzzleInfoPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PuzzleInfoPanel() {
+	public PuzzleInfoPanel(Board b) {
 		setLayout(null);
 		
 		JLabel label = new JLabel("");
@@ -65,11 +68,15 @@ public class PuzzleInfoPanel extends JPanel {
 		textField_3.setColumns(10);
 		
 		JButton btnPreview = new JButton("Preview");
-		btnPreview.setBounds(6, 380, 91, 29);
+
+		btnPreview.setBounds(6, 380, 76, 29);
+		btnPreview.addActionListener(new PreviewController());
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");
-		btnSave.setBounds(98, 380, 67, 29);
+		btnSave.setBounds(77, 380, 67, 29);
+		btnSave.addActionListener(new SaveController(this, b));
+
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");
@@ -85,5 +92,42 @@ public class PuzzleInfoPanel extends JPanel {
             }
         });
 
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+	
+	public String getMaxWord() {
+		return textField.getText();
+		
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public void setTextField_1(JTextField textField_1) {
+		this.textField_1 = textField_1;
+	}
+
+	public JTextField getTextField_2() {
+		return textField_2;
+	}
+
+	public void setTextField_2(JTextField textField_2) {
+		this.textField_2 = textField_2;
+	}
+
+	public JTextField getTextField_3() {
+		return textField_3;
+	}
+
+	public void setTextField_3(JTextField textField_3) {
+		this.textField_3 = textField_3;
 	}
 }

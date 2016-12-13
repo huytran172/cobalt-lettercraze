@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 
 import builder.view.editGame.BoardPanel;
 import builder.view.editGame.TitlePanel;
+import player.models.Board;
 
 import java.awt.event.ActionListener;
 import java.awt.Color;
@@ -16,21 +17,30 @@ public class PuzzleGamePanel extends JPanel {
 	
 
 	JPanel boardPanel;
+	public BoardPanel getBoardPanel() {
+		return (BoardPanel) boardPanel;
+	}
+
+	public void setBoardPanel(JPanel boardPanel) {
+		this.boardPanel = boardPanel;
+	}
+
 	JPanel titlePanel;
 	JPanel infoPanel;
-	JPanel starPanel;
+	//JPanel starPanel;
 	
 	public PuzzleGamePanel(){
 		
 		this.setLayout(null);
 		
-		
-		boardPanel = new BoardPanel();
+		Board b = new Board();
+		b.initialize();
+		boardPanel = new BoardPanel(b);
 	    add(boardPanel);
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
 	    
-	    infoPanel = new PuzzleInfoPanel();
+	    infoPanel = new PuzzleInfoPanel(b);
 	    add(infoPanel);
 	    infoPanel.setBounds(480, 100, 280, 420);
 	    

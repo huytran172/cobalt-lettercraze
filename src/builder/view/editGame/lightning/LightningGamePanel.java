@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 
 import builder.view.editGame.BoardPanel;
 import builder.view.editGame.TitlePanel;
+import player.models.Board;
 
 import java.awt.event.ActionListener;
 import java.awt.Color;
@@ -25,7 +26,9 @@ public class LightningGamePanel extends JPanel {
 		this.setLayout(null);
 		
 		
-		boardPanel = new BoardPanel();
+		Board b = new Board();
+		b.initialize();
+		boardPanel = new BoardPanel(b);
 	    add(boardPanel);
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);

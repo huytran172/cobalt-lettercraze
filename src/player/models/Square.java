@@ -30,6 +30,14 @@ public class Square {
 	public void setEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
 	}
+	
+	public boolean isSelected() {
+		return isSelected;
+	}
+	
+	public void setSelected(boolean selected) {
+		this.isSelected = selected;
+	}
 
 	public void toggleEnabled() {
 		isEnabled = !isEnabled;

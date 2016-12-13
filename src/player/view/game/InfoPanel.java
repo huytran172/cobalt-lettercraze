@@ -90,11 +90,13 @@ public class InfoPanel extends JPanel {
 				 .addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
 				 .addGap(65)
 				 .addGroup(groupLayout.createParallelGroup()
-						 .addComponent(removeWord, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-						 ));
+						 .addComponent(removeWord, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						 )
+				 .addGap(10)
+				 .addGroup(groupLayout.createParallelGroup()
+						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)));
 		 
 		 groupLayout.setHorizontalGroup(
 				 
@@ -112,11 +114,11 @@ public class InfoPanel extends JPanel {
 				 .addComponent(star3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(removeWord, GroupLayout.PREFERRED_SIZE, this.getWidth()/4, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, this.getWidth()/4, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, this.getWidth()/4,GroupLayout.PREFERRED_SIZE)
-						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, this.getWidth()/4,GroupLayout.PREFERRED_SIZE)
-				 ));
+						 .addComponent(removeWord, GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE))
+				 .addGroup(groupLayout.createSequentialGroup()
+						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)
+						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)));
 			
 			setLayout(groupLayout);
 	}

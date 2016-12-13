@@ -11,16 +11,16 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 
-public class GamePanelPuzzle extends JPanel {
+public class GamePanelPuzzle extends JPanel implements GamePanel {
 	
 	Level l;
-	JPanel boardPanel;
-	JPanel titlePanel;
-	JPanel infoPanel;
-	JPanel featurePanel;
+	private BoardPanel boardPanel;
+	private TitlePanel titlePanel;
+	private InfoPanel infoPanel;
+	private FeaturePanel featurePanel;
 	
 	GamePanelPuzzle(Level l){
-		
+		this.l = l;
 		this.setLayout(null);
 				
 		boardPanel = new BoardPanel(l.getBoard());
@@ -43,7 +43,26 @@ public class GamePanelPuzzle extends JPanel {
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
 	}
-	
+
+	public BoardPanel getBoardPanel() {
+		return boardPanel;
+	}
+
+	public InfoPanel getInfoPanel() {
+		return infoPanel;
+	}
+
+	public TitlePanel getTitlePanel() {
+		return titlePanel;
+	}
+
+	public FeaturePanel getFeaturePanel() {
+		return featurePanel;
+	}
+
+	public Level getLevel() {
+		return l;
+	}
 }
 
 

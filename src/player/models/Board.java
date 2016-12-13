@@ -13,6 +13,9 @@ public class Board implements Iterable<Square> {
 	
 	/** A list of words found */
 	protected Stack<Word> wordsFound;
+
+	/** Temp word being built */
+	protected Word tempWord;
 	
 	/** VARIABLE IN BOARD ENTITY **/
 	/** Squares in the board. */
@@ -226,8 +229,8 @@ public class Board implements Iterable<Square> {
 	 */
 	public boolean updateActiveWord(Square square){
 		
-		if (!this.activeWord.squares.contains(square)){
-			this.activeWord.squares.add(square);
+		if (!this.activeWord.getWord().contains(square)){
+			this.activeWord.getWord().add(square);
 			return true;
 		}
 		
@@ -343,7 +346,18 @@ public class Board implements Iterable<Square> {
 				return this.squares.get(i);
 			}
 		}
-
 		return null;
+	}
+
+	public Word getTempWord() {
+		return tempWord;
+	}
+
+	public boolean addSquareToTempWord(Square square) {
+		return this.tempWord.addSquareToWord(square);
+	}
+
+	public void renewTempWord() {
+		tempWord = new Word(new ArrayList<Square>());
 	}
 }

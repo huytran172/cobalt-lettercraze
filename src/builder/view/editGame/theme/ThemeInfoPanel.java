@@ -76,15 +76,15 @@ public class ThemeInfoPanel extends JPanel {
 		textField_4.setColumns(10);
 		
 		JButton btnPreview = new JButton("Preview");
-		btnPreview.setBounds(6, 369, 79, 29);
+		btnPreview.setBounds(6, 369, 91, 29);
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");
-		btnSave.setBounds(98, 369, 61, 29);
+		btnSave.setBounds(108, 369, 61, 29);
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");
-		btnQuit.setBounds(176, 369, 61, 29);
+		btnQuit.setBounds(181, 369, 61, 29);
 		add(btnQuit);
 		btnQuit.addActionListener(new ActionListener() {
             @Override

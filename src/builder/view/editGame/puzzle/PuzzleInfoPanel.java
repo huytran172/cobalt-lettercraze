@@ -65,15 +65,15 @@ public class PuzzleInfoPanel extends JPanel {
 		textField_3.setColumns(10);
 		
 		JButton btnPreview = new JButton("Preview");
-		btnPreview.setBounds(6, 380, 76, 29);
+		btnPreview.setBounds(6, 380, 91, 29);
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");
-		btnSave.setBounds(77, 380, 67, 29);
+		btnSave.setBounds(98, 380, 67, 29);
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");
-		btnQuit.setBounds(138, 380, 67, 29);
+		btnQuit.setBounds(168, 380, 67, 29);
 		add(btnQuit);
 		btnQuit.addActionListener(new ActionListener() {
             @Override

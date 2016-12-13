@@ -16,6 +16,7 @@ public class SquarePanel extends JPanel {
 	// Remove later
 			private boolean enabled;
 			private Square square;
+			private boolean white;
 
 			// Add later
 			// private Model model;
@@ -28,7 +29,7 @@ public class SquarePanel extends JPanel {
 			/**
 			 * Constructor
 			 * Will be removed later
-			 * @param enabled state of SquarePanel
+			 * @param square state of SquarePanel
 			 */
 			public SquarePanel(Square square) {
 				this.square = square;
@@ -37,32 +38,6 @@ public class SquarePanel extends JPanel {
 				this.setBackground(Color.WHITE);
 				putLetter();
 				initialize(this.enabled);
-				addMouseListener(new MouseListener() {
-					@Override
-					public void mouseClicked(MouseEvent e) {
-						toggleEnableSquare();
-					}
-
-					@Override
-					public void mousePressed(MouseEvent e) {
-
-					}
-
-					@Override
-					public void mouseReleased(MouseEvent e) {
-
-					}
-
-					@Override
-					public void mouseEntered(MouseEvent e) {
-
-					}
-
-					@Override
-					public void mouseExited(MouseEvent e) {
-
-					}
-				});
 			}
 
 			public void putLetter() {
@@ -74,6 +49,7 @@ public class SquarePanel extends JPanel {
 
 			public void initialize(boolean enabled) {
 				this.enabled = enabled;
+				this.white = enabled;
 				this.setVisible(this.enabled);
 				this.setEnabled(this.enabled);
 			}
@@ -95,7 +71,8 @@ public class SquarePanel extends JPanel {
 			}
 
 			public void toggleColor() {
-				if (this.enabled) {
+				white = !white;
+				if (white) {
 					this.setBackground(Color.WHITE);
 				} else {
 					this.setBackground(Color.GRAY);

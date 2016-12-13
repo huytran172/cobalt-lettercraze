@@ -11,19 +11,17 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 
-public class GamePanelLightning extends JPanel {
-	
+public class GamePanelLightning extends JPanel implements GamePanel {
 
-	JPanel boardPanel;
-	JPanel titlePanel;
-	JPanel infoPanel;
-	JPanel featurePanel;
-	Level l;
+	private BoardPanel boardPanel;
+	private TitlePanel titlePanel;
+	private InfoPanel infoPanel;
+	private FeaturePanel featurePanel;
+	private Level l;
 	
 	GamePanelLightning(Level l){
-		
+		this.l = l;
 		this.setLayout(null);
-		
 		
 		boardPanel = new BoardPanel(l.getBoard());
 	    add(boardPanel);
@@ -47,7 +45,26 @@ public class GamePanelLightning extends JPanel {
 	   // add(infoPanel);
 		
 	}
-	
+
+	public BoardPanel getBoardPanel() {
+		return boardPanel;
+	}
+
+	public InfoPanel getInfoPanel() {
+		return infoPanel;
+	}
+
+	public TitlePanel getTitlePanel() {
+		return titlePanel;
+	}
+
+	public FeaturePanel getFeaturePanel() {
+		return featurePanel;
+	}
+
+	public Level getLevel() {
+		return l;
+	}
 }
 
 

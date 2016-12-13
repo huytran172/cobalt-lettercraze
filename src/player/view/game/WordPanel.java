@@ -38,6 +38,15 @@ public class WordPanel extends JPanel {
         vertical = new JScrollPane(console);
         vertical.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         add(vertical);
+        testAdd();
 	}
+
+	public void testAdd() {
+	    console.add(new JLabel("hello"));
+    }
+
+	public void addToWordPanel(String string) {
+	    console.add(new JLabel(string));
+    }
 }
 

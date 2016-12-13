@@ -5,7 +5,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import builder.view.editGame.BoardPanel;
-import builder.view.editGame.StarPanel;
 import builder.view.editGame.TitlePanel;
 import builder.view.editGame.lightning.LightningInfoPanel;
 
@@ -41,9 +40,9 @@ public class ThemeGamePanel extends JPanel {
 	    titlePanel.setBounds(40, 20, 600, 60);
 	    //titlePanel.setBackground(Color.blue);
 	    
-	    starPanel = new StarPanel();
-	    add(starPanel);
-	    starPanel.setBounds(60, 50, 800, 50);
+//	    starPanel = new StarPanel();
+//	    add(starPanel);
+//	    starPanel.setBounds(60, 50, 800, 50);
 	    
 	    
 	    //add(titlePanel);

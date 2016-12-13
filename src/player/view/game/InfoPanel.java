@@ -30,7 +30,6 @@ public class InfoPanel extends JPanel {
 	JButton undo;
 	JButton quit;
 	
-	
 	public InfoPanel(Level l){
 		initialize();
 	}

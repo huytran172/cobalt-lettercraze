@@ -26,6 +26,12 @@ public class Puzzle extends Level{
 			inputStream = new BufferedReader(new FileReader(f));
 			inputStream.readLine();
 			this.maxMoves = Integer.parseInt(inputStream.readLine());
+			inputStream.readLine();
+			inputStream.readLine();
+			inputStream.readLine();
+			// Board shape
+			this.board = new Board();
+			this.board.initialize(inputStream.readLine());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

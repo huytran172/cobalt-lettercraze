@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 
 import player.models.Model;
 import player.models.Puzzle;
+import player.models.Theme;
 
 /**
  * The panel where player plays the game
@@ -42,11 +43,10 @@ public class GameFrame extends JFrame {
 		/*if (level % 3 == 2) {
 			//contentPane = new GamePanelLightning(m.getLevels()[level]);
 			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
-		}
-		if (level % 3 == 0) {
-			//contentPane = new GamePanelTheme(m.getLevels()[level]);
-			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
 		}*/
+		if (level % 3 == 0) {
+			contentPane = new GamePanelTheme(new Theme(new File(str)));
+		}
 
 
 		setContentPane(contentPane);

@@ -96,4 +96,5 @@ public class Square {
 	public void clearSquare() {
 		this.letter.setStringEmpty();
 	}
+	
 }

@@ -26,6 +26,7 @@ public class InfoPanel extends JPanel {
 	
 	WordPanel wordsFound;
 	
+	JButton removeWord;
 	JButton reset;
 	JButton undo;
 	JButton quit;
@@ -57,6 +58,7 @@ public class InfoPanel extends JPanel {
 		 
 		 wordsFound = new WordPanel();
 		 
+		 removeWord = new JButton("Choose");
 		 reset = new JButton("Reset");
 		 undo = new JButton("Undo");
 		 quit = new JButton ("Skip");
@@ -88,6 +90,7 @@ public class InfoPanel extends JPanel {
 				 .addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
 				 .addGap(65)
 				 .addGroup(groupLayout.createParallelGroup()
+						 .addComponent(removeWord, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
@@ -109,9 +112,10 @@ public class InfoPanel extends JPanel {
 				 .addComponent(star3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, this.getWidth()/3, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, this.getWidth()/3,GroupLayout.PREFERRED_SIZE)
-						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, this.getWidth()/3,GroupLayout.PREFERRED_SIZE)
+						 .addComponent(removeWord, GroupLayout.PREFERRED_SIZE, this.getWidth()/4, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, this.getWidth()/4, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, this.getWidth()/4,GroupLayout.PREFERRED_SIZE)
+						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, this.getWidth()/4,GroupLayout.PREFERRED_SIZE)
 				 ));
 			
 			setLayout(groupLayout);

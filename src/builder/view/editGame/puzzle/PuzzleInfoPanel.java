@@ -45,7 +45,7 @@ public class PuzzleInfoPanel extends JPanel {
 		textField_1.setBounds(59, 39, 61, 26);
 		add(textField_1);
 		textField_1.setColumns(10);
-		
+
 		JLabel lblStars_1 = new JLabel("3 Stars:");
 		lblStars_1.setBounds(6, 72, 61, 16);
 		add(lblStars_1);

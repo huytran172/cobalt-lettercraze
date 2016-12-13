@@ -15,12 +15,15 @@ import javax.swing.JTextField;
 import builder.view.BuilderApplication;
 import builder.view.editGame.puzzle.PuzzleGamePanel;
 import builder.view.editGame.puzzle.PuzzleInfoPanel;
+import player.models.Board;
 
 public class SaveController implements ActionListener {
 	PuzzleInfoPanel application;     /** Application we have control over. */
+	Board b;
 	
-	public SaveController(PuzzleInfoPanel app) {
+	public SaveController(PuzzleInfoPanel app, Board b) {
 		this.application = app;
+		this.b = b;
 
 	}
 
@@ -48,14 +51,14 @@ public class SaveController implements ActionListener {
 	    PuzzleGamePanel puzzleGamePanel = (PuzzleGamePanel) this.application.getParent();
 		try {
 			//Create new file
-			File file = new File("../cobalt-lettercraze/levels/Level16.txt");
+			File file = new File("../cobalt-lettercraze/levels/Level4.txt");
 			//file.getParentFile().mkdirs();
 
 			PrintWriter writer = new PrintWriter(file);
 		    //PrintWriter writer = new PrintWriter("Level16", "UTF-8");
 		    
 		    //Add level name
-		    writer.println("16");
+		    writer.println("4");
 		    
 		    //Maximum number of words
 		    writer.println(maxWords);
@@ -75,7 +78,7 @@ public class SaveController implements ActionListener {
 		    writer.println(0);
 		    
 		    //Board visibility
-		    //writer.println(puzzleGamePanel.getBoardPanel().getBoard().toString());
+		    writer.println(b.toString());
 		    writer.close();
 		    
 		} catch (IOException exception) {

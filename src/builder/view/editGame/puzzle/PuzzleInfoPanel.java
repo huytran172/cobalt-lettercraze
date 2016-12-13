@@ -5,9 +5,11 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import builder.controller.PreviewController;
 import builder.controller.SaveController;
 import builder.view.dropdownMenu.DropMenuFrame;
 import builder.view.editGame.GameFrame;
+import player.models.Board;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -22,7 +24,7 @@ public class PuzzleInfoPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PuzzleInfoPanel() {
+	public PuzzleInfoPanel(Board b) {
 		setLayout(null);
 		
 		JLabel label = new JLabel("");
@@ -67,11 +69,12 @@ public class PuzzleInfoPanel extends JPanel {
 		
 		JButton btnPreview = new JButton("Preview");
 		btnPreview.setBounds(6, 380, 76, 29);
+		btnPreview.addActionListener(new PreviewController());
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");
 		btnSave.setBounds(77, 380, 67, 29);
-		btnSave.addActionListener(new SaveController(this));
+		btnSave.addActionListener(new SaveController(this, b));
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");

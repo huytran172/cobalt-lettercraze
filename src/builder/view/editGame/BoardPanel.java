@@ -3,6 +3,7 @@ package builder.view.editGame;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import player.models.Board;
 import player.view.menu.CustomLevelButton;
 
 import java.awt.GridBagConstraints;
@@ -11,13 +12,19 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 
 public class BoardPanel extends JPanel {
-
+	
+	private Board board;
 	private SquarePanel[] squares = new SquarePanel[36];
 	
 	/**
 	 * Create the panel.
 	 */
-	public BoardPanel() {
+	public Board getBoard() {
+		return board;
+	}
+
+
+	public BoardPanel(Board board) {
 		GridLayout gridLayout = new GridLayout(6, 6);
 		//GridBagLayout gridLayout = new GridBagLayout();
 		setLayout(gridLayout);

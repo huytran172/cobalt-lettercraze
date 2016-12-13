@@ -1,5 +1,11 @@
 package player.models;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+import player.models.score.ScorePuzzle;
 import player.models.score.ScoreTheme;
 
 public class Theme extends Level{
@@ -12,6 +18,34 @@ public class Theme extends Level{
 		this.theme = theme;
 		this.wordsToFind = wordsToFind;
 		this.score = new ScoreTheme(super.threshold, super.highScore);
+	}
+	
+	public Theme(File f) {
+		super(f);
+		this.score = new ScoreTheme(super.threshold, super.highScore);
+		BufferedReader inputStream = null;
+		try {
+			inputStream = new BufferedReader(new FileReader(f));
+			inputStream.readLine();
+			String[] themeAndWords = inputStream.readLine().split(" ");
+			this.theme = themeAndWords[0];
+			inputStream.readLine();
+			inputStream.readLine();
+			inputStream.readLine();
+			// Board shape
+			this.board = new Board();
+			this.board.initialize(inputStream.readLine(), themeAndWords);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (inputStream != null) {
+				try {
+					inputStream.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 	
 	@Override

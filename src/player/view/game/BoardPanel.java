@@ -3,8 +3,10 @@ package player.view.game;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import player.controller.BoardController;
 import player.models.Board;
 import player.models.Square;
+import player.models.Word;
 import player.view.menu.CustomLevelButton;
 
 import java.awt.GridBagConstraints;
@@ -18,11 +20,20 @@ public class BoardPanel extends JPanel {
 	private Board board;
 	private ArrayList<Square> squareModels;
 	
+	// temp storage of word being built/.  MOVE TO BOARD
+	private ArrayList<Square> word = new ArrayList<Square>();
+	
+	public ArrayList<Square> getWord() { 
+		return word;
+	}
+	
 	/**
 	 * Create the panel.
 	 */
 	public BoardPanel(Board board) {
 		this.board = board;
+		//this.addMouseListener(new BoardController());
+		//this.addMouseMotionListener(new BoardController());
 
 		GridLayout gridLayout = new GridLayout(6, 6, 10, 10);
 		//GridBagLayout gridLayout = new GridBagLayout();
@@ -32,8 +43,11 @@ public class BoardPanel extends JPanel {
 
 		for (int i = 0; i < 36; i++) {
 			squarePanels[i] = new SquarePanel(squareModels.get(i));
+			squarePanels[i].addMouseListener(new BoardController(squarePanels[i], squareModels.get(i), this, board));
 			add(squarePanels[i]);
-			System.out.print(squareModels.get(i).isEnabled());
+			//System.out.print("index: " + i + " + char: " );
+
+
 			//squarePanels[i].initialize(squareModels.get(i).isEnabled());
 			//squarePanels[i].setEnable(false);
 			/*
@@ -53,8 +67,26 @@ public class BoardPanel extends JPanel {
 		}
 
 		//btnLevel[37].setActive(true);
-		  
-		 
 	}
 
+	public void deselectWord(Word word) {
+		ArrayList<Square> wordSquares = word.getSquares();
+		int index;
+		for (int i = 0; i < wordSquares.size(); i++) {
+			index = squareModels.indexOf(wordSquares.get(i));
+			squarePanels[index].toggleColor();
+			//squarePanels[index].putLetter();
+			//System.out.print("fuck: " + squarePanels[index]);
+//			squarePanels[index].revalidate();
+//			squarePanels[index].repaint();
+		}
+	}
+
+	public void reputLetter() {
+		for (int i = 0; i < squarePanels.length; i++) {
+			squarePanels[i].putLetter();
+			squarePanels[i].revalidate();
+			squarePanels[i].repaint();
+		}
+	}
 }

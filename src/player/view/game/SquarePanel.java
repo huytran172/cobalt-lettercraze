@@ -14,7 +14,6 @@ import javax.swing.*;
 
 public class SquarePanel extends JPanel {
 	// Remove later
-			private boolean enabled;
 			private Square square;
 
 			// Add later
@@ -28,54 +27,28 @@ public class SquarePanel extends JPanel {
 			/**
 			 * Constructor
 			 * Will be removed later
-			 * @param enabled state of SquarePanel
+			 * @param square state of SquarePanel
 			 */
 			public SquarePanel(Square square) {
 				this.square = square;
-				this.enabled = square.isEnabled();
 				this.setBorder(BorderFactory.createLineBorder(Color.black));
 				this.setBackground(Color.WHITE);
 				putLetter();
-				initialize(this.enabled);
-				addMouseListener(new MouseListener() {
-					@Override
-					public void mouseClicked(MouseEvent e) {
-						toggleEnableSquare();
-					}
-
-					@Override
-					public void mousePressed(MouseEvent e) {
-
-					}
-
-					@Override
-					public void mouseReleased(MouseEvent e) {
-
-					}
-
-					@Override
-					public void mouseEntered(MouseEvent e) {
-
-					}
-
-					@Override
-					public void mouseExited(MouseEvent e) {
-
-					}
-				});
+				initialize(square.isEnabled());
 			}
 
 			public void putLetter() {
 				JLabel label = new JLabel();
 				label.setText(this.square.getLetter().getS());
+				System.out.print("put letter: " + this.square.getLetter().getS() + "\n");
 				label.setFont(label.getFont().deriveFont(25.0f));
+				this.removeAll();
 				this.add(label);
 			}
 
 			public void initialize(boolean enabled) {
-				this.enabled = enabled;
-				this.setVisible(this.enabled);
-				this.setEnabled(this.enabled);
+				this.setVisible(enabled);
+				this.setEnabled(enabled);
 			}
 
 			/**
@@ -83,32 +56,26 @@ public class SquarePanel extends JPanel {
 			 * @param enabled square is enabled or not
 			 */
 			public void enableSquare(boolean enabled) {
-				this.enabled = enabled;
-				this.setEnabled(this.enabled);
+				this.square.setEnabled(enabled);
+				this.setEnabled(enabled);
 				//redrawLevelButton();
 			}
 
 			public void toggleEnableSquare() {
-				enabled = !enabled;
-				enableSquare(enabled);
+				this.square.toggleEnabled();
+				enableSquare(square.isEnabled());
 				toggleColor();
 			}
 
 			public void toggleColor() {
-				if (this.enabled) {
-					this.setBackground(Color.WHITE);
-				} else {
+				this.square.toggleSelect();
+				if (square.isSelected()) {
 					this.setBackground(Color.GRAY);
+				} else {
+					this.setBackground(Color.WHITE);
 				}
 			}
 
-			/**
-			 * Return whether the button is active or not
-			 */
-			public boolean isEnable() {
-				return this.enabled;
-			}
-			
 
 			/**
 			 * Redraw the button to show level 

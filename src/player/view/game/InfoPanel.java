@@ -25,17 +25,20 @@ public class InfoPanel extends JPanel {
 	StarPanel star3;
 	
 	WordPanel wordsFound;
-	
+
+	CustomSubmitButton submitButton;
+
 	JButton reset;
 	JButton undo;
 	JButton quit;
 	
 	public InfoPanel(Level l){
+		this.level = l;
 		initialize();
 	}
 	
-	private void initialize(){
-		
+	private void initialize() {
+
 		 setBounds(660, 170, 260, 510);
 		 //setBackground(Color.lightGray);
 		 
@@ -56,7 +59,9 @@ public class InfoPanel extends JPanel {
 		 star3 = new StarPanel(3, 0);
 		 
 		 wordsFound = new WordPanel();
-		 
+
+		 submitButton = new CustomSubmitButton(level, wordsFound, this);
+
 		 reset = new JButton("Reset");
 		 undo = new JButton("Undo");
 		 quit = new JButton ("Skip");
@@ -86,12 +91,17 @@ public class InfoPanel extends JPanel {
 						 //.addPreferredGap(ComponentPlacement.RELATED)
 						 .addContainerGap(0, 0))
 				 .addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-				 .addGap(65)
+
+				 .addGap(60)
 				 .addGroup(groupLayout.createParallelGroup()
-						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-						 ));
+						 .addComponent(submitButton, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						 )
+				 .addGap(8)
+
+				 .addGroup(groupLayout.createParallelGroup()
+						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)));
 		 
 		 groupLayout.setHorizontalGroup(
 				 
@@ -108,12 +118,18 @@ public class InfoPanel extends JPanel {
 				 .addComponent(star2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(star3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(wordsFound, GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
+						 .addComponent(submitButton, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, this.getWidth()/3, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, this.getWidth()/3,GroupLayout.PREFERRED_SIZE)
-						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, this.getWidth()/3,GroupLayout.PREFERRED_SIZE)
-				 ));
+						 .addComponent(submitButton, GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE))
+				 .addGroup(groupLayout.createSequentialGroup()
+						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)
+						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)));
 			
 			setLayout(groupLayout);
+	}
+
+	public WordPanel getWordsFound() {
+		return wordsFound;
 	}
 }

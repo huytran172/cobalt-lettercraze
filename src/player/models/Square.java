@@ -39,6 +39,10 @@ public class Square {
 		this.isSelected = selected;
 	}
 
+	public void toggleEnabled() {
+		isEnabled = !isEnabled;
+	}
+
 	public Square(Letter letter, int row, int column, boolean isEnabled) {
 		this.letter = letter;
 		this.row = row;
@@ -59,8 +63,9 @@ public class Square {
 	public void toggleSelect() {
 		if (isSelected) {
 			deselect();
+		} else {
+			select();
 		}
-		select();
 	}
 
 	/**
@@ -76,7 +81,11 @@ public class Square {
 	public void deselect() {
 		this.isSelected = false;
 	}
-	
+
+	public boolean isSelected() {
+		return this.isSelected;
+	}
+
 	/**
 	 * [updateLetter description]
 	 */
@@ -104,4 +113,5 @@ public class Square {
 	public void clearSquare() {
 		this.letter.setStringEmpty();
 	}
+	
 }

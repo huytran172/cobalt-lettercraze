@@ -52,8 +52,8 @@ public abstract class Level {
 			this.isComplete = Integer.parseInt(inputStream.readLine()) == 0 ? false : true;
 			
 			// Board shape
-			this.board = new Board();
-			this.board.initialize(inputStream.readLine());
+//			this.board = new Board();
+//			this.board.initialize(inputStream.readLine());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

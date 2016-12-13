@@ -25,8 +25,16 @@ public class Lightning extends Level {
 		BufferedReader inputStream = null;
 		try {
 			inputStream = new BufferedReader(new FileReader(f));
+			// Skip level number
 			inputStream.readLine();
 			this.time = Integer.parseInt(inputStream.readLine());
+			// skip high score, is complete, threshold
+			inputStream.readLine();
+			inputStream.readLine();
+			inputStream.readLine();
+			// Board shape
+			this.board = new Board();
+			this.board.initialize(inputStream.readLine());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

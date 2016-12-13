@@ -60,7 +60,7 @@ public class InfoPanel extends JPanel {
 		 
 		 wordsFound = new WordPanel();
 
-		 submitButton = new CustomSubmitButton(level, wordsFound);
+		 submitButton = new CustomSubmitButton(level, wordsFound, this);
 
 		 reset = new JButton("Reset");
 		 undo = new JButton("Undo");

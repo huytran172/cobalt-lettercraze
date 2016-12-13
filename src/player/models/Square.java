@@ -55,8 +55,9 @@ public class Square {
 	public void toggleSelect() {
 		if (isSelected) {
 			deselect();
+		} else {
+			select();
 		}
-		select();
 	}
 
 	/**

@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import player.controller.BoardController;
 import player.models.Board;
 import player.models.Square;
+import player.models.Word;
 import player.view.menu.CustomLevelButton;
 
 import java.awt.GridBagConstraints;
@@ -66,8 +67,20 @@ public class BoardPanel extends JPanel {
 		}
 
 		//btnLevel[37].setActive(true);
-		  
-		 
 	}
+
+	public void deselectWord(Word word) {
+		ArrayList<Square> wordSquares = word.getSquares();
+		int index;
+		for (int i = 0; i < wordSquares.size(); i++) {
+			index = squareModels.indexOf(wordSquares.get(i));
+			squarePanels[index].toggleColor();
+			squarePanels[index].putLetter();
+			System.out.print("fuck: " + squarePanels[index]);
+//			squarePanels[index].revalidate();
+//			squarePanels[index].repaint();
+		}
+	}
+
 
 }

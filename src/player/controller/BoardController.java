@@ -36,7 +36,7 @@ public class BoardController extends MouseAdapter {
         if (board.addSquareToTempWord(square)) {
             squarePanel.toggleColor();
         }
-        System.out.print("testing ");
+        System.out.print("word made: ");
         System.out.print(board.getSquareList().indexOf(square));
         System.out.print(" " + board.getTempWord().getWordString());
         System.out.print("\n");

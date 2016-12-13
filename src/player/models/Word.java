@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 
 public class Word {
-	
 	private ArrayList<Square> squares = new ArrayList<Square>();
 	
 	public Word(ArrayList<Square> squares){
@@ -96,7 +95,9 @@ public class Word {
 			this.squares.remove(i);
 		}
 	}
-	
+
+
+
 	public static void main(String[] args){
 		Letter letter = new Letter("s");
 		Square square1 = new Square(letter,1,1,false);
@@ -107,5 +108,10 @@ public class Word {
 		Square square3 = new Square(letter2,1,1,false);
 		word.squares.add(square3);
 		System.out.println(word.getWordString());
+	}
+
+
+	public ArrayList<Square> getSquares() {
+		return squares;
 	}
 }

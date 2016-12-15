@@ -27,7 +27,9 @@ public class LightningSubmitButton extends CustomSubmitButton {
 			System.out.println("SCORE " + this.score.getScore());
 			wordPanel.addToWordPanel(word.getWordString());
 			word.clearWord();
-			updateInterface();
+			board.updateBoard();
+			board.fillEmptySquares();
 		}
+		updateInterface();
 	}
 }

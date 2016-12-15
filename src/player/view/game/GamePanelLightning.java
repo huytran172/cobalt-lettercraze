@@ -18,6 +18,7 @@ public class GamePanelLightning extends JPanel implements GamePanel {
 	private InfoPanel infoPanel;
 	private FeaturePanel featurePanel;
 	private Level l;
+	private JButton btn;
 	
 	GamePanelLightning(Level l){
 		this.l = l;
@@ -40,10 +41,10 @@ public class GamePanelLightning extends JPanel implements GamePanel {
 	    featurePanel = new FeaturePanel("lightning", "5");
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
-	    	    
-	    //add(titlePanel);
-	   // add(infoPanel);
-		
+
+		btn = new JButton("Submit");
+		add(btn);
+		btn.setBounds(60, 65, 100, 30);
 	}
 
 	public BoardPanel getBoardPanel() {

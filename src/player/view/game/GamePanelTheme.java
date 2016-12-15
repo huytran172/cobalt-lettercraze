@@ -1,35 +1,29 @@
 package player.view.game;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import player.models.Theme;
+import player.view.game.featurePanel.FeaturePanelTheme;
+import player.view.game.submitbutton.CustomSubmitButton;
+import player.view.game.submitbutton.ThemeSubmitButton;
 
-import player.models.Level;
-
-import java.awt.event.ActionListener;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-
-public class GamePanelTheme extends JPanel implements GamePanel {
-
+public class GamePanelTheme extends GamePanel {
 	private BoardPanel boardPanel;
 	private TitlePanel titlePanel;
 	private InfoPanel infoPanel;
-	private FeaturePanel featurePanel;
-	private Level l;
-	private JButton btn;
+	private FeaturePanelTheme featurePanel;
+	private Theme level;
+	private ThemeSubmitButton btn;
 	
-	GamePanelTheme(Level l){
-		this.l = l;
+	GamePanelTheme(Theme level){
+		super();
+		this.level = level;
 		this.setLayout(null);
 		
-		boardPanel = new BoardPanel(l.getBoard());
+		boardPanel = new BoardPanel(level.getBoard());
 	    add(boardPanel);
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
 	    
-	    infoPanel = new InfoPanel(l);
+	    infoPanel = new InfoPanel(level);
 	    add(infoPanel);
 	    infoPanel.setBounds(480, 100, 280, 420);
 	    
@@ -40,33 +34,28 @@ public class GamePanelTheme extends JPanel implements GamePanel {
 
 	    //titlePanel.setBackground(Color.blue);
 	    
-	    featurePanel = new FeaturePanel("theme", "color");
+	    featurePanel = new FeaturePanelTheme(level, boardPanel);
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
 
-		btn = new JButton("Submit");
+		btn = new ThemeSubmitButton(this);
 		add(btn);
 		btn.setBounds(60, 65, 100, 30);
 	}
 
-	public BoardPanel getBoardPanel() {
-		return boardPanel;
+	@Override
+	public Theme getLevel() {
+		return level;
 	}
 
-	public InfoPanel getInfoPanel() {
-		return infoPanel;
-	}
-
-	public TitlePanel getTitlePanel() {
-		return titlePanel;
-	}
-
-	public FeaturePanel getFeaturePanel() {
+	@Override
+	public FeaturePanelTheme getFeaturePanel() {
 		return featurePanel;
 	}
 
-	public Level getLevel() {
-		return l;
+	@Override
+	public CustomSubmitButton getSubmitButton() {
+		return btn;
 	}
 
 }

@@ -179,7 +179,7 @@ public class TestPlayerEntity extends TestCase {
 		Square square3 = new Square(letter3,1,1,false);
 		word.addSquareToWord(square3);
 		word.clearWord();
-		word.main(null);
+		//word.main(null);
 		//assertTrue(word.validWord());
 		assertEquals(word.calcWordScore(), 7);
 		

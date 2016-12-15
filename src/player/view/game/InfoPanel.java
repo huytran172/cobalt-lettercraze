@@ -21,8 +21,6 @@ public class InfoPanel extends JPanel {
 	
 	protected WordPanel wordsFound;
 
-	protected CustomSubmitButton submitButton;
-
 	protected CustomResetButton reset;
 	protected JButton undo;
 	protected JButton quit;
@@ -81,7 +79,6 @@ public class InfoPanel extends JPanel {
 
 				 .addGap(60)
 				 .addGroup(groupLayout.createParallelGroup()
-						 .addComponent(getSubmitButton(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getReset(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						 )
 				 .addGap(8)
@@ -105,9 +102,7 @@ public class InfoPanel extends JPanel {
 				 .addComponent(getStar2(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getStar3(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getWordsFound(), GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
-						 .addComponent(getSubmitButton(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(getSubmitButton(), GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getReset(), GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE))
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addComponent(getUndo(), GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)
@@ -150,10 +145,6 @@ public class InfoPanel extends JPanel {
 
 	public JLabel getThisScore() {
 		return thisScore;
-	}
-
-	public CustomSubmitButton getSubmitButton() {
-		return submitButton;
 	}
 
 	public JButton getReset() {
@@ -202,10 +193,6 @@ public class InfoPanel extends JPanel {
 
 	public void setWordsFound(WordPanel wordsFound) {
 		this.wordsFound = wordsFound;
-	}
-
-	public void setSubmitButton(CustomSubmitButton submitButton) {
-		this.submitButton = submitButton;
 	}
 
 	public void setReset(CustomResetButton reset) {

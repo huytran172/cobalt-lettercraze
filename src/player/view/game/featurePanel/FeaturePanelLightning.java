@@ -45,7 +45,7 @@ public class FeaturePanelLightning extends JPanel implements IFeaturePanel {
                             + " seconds left");
                 } else {
                     feature.setText("You lose hahahahahaha");
-                    boardPanel.disableBoard();
+                    boardPanel.hideBoard();
                 }
 
             }

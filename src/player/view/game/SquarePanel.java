@@ -61,6 +61,11 @@ public class SquarePanel extends JPanel {
 				//redrawLevelButton();
 			}
 
+			public void hideSquare(boolean state) {
+				enableSquare(state);
+				this.setVisible(state);
+			}
+
 			public void toggleEnableSquare() {
 				this.square.toggleEnabled();
 				enableSquare(square.isEnabled());

@@ -38,7 +38,7 @@ public class FeaturePanelTheme extends JPanel implements IFeaturePanel {
             return true;
         } else {
             feature.setText("You have found all the words in this theme. Wow :v");
-            boardPanel.disableBoard();
+            boardPanel.hideBoard();
             return false;
         }
     }

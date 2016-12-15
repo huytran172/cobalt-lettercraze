@@ -38,13 +38,13 @@ public class InfoPanel extends JPanel {
         setHighScore(new JLabel("High score"));
         getHighScore().setFont(getHighScore().getFont().deriveFont(18.0f));
         highScoreNum = new JLabel();
-        sethighScoreNum(0);
+        setHighScoreNum(0);
         gethighScoreNum().setFont(gethighScoreNum().getFont().deriveFont(18.0f));
 
         setCurrentScore(new JLabel("Score"));
         getCurrentScore().setFont(getHighScore().getFont().deriveFont(18.0f));
         scoreNum = new JLabel();
-        setscoreNum(0);
+        setScoreNum(0);
         getscoreNum().setFont(getscoreNum().getFont().deriveFont(18.0f));
 
         setStar1(new StarPanel(1, 0));
@@ -200,11 +200,11 @@ public class InfoPanel extends JPanel {
         this.currentScore = currentScore;
     }
 
-    public void sethighScoreNum(int input) {
+    public void setHighScoreNum(int input) {
         this.highScoreNum.setText("" + input);
     }
 
-    public void setscoreNum(int input) {
+    public void setScoreNum(int input) {
         this.scoreNum.setText("" + input);
     }
 }

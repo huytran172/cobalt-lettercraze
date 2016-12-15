@@ -32,7 +32,6 @@ public class CustomResetButton extends JButton implements ActionListener{
 		GamePanel gamePanel = (GamePanel) infoPanel.getParent();
 		board.resetBoard();
 		gamePanel.getBoardPanel().reputLetter();
-		infoPanel.setscoreNum(10);
 		//BoardPanel boardInParent = ((GamePanel) this.infoPanel.getParent()).getBoardPanel();
 		//boardInParent.redrawBoardPanel();
 		//System.out.println(boardInParent.toString());

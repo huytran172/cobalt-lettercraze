@@ -11,7 +11,6 @@ public class ThemeSubmitButton extends CustomSubmitButton {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		GamePanel gamePanel = (GamePanel) infoPanel.getParent();
 		word = board.getTempWord();
 		if (word.validWord()) {
 			this.updateScore(word);
@@ -21,6 +20,7 @@ public class ThemeSubmitButton extends CustomSubmitButton {
 			board.updateBoard();
 			board.fillEmptySquares();
 			gamePanel.getBoardPanel().reputLetter();
+			updateInterface();
 		}
 	}
 }

@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import player.models.score.Score;
 //import player.models.LightningTimer;
 import player.models.score.ScoreLightning;
 
@@ -75,6 +76,11 @@ public class Lightning extends Level {
 	public void updateLevel() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Score getScore() {
+		return this.score;
 	}
 
 	

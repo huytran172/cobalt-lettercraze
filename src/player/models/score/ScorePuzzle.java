@@ -17,7 +17,6 @@ public class ScorePuzzle extends Score {
 	@Override
 	public void removeScore(Word w) {
 		this.addScore(0-w.calcWordScore());
-		
 	}
 	
 	

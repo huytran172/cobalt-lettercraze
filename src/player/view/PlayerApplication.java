@@ -9,7 +9,7 @@ import player.view.splash.SplashScreenWindow;
 
 public class PlayerApplication {
 	public static void main(String[] args) {
-	new PlayerApplication().runPlayerApp();	
+		new PlayerApplication().runPlayerApp();	
 	}
 	
 	SplashScreenWindow splashScreen;

@@ -14,8 +14,6 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 
 public class PuzzleGamePanel extends JPanel {
-	
-
 	JPanel boardPanel;
 	public BoardPanel getBoardPanel() {
 		return (BoardPanel) boardPanel;
@@ -30,9 +28,8 @@ public class PuzzleGamePanel extends JPanel {
 	//JPanel starPanel;
 	
 	public PuzzleGamePanel(){
-		
 		this.setLayout(null);
-		
+		/*
 		Board b = new Board();
 		b.initialize();
 		boardPanel = new BoardPanel(b);
@@ -49,7 +46,7 @@ public class PuzzleGamePanel extends JPanel {
 	    add(titlePanel);
 	    titlePanel.setBounds(40, 20, 600, 60);
 	    //titlePanel.setBackground(Color.blue);
-	    
+	    */
 //	    starPanel = new StarPanel();
 //	    add(starPanel);
 //	    starPanel.setBounds(60, 50, 800, 50);

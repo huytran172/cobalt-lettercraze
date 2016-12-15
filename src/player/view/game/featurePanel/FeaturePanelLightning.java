@@ -4,6 +4,7 @@ import player.models.Lightning;
 import player.view.game.BoardPanel;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,8 +22,16 @@ public class FeaturePanelLightning extends JPanel implements IFeaturePanel {
     public FeaturePanelLightning(Lightning lightningLevel, BoardPanel boardPanel) {
         this.lightningLevel = lightningLevel;
         this.boardPanel = boardPanel;
+        initFeatureLabel();
         maxTime = lightningLevel.getTime();
         updateTimer(maxTime);
+    }
+
+    public void initFeatureLabel() {
+        feature = new JLabel();
+        feature.setText("Timer: " + " seconds left");
+        feature.setFont(new Font(feature.getFont().getName(), Font.PLAIN, 20));
+        add(feature);
     }
 
     public void updateTimer (int maxTime) {

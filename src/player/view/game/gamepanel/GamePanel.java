@@ -30,11 +30,6 @@ public abstract class GamePanel extends JPanel{
 	    infoPanel = new InfoPanel(level);
 	    add(infoPanel);
 	    infoPanel.setBounds(480, 100, 280, 420);
-	    
-	    titlePanel = new TitlePanel("Lightning");
-	    add(titlePanel);
-	    titlePanel.setBounds(40, 20, 600, 45);
-	    //titlePanel.setBackground(Color.blue);	
     }
 
     public BoardPanel getBoardPanel() {

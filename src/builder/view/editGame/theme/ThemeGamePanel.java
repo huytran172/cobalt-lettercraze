@@ -15,32 +15,29 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 
 public class ThemeGamePanel extends JPanel {
-	
-
 	JPanel boardPanel;
 	JPanel titlePanel;
 	JPanel infoPanel;
 	JPanel starPanel;
 	
 	public ThemeGamePanel(){
-		
 		this.setLayout(null);
-		
-		
+		/*
 		Board b = new Board();
 		b.initialize();
 		boardPanel = new BoardPanel(b);
 	    add(boardPanel);
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
-	    
+
 	    infoPanel = new ThemeInfoPanel(b);
 	    add(infoPanel);
 	    infoPanel.setBounds(480, 100, 280, 420);
-	    
+
 	    titlePanel = new TitlePanel("Theme");
 	    add(titlePanel);
 	    titlePanel.setBounds(40, 20, 600, 60);
+	    */
 	    //titlePanel.setBackground(Color.blue);
 	    
 //	    starPanel = new StarPanel();

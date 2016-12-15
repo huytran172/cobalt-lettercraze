@@ -19,7 +19,12 @@ public class GamePanelTheme extends GamePanel {
 	
 	public GamePanelTheme(Theme level){
 		super(level);
-	    
+
+		titlePanel = new TitlePanel("Theme");
+		add(titlePanel);
+		titlePanel.setBounds(40, 20, 600, 45);
+		//titlePanel.setBackground(Color.blue);
+
 	    featurePanel = new FeaturePanelTheme(level, boardPanel);
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);

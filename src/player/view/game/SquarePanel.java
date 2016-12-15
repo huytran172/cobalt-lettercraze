@@ -40,7 +40,7 @@ public class SquarePanel extends JPanel {
 			public void putLetter() {
 				JLabel label = new JLabel();
 				label.setText(this.square.getLetter().getS());
-				System.out.print("put letter: " + this.square.getLetter().getS() + "\n");
+				//System.out.print("put letter: " + this.square.getLetter().getS() + "\n");
 				label.setFont(label.getFont().deriveFont(25.0f));
 				this.removeAll();
 				this.add(label);

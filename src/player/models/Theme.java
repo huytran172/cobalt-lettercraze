@@ -30,6 +30,8 @@ public class Theme extends Level{
 			inputStream.readLine();
 			String[] themeAndWords = inputStream.readLine().split(" ");
 			this.theme = themeAndWords[0];
+			this.wordsToFind = new String[themeAndWords.length - 1];
+			System.arraycopy(themeAndWords, 1, wordsToFind, 0, themeAndWords.length - 1);
 			inputStream.readLine();
 			inputStream.readLine();
 			inputStream.readLine();

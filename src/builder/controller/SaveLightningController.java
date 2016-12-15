@@ -13,20 +13,49 @@ import java.util.Date;
 import javax.swing.JTextField;
 
 import builder.view.BuilderApplication;
+import builder.view.editGame.lightning.LightningInfoPanel;
 import builder.view.editGame.puzzle.PuzzleGamePanel;
 import builder.view.editGame.puzzle.PuzzleInfoPanel;
 import player.models.Board;
 
-public class SaveController implements ActionListener {
-	PuzzleInfoPanel application;     /** Application we have control over. */
+public class SaveLightningController implements ActionListener {
+	LightningInfoPanel application;     /** Application we have control over. */
 	Board b;
 	
-	public SaveController(PuzzleInfoPanel app, Board b) {
+	public SaveLightningController(LightningInfoPanel app, Board b) {
 		this.application = app;
 		this.b = b;
 
 	}
+	
+	/**
+	 * Create a new name for the freshly created level
+	 * @return
+	 */
+	int levelName(){
+		
+		File[] files = new File("../cobalt-lettercraze/levels/").listFiles();
 
+		int[] levels = new int[files.length];
+		
+		for (int i = 0; i < files.length; i++){
+			String name = files[i].getName(); 
+			levels[i] = Integer.parseInt(files[i].getName().substring(5, name.length() - 4));
+
+		}
+		
+		int max = levels[0];
+
+		for (int i = 1; i < levels.length; i++) {
+		    if (levels[i] > max) {
+		      max = levels[i];
+		    }
+		}
+		
+		return max + 1;
+	}
+
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String maxWords = application.getTextField_3().getText();
@@ -44,21 +73,18 @@ public class SaveController implements ActionListener {
 //		IMove move = new ModifyValue(model, Integer.valueOf(tf.getText()));
 //		
 		// request move
-		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-	    Date dateobj = new Date();
-	    String time = String.format("Level%s.txt", df.format(dateobj));
-	    
-	    PuzzleGamePanel puzzleGamePanel = (PuzzleGamePanel) this.application.getParent();
+
+
 		try {
 			//Create new file
-			File file = new File("../cobalt-lettercraze/levels/Level4.txt");
-			//file.getParentFile().mkdirs();
-
+			String name = String.format("../cobalt-lettercraze/levels/Level%d.txt", levelName());
+			File file = new File(name);
+		
 			PrintWriter writer = new PrintWriter(file);
 		    //PrintWriter writer = new PrintWriter("Level16", "UTF-8");
 		    
 		    //Add level name
-		    writer.println("4");
+		    writer.println(String.format("%d", levelName()-1));
 		    
 		    //Maximum number of words
 		    writer.println(maxWords);

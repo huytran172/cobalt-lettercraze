@@ -1,26 +1,22 @@
 package player.models;
 
 import java.util.*;
-
 import player.controller.Listener;
 
-/**
- * Supports listeners for changes.
- * 
- * @author cobalt
- */
 public class Board implements Iterable<Square> {
-	
 	/** A list of words found */
 	protected Stack<Word> wordsFound;
 
 	/** Temp word being built */
 	protected Word tempWord;
 	
-	/** VARIABLE IN BOARD ENTITY **/
 	/** Squares in the board. */
 	protected ArrayList<Square> squares = new ArrayList<Square>(36);
 
+	/**
+	 * Initialize with board shape from the text file
+	 * @param boardLine board shape (0 1 1 0 ... 0)
+	 */
 	public void initialize(String boardLine) {
 		String squaresString[] = boardLine.split(" ");
 
@@ -39,6 +35,11 @@ public class Board implements Iterable<Square> {
 		}
 	}
 
+	/**
+	 * Initialize board with board shape and theme and words in the theme mode
+	 * @param boardLine
+	 * @param themeAndWords
+	 */
 	public void initialize(String boardLine, String[] themeAndWords) {
 		String squaresString[] = boardLine.split(" ");
 
@@ -151,9 +152,10 @@ public class Board implements Iterable<Square> {
 		}
 	}
 	
+	/**
+	 * Initialize general 6x6 board
+	 */
 	public void initialize() {
-		
-
 		int j = -1;
 
 		for (int i = 0; i < 36; i++) {
@@ -168,7 +170,7 @@ public class Board implements Iterable<Square> {
 		}
 	}
 	
-	/**Word being chosen. */
+	/** Word being chosen. */
 
 	private Word activeWord = null;
 	
@@ -283,8 +285,6 @@ public class Board implements Iterable<Square> {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < 36; i++) {
-			
-			
 			sb.append(this.squares.get(i).isSelected ? 1 : 0);
 			sb.append(" ");
 		}
@@ -294,6 +294,7 @@ public class Board implements Iterable<Square> {
 	/**
 	 * Update Board: Call when a move is recently made and
 	 * squares move up to fill empty spaces
+	 * @return boolean
 	 */
 	public boolean updateBoard(){
 		boolean checkStatus = false;
@@ -337,7 +338,6 @@ public class Board implements Iterable<Square> {
 		return isFillable;
 	}
 	
-	
 	/**
 	 * Reset Board - refill and randomize letters in Board
 	 * For Puzzle and Lightning
@@ -357,6 +357,12 @@ public class Board implements Iterable<Square> {
 		return squares;
 	}
 	
+	/**
+	 * Get a square base on the row and column
+	 * @param row
+	 * @param column
+	 * @return
+	 */
 	public Square getSquare(int row, int column) {
 		if (row < 0 || column < 0) return null;
 		for (int i = 0; i < 36; i++) {
@@ -367,10 +373,19 @@ public class Board implements Iterable<Square> {
 		return null;
 	}
 
+	/**
+	 * Get active word word
+	 * @return Word
+	 */
 	public Word getTempWord() {
 		return tempWord;
 	}
 
+	/**
+	 * add square to the active word
+	 * @param square
+	 * @return boolean
+	 */
 	public boolean addSquareToTempWord(Square square) {
 		return this.tempWord.addSquareToWord(square);
 	}

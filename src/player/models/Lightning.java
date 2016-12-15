@@ -5,14 +5,14 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import player.models.score.Score;
 //import player.models.LightningTimer;
 import player.models.score.ScoreLightning;
 
 public class Lightning extends Level {
-
 //	LightningTimer timer;
-	ScoreLightning score;
-	int time;
+	private ScoreLightning score;
+	private int time;
 	
 //	public Lightning(int time, int[] threshold){
 //		super(new Board());
@@ -77,5 +77,13 @@ public class Lightning extends Level {
 		
 	}
 
-	
+	@Override
+	public Score getScore() {
+		return this.score;
+	}
+
+
+	public int getTime() {
+		return time;
+	}
 }

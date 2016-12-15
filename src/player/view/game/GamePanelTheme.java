@@ -17,7 +17,8 @@ public class GamePanelTheme extends JPanel implements GamePanel {
 	private TitlePanel titlePanel;
 	private InfoPanel infoPanel;
 	private FeaturePanel featurePanel;
-	Level l;
+	private Level l;
+	private JButton btn;
 	
 	GamePanelTheme(Level l){
 		this.l = l;
@@ -42,10 +43,10 @@ public class GamePanelTheme extends JPanel implements GamePanel {
 	    featurePanel = new FeaturePanel("theme", "color");
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
-	    
-	    //add(titlePanel);
-	   // add(infoPanel);
-		
+
+		btn = new JButton("Submit");
+		add(btn);
+		btn.setBounds(60, 65, 100, 30);
 	}
 
 	public BoardPanel getBoardPanel() {

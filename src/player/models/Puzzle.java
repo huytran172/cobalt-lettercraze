@@ -5,12 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import player.models.score.Score;
 import player.models.score.ScorePuzzle;
 
 public class Puzzle extends Level{
-
-	int maxMoves;
-	ScorePuzzle score;
+	private int maxMoves;
+	private ScorePuzzle score;
 	
 //	public Puzzle(int moves, int threshold[]){
 //		super(new Board());
@@ -74,5 +74,14 @@ public class Puzzle extends Level{
 		
 	}
 
+	@Override
+	public Score getScore() {
+		return this.score;
+	}
+
+
+	public int getMaxMoves() {
+		return maxMoves;
+	}
 
 }

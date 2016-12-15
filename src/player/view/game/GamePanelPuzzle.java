@@ -12,12 +12,12 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 
 public class GamePanelPuzzle extends JPanel implements GamePanel {
-	
-	Level l;
+	private Level l;
 	private BoardPanel boardPanel;
 	private TitlePanel titlePanel;
 	private InfoPanel infoPanel;
 	private FeaturePanel featurePanel;
+	private JButton btn;
 	
 	GamePanelPuzzle(Level l){
 		this.l = l;
@@ -25,9 +25,7 @@ public class GamePanelPuzzle extends JPanel implements GamePanel {
 				
 		boardPanel = new BoardPanel(l.getBoard());
 	    add(boardPanel);
-
 	    boardPanel.setBounds(40, 100, 420, 420);
-	    //boardPanel.setBackground(Color.blue);
 	    
 	    infoPanel = new InfoPanel(l);
 	    add(infoPanel);
@@ -36,12 +34,14 @@ public class GamePanelPuzzle extends JPanel implements GamePanel {
 	    titlePanel = new TitlePanel("Puzzle");
 	    add(titlePanel);
 	    titlePanel.setBounds(40, 20, 600, 45);
-
-	    //titlePanel.setBackground(Color.blue);
 	    
 		featurePanel = new FeaturePanel("puzzle", "20");
 		add(featurePanel);
-		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
+		featurePanel.setBounds(200, 60, 300, 50);
+
+		btn = new JButton("Submit");
+		add(btn);
+		btn.setBounds(60, 65, 100, 30);
 	}
 
 	public BoardPanel getBoardPanel() {

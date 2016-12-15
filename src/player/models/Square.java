@@ -3,46 +3,18 @@ package player.models;
 public class Square {
 	Letter letter;
 	int row;
-	public int getRow() {
-		return row;
-	}
-
-	public void setRow(int row) {
-		this.row = row;
-	}
-
-	public int getColumn() {
-		return column;
-	}
-
-	public void setColumn(int column) {
-		this.column = column;
-	}
-
+	
 	int column;
 	boolean isSelected;
 	boolean isEnabled;
 	
-	public boolean isEnabled() {
-		return isEnabled;
-	}
-
-	public void setEnabled(boolean isEnabled) {
-		this.isEnabled = isEnabled;
-	}
-	
-	public boolean isSelected() {
-		return isSelected;
-	}
-	
-	public void setSelected(boolean selected) {
-		this.isSelected = selected;
-	}
-
-	public void toggleEnabled() {
-		isEnabled = !isEnabled;
-	}
-
+	/**
+	 * Generate square with letter
+	 * @param letter
+	 * @param row
+	 * @param column
+	 * @param isEnabled
+	 */
 	public Square(Letter letter, int row, int column, boolean isEnabled) {
 		this.letter = letter;
 		this.row = row;
@@ -50,6 +22,12 @@ public class Square {
 		this.isEnabled = isEnabled;
 	}
 	
+	/**
+	 * Generate square with random letter
+	 * @param row
+	 * @param column
+	 * @param isEnabled
+	 */
 	public Square(int row, int column, boolean isEnabled) {
 		this.letter = new Letter(RandomLetter.generateLetter());
 		this.row = row;
@@ -82,6 +60,10 @@ public class Square {
 		this.isSelected = false;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean isSelected() {
 		return this.isSelected;
 	}
@@ -114,4 +96,35 @@ public class Square {
 		this.letter.setStringEmpty();
 	}
 	
+	public int getRow() {
+		return row;
+	}
+
+	public void setRow(int row) {
+		this.row = row;
+	}
+
+	public int getColumn() {
+		return column;
+	}
+
+	public void setColumn(int column) {
+		this.column = column;
+	}
+
+	public boolean isEnabled() {
+		return isEnabled;
+	}
+
+	public void setEnabled(boolean isEnabled) {
+		this.isEnabled = isEnabled;
+	}
+	
+	public void setSelected(boolean selected) {
+		this.isSelected = selected;
+	}
+
+	public void toggleEnabled() {
+		isEnabled = !isEnabled;
+	}
 }

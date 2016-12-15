@@ -46,4 +46,12 @@ public class QuickSaveState {
 	public int getScore(){
 		return currentScore;
 	}
+	
+	/**
+	 * Clear Quick Saved State
+	 */
+	public void clearSaveState(){
+		squares = new ArrayList<Square>(36);
+		currentScore = 0;
+	}
 }

@@ -6,8 +6,6 @@ import player.models.Level;
 import player.view.game.BoardPanel;
 import player.view.game.InfoPanel;
 import player.view.game.featurePanel.FeaturePanelLightning;
-import player.view.game.featurePanel.FeaturePanelPuzzle;
-import player.view.game.gamepanel.GamePanel;
 
 public class LightningSubmitButton extends CustomSubmitButton {
 	private FeaturePanelLightning featurePanelLightning;

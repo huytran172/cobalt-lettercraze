@@ -26,9 +26,8 @@ public class ThemeSubmitButton extends CustomSubmitButton {
 			wordPanel.addToWordPanel(word.getWordString());
 			word.clearWord();
 			board.updateBoard();
-			board.fillEmptySquares();
-			boardPanel.reputLetter();
-			updateInterface();
+			featurePanelTheme.updateTheme();
 		}
+		updateInterface();
 	}
 }

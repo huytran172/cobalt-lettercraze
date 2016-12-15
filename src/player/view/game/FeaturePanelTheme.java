@@ -17,6 +17,5 @@ public class FeaturePanelTheme extends JPanel {
         this.themeLevel = themeLevel;
         this.boardPanel = boardPanel;
         themeTitle = themeLevel.getTheme();
-
     }
 }

@@ -28,7 +28,7 @@ public class InfoPanel extends JPanel {
 
 	CustomSubmitButton submitButton;
 
-	JButton reset;
+	CustomResetButton reset;
 	JButton undo;
 	JButton quit;
 	
@@ -62,7 +62,7 @@ public class InfoPanel extends JPanel {
 
 		 submitButton = new CustomSubmitButton(level, wordsFound, this);
 
-		 reset = new JButton("Reset");
+		 reset = new CustomResetButton(level, this);
 		 undo = new JButton("Undo");
 		 quit = new JButton ("Skip");
 		 

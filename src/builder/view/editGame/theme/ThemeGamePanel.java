@@ -34,7 +34,7 @@ public class ThemeGamePanel extends JPanel {
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
 	    
-	    infoPanel = new ThemeInfoPanel();
+	    infoPanel = new ThemeInfoPanel(b);
 	    add(infoPanel);
 	    infoPanel.setBounds(480, 100, 280, 420);
 	    

@@ -6,7 +6,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import builder.controller.PreviewController;
-import builder.controller.SaveController;
+import builder.controller.SavePuzzleController;
 import builder.view.dropdownMenu.DropMenuFrame;
 import builder.view.editGame.GameFrame;
 import player.models.Board;
@@ -75,7 +75,7 @@ public class PuzzleInfoPanel extends JPanel {
 		
 		JButton btnSave = new JButton("Save");
 		btnSave.setBounds(77, 380, 67, 29);
-		btnSave.addActionListener(new SaveController(this, b));
+		btnSave.addActionListener(new SavePuzzleController(this, b));
 
 		add(btnSave);
 		

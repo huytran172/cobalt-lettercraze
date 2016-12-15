@@ -19,9 +19,9 @@ import java.awt.event.ActionListener;
 public abstract class CustomSubmitButton extends JButton implements ActionListener {
     protected Level level;
     protected WordPanel wordPanel;
+    protected BoardPanel boardPanel;
     protected Board board;
     protected Word word;
-    protected GamePanel gamePanel;
     protected InfoPanel infoPanel;
     protected StarPanel starPanel1;
     protected StarPanel starPanel2;
@@ -33,6 +33,7 @@ public abstract class CustomSubmitButton extends JButton implements ActionListen
         this.level = l;
         this.wordPanel = infoPanel.getWordsFound();
         this.infoPanel = infoPanel;
+        this.boardPanel = boardPanel;
         this.board = boardPanel.getBoard();
         this.score = level.getScore();
         this.starPanel1 = infoPanel.getStar1();
@@ -69,9 +70,8 @@ public abstract class CustomSubmitButton extends JButton implements ActionListen
      * Not sure what this does
      */
     protected void updateInterface() {
-        gamePanel.getBoardPanel().deselectWord(word);
-        gamePanel.getBoardPanel().reputLetter();
-        gamePanel.getBoardPanel().revalidate();
+        boardPanel.deselectWord(word);
+        boardPanel.reputLetter();
         board.renewTempWord();
     }
 }

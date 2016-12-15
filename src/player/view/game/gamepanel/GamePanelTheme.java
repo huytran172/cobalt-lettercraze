@@ -10,11 +10,7 @@ import player.view.game.submitbutton.PuzzleSubmitButton;
 import player.view.game.submitbutton.ThemeSubmitButton;
 
 public class GamePanelTheme extends GamePanel {
-	private BoardPanel boardPanel;
-	private TitlePanel titlePanel;
-	private InfoPanel infoPanel;
 	private FeaturePanelTheme featurePanel;
-	private Theme level;
 	private ThemeSubmitButton btn;
 	
 	public GamePanelTheme(Theme level){
@@ -27,7 +23,7 @@ public class GamePanelTheme extends GamePanel {
 
 	    featurePanel = new FeaturePanelTheme(level, boardPanel);
 		add(featurePanel);
-		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
+		featurePanel.setBounds(200, 60, 300, 50);
 
 		btn = new ThemeSubmitButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
 		add(btn);
@@ -36,7 +32,7 @@ public class GamePanelTheme extends GamePanel {
 
 	@Override
 	public Theme getLevel() {
-		return level;
+		return (Theme) level;
 	}
 
 	@Override

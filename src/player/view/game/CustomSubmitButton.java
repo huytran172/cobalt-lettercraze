@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 /**
  * Created by quyendinhthuchoang on 12/12/2016.
+ * Fixed and enhanced by hunghongphugia on 12/15/2016.
  */
 public class CustomSubmitButton extends JButton implements ActionListener {
     private Level level;

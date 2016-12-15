@@ -27,7 +27,7 @@ public class ThemeSubmitButton extends CustomSubmitButton {
 			word.clearWord();
 			board.updateBoard();
 			board.fillEmptySquares();
-			gamePanel.getBoardPanel().reputLetter();
+			boardPanel.reputLetter();
 			updateInterface();
 		}
 	}

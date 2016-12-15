@@ -1,6 +1,7 @@
-package player.view.game;
+package player.view.game.featurePanel;
 
 import player.models.Lightning;
+import player.view.game.BoardPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +10,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by quyendinhthuchoang on 12/14/2016.
  */
-public class FeaturePanelLightning extends JPanel {
+public class FeaturePanelLightning extends JPanel implements IFeaturePanel {
     private JLabel feature;
     private Lightning lightningLevel;
     private BoardPanel boardPanel;

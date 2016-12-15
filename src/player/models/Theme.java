@@ -81,6 +81,12 @@ public class Theme extends Level{
 	public Score getScore() {
 		return this.score;
 	}
-	
-	
+
+	public String getTheme() {
+		return theme;
+	}
+
+	public String[] getWordsToFind() {
+		return wordsToFind;
+	}
 }

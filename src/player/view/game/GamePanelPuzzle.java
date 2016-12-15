@@ -1,67 +1,61 @@
 package player.view.game;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import player.models.Puzzle;
+import player.view.game.featurePanel.FeaturePanelPuzzle;
+import player.view.game.submitbutton.CustomSubmitButton;
+import player.view.game.submitbutton.PuzzleSubmitButton;
 
-import player.models.Level;
-
-import java.awt.event.ActionListener;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-
-public class GamePanelPuzzle extends JPanel implements GamePanel {
-	private Level l;
+public class GamePanelPuzzle extends GamePanel {
+	private Puzzle level;
 	private BoardPanel boardPanel;
 	private TitlePanel titlePanel;
 	private InfoPanel infoPanel;
-	private FeaturePanel featurePanel;
-	private JButton btn;
+	private FeaturePanelPuzzle featurePanel;
+	private PuzzleSubmitButton btn;
 	
-	GamePanelPuzzle(Level l){
-		this.l = l;
+	GamePanelPuzzle(Puzzle level){
+		super();
+		this.level = level;
 		this.setLayout(null);
 				
-		boardPanel = new BoardPanel(l.getBoard());
+		boardPanel = new BoardPanel(level.getBoard());
 	    add(boardPanel);
 	    boardPanel.setBounds(40, 100, 420, 420);
-	    
-	    infoPanel = new InfoPanel(l);
-	    add(infoPanel);
-	    infoPanel.setBounds(480, 100, 280, 420);
-	    
-	    titlePanel = new TitlePanel("Puzzle");
-	    add(titlePanel);
-	    titlePanel.setBounds(40, 20, 600, 45);
-	    
-		featurePanel = new FeaturePanel("puzzle", "20");
+
+		infoPanel = new InfoPanel(level);
+		add(infoPanel);
+		infoPanel.setBounds(480, 100, 280, 420);
+
+		titlePanel = new TitlePanel("Puzzle");
+		add(titlePanel);
+		titlePanel.setBounds(40, 20, 600, 45);
+
+		featurePanel = new FeaturePanelPuzzle(level, boardPanel);
 		add(featurePanel);
 		featurePanel.setBounds(200, 60, 300, 50);
 
-		btn = new JButton("Submit");
+		btn = new PuzzleSubmitButton(this);
 		add(btn);
 		btn.setBounds(60, 65, 100, 30);
 	}
 
-	public BoardPanel getBoardPanel() {
-		return boardPanel;
+	public void initButton() {
+
 	}
 
-	public InfoPanel getInfoPanel() {
-		return infoPanel;
+	@Override
+	public Puzzle getLevel() {
+		return level;
 	}
 
-	public TitlePanel getTitlePanel() {
-		return titlePanel;
-	}
-
-	public FeaturePanel getFeaturePanel() {
+	@Override
+	public FeaturePanelPuzzle getFeaturePanel() {
 		return featurePanel;
 	}
 
-	public Level getLevel() {
-		return l;
+	@Override
+	public CustomSubmitButton getSubmitButton() {
+		return btn;
 	}
 }
 

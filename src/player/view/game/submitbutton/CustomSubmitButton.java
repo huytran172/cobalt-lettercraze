@@ -29,6 +29,7 @@ public abstract class CustomSubmitButton extends JButton implements ActionListen
     public CustomSubmitButton(GamePanel panel) {
     	this.gamePanel = panel;
         this.level = panel.getLevel();
+        System.out.print(panel.getInfoPanel().toString());
         this.wordPanel = panel.getInfoPanel().getWordsFound();
         this.infoPanel = panel.getInfoPanel();
         this.board = level.getBoard();

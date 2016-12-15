@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import player.models.score.Score;
+
 public abstract class Level {
 	Board board;
 	String stringWordsFound[];
@@ -198,4 +200,17 @@ public abstract class Level {
 		return sb.toString();
 	}
 	
+	public String getType() {
+		if (this.index % 3 == 0) {
+			return "puzzle";
+		}
+		
+		if (this.index % 3 == 1) {
+			return "theme";
+		}
+		
+		return "lightning";
+	}
+	
+	abstract public Score getScore();
 }

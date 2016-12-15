@@ -11,9 +11,9 @@ import javax.swing.JProgressBar;
 import javax.swing.JScrollBar;
 
 import player.models.Level;
+import player.view.game.submitbutton.CustomSubmitButton;
 
 public class InfoPanel extends JPanel {
-	
 	Level level;
 	JLabel highScore;
 	JLabel currentScore;
@@ -38,7 +38,6 @@ public class InfoPanel extends JPanel {
 	}
 	
 	private void initialize() {
-
 		 setBounds(660, 170, 260, 510);
 		 //setBackground(Color.lightGray);
 		 
@@ -54,13 +53,12 @@ public class InfoPanel extends JPanel {
 		 thisScore.setFont(thisScore.getFont().deriveFont(18.0f));
 
 		 star1 = new StarPanel(1, 0);
-		 star1.toggleStar();
 		 star2 = new StarPanel(2, 0);
 		 star3 = new StarPanel(3, 0);
 		 
 		 wordsFound = new WordPanel();
 
-		 submitButton = new CustomSubmitButton(level, wordsFound, this);
+		 submitButton = new CustomSubmitButton(this);
 
 		 reset = new JButton("Reset");
 		 undo = new JButton("Undo");
@@ -127,6 +125,18 @@ public class InfoPanel extends JPanel {
 						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)));
 			
 			setLayout(groupLayout);
+	}
+
+	public StarPanel getStar1() {
+		return star1;
+	}
+
+	public StarPanel getStar2() {
+		return star2;
+	}
+
+	public StarPanel getStar3() {
+		return star3;
 	}
 
 	public WordPanel getWordsFound() {

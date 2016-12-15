@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import player.models.score.Score;
 import player.models.score.ScorePuzzle;
 import player.models.score.ScoreTheme;
 
@@ -74,6 +75,11 @@ public class Theme extends Level{
 	public void updateLevel() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Score getScore() {
+		return this.score;
 	}
 	
 	

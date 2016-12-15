@@ -4,10 +4,12 @@ import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import player.models.Model;
+
 public class MenuScreenFrame extends JFrame {
 	private JPanel contentPane;
 
-	public MenuScreenFrame() {
+	public MenuScreenFrame(Model m) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = 800;
 	    int height = 600;
@@ -15,7 +17,7 @@ public class MenuScreenFrame extends JFrame {
 	    int x = (screen.width-width)/2;
 	    int y = (screen.height-height)/2;
 	    setBounds(x,y,width,height);
-		contentPane = new MenuScreenPanel();
+		contentPane = new MenuScreenPanel(m);
 		setContentPane(contentPane);
 	}
 }

@@ -14,6 +14,7 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.event.SwingPropertyChangeSupport;
 
+import player.models.Level;
 import player.view.game.GameFrame;
 
 /**
@@ -24,17 +25,22 @@ import player.view.game.GameFrame;
 
 public class CustomLevelButton extends JButton implements ActionListener {
 	// Remove later
-	private int level;
+//	private int level;
 	private int stars;
 	private boolean active;
+	
+	private Level level;
 
 	// Add later
 	// private Model model;
 
 	// TODO: Retrieve data from the model to display in the button
 	// e.g current level number, number of stars
-	//	public CustomLevelButton(Model m) {
-	//	}
+//	public CustomLevelButton(Level l) {
+//		this.level = l;
+//		this.stars = level.getScore().calculateStar();
+//		this.active = level.isActive();
+//	}
 	
 	/**
 	 * Constructor
@@ -42,9 +48,9 @@ public class CustomLevelButton extends JButton implements ActionListener {
 	 * @param level current level number
 	 * @param stars numbers of star
 	 */
-	public CustomLevelButton(int level, int stars, boolean active) {
-		this.level = level;
-		this.stars = stars;
+	public CustomLevelButton(Level l, boolean active) {
+		this.level = l;
+		this.stars = l.getScore().calculateStar();
 		this.active = active;
 		setActive(this.active);
 		addActionListener(this);
@@ -78,7 +84,7 @@ public class CustomLevelButton extends JButton implements ActionListener {
 		setHorizontalTextPosition(SwingConstants.CENTER);
 		setIconTextGap(30);
 	    setPreferredSize(new Dimension(100, 100));
-		setText("Level " + this.level);
+		setText("Level " + this.level.getIndex());
 		// drawStarsToButton();
 	}
 	

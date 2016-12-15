@@ -31,8 +31,8 @@ public class TitlePanel extends JPanel{
             public void actionPerformed(ActionEvent e) {
             	GameFrame currentFrame = (GameFrame) SwingUtilities.getRoot(btnBack);
         		currentFrame.dispose();
-        		MenuScreenFrame frame = new MenuScreenFrame();
-				frame.setVisible(true);
+//        		MenuScreenFrame frame = new MenuScreenFrame();
+//				frame.setVisible(true);
             }
         });
 		

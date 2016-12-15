@@ -9,6 +9,7 @@ import javax.swing.SwingUtilities;
 import player.models.Board;
 import player.models.Level;
 import player.models.Word;
+import player.view.game.gamepanel.GamePanel;
 
 public class CustomUndoButton extends JButton implements ActionListener {
     private Level level;

@@ -70,4 +70,9 @@ public class BoardPanel extends JPanel {
 			squarePanels[i].enableSquare(false);
 		}
 	}
+
+	public Board getBoard() {
+		// TODO Auto-generated method stub
+		return this.board;
+	}
 }

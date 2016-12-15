@@ -2,11 +2,18 @@ package player.view.game.submitbutton;
 
 import java.awt.event.ActionEvent;
 
-import player.view.game.GamePanel;
+import player.models.Level;
+import player.view.game.BoardPanel;
+import player.view.game.InfoPanel;
+import player.view.game.featurePanel.FeaturePanelTheme;
 
 public class ThemeSubmitButton extends CustomSubmitButton {
-	public ThemeSubmitButton(GamePanel panel) {
-		super(panel);
+	private FeaturePanelTheme featurePanelTheme;
+
+	public ThemeSubmitButton(Level l, BoardPanel b, InfoPanel i, FeaturePanelTheme f) {
+		super(l, b, i);
+		this.featurePanelTheme = f;
+		addActionListener(this);
 	}
 
 	@Override

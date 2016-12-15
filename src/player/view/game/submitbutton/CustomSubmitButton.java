@@ -4,12 +4,15 @@ import player.models.Board;
 import player.models.Level;
 import player.models.Word;
 import player.models.score.Score;
-import player.view.game.GamePanel;
+import player.view.game.BoardPanel;
 import player.view.game.InfoPanel;
 import player.view.game.StarPanel;
 import player.view.game.WordPanel;
+import player.view.game.featurePanel.FeaturePanel;
+import player.view.game.gamepanel.GamePanel;
 
 import javax.swing.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,19 +29,16 @@ public abstract class CustomSubmitButton extends JButton implements ActionListen
     protected Score score;
     protected int star;
 
-    public CustomSubmitButton(GamePanel panel) {
-    	this.gamePanel = panel;
-        this.level = panel.getLevel();
-        System.out.print(panel.getInfoPanel().toString());
-        this.wordPanel = panel.getInfoPanel().getWordsFound();
-        this.infoPanel = panel.getInfoPanel();
-        this.board = level.getBoard();
+    public CustomSubmitButton(Level l, BoardPanel boardPanel, InfoPanel infoPanel) {
+        this.level = l;
+        this.wordPanel = infoPanel.getWordsFound();
+        this.infoPanel = infoPanel;
+        this.board = boardPanel.getBoard();
         this.score = level.getScore();
-        this.starPanel1 = panel.getInfoPanel().getStar1();
-        this.starPanel2 = panel.getInfoPanel().getStar2();
-        this.starPanel3 = panel.getInfoPanel().getStar3();
+        this.starPanel1 = infoPanel.getStar1();
+        this.starPanel2 = infoPanel.getStar2();
+        this.starPanel3 = infoPanel.getStar3();
         setText("Submit");
-        addActionListener(this);
     }
 
     public abstract void actionPerformed(ActionEvent e);

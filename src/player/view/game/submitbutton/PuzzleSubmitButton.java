@@ -2,12 +2,18 @@ package player.view.game.submitbutton;
 
 import java.awt.event.ActionEvent;
 
-import player.view.game.GamePanel;
+import player.models.Level;
+import player.view.game.BoardPanel;
+import player.view.game.InfoPanel;
+import player.view.game.featurePanel.FeaturePanelPuzzle;
 
 public class PuzzleSubmitButton extends CustomSubmitButton {
+	FeaturePanelPuzzle featurePanelPuzzle;
 
-	public PuzzleSubmitButton(GamePanel panel) {
-		super(panel);
+	public PuzzleSubmitButton(Level l, BoardPanel b, InfoPanel i, FeaturePanelPuzzle f) {
+		super(l, b, i);
+		this.featurePanelPuzzle = f;
+		addActionListener(this);
 	}
 
 	@Override

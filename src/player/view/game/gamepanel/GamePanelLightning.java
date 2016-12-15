@@ -1,39 +1,27 @@
-package player.view.game;
+package player.view.game.gamepanel;
 
 import player.models.Lightning;
+import player.view.game.BoardPanel;
+import player.view.game.InfoPanel;
+import player.view.game.TitlePanel;
 import player.view.game.featurePanel.FeaturePanelLightning;
 import player.view.game.submitbutton.CustomSubmitButton;
 import player.view.game.submitbutton.LightningSubmitButton;
+import player.view.game.submitbutton.PuzzleSubmitButton;
 
 public class GamePanelLightning extends GamePanel {
 	private FeaturePanelLightning featurePanel;
 	private Lightning level;
 	private LightningSubmitButton btn;
 	
-	GamePanelLightning(Lightning level){
-		super();
-		this.level = level;
-		this.setLayout(null);
-		
-		boardPanel = new BoardPanel(level.getBoard());
-	    add(boardPanel);
-	    boardPanel.setBounds(40, 100, 420, 420);
-	    //boardPanel.setBackground(Color.blue);
-	    
-	    infoPanel = new InfoPanel(level);
-	    add(infoPanel);
-	    infoPanel.setBounds(480, 100, 280, 420);
-	    
-	    titlePanel = new TitlePanel("Lightning");
-	    add(titlePanel);
-	    titlePanel.setBounds(40, 20, 600, 45);
-	    //titlePanel.setBackground(Color.blue);
+	public GamePanelLightning(Lightning level){
+		super(level);
 	    
 	    featurePanel = new FeaturePanelLightning(level, boardPanel);
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
 
-		btn = new LightningSubmitButton(this);
+		btn = new LightningSubmitButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
 		add(btn);
 		btn.setBounds(60, 65, 100, 30);
 	}

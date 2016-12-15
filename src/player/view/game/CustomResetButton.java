@@ -9,6 +9,7 @@ import player.models.Board;
 import player.models.Level;
 import player.models.Word;
 import player.models.score.Score;
+import player.view.game.gamepanel.GamePanel;
 
 public class CustomResetButton extends JButton implements ActionListener{
 	private Level level;

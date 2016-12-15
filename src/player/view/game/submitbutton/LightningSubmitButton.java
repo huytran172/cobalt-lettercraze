@@ -2,12 +2,20 @@ package player.view.game.submitbutton;
 
 import java.awt.event.ActionEvent;
 
-import player.view.game.GamePanel;
+import player.models.Level;
+import player.view.game.BoardPanel;
+import player.view.game.InfoPanel;
+import player.view.game.featurePanel.FeaturePanelLightning;
+import player.view.game.featurePanel.FeaturePanelPuzzle;
+import player.view.game.gamepanel.GamePanel;
 
 public class LightningSubmitButton extends CustomSubmitButton {
+	private FeaturePanelLightning featurePanelLightning;
 
-	public LightningSubmitButton(GamePanel panel) {
-		super(panel);
+	public LightningSubmitButton(Level l, BoardPanel b, InfoPanel i, FeaturePanelLightning f) {
+		super(l, b, i);
+		this.featurePanelLightning = f;
+		addActionListener(this);
 	}
 
 	@Override

@@ -1,12 +1,11 @@
-package player.view.game;
+package player.view.game.gamepanel;
 
 import player.models.Level;
-import player.models.Lightning;
-import player.view.game.featurePanel.FeaturePanel;
-import player.view.game.featurePanel.FeaturePanelLightning;
+import player.view.game.BoardPanel;
+import player.view.game.InfoPanel;
+import player.view.game.TitlePanel;
 import player.view.game.featurePanel.IFeaturePanel;
 import player.view.game.submitbutton.CustomSubmitButton;
-import player.view.game.submitbutton.LightningSubmitButton;
 
 import javax.swing.*;
 
@@ -17,6 +16,26 @@ public abstract class GamePanel extends JPanel{
     protected BoardPanel boardPanel;
     protected TitlePanel titlePanel;
     protected InfoPanel infoPanel;
+    protected Level level;
+    
+    public GamePanel(Level l) {
+    	this.level = l;
+		this.setLayout(null);
+		
+		boardPanel = new BoardPanel(level.getBoard());
+	    add(boardPanel);
+	    boardPanel.setBounds(40, 100, 420, 420);
+	    //boardPanel.setBackground(Color.blue);
+	    
+	    infoPanel = new InfoPanel(level);
+	    add(infoPanel);
+	    infoPanel.setBounds(480, 100, 280, 420);
+	    
+	    titlePanel = new TitlePanel("Lightning");
+	    add(titlePanel);
+	    titlePanel.setBounds(40, 20, 600, 45);
+	    //titlePanel.setBackground(Color.blue);	
+    }
 
     public BoardPanel getBoardPanel() {
         return boardPanel;

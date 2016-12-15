@@ -10,6 +10,9 @@ import player.models.Lightning;
 import player.models.Model;
 import player.models.Puzzle;
 import player.models.Theme;
+import player.view.game.gamepanel.GamePanelLightning;
+import player.view.game.gamepanel.GamePanelPuzzle;
+import player.view.game.gamepanel.GamePanelTheme;
 
 /**
  * The panel where player plays the game

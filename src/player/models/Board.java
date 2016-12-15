@@ -20,6 +20,7 @@ public class Board implements Iterable<Square> {
 	/** VARIABLE IN BOARD ENTITY **/
 	/** Squares in the board. */
 	protected ArrayList<Square> squares = new ArrayList<Square>(36);
+	protected QuickSaveState saveState = new QuickSaveState();
 
 	public void initialize(String boardLine) {
 		String squaresString[] = boardLine.split(" ");
@@ -377,5 +378,19 @@ public class Board implements Iterable<Square> {
 
 	public void renewTempWord() {
 		tempWord = new Word(new ArrayList<Square>());
+	}
+	
+	public void saveSquareState(){
+		saveState.addNewSquareState(squares);
+		System.out.println("State has been saved to memory!");
+	}
+	
+	public void loadSquareState(){
+		ArrayList<String> stringList = saveState.getLastSquareState();
+		if (stringList != null){
+			for (int i = 0; i < 36; i++){
+				this.squares.get(i).getLetter().setS(stringList.get(i));
+			}
+		} else System.out.println("No more save state can be loaded!");
 	}
 }

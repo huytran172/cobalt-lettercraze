@@ -27,9 +27,8 @@ public class InfoPanel extends JPanel {
 	WordPanel wordsFound;
 
 	CustomSubmitButton submitButton;
-
-	CustomResetButton reset;
-	JButton undo;
+	CustomResetButton resetButton;
+	CustomUndoButton undoButton;
 	JButton quit;
 	
 	public InfoPanel(Level l){
@@ -61,9 +60,8 @@ public class InfoPanel extends JPanel {
 		 wordsFound = new WordPanel();
 
 		 submitButton = new CustomSubmitButton(level, wordsFound, this);
-
-		 reset = new CustomResetButton(level, this);
-		 undo = new JButton("Undo");
+		 resetButton = new CustomResetButton(level, this);
+		 undoButton = new CustomUndoButton(level, wordsFound, this);
 		 quit = new JButton ("Skip");
 		 
 		 //progressbar.setStringPainted(true);
@@ -95,12 +93,12 @@ public class InfoPanel extends JPanel {
 				 .addGap(60)
 				 .addGroup(groupLayout.createParallelGroup()
 						 .addComponent(submitButton, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(resetButton, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						 )
 				 .addGap(8)
 
 				 .addGroup(groupLayout.createParallelGroup()
-						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(undoButton, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)));
 		 
 		 groupLayout.setHorizontalGroup(
@@ -121,9 +119,9 @@ public class InfoPanel extends JPanel {
 						 .addComponent(submitButton, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addComponent(submitButton, GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(reset, GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE))
+						 .addComponent(resetButton, GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE))
 				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(undo, GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)
+						 .addComponent(undoButton, GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)
 						 .addComponent(quit, GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)));
 			
 			setLayout(groupLayout);

@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.function.UnaryOperator;
 
 public abstract class Level {
 	Board board;
@@ -197,5 +198,4 @@ public abstract class Level {
 		sb.append(this.board.toString());
 		return sb.toString();
 	}
-	
 }

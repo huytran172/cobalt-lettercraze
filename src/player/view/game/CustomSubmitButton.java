@@ -34,12 +34,12 @@ public class CustomSubmitButton extends JButton implements ActionListener {
         GamePanel gamePanel = (GamePanel) infoPanel.getParent();
         word = board.getTempWord();
         if (word.validWord()) {
-            System.out.print(word.getWordString());
+            System.out.println(word.getWordString());
+            board.saveSquareState();
             wordPanel.addToWordPanel(word.getWordString());
             word.clearWord();
             board.updateBoard();
             board.fillEmptySquares();
-            gamePanel.getBoardPanel().reputLetter();
         }
 
         gamePanel.getBoardPanel().deselectWord(word);

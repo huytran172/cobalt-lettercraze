@@ -4,12 +4,16 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.TextArea;
+import java.util.ArrayList;
 
 import javax.swing.*;
+
+import player.models.QuickSaveState;
 
 public class WordPanel extends JPanel {
 	private JScrollPane vertical;
     private JTextArea console;
+    protected QuickSaveState saveState = new QuickSaveState();
 
 
 	public WordPanel() {
@@ -40,6 +44,20 @@ public class WordPanel extends JPanel {
         label.setFont(label.getFont().deriveFont(18f));
 	    console.add(label);
 	    console.revalidate();
+	    saveState.addNewWordState(string);
     }
+	
+	public void loadWordListState(){
+		ArrayList<String> wordList = saveState.getWordListState();
+		if (wordList != null){
+			console.removeAll();
+			for (int i = 0; i < wordList.size(); i++){
+				JLabel label = new JLabel(wordList.get(i));
+		        label.setFont(label.getFont().deriveFont(18f));
+			    console.add(label);
+			    console.revalidate();
+			}
+		}
+	}
 }
 

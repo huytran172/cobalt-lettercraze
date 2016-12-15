@@ -11,7 +11,6 @@ import player.view.game.submitbutton.PuzzleSubmitButton;
 
 public class GamePanelLightning extends GamePanel {
 	private FeaturePanelLightning featurePanel;
-	private Lightning level;
 	private LightningSubmitButton btn;
 	
 	public GamePanelLightning(Lightning level){
@@ -24,7 +23,7 @@ public class GamePanelLightning extends GamePanel {
 
 	    featurePanel = new FeaturePanelLightning(level, boardPanel);
 		add(featurePanel);
-		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);
+		featurePanel.setBounds(200, 60, 300, 50);
 
 		btn = new LightningSubmitButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
 		add(btn);
@@ -33,7 +32,7 @@ public class GamePanelLightning extends GamePanel {
 
 	@Override
 	public Lightning getLevel() {
-		return level;
+		return (Lightning) level;
 	}
 
 	@Override

@@ -72,11 +72,6 @@ public abstract class CustomSubmitButton extends JButton implements ActionListen
         gamePanel.getBoardPanel().deselectWord(word);
         gamePanel.getBoardPanel().reputLetter();
         gamePanel.getBoardPanel().revalidate();
-        gamePanel.getBoardPanel().repaint();
-        gamePanel.getBoardPanel().getParent().revalidate();
-        gamePanel.getBoardPanel().getParent().repaint();
-        SwingUtilities.getRoot(this).revalidate();
-        SwingUtilities.getRoot(this).repaint();
         board.renewTempWord();
     }
 }

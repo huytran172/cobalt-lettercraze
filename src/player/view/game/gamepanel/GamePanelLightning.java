@@ -16,7 +16,12 @@ public class GamePanelLightning extends GamePanel {
 	
 	public GamePanelLightning(Lightning level){
 		super(level);
-	    
+
+		titlePanel = new TitlePanel("Lightning");
+		add(titlePanel);
+		titlePanel.setBounds(40, 20, 600, 45);
+		//titlePanel.setBackground(Color.blue);
+
 	    featurePanel = new FeaturePanelLightning(level, boardPanel);
 		add(featurePanel);
 		featurePanel.setBounds(boardPanel.getWidth() / 5, 65, 400, 50);

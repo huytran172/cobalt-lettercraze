@@ -45,6 +45,7 @@ public class GameFrame extends JFrame {
 			contentPane = new GamePanelLightning(new Lightning(new File(str)));
 		}	
 
+
 		if (level % 3 == 0) {
 			contentPane = new GamePanelTheme(new Theme(new File(str)));
 		}

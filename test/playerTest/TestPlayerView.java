@@ -4,7 +4,9 @@ package playerTest;
 import junit.framework.TestCase;
 import player.view.Menu;
 import player.view.PlayerApplication;
+import player.view.WinGameFrame;
 import player.view.game.GameFrame;
+import player.view.menu.HelpFrame;
 import player.view.menu.MenuScreenFrame;
 
 public class TestPlayerView extends TestCase{
@@ -22,6 +24,7 @@ public class TestPlayerView extends TestCase{
 		m.initialize();
 		
 		MenuScreenFrame msf = new MenuScreenFrame();
+		HelpFrame hf = new HelpFrame();
 		
 	}
 	
@@ -29,6 +32,7 @@ public class TestPlayerView extends TestCase{
 		GameFrame gf1 = new GameFrame(1);
 		GameFrame gf2 = new GameFrame(2);
 		GameFrame gf3 = new GameFrame(3);
+		WinGameFrame wgf = new WinGameFrame();
 	}
 
 }

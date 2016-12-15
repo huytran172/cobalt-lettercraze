@@ -22,7 +22,7 @@ public class InfoPanel extends JPanel {
 	protected WordPanel wordsFound;
 
 	protected CustomResetButton reset;
-	protected JButton undo;
+	protected CustomUndoButton undo;
 	protected JButton quit;
 
 	
@@ -53,7 +53,7 @@ public class InfoPanel extends JPanel {
 		 setWordsFound(new WordPanel());
 
 		 reset = new CustomResetButton(getLevel(), this);
-		 setUndo(new JButton("Undo"));
+		 undo = new CustomUndoButton(getLevel(), wordsFound, this);
 		 setQuit(new JButton ("Skip"));
 
 		 GroupLayout groupLayout = new GroupLayout(this);
@@ -199,7 +199,7 @@ public class InfoPanel extends JPanel {
 		this.reset = reset;
 	}
 
-	public void setUndo(JButton undo) {
+	public void setUndo(CustomUndoButton undo) {
 		this.undo = undo;
 	}
 

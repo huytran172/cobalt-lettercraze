@@ -12,35 +12,33 @@ import java.io.File;
 public class StarPanel extends JPanel{
     private int starNum;
     private int score;
-    private JLabel label1;
-    private JLabel label2;
+    private JLabel textLabel;
+    private JLabel starLabel;
     private boolean state = false;
 
     public StarPanel(int starNum, int score) {
         this.starNum = starNum;
         this.score = score;
         
-        label1 = new JLabel();
-        add(label1);
+        textLabel = new JLabel();
+        add(textLabel);
         
-        label2 = new JLabel();
-        add(label2);
+        starLabel = new JLabel();
+        add(starLabel);
 
         initialize();
         addStart();
     }
 
     public void initialize() {
-        label1.setText("Star " + starNum + ": " + score);
-        label1.setFont(label1.getFont().deriveFont(17.0f));
-//        GroupLayout groupLayout = new GroupLayout(this);
-//        groupLayout.setVerticalGroup(
+        textLabel.setText("Star " + starNum + ": " + score);
+        textLabel.setFont(textLabel.getFont().deriveFont(17.0f));
     }
 
     public void addStart() {
         try {
             Image img = ImageIO.read(new File("Images/star-20.png"));
-            label2.setIcon(new ImageIcon(img));
+            starLabel.setIcon(new ImageIcon(img));
             toggleStar();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -48,7 +46,7 @@ public class StarPanel extends JPanel{
     }
 
     public void toggleStar() {
-        label2.setVisible(state);
+        starLabel.setVisible(state);
         state = !state;
     }
 }

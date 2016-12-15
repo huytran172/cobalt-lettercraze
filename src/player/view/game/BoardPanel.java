@@ -45,28 +45,7 @@ public class BoardPanel extends JPanel {
 			squarePanels[i] = new SquarePanel(squareModels.get(i));
 			squarePanels[i].addMouseListener(new BoardController(squarePanels[i], squareModels.get(i), this, board));
 			add(squarePanels[i]);
-			//System.out.print("index: " + i + " + char: " );
-
-
-			//squarePanels[i].initialize(squareModels.get(i).isEnabled());
-			//squarePanels[i].setEnable(false);
-			/*
-			GridBagConstraints gbc_btnLevel = new GridBagConstraints();
-			gbc_btnLevel.insets = new Insets(20, 30, 20, 28);
-			
-			gbc_btnLevel.gridx = currentGridX;
-			gbc_btnLevel.gridy = currentGridY;
-			add(btnLevel[i], gbc_btnLevel);
-			
-			currentGridX = currentGridX + 2;
-			if ((i % 6) == 0) {
-				currentGridX = 1;
-				currentGridY = currentGridY + 2;
-			}
-			*/
 		}
-
-		//btnLevel[37].setActive(true);
 	}
 
 	public void deselectWord(Word word) {
@@ -75,10 +54,6 @@ public class BoardPanel extends JPanel {
 		for (int i = 0; i < wordSquares.size(); i++) {
 			index = squareModels.indexOf(wordSquares.get(i));
 			squarePanels[index].toggleColor();
-			//squarePanels[index].putLetter();
-			//System.out.print("fuck: " + squarePanels[index]);
-//			squarePanels[index].revalidate();
-//			squarePanels[index].repaint();
 		}
 	}
 
@@ -87,6 +62,12 @@ public class BoardPanel extends JPanel {
 			squarePanels[i].putLetter();
 			squarePanels[i].revalidate();
 			squarePanels[i].repaint();
+		}
+	}
+
+	public void disableBoard() {
+		for (int i = 0; i < squarePanels.length; i++) {
+			squarePanels[i].enableSquare(false);
 		}
 	}
 }

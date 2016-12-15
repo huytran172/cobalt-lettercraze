@@ -4,7 +4,6 @@ import java.util.*;
 import player.controller.Listener;
 
 public class Board implements Iterable<Square> {
-	
 	/** A list of words found */
 	protected Stack<Word> wordsFound;
 
@@ -286,8 +285,6 @@ public class Board implements Iterable<Square> {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < 36; i++) {
-			
-			
 			sb.append(this.squares.get(i).isSelected ? 1 : 0);
 			sb.append(" ");
 		}

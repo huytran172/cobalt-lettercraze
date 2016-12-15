@@ -10,10 +10,9 @@ import player.models.score.Score;
 import player.models.score.ScoreLightning;
 
 public class Lightning extends Level {
-
 //	LightningTimer timer;
-	ScoreLightning score;
-	int time;
+	private ScoreLightning score;
+	private int time;
 	
 //	public Lightning(int time, int[] threshold){
 //		super(new Board());
@@ -83,5 +82,8 @@ public class Lightning extends Level {
 		return this.score;
 	}
 
-	
+
+	public int getTime() {
+		return time;
+	}
 }

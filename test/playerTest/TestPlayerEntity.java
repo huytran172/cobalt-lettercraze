@@ -15,16 +15,24 @@ import player.models.Lightning;
 import player.models.LightningTimer;
 import player.models.Model;
 import player.models.Puzzle;
+import player.models.QuickSaveState;
 import player.models.RandomLetter;
 import player.models.Square;
 import player.models.StringFileIterator;
 import player.models.Theme;
 import player.models.Word;
 import player.models.score.Score;
+import player.models.score.ScoreLightning;
+import player.models.score.ScorePuzzle;
+import player.models.score.ScoreTheme;
 
 public class TestPlayerEntity extends TestCase {
 	
 	public void testLetter(){
+		Letter random = new Letter("");
+		random.setS("a");
+		assertEquals(random.getS(), "a");
+
 		Letter e = new Letter("e");
 		Letter t = new Letter("t");
 		assertEquals(e.getScore(), 1);
@@ -104,15 +112,42 @@ public class TestPlayerEntity extends TestCase {
 		Board b = new Board();
 		Letter a = new Letter("A");
 		Square s = new Square(a, 0, 0, false);
+		Square s1 = new Square(a, 1, 1, true);
+		Word word = new Word(new ArrayList<Square>());
+		word.addSquareToWord(s);
 		//assertFalse(b.updateActiveWord(s));
+		b.initialize();
 		Listener list = null;
 		b.addListener(list);
 		b.removeListener(list);
 		b.toggleSquare(s);
 		b.notifyListeners();
+		b.setActiveWord(word);
+		b.iterator();
+		b.size();
+		b.getSquare(0, 0);
+		//assertEquals(b.getSquare(0, 0), s);
+		b.get(0);
+		assertFalse(b.updateActiveWord(s));
+		assertTrue(b.updateBoard());
+		assertTrue(b.fillEmptySquares());
+		assertTrue(b.resetBoard());
+		b.getSquare(0, 0);
+		b.getSquare(1, 1);
+		b.getSquareList();
+		b.getTempWord();
+		b.renewTempWord();
+		assertTrue(b.addSquareToTempWord(s1));
+		b.toString();
+		
+		//b.undo();
+		
+		b.initialize("");
+		b.initialize("", null);
 		//b.updateBoard();
 		
 	}
+
 	
 	public void testDictionary(){
 		Dictionary d = new Dictionary();
@@ -135,7 +170,7 @@ public class TestPlayerEntity extends TestCase {
 	public void testModel(){
 		Model m = new Model();
 	}
-	/*
+	
 	public void testLightning(){
 		File f = new File("Level1.txt");
 		Lightning lightning = new Lightning(f);
@@ -153,7 +188,7 @@ public class TestPlayerEntity extends TestCase {
 		assertTrue(puzzle.undo());
 		puzzle.initialize();
 	}
-	*/
+	
 	public void testTheme(){
 		Theme theme = new Theme("colors", null, null);
 		assertTrue(theme.endLevel());
@@ -198,7 +233,76 @@ public class TestPlayerEntity extends TestCase {
 		
 	}
 	
-	public void testScore(){
+	public void testScorePuzzle(){
+		Letter letter = new Letter("s");
+		Square square1 = new Square(letter,1,1,false);
+		Word word = new Word(new ArrayList<Square>());
+		word.addSquareToWord(square1);
 		
+		int threshold[] = new int[3];
+		threshold[0] = 2;
+		threshold[1] = 3;
+		threshold[2] = 4;
+		ScorePuzzle sp = new ScorePuzzle(threshold, 10);
+		sp.updateScore(word);
+		sp.removeScore(word);
+		sp.calculateStar();
+		sp.updateScore(word);
+		sp.calculateStar();
+		sp.updateScore(word);
+		sp.updateScore(word);
+		sp.getHighScoreList();
+		assertEquals(sp.getHighScore(), 10);
+		sp.calculateStar();
+		sp.setScore(3);
+		assertEquals(sp.getScore(), 3);
+		sp.setHighScore(15);
+		sp.updateHighScore();
+		assertEquals(sp.getHighScore(), 15);
+		sp.setScore(20);
+		sp.updateHighScore();
+		assertEquals(sp.getHighScore(), 20);
+	}
+	
+	public void testScoreLightning(){
+		Letter letter = new Letter("s");
+		Square square1 = new Square(letter,1,1,false);
+		Word word = new Word(new ArrayList<Square>());
+		word.addSquareToWord(square1);
+		
+		int threshold[] = new int[3];
+		threshold[0] = 2;
+		threshold[1] = 3;
+		threshold[2] = 4;
+		ScoreLightning sl = new ScoreLightning(threshold, 10);
+		sl.updateScore(word);
+		sl.removeScore(word);
+	}
+	
+	public void testThemeLightning(){
+		Letter letter = new Letter("s");
+		Square square1 = new Square(letter,1,1,false);
+		Word word = new Word(new ArrayList<Square>());
+		word.addSquareToWord(square1);
+		
+		int threshold[] = new int[3];
+		threshold[0] = 2;
+		threshold[1] = 3;
+		threshold[2] = 4;
+		ScoreTheme st = new ScoreTheme(threshold, 10);
+		st.updateScore(word);
+		st.removeScore(word);
+	}
+	
+	public void testQuickSave(){
+		ArrayList<Square> squares = new ArrayList<Square>(36);
+		int currentScore = 0;
+		QuickSaveState qss = new QuickSaveState(squares, currentScore);
+		assertEquals(qss.getScore(), 0);
+		qss.updateArrayList(squares);
+		qss.updateScore(5);
+		assertEquals(qss.getScore(), 5);
+		assertEquals(qss.getArrayList(), squares);
+		qss.clearSaveState();
 	}
 }

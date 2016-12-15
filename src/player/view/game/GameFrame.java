@@ -6,6 +6,7 @@ import java.io.File;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import player.models.Lightning;
 import player.models.Model;
 import player.models.Puzzle;
 import player.models.Theme;
@@ -40,10 +41,11 @@ public class GameFrame extends JFrame {
 			//contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/Level1.txt")));
 			contentPane = new GamePanelPuzzle(new Puzzle(new File(str)));
 		}
-		/*if (level % 3 == 2) {
+		if (level % 3 == 2) {
+			contentPane = new GamePanelLightning(new Lightning(new File(str)));
 			//contentPane = new GamePanelLightning(m.getLevels()[level]);
-			contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
-		}*/
+			//contentPane = new GamePanelPuzzle(new Puzzle(new File("../cobalt-lettercraze/levels/level2.txt")));
+		}
 		if (level % 3 == 0) {
 			contentPane = new GamePanelTheme(new Theme(new File(str)));
 		}

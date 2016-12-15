@@ -1,4 +1,4 @@
-package player.view.game;
+package player.view.game.featurePanel;
 
 import player.models.LightningTimer;
 

@@ -3,6 +3,7 @@ package player.view;
 import java.awt.EventQueue;
 
 import builder.view.splash.BuilderSplashWindow;
+import player.models.Model;
 import player.view.game.GameFrame;
 import player.view.menu.MenuScreenFrame;
 import player.view.splash.SplashScreenWindow;
@@ -21,7 +22,8 @@ public class PlayerApplication {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MenuScreenFrame frame = new MenuScreenFrame();
+					Model m = new Model();
+					MenuScreenFrame frame = new MenuScreenFrame(m);
 					frame.setVisible(true);
 					//GameFrame gframe = new GameFrame();
 					//gframe.setVisible(true);

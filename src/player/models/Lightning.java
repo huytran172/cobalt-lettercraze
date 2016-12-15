@@ -86,4 +86,5 @@ public class Lightning extends Level {
 	public int getTime() {
 		return time;
 	}
+
 }

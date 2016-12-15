@@ -25,8 +25,8 @@ public class HelpPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				HelpFrame currentFrame = (HelpFrame) SwingUtilities.getRoot(btnBack);
 				currentFrame.dispose();
-				MenuScreenFrame frame = new MenuScreenFrame();
-				frame.setVisible(true);
+//				MenuScreenFrame frame = new MenuScreenFrame();
+//				frame.setVisible(true);
 			}
 		});
 

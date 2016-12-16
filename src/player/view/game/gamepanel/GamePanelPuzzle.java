@@ -21,7 +21,7 @@ public class GamePanelPuzzle extends GamePanel {
 	public GamePanelPuzzle(Puzzle level){
 		super(level);
 
-		titlePanel = new TitlePanel("Puzzle");
+		titlePanel = new TitlePanel("Puzzle", level);
 		add(titlePanel);
 		titlePanel.setBounds(40, 20, 600, 45);
 		//titlePanel.setBackground(Color.blue);

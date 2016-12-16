@@ -65,7 +65,7 @@ public class Board implements Iterable<Square> {
 
 		squares.get(squareIndex).letter.setS(String.valueOf(themeAndWords[1].charAt(0)));
 		for (int i = 1; i < themeAndWords.length; i++) {
-			char[] charArray = themeAndWords[i].toCharArray();
+			char[] charArray = themeAndWords[i].toUpperCase().toCharArray();
 			System.out.println(themeAndWords[i]);
 			System.out.println(charArray.length);
 

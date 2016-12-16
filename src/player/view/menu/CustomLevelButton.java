@@ -25,7 +25,6 @@ import player.view.game.GameFrame;
 
 public class CustomLevelButton extends JButton implements ActionListener {
 	// Remove later
-//	private int level;
 	private int stars;
 	private boolean active;
 	
@@ -61,6 +60,7 @@ public class CustomLevelButton extends JButton implements ActionListener {
 	 * @param active button is active or not
 	 */
 	public void setActive(boolean active) {
+		this.stars = level.getScore().calculateStar();
 		this.active = active;
 		setEnabled(this.active);
 		if (active) {
@@ -94,8 +94,20 @@ public class CustomLevelButton extends JButton implements ActionListener {
 	 */
 	private void drawStarsToButton() {
 		try {
-			Image img = ImageIO.read(new File("Images/star-20.png"));
-			setIcon(new ImageIcon(img));
+			if (this.stars == 1) {
+				Image img = ImageIO.read(new File("Images/star1.png"));
+				setIcon(new ImageIcon(img));
+			}
+
+			if (this.stars == 2) {
+				Image img = ImageIO.read(new File("Images/star2.png"));
+				setIcon(new ImageIcon(img));
+			}
+
+			if (this.stars == 3) {
+				Image img = ImageIO.read(new File("Images/star3.png"));
+				setIcon(new ImageIcon(img));
+			}
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}

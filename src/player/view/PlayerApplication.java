@@ -25,8 +25,6 @@ public class PlayerApplication {
 					Model m = new Model();
 					MenuScreenFrame frame = new MenuScreenFrame(m);
 					frame.setVisible(true);
-					//GameFrame gframe = new GameFrame();
-					//gframe.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

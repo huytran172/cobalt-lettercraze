@@ -15,6 +15,14 @@ public abstract class Level {
 	boolean isComplete;
 	Dictionary dictionary;
 	int index;
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
 	int highScore;
 	int threshold[] = new int[3];
 
@@ -135,6 +143,8 @@ public abstract class Level {
 		
 	}
 	
+//	public abstract boolean isActive();
+	
 	//Initialize a level
 	abstract void initialize();
 	
@@ -201,11 +211,11 @@ public abstract class Level {
 	}
 	
 	public String getType() {
-		if (this.index % 3 == 0) {
+		if (this.index % 3 == 1) {
 			return "puzzle";
 		}
 		
-		if (this.index % 3 == 1) {
+		if (this.index % 3 == 0) {
 			return "theme";
 		}
 		

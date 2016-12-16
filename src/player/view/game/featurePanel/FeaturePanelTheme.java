@@ -32,19 +32,20 @@ public class FeaturePanelTheme extends JPanel implements IFeaturePanel {
         add(feature);
     }
 
-    public void updateTheme() {
-//        if (wordLeft > 0) {
-//            wordLeft--;
-//            return true;
-//        } else {
-//            feature.setText("You win :(");
-//            boardPanel.hideBoard();
-//            return false;
-//        }
+    public void decreaseWordLeft() {
         wordLeft--;
         if (wordLeft == 0) {
             feature.setText("You win :(");
             boardPanel.hideBoard();
+        }
+    }
+    
+    public void increaseWordLeft() {
+    	if (wordLeft < themeLevel.getWordsToFind().length){
+        	wordLeft++;
+        }
+        if (wordLeft != 0) {
+            boardPanel.showBoard();
         }
     }
 }

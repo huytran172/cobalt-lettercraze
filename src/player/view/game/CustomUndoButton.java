@@ -8,31 +8,38 @@ import javax.swing.SwingUtilities;
 
 import player.models.Board;
 import player.models.Level;
+import player.models.Puzzle;
 import player.models.Word;
+import player.view.game.featurePanel.IFeaturePanel;
 import player.view.game.gamepanel.GamePanel;
 
 public class CustomUndoButton extends JButton implements ActionListener {
     private Level level;
     private WordPanel wordPanel;
     private Board board;
+    private BoardPanel boardPanel;
     private InfoPanel infoPanel;
-
-    public CustomUndoButton(Level level, WordPanel wordPanel, InfoPanel infoPanel) {
+    private IFeaturePanel featurePanel;
+    
+    public CustomUndoButton(Level level, BoardPanel boardPanel, InfoPanel infoPanel, IFeaturePanel featurePanel) {
         this.level = level;
-        this.wordPanel = wordPanel;
         this.infoPanel = infoPanel;
-        board = level.getBoard();
+        this.boardPanel = boardPanel;
+        this.wordPanel = infoPanel.getWordsFound();
+        this.featurePanel = featurePanel;
+        board = this.level.getBoard();
         setText("Undo");
         addActionListener(this);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        GamePanel gamePanel = (GamePanel) infoPanel.getParent();
+	public void actionPerformed(ActionEvent e) {
         board.loadSquareState();
         wordPanel.loadWordListState();
-        gamePanel.getBoardPanel().reputLetter();
-        gamePanel.getBoardPanel().repaint();
-        gamePanel.getBoardPanel().getParent().repaint();
-        SwingUtilities.getRoot(this).repaint();
+        featurePanel.increaseWordLeft();
+        boardPanel.reputLetter();
+        boardPanel.repaint();
+        wordPanel.repaint();
+//        gamePanel.getBoardPanel().getParent().repaint();
+//        SwingUtilities.getRoot(this).repaint();
     }
 }

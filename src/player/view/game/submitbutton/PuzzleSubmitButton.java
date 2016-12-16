@@ -23,11 +23,13 @@ public class PuzzleSubmitButton extends CustomSubmitButton {
 			this.updateScore(word);
 			board.saveSquareState();
 			System.out.println("SCORE " + this.score.getScore());
+			infoPanel.setScoreNum(this.score.getScore());
+			infoPanel.setHighScoreNum(this.score.getHighScore());
 			wordPanel.addToWordPanel(word.getWordString());
 			word.clearWord();
 			board.updateBoard();
 			board.fillEmptySquares();
-			featurePanelPuzzle.updateWordLeft();
+			featurePanelPuzzle.decreaseWordLeft();
 		}
 		updateInterface();
 	}

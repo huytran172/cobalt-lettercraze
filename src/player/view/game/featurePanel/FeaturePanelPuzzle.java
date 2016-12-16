@@ -29,20 +29,21 @@ public class FeaturePanelPuzzle extends JPanel implements IFeaturePanel {
         add(feature);
     }
 
-    public void updateWordLeft() {
-//        if (wordLeft > 1) {
-//            wordLeft--;
-//            feature.setText("Remaining words: " + wordLeft);
-//            return true;
-//        } else {
-//            feature.setText("You lose hahahahahaha");
-//            boardPanel.hideBoard();
-//            return false;
-//        }
+    public void decreaseWordLeft() {
         wordLeft--;
         feature.setText("Remaining words: " + wordLeft);
         if (wordLeft == 0) {
             boardPanel.hideBoard();
+        }
+    }
+    
+    public void increaseWordLeft() {
+        if (wordLeft < puzzleLevel.getMaxMoves()){
+        	wordLeft++;
+        }
+        feature.setText("Remaining words: " + wordLeft);
+        if (wordLeft != 0) {
+            boardPanel.showBoard();
         }
     }
 }

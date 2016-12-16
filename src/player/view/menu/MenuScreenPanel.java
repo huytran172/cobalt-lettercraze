@@ -7,10 +7,13 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import player.models.Level;
+import player.models.Model;
+
 public class MenuScreenPanel extends JPanel {
 	private CustomLevelButton[] btnLevel = new CustomLevelButton[16];
 
-	MenuScreenPanel() {
+	MenuScreenPanel(Model m) {
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 
 		//gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -24,8 +27,9 @@ public class MenuScreenPanel extends JPanel {
 		int currentGridY = 2;
 		
 		for (int i = 1; i < 16; i++) {
-
-			btnLevel[i] = new CustomLevelButton(i, 0, false);
+			Level l = m.getLevels()[i];
+			System.out.println("dsadasdsa" + l.toString());
+			btnLevel[i] = new CustomLevelButton(l, m.isPreviousLevelComplete(l));
 			GridBagConstraints gbc_btnLevel = new GridBagConstraints();
 			gbc_btnLevel.insets = new Insets(20, 30, 20, 28);
 			
@@ -38,10 +42,6 @@ public class MenuScreenPanel extends JPanel {
 				currentGridX = 1;
 				currentGridY = currentGridY + 2;
 			}
-		}
-
-		for (int i = 1; i <= 6; i++) {
-			btnLevel[i].setActive(true);
 		}
 		
 		CustomHelpButton btnHelp = new CustomHelpButton();

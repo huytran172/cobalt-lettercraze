@@ -23,6 +23,11 @@ public class HelpPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				HelpFrame currentFrame = (HelpFrame) SwingUtilities.getRoot(btnBack);
+				MenuScreenFrame menuFrame = currentFrame.getMenuFrame();
+				((MenuScreenPanel) menuFrame.getContentPane()).repaintButtons();
+				menuFrame.setVisible(true);
+				menuFrame.revalidate();
+				menuFrame.repaint();
 				currentFrame.dispose();
 			}
 		});

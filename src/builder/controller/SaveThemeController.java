@@ -139,7 +139,7 @@ int levelName(){
 			    //PrintWriter writer = new PrintWriter("Level16", "UTF-8");
 			    
 			    //Add level name
-			    writer.println(String.format("%d", levelName()-1));
+			    writer.println(String.format("%d", levelNum));
 			    
 			    //Maximum number of words
 			    writer.print(maxWords + " ");

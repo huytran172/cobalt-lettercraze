@@ -21,11 +21,20 @@ public class PuzzleInfoPanel extends JPanel {
 	private JTextField textField_2;
 	private JTextField textField_3;
 
+	protected Board b;
+	protected int levelNum;
+	protected boolean add;
+
+
 	/**
 	 * Create the panel.
 	 * @param levelNum 
 	 */
 	public PuzzleInfoPanel(Board b, int levelNum, boolean add) {
+		this.b = b;
+		this.levelNum = levelNum;
+		this.add = add;
+		
 		setLayout(null);
 		
 		JLabel label = new JLabel("");
@@ -94,6 +103,18 @@ public class PuzzleInfoPanel extends JPanel {
 
 	}
 
+	public Board getB() {
+		return b;
+	}
+
+	public int getLevelNum() {
+		return levelNum;
+	}
+
+	public boolean isAdd() {
+		return add;
+	}
+
 	public JTextField getTextField() {
 		return textField;
 	}
@@ -130,4 +151,6 @@ public class PuzzleInfoPanel extends JPanel {
 	public void setTextField_3(JTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
+
+	
 }

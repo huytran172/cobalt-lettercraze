@@ -1,14 +1,15 @@
 package player.view.game;
 
-import javax.swing.GroupLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 import player.models.Level;
 import player.models.QuickSaveState;
 import player.models.score.Score;
 import player.view.game.submitbutton.CustomSubmitButton;
+
+import java.awt.*;
+import java.io.File;
 
 public class InfoPanel extends JPanel {
 	protected Score score;
@@ -26,6 +27,10 @@ public class InfoPanel extends JPanel {
 	protected StarPanel star2;
 	protected StarPanel star3;
 
+	protected JLabel starLabel;
+
+	protected int threshold[];
+
 	protected WordPanel wordsFound;
 	protected QuickSaveState saveState = new QuickSaveState();
 
@@ -38,6 +43,8 @@ public class InfoPanel extends JPanel {
 		 setBounds(660, 170, 260, 300);
 		 //setBackground(Color.lightGray);
 		this.score = level.getScore();
+		this.threshold = score.getThreshold();
+		this.starLabel = new JLabel();
 
 		setHighScore(new JLabel("High score"));
 		getHighScore().setFont(getHighScore().getFont().deriveFont(18.0f));
@@ -53,9 +60,11 @@ public class InfoPanel extends JPanel {
 		setScoreNum(scoreNum);
 		getScoreNumLabel().setFont(getScoreNumLabel().getFont().deriveFont(18.0f));
 
-		 setStar1(new StarPanel(1, 0));
-		 setStar2(new StarPanel(2, 0));
-		 setStar3(new StarPanel(3, 0));
+		 star1 = new StarPanel(1, threshold[0]);
+		 star2 = new StarPanel(2, threshold[1]);
+		 star3 = new StarPanel(3, threshold[2]);
+
+
 
 		 setWordsFound(new WordPanel());
 
@@ -65,16 +74,17 @@ public class InfoPanel extends JPanel {
 				 groupLayout.createSequentialGroup()
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addGroup(groupLayout.createParallelGroup()
-								 .addComponent(getHighScore(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-								 .addComponent(getHighScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+								 .addComponent(getHighScore(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								 .addComponent(getHighScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
 						 //.addGap(18)
 						 .addGroup(groupLayout.createParallelGroup()
-								 .addComponent(getCurrentScore(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-								 .addComponent(getScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+								 .addComponent(getCurrentScore(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								 .addComponent(getScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
 						 //.addComponent(currentScore, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getStar1(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getStar2(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getStar3(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(starLabel, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
 						 //.addComponent(progressbar, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
 						 //.addPreferredGap(ComponentPlacement.RELATED)
 						 .addContainerGap(0, 0))
@@ -88,20 +98,42 @@ public class InfoPanel extends JPanel {
 
 				 groupLayout.createParallelGroup()
 				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(getHighScore(), GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(getHighScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						 .addComponent(getHighScore(), GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(getHighScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
 				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(getCurrentScore(), GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(getScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						 .addComponent(getCurrentScore(), GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+						 .addComponent(getScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
 				 //.addComponent(currentScore, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
 				 //.addComponent(progressbar, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getStar1(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getStar2(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getStar3(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+				 .addComponent(starLabel, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getWordsFound(), GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()));
 
 			setLayout(groupLayout);
+	}
+
+	public void drawStarsToInfoPanel() {
+		try {
+			if (score.getScore() >= threshold[0]) {
+				Image img = ImageIO.read(new File("Images/star1.png"));
+				starLabel.setIcon(new ImageIcon(img));
+			}
+
+			if (score.getScore() >= threshold[1]) {
+				Image img = ImageIO.read(new File("Images/star2.png"));
+				starLabel.setIcon(new ImageIcon(img));
+			}
+
+			if (score.getScore() >= threshold[2]) {
+				Image img = ImageIO.read(new File("Images/star3.png"));
+				starLabel.setIcon(new ImageIcon(img));
+			}
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
 	}
 
 	public StarPanel getStar1() {

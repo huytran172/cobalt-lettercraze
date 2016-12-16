@@ -36,10 +36,10 @@ public class GameFrame extends JFrame {
 		else if (levelNum%3 == 0){
 			contentPane = new ThemeGamePanel(levelNum);
 		}
-		
-		else {
-			contentPane = new PuzzleGamePanel(levelNum);
-		}
+//		
+//		else {
+//			contentPane = new PuzzleGamePanel(levelNum);
+//		}
 	
 		setContentPane(contentPane);
 	}

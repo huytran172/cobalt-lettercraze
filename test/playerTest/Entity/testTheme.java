@@ -16,4 +16,10 @@ public class testTheme extends TestCase {
         assertEquals(p.getIndex(), 3);
         assertEquals(p.getType(), "theme");
     }
+	
+	public void testWriteToFile() {
+        File read = new File("../cobalt-lettercraze/levels/level3.txt");
+        Theme p = new Theme(read);
+        p.printToFile();
+	}
 }

@@ -6,6 +6,7 @@ import junit.framework.TestCase;
 import player.models.Board;
 import player.models.Lightning;
 import player.models.LightningTimer;
+import player.models.Theme;
 
 public class testLightning extends TestCase {
 	public void testInitializeLightning() {
@@ -17,5 +18,18 @@ public class testLightning extends TestCase {
         assertEquals(p.getThreshold()[2], 12);
         assertEquals(p.getIndex(), 2);
         assertEquals(p.getType(), "lightning");
-    }
+        
+	}
+	
+	public void testLightningTimer() {
+		LightningTimer t = new LightningTimer();
+		t.showNextPanel();
+		t.main(null);
+	}
+
+	public void testWriteToFile() {
+        File read = new File("../cobalt-lettercraze/levels/level2.txt");
+        Lightning p = new Lightning(read);
+        p.printToFile();
+	}
 }

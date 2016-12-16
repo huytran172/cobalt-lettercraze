@@ -46,6 +46,7 @@ public class testBoard extends TestCase {
 		Board b = new Board();
 		b.initialize();
 		b.setActiveWord(new Word(new ArrayList<Square>()));
+		b.getTempWord();
 		assertEquals(b.size(), b.getSquareList().size());
 		assertEquals(b.get(0), b.getSquareList().get(0));
 	}
@@ -57,8 +58,53 @@ public class testBoard extends TestCase {
 		assertTrue(b.getSquareList().get(1).isEnabled());
 	}
 
-	public void testUpdateActiveWord() {
-
+	public void testToString() {
+		Board b = new Board();
+		b.initialize();
+		b.toString();
+		b.toStringForBuilder();
 	}
-
+	
+	public void testUpdateBoard() {
+		Board b = new Board();
+		b.initialize();
+		assertTrue(b.updateBoard());
+	}
+	
+	public void testResetBoard() {
+		Board b = new Board();
+		b.initialize();
+		assertTrue(b.resetBoard());
+		b.clearBoard();
+	}
+	
+	public void testTempWord() {
+		Board b = new Board();
+		b.initialize();
+		b.setTempWord(new Word(new ArrayList<Square>()));
+		assertTrue(b.addSquareToTempWord(b.get(1)));
+		b.setTempWord(new Word(new ArrayList<Square>()));
+		assertTrue(b.addSquareToTempWord(b.get(1)));
+		b.renewTempWord();
+	}
+	
+	public void testState() {
+		Board b = new Board();
+		b.initialize();
+		b.saveSquareState();
+		b.loadSquareState();
+	}
+	
+	public void testFillEmptySquare() {
+		Board b = new Board();
+		b.initialize();
+		b.fillEmptySquares();
+		assertFalse(b.getSquareList().get(1).isEmptySquare());
+	}
+	
+	public void testUpdateActiveWord() {
+		Board b = new Board();
+		b.initialize();
+		b.setTempWord(new Word(new ArrayList<Square>()));
+	}
 }

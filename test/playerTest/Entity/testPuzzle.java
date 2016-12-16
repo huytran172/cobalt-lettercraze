@@ -4,6 +4,7 @@ import java.io.File;
 
 import junit.framework.TestCase;
 import player.models.Puzzle;
+import player.models.Theme;
 
 public class testPuzzle extends TestCase {
 	public void testInitializePuzzle() {
@@ -16,4 +17,10 @@ public class testPuzzle extends TestCase {
         assertEquals(p.getIndex(), 1);
         assertEquals(p.getType(), "puzzle");
     }
+	
+	public void testWriteToFile() {
+        File read = new File("../cobalt-lettercraze/levels/level1.txt");
+        Puzzle p = new Puzzle(read);
+        p.printToFile();
+	}
 }

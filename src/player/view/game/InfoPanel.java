@@ -9,6 +9,7 @@ import player.models.Level;
 import player.view.game.submitbutton.CustomSubmitButton;
 
 public class InfoPanel extends JPanel {
+
 	protected Level level;
 	protected JLabel highScore;
 	protected JLabel currentScore;
@@ -178,4 +179,5 @@ public class InfoPanel extends JPanel {
 	public void setQuit(JButton quit) {
 		this.quit = quit;
 	}
+
 }

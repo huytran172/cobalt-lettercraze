@@ -83,5 +83,5 @@ public class Puzzle extends Level{
 	public int getMaxMoves() {
 		return maxMoves;
 	}
-
+	
 }

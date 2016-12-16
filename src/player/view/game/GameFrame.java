@@ -6,6 +6,7 @@ import java.io.File;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import player.models.Level;
 import player.models.Lightning;
 import player.models.Model;
 import player.models.Puzzle;
@@ -13,6 +14,7 @@ import player.models.Theme;
 import player.view.game.gamepanel.GamePanelLightning;
 import player.view.game.gamepanel.GamePanelPuzzle;
 import player.view.game.gamepanel.GamePanelTheme;
+import player.view.menu.MenuScreenFrame;
 
 /**
  * The panel where player plays the game
@@ -21,15 +23,17 @@ import player.view.game.gamepanel.GamePanelTheme;
  */
 
 public class GameFrame extends JFrame {
-	Model m;
+//	Model m;
 	/**
 	 * 
 	 */
 	//private static final long serialVersionUID = 1L;
 	
-	private JPanel contentPane;
+	protected JPanel contentPane;
+	protected MenuScreenFrame menuScreenFrame;
 
-	public GameFrame(int level) {
+	public GameFrame(Level level, MenuScreenFrame menuScreenFrame) {
+		this.menuScreenFrame = menuScreenFrame;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = 800;
 	    int height = 600;
@@ -38,19 +42,16 @@ public class GameFrame extends JFrame {
 	    int y = (screen.height-height)/2;
 	    setBounds(x,y,width,height);
 	    
-	    String str;
-	    str = String.format("../cobalt-lettercraze/levels/Level%d.txt", level);
-		if (level % 3 == 1) {
-			contentPane = new GamePanelPuzzle(new Puzzle(new File(str)));
+		if (level.getType().equals("puzzle")) {
+			contentPane = new GamePanelPuzzle((Puzzle) level);
 		}
 
-		if (level % 3 == 2) {
-			contentPane = new GamePanelLightning(new Lightning(new File(str)));
+		if (level.getType().equals("lightning")) {
+			contentPane = new GamePanelLightning((Lightning) level);
 		}	
 
-
-		if (level % 3 == 0) {
-			contentPane = new GamePanelTheme(new Theme(new File(str)));
+		if (level.getType().equals("theme")) {
+			contentPane = new GamePanelTheme((Theme) level);
 		}
 
 		setContentPane(contentPane);
@@ -78,5 +79,9 @@ public class GameFrame extends JFrame {
 		}
 
 		setContentPane(contentPane);
+	}
+	
+	public MenuScreenFrame getMenuFrame() {
+		return menuScreenFrame;
 	}
 }

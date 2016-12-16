@@ -23,8 +23,9 @@ public class Board implements Iterable<Square> {
 	protected QuickSaveState saveState = new QuickSaveState();
 
 	public void initialize(String boardLine) {
+		System.out.println("BOARD" + boardLine);
 		String squaresString[] = boardLine.split(" ");
-
+		
 		int j = -1;
 
 		for (int i = 0; i < 36; i++) {

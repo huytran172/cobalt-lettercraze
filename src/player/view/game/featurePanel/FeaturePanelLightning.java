@@ -52,4 +52,16 @@ public class FeaturePanelLightning extends JPanel implements IFeaturePanel {
         };
         new Timer(delay, taskPerformer).start();
     }
+
+	@Override
+	public void increaseWordLeft() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void decreaseWordLeft() {
+		// TODO Auto-generated method stub
+		
+	}
 }

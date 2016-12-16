@@ -20,7 +20,8 @@ public class ThemeGamePanel extends JPanel {
 	JPanel infoPanel;
 	JPanel starPanel;
 	
-	public ThemeGamePanel(){
+	public ThemeGamePanel(int levelNum){
+		
 		this.setLayout(null);
 		
 		Board b = new Board();
@@ -29,8 +30,8 @@ public class ThemeGamePanel extends JPanel {
 	    add(boardPanel);
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
-
-	    infoPanel = new ThemeInfoPanel(b);
+	    
+	    infoPanel = new ThemeInfoPanel(b, levelNum);
 	    add(infoPanel);
 	    infoPanel.setBounds(480, 100, 280, 420);
 

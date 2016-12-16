@@ -24,8 +24,9 @@ public class ThemeInfoPanel extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * @param levelNum 
 	 */
-	public ThemeInfoPanel(Board b) {
+	public ThemeInfoPanel(Board b, int levelNum) {
 		setLayout(null);
 		
 		JLabel label = new JLabel("");
@@ -83,7 +84,7 @@ public class ThemeInfoPanel extends JPanel {
 		
 		JButton btnSave = new JButton("Save");
 		btnSave.setBounds(108, 369, 61, 29);
-		btnSave.addActionListener(new SaveThemeController(this,b));
+		btnSave.addActionListener(new SaveThemeController(this,b,levelNum));
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");

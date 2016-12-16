@@ -21,22 +21,25 @@ import player.models.Board;
 public class SaveLightningController implements ActionListener {
 	LightningInfoPanel application;     /** Application we have control over. */
 	Board b;
+	int levelNum;
 	
-	public SaveLightningController(LightningInfoPanel app, Board b) {
+	public SaveLightningController(LightningInfoPanel app, Board b, int levelNum) {
 		this.application = app;
 		this.b = b;
-
+		this.levelNum = levelNum;
 	}
 	
 	/**
 	 * Create a new name for the freshly created level
 	 * @return
 	 */
-	int levelName(){
+int levelName(){
 		
-		File[] files = new File("../cobalt-lettercraze/levels/").listFiles();
+		File[] files = new File("../cobalt-lettercraze/levelsBuilderMade/").listFiles();
 
 		int[] levels = new int[files.length];
+		
+		if (levels.length != 0) {
 		
 		for (int i = 0; i < files.length; i++){
 			String name = files[i].getName(); 
@@ -53,6 +56,10 @@ public class SaveLightningController implements ActionListener {
 		}
 		
 		return max + 1;
+		
+		}
+		
+		return 1;
 	}
 
 	
@@ -77,35 +84,79 @@ public class SaveLightningController implements ActionListener {
 
 		try {
 			//Create new file
-			String name = String.format("../cobalt-lettercraze/levels/Level%d.txt", levelName());
-			File file = new File(name);
-		
-			PrintWriter writer = new PrintWriter(file);
-		    //PrintWriter writer = new PrintWriter("Level16", "UTF-8");
-		    
-		    //Add level name
-		    writer.println(String.format("%d", levelName()-1));
-		    
-		    //Maximum number of words
-		    writer.println(maxWords);
-		    
-		    //Thresholds
-		    for (int j = 0; j <3; j++){
-		    	writer.print(stars.get(j) + " ");
-		    }
-		    
-		    writer.println();
-		    
-		    
-		    //High score
-		    writer.println(0);
-		    
-		    //Is complete?
-		    writer.println(0);
-		    
-		    //Board visibility
-		    writer.println(b.toString());
-		    writer.close();
+
+			if (levelNum == 1) {
+
+				String name = String.format("../cobalt-lettercraze/levelsBuilderMade/Level%d.txt", levelName());
+				File file = new File(name);
+				//file.getParentFile().mkdirs();
+
+				PrintWriter writer = new PrintWriter(file);
+				//PrintWriter writer = new PrintWriter("Level16", "UTF-8");
+
+				//Add level name
+				writer.println(String.format("%d", levelName()-1));
+
+				//Maximum number of words
+				writer.println(maxWords);
+
+				//Thresholds
+				for (int j = 0; j <3; j++){
+					writer.print(stars.get(j) + " ");
+				}
+
+				writer.println();
+
+
+				//High score
+				writer.println(0);
+
+				//Is complete?
+				writer.println(0);
+
+				//Board visibility
+				writer.println(b.toString());
+				writer.close();
+			}
+			
+			else {
+				
+				String name = String.format("../cobalt-lettercraze/levels/Level%d.txt", levelNum);
+				File file = new File(name);
+				//file.getParentFile().mkdirs();
+				
+				PrintWriter writerClear = new PrintWriter(file);
+				writerClear.close();
+				
+				PrintWriter writer = new PrintWriter(file);
+				//PrintWriter writer = new PrintWriter("Level16", "UTF-8");
+
+				//Add level name
+				writer.println(String.format("%d", levelNum));
+
+				//Maximum number of words
+				writer.println(maxWords);
+
+				//Thresholds
+				for (int j = 0; j <3; j++){
+					writer.print(stars.get(j) + " ");
+				}
+
+				writer.println();
+
+
+				//High score
+				writer.println(0);
+
+				//Is complete?
+				writer.println(0);
+
+				//Board visibility
+				writer.println(b.toString());
+				writer.close();
+			}
+				
+			
 		    
 		} catch (IOException exception) {
 			exception.printStackTrace();

@@ -2,6 +2,8 @@ package player.view.game.gamepanel;
 
 import player.models.Puzzle;
 import player.view.game.BoardPanel;
+import player.view.game.CustomResetButton;
+import player.view.game.CustomUndoButton;
 import player.view.game.InfoPanel;
 import player.view.game.TitlePanel;
 import player.view.game.featurePanel.FeaturePanelPuzzle;
@@ -12,7 +14,9 @@ import java.awt.*;
 
 public class GamePanelPuzzle extends GamePanel {
 	private FeaturePanelPuzzle featurePanel;
-	private PuzzleSubmitButton btn;
+	private PuzzleSubmitButton btnSubmit;
+	private CustomResetButton btnReset;
+	private CustomUndoButton btnUndo;
 	
 	public GamePanelPuzzle(Puzzle level){
 		super(level);
@@ -22,14 +26,22 @@ public class GamePanelPuzzle extends GamePanel {
 		titlePanel.setBounds(40, 20, 600, 45);
 		//titlePanel.setBackground(Color.blue);
 
-		featurePanel = new FeaturePanelPuzzle(level, boardPanel);
+		featurePanel = new FeaturePanelPuzzle(level, this.boardPanel);
 		add(featurePanel);
 		featurePanel.setBounds(200, 60, 300, 50);
 		//featurePanel.setBackground(Color.blue);
 
-		btn = new PuzzleSubmitButton(level, boardPanel, infoPanel, featurePanel);
-		add(btn);
-		btn.setBounds(60, 65, 100, 30);
+		btnSubmit = new PuzzleSubmitButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
+		add(btnSubmit);
+		btnSubmit.setBounds(60, 65, 100, 30);
+		
+		btnReset = new CustomResetButton(level, this.boardPanel);
+		add(btnReset);
+		btnReset.setBounds(160, 65, 100, 30);
+		
+		btnUndo = new CustomUndoButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
+		add(btnUndo);
+		btnUndo.setBounds(260, 65, 100, 30);
 	}
 
 	public void initButton() {
@@ -48,7 +60,15 @@ public class GamePanelPuzzle extends GamePanel {
 
 	@Override
 	public CustomSubmitButton getSubmitButton() {
-		return btn;
+		return btnSubmit;
+	}
+	
+	public CustomResetButton getResetButton() {
+		return btnReset;
+	}
+	
+	public CustomUndoButton getUndoButton() {
+		return btnUndo;
 	}
 }
 

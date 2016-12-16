@@ -14,6 +14,7 @@ import player.models.Theme;
 import player.view.game.gamepanel.GamePanelLightning;
 import player.view.game.gamepanel.GamePanelPuzzle;
 import player.view.game.gamepanel.GamePanelTheme;
+import player.view.menu.MenuScreenFrame;
 
 /**
  * The panel where player plays the game
@@ -28,9 +29,11 @@ public class GameFrame extends JFrame {
 	 */
 	//private static final long serialVersionUID = 1L;
 	
-	private JPanel contentPane;
+	protected JPanel contentPane;
+	protected MenuScreenFrame menuScreenFrame;
 
-	public GameFrame(Level level) {
+	public GameFrame(Level level, MenuScreenFrame menuScreenFrame) {
+		this.menuScreenFrame = menuScreenFrame;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = 800;
 	    int height = 600;
@@ -76,5 +79,9 @@ public class GameFrame extends JFrame {
 		}
 
 		setContentPane(contentPane);
+	}
+	
+	public MenuScreenFrame getMenuFrame() {
+		return menuScreenFrame;
 	}
 }

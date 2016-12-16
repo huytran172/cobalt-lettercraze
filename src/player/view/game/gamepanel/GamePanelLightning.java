@@ -2,6 +2,8 @@ package player.view.game.gamepanel;
 
 import player.models.Lightning;
 import player.view.game.BoardPanel;
+import player.view.game.CustomResetButton;
+import player.view.game.CustomUndoButton;
 import player.view.game.InfoPanel;
 import player.view.game.TitlePanel;
 import player.view.game.featurePanel.FeaturePanelLightning;
@@ -11,7 +13,9 @@ import player.view.game.submitbutton.PuzzleSubmitButton;
 
 public class GamePanelLightning extends GamePanel {
 	private FeaturePanelLightning featurePanel;
-	private LightningSubmitButton btn;
+	private LightningSubmitButton btnSubmit;
+	private CustomResetButton btnReset;
+	private CustomUndoButton btnUndo;
 	
 	public GamePanelLightning(Lightning level){
 		super(level);
@@ -21,13 +25,21 @@ public class GamePanelLightning extends GamePanel {
 		titlePanel.setBounds(40, 20, 600, 45);
 		//titlePanel.setBackground(Color.blue);
 
-	    featurePanel = new FeaturePanelLightning(level, boardPanel);
+	    featurePanel = new FeaturePanelLightning(level, this.boardPanel);
 		add(featurePanel);
 		featurePanel.setBounds(200, 60, 300, 50);
 
-		btn = new LightningSubmitButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
-		add(btn);
-		btn.setBounds(60, 65, 100, 30);
+		btnSubmit = new LightningSubmitButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
+		add(btnSubmit);
+		btnSubmit.setBounds(60, 65, 100, 30);
+		
+		btnReset = new CustomResetButton(level, this.boardPanel);
+		add(btnReset);
+		btnReset.setBounds(160, 65, 100, 30);
+		
+		btnUndo = new CustomUndoButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
+		add(btnUndo);
+		btnUndo.setBounds(260, 65, 100, 30);
 	}
 
 	@Override
@@ -42,7 +54,15 @@ public class GamePanelLightning extends GamePanel {
 
 	@Override
 	public CustomSubmitButton getSubmitButton() {
-		return btn;
+		return btnSubmit;
+	}
+	
+	public CustomResetButton getResetButton() {
+		return btnReset;
+	}
+	
+	public CustomUndoButton getUndoButton() {
+		return btnUndo;
 	}
 }
 

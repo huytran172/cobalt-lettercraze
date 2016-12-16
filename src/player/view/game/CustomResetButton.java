@@ -14,13 +14,13 @@ import player.view.game.gamepanel.GamePanel;
 public class CustomResetButton extends JButton implements ActionListener{
 	private Level level;
     //private BoardPanel boardPanel;
-    private InfoPanel infoPanel;
+    private BoardPanel boardPanel;
     private Board board;
 
     
-    public CustomResetButton(Level level, InfoPanel infoPanel) {
+    public CustomResetButton(Level level, BoardPanel boardPanel) {
         this.level = level;
-        this.infoPanel = infoPanel;
+        this.boardPanel = boardPanel;
         //this.wordPanel = wordPanel;
         board = this.level.getBoard();
         setText("Reset");
@@ -29,10 +29,8 @@ public class CustomResetButton extends JButton implements ActionListener{
     
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		GamePanel gamePanel = (GamePanel) infoPanel.getParent();
 		board.resetBoard();
-		gamePanel.getBoardPanel().reputLetter();
-		infoPanel.setscoreNum(10);
+		boardPanel.reputLetter();
 		//BoardPanel boardInParent = ((GamePanel) this.infoPanel.getParent()).getBoardPanel();
 		//boardInParent.redrawBoardPanel();
 		//System.out.println(boardInParent.toString());

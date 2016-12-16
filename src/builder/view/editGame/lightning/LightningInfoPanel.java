@@ -54,8 +54,9 @@ public class LightningInfoPanel extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * @param level 
 	 */
-	public LightningInfoPanel(Board b) {
+	public LightningInfoPanel(Board b, int level) {
 		setLayout(null);
 		
 		JLabel label = new JLabel("");
@@ -104,7 +105,7 @@ public class LightningInfoPanel extends JPanel {
 		
 		JButton btnSave = new JButton("Save");
 		btnSave.setBounds(98, 380, 67, 29);
-		btnSave.addActionListener(new SaveLightningController(this, b));
+		btnSave.addActionListener(new SaveLightningController(this, b, level));
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");

@@ -30,6 +30,10 @@ public class TitlePanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
             	GameFrame currentFrame = (GameFrame) SwingUtilities.getRoot(btnBack);
+            	MenuScreenFrame menuFrame = currentFrame.getMenuFrame();
+            	menuFrame.setVisible(true);
+            	menuFrame.revalidate();
+            	menuFrame.repaint();
         		currentFrame.dispose();
 //        		MenuScreenFrame frame = new MenuScreenFrame();
 //				frame.setVisible(true);

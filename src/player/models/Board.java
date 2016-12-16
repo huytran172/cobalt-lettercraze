@@ -16,6 +16,9 @@ public class Board implements Iterable<Square> {
 
 	/** Temp word being built */
 	protected Word tempWord;
+
+	protected String squaresString[];
+	protected String themeAndWords[];
 	
 	/** VARIABLE IN BOARD ENTITY **/
 	/** Squares in the board. */
@@ -25,7 +28,7 @@ public class Board implements Iterable<Square> {
 	public void initialize(String boardLine) {
 		System.out.println("BOARD" + boardLine);
 		String squaresString[] = boardLine.split(" ");
-		
+
 		int j = -1;
 
 		for (int i = 0; i < 36; i++) {
@@ -42,12 +45,16 @@ public class Board implements Iterable<Square> {
 	}
 
 	public void initialize(String boardLine, String[] themeAndWords) {
-		String squaresString[] = boardLine.split(" ");
+		this.squaresString = boardLine.split(" ");
+		this.themeAndWords = themeAndWords;
+		fillWordsFromFile();
+	}
 
+	public void initialize() {
 		int j = -1;
-		
+
 		for (int i = 0; i < 36; i++) {
-			squares.add(i, new Square(new Letter(""), 0, 0, false));
+			squares.add(i, new Square(new Letter(""), 0,0, true));
 			squares.get(i).setColumn(i % 6);
 
 			if (i % 6 == 0) {
@@ -55,15 +62,34 @@ public class Board implements Iterable<Square> {
 			}
 
 			squares.get(i).setRow(j);
-			squares.get(i).setEnabled(squaresString[i].equals("0") ? false : true);
+		}
+	}
+
+	public void fillWordsFromFile() {
+		int j = -1;
+
+		if (squares.size() == 0) {
+			for (int i = 0; i < 36; i++) {
+				squares.add(i, new Square(new Letter(""), 0, 0, false));
+				squares.get(i).setColumn(i % 6);
+
+				if (i % 6 == 0) {
+					j++;
+				}
+
+				squares.get(i).setRow(j);
+				squares.get(i).setEnabled(squaresString[i].equals("0") ? false : true);
+			}
 		}
 
 		int squareIndex = 0;
 		while (! squares.get(squareIndex).isEnabled()) {
 			squareIndex++;
 		}
-
+		System.out.println("test 3: " + squareIndex);
 		squares.get(squareIndex).letter.setS(String.valueOf(themeAndWords[1].charAt(0)));
+		System.out.println("test 4: " + String.valueOf(themeAndWords[1].charAt(0)));
+		System.out.println("test 5: " + squares.get(squareIndex).letter.getS());
 		for (int i = 1; i < themeAndWords.length; i++) {
 			char[] charArray = themeAndWords[i].toUpperCase().toCharArray();
 			System.out.println(themeAndWords[i]);
@@ -75,10 +101,10 @@ public class Board implements Iterable<Square> {
 				k = 1;
 			}
 
-			while (k < charArray.length) {
+			while (k < charArray.length && squareIndex < 36) {
 				int row = squares.get(squareIndex).getRow();
 				int column = squares.get(squareIndex).getColumn();
-				
+
 				// above
 				if (this.getSquare(row - 1, column) != null && this.getSquare(row - 1, column).isEnabled() && this.getSquare(row - 1, column).letter.isEmptyString()) {
 					this.getSquare(row - 1, column).letter.setS(Character.toString(charArray[k]));
@@ -86,7 +112,7 @@ public class Board implements Iterable<Square> {
 					k++;
 					continue;
 				}
-				
+
 				// upper right
 				if (this.getSquare(row - 1, column + 1) != null && this.getSquare(row - 1, column + 1).isEnabled() && this.getSquare(row - 1, column + 1).letter.isEmptyString()) {
 					this.getSquare(row - 1, column + 1).letter.setS(Character.toString(charArray[k]));
@@ -152,24 +178,7 @@ public class Board implements Iterable<Square> {
 			}
 		}
 	}
-	
-	public void initialize() {
-		
 
-		int j = -1;
-
-		for (int i = 0; i < 36; i++) {
-			squares.add(i, new Square(new Letter(""), 0,0, true));
-			squares.get(i).setColumn(i % 6);
-
-			if (i % 6 == 0) {
-				j++;
-			}
-
-			squares.get(i).setRow(j);
-		}
-	}
-	
 	/**Word being chosen. */
 
 	private Word activeWord = null;
@@ -351,6 +360,14 @@ public class Board implements Iterable<Square> {
 			}
 		}
 		return !isAllDisabled;
+	}
+
+	public void clearBoard() {
+		for (int i = 0; i < 36; i++) {
+			if (squares.get(i).isEnabled) {
+				squares.get(i).letter.setStringEmpty();
+			}
+		}
 	}
 
 	public ArrayList<Square> getSquareList() {

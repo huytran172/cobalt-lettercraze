@@ -35,7 +35,7 @@ public class GamePanelLightning extends GamePanel {
 		add(btnSubmit);
 		btnSubmit.setBounds(480, 490, 100, 30);
 		
-		btnReset = new CustomResetButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
+		btnReset = new CustomResetButton("lightning", level, this.boardPanel, this.infoPanel, this.featurePanel);
 		add(btnReset);
 		btnReset.setBounds(580, 490, 100, 30);
 		

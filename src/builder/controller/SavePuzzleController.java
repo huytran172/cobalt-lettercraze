@@ -35,7 +35,7 @@ public class SavePuzzleController implements ActionListener {
 	 * Create a new name for the freshly created level
 	 * @return
 	 */
-	int levelName(){
+	public int levelName(){
 		
 		File[] files = new File("../cobalt-lettercraze/levelsBuilderMade/").listFiles();
 

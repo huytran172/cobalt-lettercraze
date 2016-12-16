@@ -26,7 +26,7 @@ public class PuzzleGamePanel extends JPanel {
 	}
 
 	JPanel titlePanel;
-	JPanel infoPanel;
+	PuzzleInfoPanel infoPanel;
 	//JPanel starPanel;
 	
 	public PuzzleGamePanel(int levelNum, boolean add){
@@ -49,5 +49,10 @@ public class PuzzleGamePanel extends JPanel {
 	    add(titlePanel);
 	    titlePanel.setBounds(40, 20, 600, 60);
 
+	}
+
+	public PuzzleInfoPanel getInfoPanel() {
+		// TODO Auto-generated method stub
+		return this.infoPanel;
 	}
 }

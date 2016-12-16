@@ -20,6 +20,17 @@ public class PuzzleInfoPanel extends JPanel {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	protected Board b;
+	public Board getB() {
+		return b;
+	}
+
+	public int getLevelNum() {
+		return levelNum;
+	}
+
+	protected int levelNum;
+	protected boolean add;
 
 	/**
 	 * Create the panel.
@@ -129,5 +140,10 @@ public class PuzzleInfoPanel extends JPanel {
 
 	public void setTextField_3(JTextField textField_3) {
 		this.textField_3 = textField_3;
+	}
+
+	public boolean isAdd() {
+		// TODO Auto-generated method stub
+		return this.add;
 	}
 }

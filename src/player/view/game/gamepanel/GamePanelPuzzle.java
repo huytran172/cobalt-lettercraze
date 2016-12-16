@@ -3,7 +3,6 @@ package player.view.game.gamepanel;
 import player.models.Puzzle;
 import player.view.game.BoardPanel;
 import player.view.game.CustomResetButton;
-import player.view.game.CustomSkipButton;
 import player.view.game.CustomUndoButton;
 import player.view.game.InfoPanel;
 import player.view.game.TitlePanel;
@@ -18,7 +17,7 @@ public class GamePanelPuzzle extends GamePanel {
 	private PuzzleSubmitButton btnSubmit;
 	private CustomResetButton btnReset;
 	private CustomUndoButton btnUndo;
-	private CustomSkipButton btnSkip;
+//	private CustomSkipButton btnSkip;
 	
 	public GamePanelPuzzle(Puzzle level){
 		super(level);
@@ -45,9 +44,9 @@ public class GamePanelPuzzle extends GamePanel {
 		add(btnUndo);
 		btnUndo.setBounds(680, 490, 100, 30);
 		
-		btnSkip = new CustomSkipButton(level, this.infoPanel);
-		add(btnSkip);
-		btnSkip.setBounds(480, 460, 300, 30);
+//		btnSkip = new CustomSkipButton(level, this.infoPanel);
+//		add(btnSkip);
+//		btnSkip.setBounds(480, 460, 300, 30);
 	}
 
 	public void initButton() {
@@ -76,6 +75,10 @@ public class GamePanelPuzzle extends GamePanel {
 	public CustomUndoButton getUndoButton() {
 		return btnUndo;
 	}
+	
+//	public CustomUndoButton getUndoButton() {
+//	return btnUndo;
+//}
 }
 
 

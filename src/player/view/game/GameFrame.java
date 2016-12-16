@@ -30,9 +30,9 @@ public class GameFrame extends JFrame {
 	//private static final long serialVersionUID = 1L;
 	
 	protected JPanel contentPane;
-	protected MenuScreenFrame menuScreenFrame;
+	protected JFrame menuScreenFrame;
 
-	public GameFrame(Level level, MenuScreenFrame menuScreenFrame) {
+	public GameFrame(Level level, JFrame menuScreenFrame) {
 		this.menuScreenFrame = menuScreenFrame;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = 800;
@@ -82,6 +82,10 @@ public class GameFrame extends JFrame {
 	}
 	
 	public MenuScreenFrame getMenuFrame() {
-		return menuScreenFrame;
+		return (MenuScreenFrame) menuScreenFrame;
+	}
+	
+	public GameFrame getGameFrame() {
+		return (GameFrame) menuScreenFrame;
 	}
 }

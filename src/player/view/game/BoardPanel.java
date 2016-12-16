@@ -72,6 +72,14 @@ public class BoardPanel extends JPanel {
 			squarePanels[i].repaint();
 		}
 	}
+	
+	public void showBoard() {
+		for (int i = 0; i < squarePanels.length; i++) {
+			squarePanels[i].hideSquare(true);
+			squarePanels[i].revalidate();
+			squarePanels[i].repaint();
+		}
+	}
 
 	public Board getBoard() {
 		// TODO Auto-generated method stub

@@ -20,7 +20,6 @@ public class WordPanel extends JPanel {
 		
 		//setBackground(Color.lightGray);
         console = new JTextArea(8, 20);
-//        console.setFont(console.getFont().deriveFont(console.getFont().getSize() + 1.0f));
         console.setPreferredSize(new Dimension(300, 260));
         console.setLayout(new BoxLayout(console, BoxLayout.Y_AXIS));
 //        console.add(new JLabel("Khuyen Cao"));
@@ -44,6 +43,7 @@ public class WordPanel extends JPanel {
         label.setFont(label.getFont().deriveFont(18f));
 	    console.add(label);
 	    console.revalidate();
+	    console.repaint();
 	    saveState.addNewWordState(string);
     }
 	
@@ -58,6 +58,12 @@ public class WordPanel extends JPanel {
 				console.revalidate();
 			}
 		}
+	}
+
+	public void clearWordPanel() {
+		console.removeAll();
+		console.revalidate();
+		console.repaint();
 	}
 }
 

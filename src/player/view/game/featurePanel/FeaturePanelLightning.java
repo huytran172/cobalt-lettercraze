@@ -28,6 +28,11 @@ public class FeaturePanelLightning extends JPanel implements IFeaturePanel {
         updateTimer(maxTime);
     }
 
+    public void reInit() {
+//        counter = 0;
+//        feature.setText("Timer: " + maxTime + " seconds left");
+    }
+
     public void initFeatureLabel() {
         feature = new JLabel();
         feature.setText("Timer: " + " seconds left");

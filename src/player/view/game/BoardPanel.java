@@ -57,12 +57,12 @@ public class BoardPanel extends JPanel {
 		}
 	}
 
-	public void selectWord(Word word) {
+	public void flipColorWord(Word word) {
 		ArrayList<Square> wordSquares = word.getSquares();
 		int index;
 		for (int i = 0; i < wordSquares.size(); i++) {
 			index = squareModels.indexOf(wordSquares.get(i));
-			squarePanels[index].enableColor(true);
+			squarePanels[index].toggleJustColor();
 		}
 	}
 

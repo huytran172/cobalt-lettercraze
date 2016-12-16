@@ -81,6 +81,14 @@ public class SquarePanel extends JPanel {
 				}
 			}
 
+			public void toggleJustColor() {
+				if (square.isSelected()) {
+					this.setBackground(Color.white);
+				} else {
+					this.setBackground(Color.gray);
+				}
+			}
+
 			public void enableColor(boolean state) {
 				if (state) {
 					this.square.select();

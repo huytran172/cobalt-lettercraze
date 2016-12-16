@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import player.models.Board;
@@ -26,5 +27,10 @@ public class CustomSkipButton extends JButton implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//currentFrame.dispose();
+		level.printToFile();
+		JFrame currentFrame = (JFrame) SwingUtilities.getRoot(this);
+		GameFrame gframe = new GameFrame(this.level, currentFrame);
+		currentFrame.setVisible(false);
+		gframe.setVisible(true);
 	}
 }

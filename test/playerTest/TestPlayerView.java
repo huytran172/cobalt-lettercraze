@@ -35,7 +35,7 @@ public class TestPlayerView extends TestCase{
 		m.main(null);
 		m.initialize();
 		
-		HelpFrame hf = new HelpFrame();
+		HelpFrame hf = new HelpFrame(null);
 		Model model = new Model();
 		MenuScreenFrame msf = new MenuScreenFrame(model);
 		

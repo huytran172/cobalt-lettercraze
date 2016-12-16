@@ -53,5 +53,9 @@ public class PuzzleGamePanel extends JPanel {
 	    titlePanel.setBounds(40, 20, 600, 60);
 	}
 
+	public PuzzleInfoPanel getInfoPanel() {
+		return (PuzzleInfoPanel) this.infoPanel;
+	}
+
 	
 }

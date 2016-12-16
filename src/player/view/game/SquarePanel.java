@@ -69,20 +69,15 @@ public class SquarePanel extends JPanel {
 			public void toggleEnableSquare() {
 				this.square.toggleEnabled();
 				enableSquare(square.isEnabled());
-				toggleColor();
+				//toggleColor();
 			}
 
-			public void toggleColor() {
+			public void toggleJustSelected() {
 				this.square.toggleSelect();
-				if (square.isSelected()) {
-					this.setBackground(Color.GRAY);
-				} else {
-					this.setBackground(Color.WHITE);
-				}
 			}
 
 			public void toggleJustColor() {
-				if (square.isSelected()) {
+				if (this.getBackground() == Color.GRAY) {
 					this.setBackground(Color.white);
 				} else {
 					this.setBackground(Color.gray);

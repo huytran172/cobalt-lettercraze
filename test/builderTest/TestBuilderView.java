@@ -41,6 +41,7 @@ public class TestBuilderView extends TestCase{
 		GameFrame gf2 = new GameFrame(2, true);
 		GameFrame gf3 = new GameFrame(3, true);
 	}
+
 	
 	public void testSquarePanel(){
 		Letter a = new Letter("a");

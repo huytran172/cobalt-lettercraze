@@ -47,10 +47,10 @@ public class CustomResetButton extends JButton implements ActionListener{
         boardPanel.reputLetter();
         score.setScore(0);
 		infoPanel.setScoreNum(score.getScore());
+		infoPanel.drawStarsToInfoPanel();
         infoPanel.getWordsFound().clearWordPanel();
         featurePanel.reInit();
 	}
-
 }
 
 

@@ -49,3 +49,4 @@ Builder Application:
 
 Test Cases:
 
+We achieved 71.7% of coverage in the src folder.

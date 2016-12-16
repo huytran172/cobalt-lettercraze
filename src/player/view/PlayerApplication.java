@@ -2,6 +2,8 @@ package player.view;
 
 import java.awt.EventQueue;
 
+import javax.swing.JFrame;
+
 import builder.view.splash.BuilderSplashWindow;
 import player.models.Model;
 import player.view.game.GameFrame;
@@ -34,5 +36,9 @@ public class PlayerApplication {
 	
 	public SplashScreenWindow getSplash(){
 		return splashScreen;
+	}
+
+	public JFrame getFrame() {
+		return frame;
 	}
 }

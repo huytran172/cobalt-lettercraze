@@ -31,7 +31,7 @@ public class InfoPanel extends JPanel {
 	}
 
 	private void initialize() {
-		 setBounds(660, 170, 260, 510);
+		 setBounds(660, 170, 260, 300);
 		 //setBackground(Color.lightGray);
 
 		setHighScore(new JLabel("High score"));
@@ -96,7 +96,7 @@ public class InfoPanel extends JPanel {
 				 .addComponent(getStar3(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getWordsFound(), GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(getQuit(), GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)));
+						 .addComponent(getQuit(), GroupLayout.PREFERRED_SIZE, this.getWidth(),GroupLayout.PREFERRED_SIZE)));
 
 			setLayout(groupLayout);
 	}

@@ -62,7 +62,7 @@ public class SquarePanel extends JPanel {
 			}
 
 			public void hideSquare(boolean state) {
-				enableSquare(state);
+				//enableSquare(state);
 				this.setVisible(state);
 			}
 
@@ -79,6 +79,11 @@ public class SquarePanel extends JPanel {
 				} else {
 					this.setBackground(Color.WHITE);
 				}
+			}
+			
+			public void setSquareEnable(Boolean b) {
+				if (b) this.setBackground(Color.WHITE);
+				else this.setBackground(Color.GRAY);
 			}
 
 

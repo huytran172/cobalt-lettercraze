@@ -65,17 +65,9 @@ public class BoardPanel extends JPanel {
 		}
 	}
 
-	public void hideBoard() {
+	public void setBoardEnabled(Boolean b) {
 		for (int i = 0; i < squarePanels.length; i++) {
-			squarePanels[i].hideSquare(false);
-			squarePanels[i].revalidate();
-			squarePanels[i].repaint();
-		}
-	}
-	
-	public void showBoard() {
-		for (int i = 0; i < squarePanels.length; i++) {
-			squarePanels[i].hideSquare(true);
+			squarePanels[i].setSquareEnable(b);
 			squarePanels[i].revalidate();
 			squarePanels[i].repaint();
 		}

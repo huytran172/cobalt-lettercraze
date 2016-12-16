@@ -6,6 +6,7 @@ import player.models.Word;
 import player.view.game.BoardPanel;
 import player.view.game.SquarePanel;
 
+import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -33,12 +34,14 @@ public class BoardController extends MouseAdapter {
 
 	@Override
     public void mousePressed(MouseEvent me) {
-        if (board.addSquareToTempWord(square)) {
-            squarePanel.toggleColor();
-        }
-        System.out.print("word made: ");
-        System.out.print(board.getSquareList().indexOf(square));
-        System.out.print(" " + board.getTempWord().getWordString());
-        System.out.print("\n");
+		if (squarePanel.getBackground() == Color.WHITE){
+			if (board.addSquareToTempWord(square)) {
+				squarePanel.toggleColor();
+			}
+			System.out.print("word made: ");
+			System.out.print(board.getSquareList().indexOf(square));
+			System.out.print(" " + board.getTempWord().getWordString());
+			System.out.print("\n");
+		}
     }
 }

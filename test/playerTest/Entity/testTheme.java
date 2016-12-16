@@ -15,6 +15,11 @@ public class testTheme extends TestCase {
         assertEquals(p.getThreshold()[2], 12);
         assertEquals(p.getIndex(), 3);
         assertEquals(p.getType(), "theme");
+        p.updateLevel();
+        p.initialize();
+        assertTrue(p.endLevel());
+        assertFalse(p.reset());
+        assertTrue(p.undo());
     }
 	
 	public void testWriteToFile() {

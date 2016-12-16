@@ -18,6 +18,11 @@ public class testLightning extends TestCase {
         assertEquals(p.getThreshold()[2], 12);
         assertEquals(p.getIndex(), 2);
         assertEquals(p.getType(), "lightning");
+        p.updateLevel();
+        p.initialize();
+        assertTrue(p.endLevel());
+        assertFalse(p.reset());
+        assertTrue(p.undo());
         
 	}
 	

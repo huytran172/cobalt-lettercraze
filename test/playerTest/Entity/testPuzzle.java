@@ -16,6 +16,11 @@ public class testPuzzle extends TestCase {
         assertEquals(p.getThreshold()[2], 12);
         assertEquals(p.getIndex(), 1);
         assertEquals(p.getType(), "puzzle");
+        p.updateLevel();
+        p.initialize();
+        assertTrue(p.endLevel());
+        assertFalse(p.reset());
+        assertTrue(p.undo());
     }
 	
 	public void testWriteToFile() {

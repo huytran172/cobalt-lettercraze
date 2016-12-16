@@ -8,11 +8,14 @@ import javax.swing.JPanel;
 
 public class HelpFrame extends JFrame {
 	private JPanel contentPane;
+	private MenuScreenFrame menuFrame;
 
 	/**
 	 * Create the frame.
+	 * @param currentFrame 
 	 */
-	public HelpFrame() {
+	public HelpFrame(MenuScreenFrame menuFrame) {
+		this.menuFrame = menuFrame;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = 800;
 	    int height = 600;
@@ -22,6 +25,10 @@ public class HelpFrame extends JFrame {
 	    setBounds(x,y,width,height);
 		contentPane = new HelpPanel();
 		setContentPane(contentPane);
+	}
+	
+	public MenuScreenFrame getMenuFrame(){
+		return menuFrame;
 	}
 
 }

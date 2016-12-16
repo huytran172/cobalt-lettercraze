@@ -24,7 +24,7 @@ public class CustomHelpButton extends JButton implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		MenuScreenFrame currentFrame = (MenuScreenFrame) SwingUtilities.getRoot(this);
 		currentFrame.dispose();
-		HelpFrame hframe = new HelpFrame();
+		HelpFrame hframe = new HelpFrame(currentFrame);
 		hframe.setVisible(true);
 	}
 }

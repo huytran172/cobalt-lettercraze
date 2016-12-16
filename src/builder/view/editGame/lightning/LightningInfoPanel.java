@@ -128,17 +128,17 @@ public class LightningInfoPanel extends JPanel {
 		textField_3.setColumns(10);
 		
 		JButton btnPreview = new JButton("Preview");
-		btnPreview.setBounds(6, 380, 91, 29);
+		btnPreview.setBounds(0, 380, 80, 30);
 		btnPreview.addActionListener(new PreviewLightningController(this, b));
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");
-		btnSave.setBounds(98, 380, 67, 29);
+		btnSave.setBounds(80, 380, 80, 30);
 		btnSave.addActionListener(new SaveLightningController(this, b, level, add));
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");
-		btnQuit.setBounds(168, 380, 67, 29);
+		btnQuit.setBounds(160, 380, 80, 30);
 		add(btnQuit);
 		btnQuit.addActionListener(new ActionListener() {
             @Override

@@ -81,17 +81,17 @@ public class ThemeInfoPanel extends JPanel {
 		textField_4.setColumns(10);
 		
 		JButton btnPreview = new JButton("Preview");
-		btnPreview.setBounds(6, 369, 91, 29);
+		btnPreview.setBounds(0, 380, 80, 30);
 		btnPreview.addActionListener(new PreviewThemeController(this,b));
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");
-		btnSave.setBounds(108, 369, 61, 29);
+		btnSave.setBounds(80, 380, 80, 30);
 		btnSave.addActionListener(new SaveThemeController(this,b,levelNum,add));
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");
-		btnQuit.setBounds(181, 369, 61, 29);
+		btnQuit.setBounds(160, 380, 80, 30);
 		add(btnQuit);
 		btnQuit.addActionListener(new ActionListener() {
             @Override

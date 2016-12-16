@@ -29,7 +29,7 @@ public class PuzzleGamePanel extends JPanel {
 	
 	public PuzzleGamePanel(){
 		this.setLayout(null);
-		/*
+		
 		Board b = new Board();
 		b.initialize();
 		boardPanel = new BoardPanel(b);
@@ -46,7 +46,7 @@ public class PuzzleGamePanel extends JPanel {
 	    add(titlePanel);
 	    titlePanel.setBounds(40, 20, 600, 60);
 	    //titlePanel.setBackground(Color.blue);
-	    */
+	    
 //	    starPanel = new StarPanel();
 //	    add(starPanel);
 //	    starPanel.setBounds(60, 50, 800, 50);

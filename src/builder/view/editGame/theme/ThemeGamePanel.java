@@ -22,7 +22,7 @@ public class ThemeGamePanel extends JPanel {
 	
 	public ThemeGamePanel(){
 		this.setLayout(null);
-		/*
+		
 		Board b = new Board();
 		b.initialize();
 		boardPanel = new BoardPanel(b);
@@ -37,7 +37,7 @@ public class ThemeGamePanel extends JPanel {
 	    titlePanel = new TitlePanel("Theme");
 	    add(titlePanel);
 	    titlePanel.setBounds(40, 20, 600, 60);
-	    */
+	    
 	    //titlePanel.setBackground(Color.blue);
 	    
 //	    starPanel = new StarPanel();

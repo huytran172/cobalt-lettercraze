@@ -207,16 +207,26 @@ public class TestPlayerEntity extends TestCase {
 		Square square2 = new Square(letter2,1,1,false);
 		word.addSquareToWord(square2);
 		System.out.println(word.getWord());
-		
-		//assertFalse(word.validWord());
+		assertFalse(word.validWord());
 		
 		Letter letter3 = new Letter("n");
 		Square square3 = new Square(letter3,1,1,false);
 		word.addSquareToWord(square3);
+		assertEquals(word.getWordString(), "sun");
+		assertTrue(word.validWord());
+		assertEquals(word.calcWordScore(), 7);
 		word.clearWord();
+		
+		assertFalse(word.addSquareToWord(square1));
+		System.out.print(word.getWordString());
+		assertEquals(word.getWordString(), "");
+		
+		word.deleteWord();
+		word.getSquares();
+		
 		//word.main(null);
 		//assertTrue(word.validWord());
-		assertEquals(word.calcWordScore(), 7);
+		
 		
 	}
 	
@@ -279,7 +289,7 @@ public class TestPlayerEntity extends TestCase {
 		sl.removeScore(word);
 	}
 	
-	public void testThemeLightning(){
+	public void testScoreTheme(){
 		Letter letter = new Letter("s");
 		Square square1 = new Square(letter,1,1,false);
 		Word word = new Word(new ArrayList<Square>());
@@ -297,7 +307,12 @@ public class TestPlayerEntity extends TestCase {
 	public void testQuickSave(){
 		ArrayList<Square> squares = new ArrayList<Square>(36);
 		int currentScore = 0;
-//		QuickSaveState qss = new QuickSaveState(squares, currentScore);
+		QuickSaveState qss = new QuickSaveState();
+		qss.addNewSquareState(squares);
+		qss.addNewWordState("abc");
+		qss.getLastSquareState();
+		qss.getWordListState();
+		
 //		assertEquals(qss.getScore(), 0);
 //		qss.updateArrayList(squares);
 //		qss.updateScore(5);

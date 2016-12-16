@@ -13,6 +13,7 @@ import player.view.game.featurePanel.IFeaturePanel;
 import player.view.game.gamepanel.GamePanel;
 
 public class CustomResetButton extends JButton implements ActionListener{
+    private String mode;
     private Level level;
     private WordPanel wordPanel;
     private Board board;
@@ -21,7 +22,8 @@ public class CustomResetButton extends JButton implements ActionListener{
     private IFeaturePanel featurePanel;
 
     
-    public CustomResetButton(Level level, BoardPanel boardPanel, InfoPanel infoPanel, IFeaturePanel featurePanel) {
+    public CustomResetButton(String mode, Level level, BoardPanel boardPanel, InfoPanel infoPanel, IFeaturePanel featurePanel) {
+        this.mode = mode;
         this.level = level;
         this.infoPanel = infoPanel;
         this.boardPanel = boardPanel;
@@ -34,8 +36,14 @@ public class CustomResetButton extends JButton implements ActionListener{
     
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		board.resetBoard();
-		boardPanel.setBoardEnabled(true);
+        boardPanel.setBoardEnabled(true);
+        if (mode.equals("theme")) {
+            board.clearBoard();
+            board.fillWordsFromFile();
+        } else {
+            board.resetBoard();
+        }
+
 		boardPanel.reputLetter();
 		infoPanel.getWordsFound().clearWordPanel();
         featurePanel.reInit();

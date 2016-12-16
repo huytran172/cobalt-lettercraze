@@ -20,7 +20,7 @@ public class GamePanelTheme extends GamePanel {
 	public GamePanelTheme(Theme level){
 		super(level);
 
-		titlePanel = new TitlePanel("Theme");
+		titlePanel = new TitlePanel("Theme", level);
 		add(titlePanel);
 		titlePanel.setBounds(40, 20, 600, 45);
 		//titlePanel.setBackground(Color.blue);

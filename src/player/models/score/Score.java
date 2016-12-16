@@ -9,6 +9,9 @@ public abstract class Score {
 	protected int score = 0;
 	protected int highScore;
 	protected int threshold[] = new int[3];
+	protected int star;
+	protected Stack<Integer> highScoreList;
+
 	public int[] getThreshold() {
 		return threshold;
 	}
@@ -17,8 +20,6 @@ public abstract class Score {
 		this.threshold = threshold;
 	}
 
-	protected int star;
-	protected Stack<Integer> highScoreList;
 	
 	public Stack<Integer> getHighScoreList() {
 		return highScoreList;
@@ -35,13 +36,13 @@ public abstract class Score {
 	 * Calculate the star
 	 */
 	public int calculateStar() {
-		if (score < threshold[0]) {
+		if (highScore < threshold[0]) {
 			star = 0;
 		}
-		else if (score >= threshold[0] && score < threshold[1]) {
+		else if (highScore >= threshold[0] && highScore < threshold[1]) {
 			star = 1;
 		}
-		else if (score >= threshold[1] && score < threshold[2]) {
+		else if (highScore >= threshold[1] && highScore < threshold[2]) {
 			star = 2;
 		}
 		else {

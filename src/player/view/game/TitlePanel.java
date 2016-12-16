@@ -11,7 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import player.models.Level;
 import player.view.menu.MenuScreenFrame;
+import player.view.menu.MenuScreenPanel;
 
 public class TitlePanel extends JPanel{
 	private JLabel label;
@@ -20,7 +22,7 @@ public class TitlePanel extends JPanel{
 	/**
 	 * Create the panel.
 	 */
-	public TitlePanel(String mode) {
+	public TitlePanel(String mode, Level l) {
 		this.mode = mode;
 		//this.currentGameFrame = currentGameFrame;		
 		
@@ -31,10 +33,12 @@ public class TitlePanel extends JPanel{
             public void actionPerformed(ActionEvent e) {
             	GameFrame currentFrame = (GameFrame) SwingUtilities.getRoot(btnBack);
             	MenuScreenFrame menuFrame = currentFrame.getMenuFrame();
+            	((MenuScreenPanel) menuFrame.getContentPane()).repaintButtons();
             	menuFrame.setVisible(true);
             	menuFrame.revalidate();
             	menuFrame.repaint();
         		currentFrame.dispose();
+        		
 //        		MenuScreenFrame frame = new MenuScreenFrame();
 //				frame.setVisible(true);
             }

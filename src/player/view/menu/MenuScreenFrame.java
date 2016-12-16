@@ -20,4 +20,8 @@ public class MenuScreenFrame extends JFrame {
 		contentPane = new MenuScreenPanel(m);
 		setContentPane(contentPane);
 	}
+
+	public JPanel getContentPane() {
+		return contentPane;
+	}
 }

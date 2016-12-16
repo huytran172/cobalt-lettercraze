@@ -12,14 +12,11 @@ import player.models.Model;
 
 public class MenuScreenPanel extends JPanel {
 	private CustomLevelButton[] btnLevel = new CustomLevelButton[16];
+	private Model m;
 
 	MenuScreenPanel(Model m) {
+		this.m = m;
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-
-		//gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		//gbl_contentPane.rowHeights = new int[]{57, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		//gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		//gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 
 		setLayout(gbl_contentPane);
 		
@@ -29,7 +26,7 @@ public class MenuScreenPanel extends JPanel {
 		for (int i = 1; i < 16; i++) {
 			Level l = m.getLevels()[i];
 			System.out.println("dsadasdsa" + l.toString());
-			btnLevel[i] = new CustomLevelButton(l, m.isPreviousLevelComplete(l));
+			btnLevel[i] = new CustomLevelButton(l, this.m.isPreviousLevelComplete(l));
 			GridBagConstraints gbc_btnLevel = new GridBagConstraints();
 			gbc_btnLevel.insets = new Insets(20, 30, 20, 28);
 			
@@ -49,5 +46,15 @@ public class MenuScreenPanel extends JPanel {
 		gbc_btnHelp.gridx = 9;
 		gbc_btnHelp.gridy = 8;
 		add(btnHelp, gbc_btnHelp);
+	}
+	
+	/**
+	 * Repaint all off the buttons
+	 */
+	public void repaintButtons()
+	{
+		for (int i = 1; i < this.btnLevel.length; i++) {
+			btnLevel[i].setActive(this.m.isPreviousLevelComplete(m.getLevels()[i]));
+		}
 	}
 }

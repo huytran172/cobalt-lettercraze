@@ -6,15 +6,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import player.models.Level;
+import player.models.score.Score;
 import player.view.game.submitbutton.CustomSubmitButton;
 
 public class InfoPanel extends JPanel {
+	protected Score score;
 
 	protected Level level;
 	protected JLabel highScore;
+	protected JLabel highScoreNumLabel;
+	protected int highScoreNum;
+
 	protected JLabel currentScore;
-	protected JLabel highScoreNum;
-	protected JLabel scoreNum;
+	protected JLabel scoreNumLabel;
+	protected int scoreNum;
 
 	protected StarPanel star1;
 	protected StarPanel star2;
@@ -31,18 +36,21 @@ public class InfoPanel extends JPanel {
 	private void initialize() {
 		 setBounds(660, 170, 260, 300);
 		 //setBackground(Color.lightGray);
+		this.score = level.getScore();
 
 		setHighScore(new JLabel("High score"));
 		getHighScore().setFont(getHighScore().getFont().deriveFont(18.0f));
-		highScoreNum = new JLabel();
-		setHighScoreNum(0);
-		getHighScoreNum().setFont(getHighScoreNum().getFont().deriveFont(18.0f));
+		highScoreNum = score.getHighScore();
+		highScoreNumLabel = new JLabel();
+		setHighScoreNum(highScoreNum);
+		getHighScoreNumLabel().setFont(getHighScoreNumLabel().getFont().deriveFont(18.0f));
 
 		setCurrentScore(new JLabel("Score"));
 		getCurrentScore().setFont(getHighScore().getFont().deriveFont(18.0f));
-		scoreNum = new JLabel();
-		setScoreNum(0);
-		getScoreNum().setFont(getScoreNum().getFont().deriveFont(18.0f));
+		scoreNum = score.getScore();
+		scoreNumLabel = new JLabel();
+		setScoreNum(scoreNum);
+		getScoreNumLabel().setFont(getScoreNumLabel().getFont().deriveFont(18.0f));
 
 		 setStar1(new StarPanel(1, 0));
 		 setStar2(new StarPanel(2, 0));
@@ -57,11 +65,11 @@ public class InfoPanel extends JPanel {
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addGroup(groupLayout.createParallelGroup()
 								 .addComponent(getHighScore(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-								 .addComponent(getHighScoreNum(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+								 .addComponent(getHighScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
 						 //.addGap(18)
 						 .addGroup(groupLayout.createParallelGroup()
 								 .addComponent(getCurrentScore(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-								 .addComponent(getScoreNum(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+								 .addComponent(getScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
 						 //.addComponent(currentScore, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getStar1(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getStar2(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
@@ -80,10 +88,10 @@ public class InfoPanel extends JPanel {
 				 groupLayout.createParallelGroup()
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addComponent(getHighScore(), GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(getHighScoreNum(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						 .addComponent(getHighScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addComponent(getCurrentScore(), GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(getScoreNum(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						 .addComponent(getScoreNumLabel(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
 				 //.addComponent(currentScore, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
 				 //.addComponent(progressbar, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getStar1(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
@@ -143,12 +151,12 @@ public class InfoPanel extends JPanel {
 		this.wordsFound = wordsFound;
 	}
 
-	public JLabel getHighScoreNum() {
-		return highScoreNum;
+	public JLabel getHighScoreNumLabel() {
+		return highScoreNumLabel;
 	}
 
-	public JLabel getScoreNum() {
-		return scoreNum;
+	public JLabel getScoreNumLabel() {
+		return scoreNumLabel;
 	}
 
 	public void setHighScore(JLabel highScore) {
@@ -160,11 +168,18 @@ public class InfoPanel extends JPanel {
 	}
 
 	public void setHighScoreNum(int input) {
-		this.highScoreNum.setText("" + input);
+		this.highScoreNumLabel.setText("" + input);
 	}
 
 	public void setScoreNum(int input) {
-		this.scoreNum.setText("" + input);
+		this.scoreNumLabel.setText("" + input);
 	}
 
+	public int getHighScoreNum() {
+		return highScoreNum;
+	}
+
+	public int getScoreNum() {
+		return scoreNum;
+	}
 }

@@ -20,8 +20,8 @@ public class CustomResetButton extends JButton implements ActionListener{
     private BoardPanel boardPanel;
     private InfoPanel infoPanel;
     private IFeaturePanel featurePanel;
+    private Score score;
 
-    
     public CustomResetButton(String mode, Level level, BoardPanel boardPanel, InfoPanel infoPanel, IFeaturePanel featurePanel) {
         this.mode = mode;
         this.level = level;
@@ -29,7 +29,8 @@ public class CustomResetButton extends JButton implements ActionListener{
         this.boardPanel = boardPanel;
         this.wordPanel = infoPanel.getWordsFound();
         this.featurePanel = featurePanel;
-        board = this.level.getBoard();
+        this.board = this.level.getBoard();
+        this.score = level.getScore();
         setText("Reset");
         addActionListener(this);
     }
@@ -43,9 +44,10 @@ public class CustomResetButton extends JButton implements ActionListener{
         } else {
             board.resetBoard();
         }
-
-		boardPanel.reputLetter();
-		infoPanel.getWordsFound().clearWordPanel();
+        boardPanel.reputLetter();
+        score.setScore(0);
+		infoPanel.setScoreNum(score.getScore());
+        infoPanel.getWordsFound().clearWordPanel();
         featurePanel.reInit();
 	}
 

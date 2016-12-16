@@ -36,11 +36,11 @@ public class TestBuilderView extends TestCase{
 		smf.main(null);
 	}
 	
-	public void testEditGameGUI(){
-		GameFrame gf1 = new GameFrame(1);
-		GameFrame gf2 = new GameFrame(2);
-		GameFrame gf3 = new GameFrame(3);
-	}
+//	public void testEditGameGUI(){
+//		GameFrame gf1 = new GameFrame(1);
+//		GameFrame gf2 = new GameFrame(2);
+//		GameFrame gf3 = new GameFrame(3);
+//	}
 	
 	public void testSquarePanel(){
 		Letter a = new Letter("a");

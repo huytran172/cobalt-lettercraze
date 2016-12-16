@@ -1,6 +1,8 @@
 package player.view.game;
 
+import javax.imageio.ImageIO;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import player.models.Level;

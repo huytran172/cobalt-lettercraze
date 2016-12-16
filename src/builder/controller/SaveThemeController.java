@@ -110,7 +110,7 @@ int levelName(){
 		    writer.println();
 		    
 		    //Thresholds
-		    for (int j = 0; j <3; j++){
+		    for (int j = 0; j < 3; j++){
 		    	writer.print(stars.get(j) + " ");
 		    }
 		    

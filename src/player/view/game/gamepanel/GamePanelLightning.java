@@ -16,6 +16,7 @@ public class GamePanelLightning extends GamePanel {
 	private LightningSubmitButton btnSubmit;
 	private CustomResetButton btnReset;
 	private CustomUndoButton btnUndo;
+//	private CustomSkipButton btnSkip;
 	
 	public GamePanelLightning(Lightning level){
 		super(level);
@@ -33,13 +34,18 @@ public class GamePanelLightning extends GamePanel {
 		add(btnSubmit);
 		btnSubmit.setBounds(480, 490, 100, 30);
 		
-		btnReset = new CustomResetButton(level, this.boardPanel);
+		btnReset = new CustomResetButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
 		add(btnReset);
 		btnReset.setBounds(580, 490, 100, 30);
 		
 		btnUndo = new CustomUndoButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
 		add(btnUndo);
 		btnUndo.setBounds(680, 490, 100, 30);
+		btnUndo.setEnabled(false);
+		
+//		btnSkip = new CustomSkipButton(level, this.infoPanel);
+//		add(btnSkip);
+//		btnSkip.setBounds(480, 460, 300, 30);
 	}
 
 	@Override
@@ -61,9 +67,9 @@ public class GamePanelLightning extends GamePanel {
 		return btnReset;
 	}
 	
-	public CustomUndoButton getUndoButton() {
-		return btnUndo;
-	}
+//	public CustomUndoButton getUndoButton() {
+//		return btnUndo;
+//	}
 }
 
 

@@ -26,6 +26,11 @@ public class FeaturePanelTheme extends JPanel implements IFeaturePanel {
         initFeatureLabel();
     }
 
+    public void reInit() {
+        wordLeft = themeLevel.getWordsToFind().length;
+        feature.setText("Theme: " + themeTitle);
+    }
+
     public void initFeatureLabel() {
         feature = new JLabel();
         feature.setText("Theme: " + themeTitle);
@@ -38,7 +43,7 @@ public class FeaturePanelTheme extends JPanel implements IFeaturePanel {
         if (wordLeft == 0) {
             feature.setText("You win :(");
             boardPanel.setBoardEnabled(false);
-            boardPanel.deselectWord(word);
+            boardPanel.toggleJustColorWord(word);
         }
     }
     

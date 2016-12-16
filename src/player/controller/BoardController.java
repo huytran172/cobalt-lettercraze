@@ -36,7 +36,8 @@ public class BoardController extends MouseAdapter {
     public void mousePressed(MouseEvent me) {
 		if (squarePanel.getBackground() == Color.WHITE){
 			if (board.addSquareToTempWord(square)) {
-				squarePanel.toggleColor();
+				squarePanel.toggleJustColor();
+				squarePanel.toggleJustSelected();
 			}
 			System.out.print("word made: ");
 			System.out.print(board.getSquareList().indexOf(square));

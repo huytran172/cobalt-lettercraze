@@ -23,6 +23,11 @@ public class FeaturePanelPuzzle extends JPanel implements IFeaturePanel {
         initFeatureLabel();
     }
 
+    public void reInit() {
+        wordLeft = puzzleLevel.getMaxMoves();
+        feature.setText("Remaining words: " + wordLeft);
+    }
+
     public void initFeatureLabel() {
         feature = new JLabel();
         feature.setText("Remaining words: " + wordLeft);
@@ -35,7 +40,7 @@ public class FeaturePanelPuzzle extends JPanel implements IFeaturePanel {
         feature.setText("Remaining words: " + wordLeft);
         if (wordLeft == 0) {
             boardPanel.setBoardEnabled(false);
-            boardPanel.deselectWord(word);
+            boardPanel.toggleJustColorWord(word);
         }
     }
     

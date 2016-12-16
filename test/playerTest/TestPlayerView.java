@@ -38,7 +38,7 @@ public class TestPlayerView extends TestCase{
 		WinGameFrame wgf = new WinGameFrame();
 		File f = new File("Level1.txt");
 		Lightning lightning = new Lightning(f);
-		GameFrame gf = new GameFrame(lightning);
+		//GameFrame gf = new GameFrame(lightning);
 		GameFrame gf1 = new GameFrame("puzzle", "Level1.txt");
 		GameFrame gf2 = new GameFrame("lightning", "Level2.txt");
 		GameFrame gf3 = new GameFrame("theme", "Level3.txt");

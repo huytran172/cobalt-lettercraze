@@ -38,7 +38,7 @@ public class FeaturePanelTheme extends JPanel implements IFeaturePanel {
         if (wordLeft == 0) {
             feature.setText("You win :(");
             boardPanel.setBoardEnabled(false);
-            boardPanel.deselectWord(word);
+            boardPanel.toggleJustColorWord(word);
         }
     }
     

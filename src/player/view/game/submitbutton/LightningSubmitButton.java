@@ -27,6 +27,8 @@ public class LightningSubmitButton extends CustomSubmitButton {
 	public void actionPerformed(ActionEvent e) {
 		word = board.getTempWord();
 		if (word.validWord()) {
+			int currentScore = this.score.getScore();
+			infoPanel.saveCurrentScore(currentScore);
 			this.updateScore(word);
 			board.saveSquareState();
 			System.out.println("SCORE " + this.score.getScore());

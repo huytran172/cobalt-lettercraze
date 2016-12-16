@@ -45,6 +45,7 @@ public class CustomResetButton extends JButton implements ActionListener{
     
 	@Override
 	public void actionPerformed(ActionEvent e) {
+        board.renewTempWord();
         boardPanel.setBoardEnabled(true);
         if (mode.equals("theme")) {
             board.clearBoard();
@@ -55,10 +56,10 @@ public class CustomResetButton extends JButton implements ActionListener{
         boardPanel.reputLetter();
         score.setScore(0);
 		infoPanel.setScoreNum(score.getScore());
+		infoPanel.drawStarsToInfoPanel();
         infoPanel.getWordsFound().clearWordPanel();
         featurePanel.reInit();
 	}
-
 }
 
 

@@ -46,4 +46,16 @@ public class QuickSaveState {
 	public ArrayList<Integer> getFixedEnableList() {
 		return enableList;
 	}
+	
+	public void addLastScore(int score){
+		scoreList.add(score);
+	}
+	
+	public int getLastScore() {
+		if (scoreList.size() > 0) {
+			int score = scoreList.get(scoreList.size() - 1);
+			scoreList.remove(scoreList.size() - 1);
+			return score;
+		} else return 0;
+	}
 }

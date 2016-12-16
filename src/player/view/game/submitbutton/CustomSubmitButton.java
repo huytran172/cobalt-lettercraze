@@ -62,6 +62,7 @@ public abstract class CustomSubmitButton extends JButton implements ActionListen
      * Not sure what this does
      */
     protected void updateInterface() {
+        infoPanel.drawStarsToInfoPanel();
         boardPanel.deselectWord(word);
         boardPanel.reputLetter();
         board.renewTempWord();

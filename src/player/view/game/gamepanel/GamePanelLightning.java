@@ -3,6 +3,7 @@ package player.view.game.gamepanel;
 import player.models.Lightning;
 import player.view.game.BoardPanel;
 import player.view.game.CustomResetButton;
+import player.view.game.CustomSkipButton;
 import player.view.game.CustomUndoButton;
 import player.view.game.InfoPanel;
 import player.view.game.TitlePanel;
@@ -16,6 +17,7 @@ public class GamePanelLightning extends GamePanel {
 	private LightningSubmitButton btnSubmit;
 	private CustomResetButton btnReset;
 	private CustomUndoButton btnUndo;
+	private CustomSkipButton btnSkip;
 	
 	public GamePanelLightning(Lightning level){
 		super(level);
@@ -40,6 +42,11 @@ public class GamePanelLightning extends GamePanel {
 		btnUndo = new CustomUndoButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
 		add(btnUndo);
 		btnUndo.setBounds(680, 490, 100, 30);
+		btnUndo.setEnabled(false);
+		
+		btnSkip = new CustomSkipButton(level, this.infoPanel);
+		add(btnSkip);
+		btnSkip.setBounds(480, 460, 300, 30);
 	}
 
 	@Override

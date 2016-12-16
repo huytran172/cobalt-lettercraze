@@ -36,13 +36,16 @@ public class FeaturePanelTheme extends JPanel implements IFeaturePanel {
         wordLeft--;
         if (wordLeft == 0) {
             feature.setText("You win :(");
-            boardPanel.hideBoard(false);
+            boardPanel.setBoardEnabled(false);
         }
     }
     
     public void increaseWordLeft() {
     	if (wordLeft < themeLevel.getWordsToFind().length){
         	wordLeft++;
+        }
+    	if (wordLeft != 0) {
+        	boardPanel.setBoardEnabled(true);
         }
     }
     

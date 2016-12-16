@@ -3,9 +3,11 @@ package player.models;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import player.models.score.Score;
 
@@ -33,6 +35,10 @@ public abstract class Level {
 	public Level(Board board) {
 		this.board = board;
 		this.dictionary = new Dictionary();
+	}
+
+	public int[] getThreshold() {
+		return threshold;
 	}
 
 	/**
@@ -223,4 +229,56 @@ public abstract class Level {
 	}
 	
 	abstract public Score getScore();
+	
+	public void printToFile() {
+		String name = String.format("../cobalt-lettercraze/levels/Level%d.txt", this.getIndex());
+		File file = new File(name);
+		try {
+			PrintWriter writerClear = new PrintWriter(file);
+			writerClear.close();
+			PrintWriter writer = new PrintWriter(file);
+
+			// Add level index
+			writer.println(this.getIndex());
+			//Maximum number of words
+			if (this.getType().equals("theme")){
+				writer.print(((Theme) this).getTheme() + " ");
+				//List of words to find
+				String[] list = ((Theme) this).getWordsToFind();
+				for (int i = 0; i < list.length; i++){
+					writer.print(list[i] + " ");
+				}
+				writer.println();
+			}
+
+			if (this.getType().equals("puzzle")) {
+				writer.println(((Puzzle) this).getMaxMoves());
+			}
+
+			if (this.getType().equals("lightning")) {
+				writer.println(((Lightning) this).getTime());
+			}
+
+
+			//Thresholds
+			int stars[] = this.getScore().getThreshold();
+
+			for (int j = 0; j <3; j++){
+				writer.print(stars[j] + " ");
+			}
+			
+			writer.println();
+
+			//High score
+			writer.println(this.getScore().getHighScore());
+			//Is complete?
+			writer.println(this.getScore().getHighScore() >= this.getScore().getThreshold()[0] ? 1 : 0);
+			//Board visibility
+			writer.println(this.getBoard().toString());
+			writer.close();
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
 }

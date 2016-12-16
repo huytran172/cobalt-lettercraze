@@ -4,9 +4,9 @@ public class Square {
 	Letter letter;
 	int row;
 	
-	int column;
-	boolean isSelected;
-	boolean isEnabled;
+	protected int column;
+	protected boolean isSelected;
+	protected boolean isEnabled;
 	
 	/**
 	 * Generate square with letter

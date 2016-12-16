@@ -1,24 +1,21 @@
 package builder.view.editGame;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import builder.view.editGame.lightning.LightningGamePanel;
 import builder.view.editGame.puzzle.PuzzleGamePanel;
 import builder.view.editGame.theme.ThemeGamePanel;
 
-
-
 public class GameFrame extends JFrame {
-	/**
-	 * 
-	 */
-	//private static final long serialVersionUID = 1L;
-	
 	private JPanel contentPane;
 
+	/**
+	 * Constructor
+	 * @param  levelNum int
+	 * @param  add      boolean
+	 */
 	public GameFrame(int levelNum, boolean add) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = 800;
@@ -39,5 +36,4 @@ public class GameFrame extends JFrame {
 		
 		setContentPane(contentPane);
 	}
-
 }

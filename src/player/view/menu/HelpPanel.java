@@ -13,10 +13,9 @@ public class HelpPanel extends JPanel {
 	private JLabel label;
 
 	/**
-	 * Create the panel.
+	 * Constructor
 	 */
 	public HelpPanel() {
-		
 		JButton btnBack = new JButton("Back");
 		btnBack.setVerticalAlignment(SwingConstants.BOTTOM);
 		add(btnBack);
@@ -25,8 +24,6 @@ public class HelpPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				HelpFrame currentFrame = (HelpFrame) SwingUtilities.getRoot(btnBack);
 				currentFrame.dispose();
-//				MenuScreenFrame frame = new MenuScreenFrame();
-//				frame.setVisible(true);
 			}
 		});
 
@@ -34,6 +31,10 @@ public class HelpPanel extends JPanel {
 		addImage(label);
 	}
 
+	/**
+	 * Add image to the label
+	 * @param label 
+	 */
 	public void addImage(JLabel label) {
 		try {
 			Image img = ImageIO.read(new File("Images/help.png"));

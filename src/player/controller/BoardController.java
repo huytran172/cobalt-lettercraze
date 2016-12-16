@@ -12,9 +12,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-/**
- * Created by quyendinhthuchoang on 12/12/2016.
- */
 public class BoardController extends MouseAdapter {
     BoardPanel boardPanel;
     Board board;
@@ -24,6 +21,13 @@ public class BoardController extends MouseAdapter {
     Square square;
 
 
+    /**
+     * Constructor
+     * @param  sp square panel
+     * @param  sq square model
+     * @param  bp board panel
+     * @param  b  board model
+     */
     public BoardController(SquarePanel sp, Square sq, BoardPanel bp, Board b) {
 		boardPanel = bp;
 		squarePanel = sp;

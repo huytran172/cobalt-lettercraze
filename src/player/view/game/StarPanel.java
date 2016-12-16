@@ -16,6 +16,11 @@ public class StarPanel extends JPanel{
     private JLabel starLabel;
     private boolean state = false;
 
+    /**
+     * Constructor
+     * @param  starNum integer
+     * @param  score   integer
+     */
     public StarPanel(int starNum, int score) {
         this.starNum = starNum;
         this.score = score;
@@ -30,11 +35,17 @@ public class StarPanel extends JPanel{
         addStart();
     }
 
+    /**
+     * initilize the star panel
+     */
     public void initialize() {
         textLabel.setText("Star " + starNum + ": " + score);
         textLabel.setFont(textLabel.getFont().deriveFont(17.0f));
     }
 
+    /**
+     * Add the star
+     */
     public void addStart() {
         try {
             Image img = ImageIO.read(new File("Images/star-20.png"));
@@ -45,6 +56,9 @@ public class StarPanel extends JPanel{
         }
     }
 
+    /**
+     * toggle star
+     */
     public void toggleStar() {
         starLabel.setVisible(state);
         state = !state;

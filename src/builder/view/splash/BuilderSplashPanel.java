@@ -12,6 +12,9 @@ import javax.swing.JPanel;
 public class BuilderSplashPanel extends JPanel {
 	private BufferedImage splashScreen;
 
+	/**
+	 * Constructor
+	 */
 	public BuilderSplashPanel() {
 		try {                
 			splashScreen = ImageIO.read(new File("Images/BuilderSplashScreen.png"));

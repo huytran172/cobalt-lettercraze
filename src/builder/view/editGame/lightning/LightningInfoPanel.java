@@ -18,41 +18,67 @@ import java.awt.event.ActionEvent;
 
 public class LightningInfoPanel extends JPanel {
 	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+
+	/**
+	 * Get the text field
+	 * @return JTextField
+	 */
 	public JTextField getTextField() {
 		return textField;
 	}
 
+	/**
+	 * Set the text field
+	 * @param textField 
+	 */
 	public void setTextField(JTextField textField) {
 		this.textField = textField;
 	}
 
+	/**
+	 * getter
+	 */
 	public JTextField getTextField_1() {
 		return textField_1;
 	}
 
+	/**
+	 * setter
+	 */
 	public void setTextField_1(JTextField textField_1) {
 		this.textField_1 = textField_1;
 	}
 
+	/**
+	 * getter
+	 */
 	public JTextField getTextField_2() {
 		return textField_2;
 	}
 
+	/**
+	 * setter
+	 */
 	public void setTextField_2(JTextField textField_2) {
 		this.textField_2 = textField_2;
 	}
 
+	/**
+	 * getter
+	 */
 	public JTextField getTextField_3() {
 		return textField_3;
 	}
 
+	/**
+	 * setter
+	 */
 	public void setTextField_3(JTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
-
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
 
 	/**
 	 * Create the panel.

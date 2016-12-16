@@ -24,22 +24,9 @@ import player.view.game.GameFrame;
  */
 
 public class CustomLevelButton extends JButton implements ActionListener {
-	// Remove later
 	private int stars;
 	private boolean active;
-	
 	private Level level;
-
-	// Add later
-	// private Model model;
-
-	// TODO: Retrieve data from the model to display in the button
-	// e.g current level number, number of stars
-//	public CustomLevelButton(Level l) {
-//		this.level = l;
-//		this.stars = level.getScore().calculateStar();
-//		this.active = level.isActive();
-//	}
 	
 	/**
 	 * Constructor
@@ -90,7 +77,6 @@ public class CustomLevelButton extends JButton implements ActionListener {
 	
 	/**
 	 * Draw stars to the button
-	 * TODO draw number of stars according to the model
 	 */
 	private void drawStarsToButton() {
 		try {
@@ -113,6 +99,10 @@ public class CustomLevelButton extends JButton implements ActionListener {
 		}
 	}
 	
+	/**
+	 * Click the butotn to go the current frame
+	 * @param e ActionEvent
+	 */
 	public void actionPerformed(ActionEvent e) {
 		MenuScreenFrame currentFrame = (MenuScreenFrame) SwingUtilities.getRoot(this);
 		GameFrame gframe = new GameFrame(this.level, currentFrame);

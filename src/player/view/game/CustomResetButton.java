@@ -22,6 +22,14 @@ public class CustomResetButton extends JButton implements ActionListener{
     private IFeaturePanel featurePanel;
     private Score score;
 
+    /**
+     * Constructor
+     * @param  mode         String mode of the level
+     * @param  level        Level
+     * @param  boardPanel   BoardPanel
+     * @param  infoPanel    InfoPanel
+     * @param  featurePanel IFeaturePanel
+     */
     public CustomResetButton(String mode, Level level, BoardPanel boardPanel, InfoPanel infoPanel, IFeaturePanel featurePanel) {
         this.mode = mode;
         this.level = level;

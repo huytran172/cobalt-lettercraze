@@ -1,36 +1,28 @@
 package player.view.game;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-
+import javax.swing.GroupLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import player.models.Level;
 import player.models.QuickSaveState;
 import player.models.score.Score;
-import player.view.game.submitbutton.CustomSubmitButton;
-
 import java.awt.*;
 import java.io.File;
 
 public class InfoPanel extends JPanel {
 	protected Score score;
-
 	protected Level level;
 	protected JLabel highScore;
 	protected JLabel highScoreNumLabel;
 	protected int highScoreNum;
-
 	protected JLabel currentScore;
 	protected JLabel scoreNumLabel;
 	protected int scoreNum;
-
 	protected StarPanel star1;
 	protected StarPanel star2;
 	protected StarPanel star3;
-
 	protected JLabel starLabel;
-
 	protected int threshold[];
-
 	protected WordPanel wordsFound;
 	protected QuickSaveState saveState = new QuickSaveState();
 
@@ -39,6 +31,9 @@ public class InfoPanel extends JPanel {
 		initialize();
 	}
 
+	/**
+	 * Initialize the info panel
+	 */
 	private void initialize() {
 		 setBounds(660, 170, 260, 300);
 		 //setBackground(Color.lightGray);

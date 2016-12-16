@@ -10,10 +10,17 @@ public class SplashScreenWindow extends JWindow{
 
 	private int duration;
 	
+	/**
+	 * Constructor
+	 * @param  d duration
+	 */
 	public SplashScreenWindow(int d) {
 		this.duration = d;
 	}
 
+	/**
+	 * Initialize the splash screen
+	 */
 	public void showSplash() {
 		JPanel content = (JPanel) getContentPane();
 		

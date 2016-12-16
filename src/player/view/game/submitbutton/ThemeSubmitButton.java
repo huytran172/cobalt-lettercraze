@@ -10,6 +10,13 @@ import player.view.game.featurePanel.FeaturePanelTheme;
 public class ThemeSubmitButton extends CustomSubmitButton {
 	private FeaturePanelTheme featurePanelTheme;
 
+	/**
+	 * Constructor
+	 * @param  l Level
+	 * @param  b BoardPanel
+	 * @param  i InfoPanel
+	 * @param  f FeaturePaneltheme
+	 */
 	public ThemeSubmitButton(Level l, BoardPanel b, InfoPanel i, FeaturePanelTheme f) {
 		super(l, b, i);
 		this.featurePanelTheme = f;

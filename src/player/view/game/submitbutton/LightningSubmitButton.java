@@ -10,6 +10,13 @@ import player.view.game.featurePanel.FeaturePanelLightning;
 public class LightningSubmitButton extends CustomSubmitButton {
 	private FeaturePanelLightning featurePanelLightning;
 
+	/**
+	 * Constructor
+	 * @param  l Level
+	 * @param  b BoardPanel
+	 * @param  i InfoPanel
+	 * @param  f FeauturePanelLightning
+	 */
 	public LightningSubmitButton(Level l, BoardPanel b, InfoPanel i, FeaturePanelLightning f) {
 		super(l, b, i);
 		this.featurePanelLightning = f;

@@ -18,6 +18,10 @@ public abstract class GamePanel extends JPanel{
     protected InfoPanel infoPanel;
     protected Level level;
     
+    /**
+     * Constructor
+     * @param  l Level
+     */
     public GamePanel(Level l) {
     	this.level = l;
 		this.setLayout(null);
@@ -32,6 +36,7 @@ public abstract class GamePanel extends JPanel{
 	    infoPanel.setBounds(480, 100, 280, 350);
     }
 
+    // GETTERS AND SETTERS
     public BoardPanel getBoardPanel() {
         return boardPanel;
     }

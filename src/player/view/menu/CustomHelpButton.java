@@ -9,14 +9,18 @@ import javax.swing.SwingUtilities;
 import player.view.game.GameFrame;
 
 public class CustomHelpButton extends JButton implements ActionListener {
-	
-	// TODO: add image to the custom help button
-	// according to the design
+	/**
+	 * Constructor
+	 */
 	public CustomHelpButton() {
 		setText("Help");
 		addActionListener(this);
 	}
 	
+	/**
+	 * Show the HelpFrame
+	 * @param e ActionEvent
+	 */
 	public void actionPerformed(ActionEvent e) {
 		MenuScreenFrame currentFrame = (MenuScreenFrame) SwingUtilities.getRoot(this);
 		currentFrame.dispose();

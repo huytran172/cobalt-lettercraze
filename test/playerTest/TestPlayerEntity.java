@@ -1,14 +1,12 @@
 package playerTest;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import junit.framework.TestCase;
 import player.models.Board;
 import player.models.Dictionary;
 import player.models.Letter;
-import player.models.Level;
 import player.models.Lightning;
 import player.models.LightningTimer;
 import player.models.Model;
@@ -16,10 +14,8 @@ import player.models.Puzzle;
 import player.models.QuickSaveState;
 import player.models.RandomLetter;
 import player.models.Square;
-import player.models.StringFileIterator;
 import player.models.Theme;
 import player.models.Word;
-import player.models.score.Score;
 import player.models.score.ScoreLightning;
 import player.models.score.ScorePuzzle;
 import player.models.score.ScoreTheme;
@@ -94,6 +90,7 @@ public class TestPlayerEntity extends TestCase {
 		Square s = new Square(a, 0, 0, false);
 		Square s1 = new Square(empty, 0, 0, false);
 		s.toggleSelect();
+		assertEquals(s.isSelected(), true);
 		s.select();
 		s.deselect();
 		s.select();
@@ -115,16 +112,11 @@ public class TestPlayerEntity extends TestCase {
 		word.addSquareToWord(s);
 		//assertFalse(b.updateActiveWord(s));
 		b.initialize();
-//		Listener list = null;
-//		b.addListener(list);
-//		b.removeListener(list);
 		b.toggleSquare(s);
-//		b.notifyListeners();
 		b.setActiveWord(word);
 		b.iterator();
 		b.size();
 		b.getSquare(0, 0);
-		//assertEquals(b.getSquare(0, 0), s);
 		b.get(0);
 		assertFalse(b.updateActiveWord(s));
 		assertTrue(b.updateBoard());
@@ -140,8 +132,8 @@ public class TestPlayerEntity extends TestCase {
 		
 		//b.undo();
 		
-		b.initialize("");
-		b.initialize("", null);
+//		b.initialize("");
+//		b.initialize("", null);
 		//b.updateBoard();
 		
 	}

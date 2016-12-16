@@ -12,10 +12,10 @@ public class Puzzle extends Level{
 	private int maxMoves;
 	private ScorePuzzle score;
 	
-//	public Puzzle(int moves, int threshold[]){
-//		super(new Board());
-//		this.maxMoves = moves;
-//		this.score = new ScorePuzzle(threshold, super.highScoreList);
+//	public puzzle(int moves, int threshold[]){
+//		super(new board());
+//		this.maxmoves = moves;
+//		this.score = new scorepuzzle(threshold, super.highscorelist);
 //	}
 	
 	public Puzzle(File f) {

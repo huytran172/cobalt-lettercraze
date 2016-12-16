@@ -28,15 +28,6 @@ public abstract class Level {
 	int highScore;
 	int threshold[] = new int[3];
 
-	/**
-	 * Constructor create a new board
-	 * @param  board board
-	 */
-	public Level(Board board) {
-		this.board = board;
-		this.dictionary = new Dictionary();
-	}
-
 	public int[] getThreshold() {
 		return threshold;
 	}
@@ -66,12 +57,8 @@ public abstract class Level {
 			
 			// Is Complete
 			this.isComplete = Integer.parseInt(inputStream.readLine()) == 0 ? false : true;
-			
-			// Board shape
-//			this.board = new Board();
-//			this.board.initialize(inputStream.readLine());
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.getMessage();
 		} finally {
 			if (inputStream != null) {
 				try {
@@ -91,14 +78,6 @@ public abstract class Level {
 	public Board getBoard() {
 		return board;
 	}
-	
-/*	public void addFoundWord(Word w) {
-		this.wordsFound.push(w);
-	}
-	
-	public void removeLastFoundWord(){
-		this.wordsFound.pop();
-	}*/
 
 	void writeToFile(File f){
 		BufferedWriter outputStream = null;
@@ -163,43 +142,9 @@ public abstract class Level {
 	
 	//Undo last move
 	public abstract boolean undo();
-//	{
-//		if (!this.board.wordsFound.empty()){
-//			Word lastWordFound = board.wordsFound.peek();
-//			
-//			
-//			
-//			//Update high score /////////////////TO-DO///////////
-//			if(this.score.getScore() == this.score.getHighScore()){
-//				this.score.getHighScoreList().pop();
-//				score.setHighScore(this.score.getHighScoreList().peek()); 
-//				
-//			};
-//			
-//			this.score.removeScore(lastWordFound);
-//			
-//			this.score.calculateStar();
-//			
-//		}
-//		return true;
-//	}
 	
 	//Update once player has found a valid word
 	public abstract void updateLevel();
-//	{
-//		
-//		if (board.updateBoard()){
-//			
-//			Word lastWordFound = board.wordsFound.peek();
-//			
-//			//Update the scores
-//			this.score.updateScore(lastWordFound);
-//			this.score.updateHighScore();
-//			this.score.calculateStar();
-//			
-//			//
-//		}
-//	}
 	
 	@Override
 	public String toString() {

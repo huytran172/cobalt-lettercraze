@@ -217,10 +217,10 @@ public class Board implements Iterable<Square> {
 		this.activeWord = w;
 	}
 
-	/** Return all shapes in the board. */
-	public Iterator<Square> iterator() {
-		return squares.iterator();
-	}
+//	/** Return all shapes in the board. */
+//	public Iterator<Square> iterator() {
+//		return squares.iterator();
+//	}
 
 	/** Return the number of words on the board. */
 	public int size() { 

@@ -18,6 +18,9 @@ public class PlayerApplication {
 	SplashScreenWindow splashScreen;
 	MenuScreenFrame frame;
 	
+	/**
+	 * run the player application
+	 */
 	public void runPlayerApp(){
 		splashScreen = new SplashScreenWindow(2000);
 		splashScreen.showSplash();
@@ -38,6 +41,10 @@ public class PlayerApplication {
 		return splashScreen;
 	}
 
+	/**
+	 * Get the menu frame
+	 * @return JFrame
+	 */
 	public JFrame getFrame() {
 		return frame;
 	}

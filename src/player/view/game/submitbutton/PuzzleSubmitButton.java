@@ -10,6 +10,13 @@ import player.view.game.featurePanel.FeaturePanelPuzzle;
 public class PuzzleSubmitButton extends CustomSubmitButton {
 	FeaturePanelPuzzle featurePanelPuzzle;
 
+	/**
+	 * Constructor
+	 * @param  l Level
+	 * @param  b BoardPanel
+	 * @param  i InfoPanel
+	 * @param  f FeaturePanelPuzzle
+	 */
 	public PuzzleSubmitButton(Level l, BoardPanel b, InfoPanel i, FeaturePanelPuzzle f) {
 		super(l, b, i);
 		this.featurePanelPuzzle = f;
@@ -20,6 +27,8 @@ public class PuzzleSubmitButton extends CustomSubmitButton {
 	public void actionPerformed(ActionEvent e) {
 		word = board.getTempWord();
 		if (word.validWord()) {
+			int currentScore = this.score.getScore();
+			infoPanel.saveCurrentScore(currentScore);
 			this.updateScore(word);
 			board.saveSquareState();
 			System.out.println("SCORE " + this.score.getScore());

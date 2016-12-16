@@ -9,6 +9,10 @@ import player.models.Model;
 public class MenuScreenFrame extends JFrame {
 	private JPanel contentPane;
 
+	/**
+	 * Constructor
+	 * @param  m Model
+	 */
 	public MenuScreenFrame(Model m) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = 800;
@@ -21,6 +25,10 @@ public class MenuScreenFrame extends JFrame {
 		setContentPane(contentPane);
 	}
 
+	/**
+	 * Get the content pane
+	 * @return  JPanel
+	 */
 	public JPanel getContentPane() {
 		return contentPane;
 	}

@@ -14,13 +14,6 @@ public class Theme extends Level{
 	String wordsToFind[];
 	ScoreTheme score;
 	
-	public Theme(String theme, String wordsToFind[], int threshold[]){
-		super(new Board());
-		this.theme = theme;
-		this.wordsToFind = wordsToFind;
-		this.score = new ScoreTheme(super.threshold, super.highScore);
-	}
-	
 	public Theme(File f) {
 		super(f);
 		this.score = new ScoreTheme(super.threshold, super.highScore);

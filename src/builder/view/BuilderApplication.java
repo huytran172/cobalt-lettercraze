@@ -13,6 +13,9 @@ public class BuilderApplication {
 	BuilderSplashWindow splashScreen;
 	DropMenuFrame frame;
 	
+	/**
+	 * Initialize
+	 */
 	public void runBuilderApp(){
 		splashScreen = new BuilderSplashWindow(2000);
 		splashScreen.showSplash();
@@ -29,10 +32,18 @@ public class BuilderApplication {
 		});
 	}
 	
+	/**
+	 * Get the splash screen
+	 * @return BuilderSplashWindow
+	 */
 	public BuilderSplashWindow getSplash(){
 		return splashScreen;
 	}
 	
+	/**
+	 * Get the DropMenuFrame
+	 * @return DropMenuFrame
+	 */
 	public DropMenuFrame getDropMenu(){
 		return frame;
 	}

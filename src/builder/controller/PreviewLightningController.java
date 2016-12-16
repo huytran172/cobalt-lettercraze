@@ -20,17 +20,15 @@ public class PreviewLightningController implements ActionListener {
 	Board b;
 	int levelNum;
 	
+	/**
+	 * constructor
+	 * @param  app LightningInfoPanel
+	 * @param  b   Board
+	 */
 	public PreviewLightningController(LightningInfoPanel app, Board b) {
 		this.application = app;
 		this.b = b;
-
 	}
-	
-	
-	/**
-	 * Create a new name for the freshly created level
-	 * @return
-	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -45,42 +43,19 @@ public class PreviewLightningController implements ActionListener {
 		stars.add(star_3);
 		
 		try {
-			//Create new file
-			
-			
-				String name = "../cobalt-lettercraze/tempFile/temp.txt";
-				File file = new File(name);
-				//file.getParentFile().mkdirs();
-
-				PrintWriter writer = new PrintWriter(file);
-				//PrintWriter writer = new PrintWriter("Level16", "UTF-8");
-
-				//Add level name
-				writer.println(String.format("%d", 2));
-
-				//Maximum number of words
-				writer.println(maxWords);
-
-				//Thresholds
-				for (int j = 0; j <3; j++){
-					writer.print(stars.get(j) + " ");
-				}
-
-				writer.println();
-
-
-				//High score
-				writer.println(0);
-
-				//Is complete?
-				writer.println(0);
-
-				//Board visibility
-				writer.println(b.toStringForBuilder());
-				writer.close();
-			
-			
-			
+			String name = "../cobalt-lettercraze/tempFile/temp.txt";
+			File file = new File(name);
+			PrintWriter writer = new PrintWriter(file);
+			writer.println(String.format("%d", 2));
+			writer.println(maxWords);
+			for (int j = 0; j <3; j++){
+				writer.print(stars.get(j) + " ");
+			}
+			writer.println();
+			writer.println(0);
+			writer.println(0);
+			writer.println(b.toStringForBuilder());
+			writer.close();
 		} catch (IOException exception) {
 			exception.printStackTrace();
 		}
@@ -88,16 +63,6 @@ public class PreviewLightningController implements ActionListener {
 		GameFrame gf = new GameFrame("lightning","../cobalt-lettercraze/tempFile/temp.txt");
 		gf.setVisible(true);
 	}
-	
-	
-	//public void actionPerformed(ActionEvent e) {
-//		DropMenuFrame currentFrame = (DropMenuFrame) SwingUtilities.getRootPane(this);
-//		currentFrame.dispose();
-		
-		
-
-		
-	
 }
 	
 	

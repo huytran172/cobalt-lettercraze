@@ -15,29 +15,24 @@ public class WordPanel extends JPanel {
     private JTextArea console;
     private QuickSaveState saveState = new QuickSaveState();
 
-
+    /**
+     * Constructor
+     * intialize the WordPanel
+     */
 	public WordPanel() {
-		
-		//setBackground(Color.lightGray);
         console = new JTextArea(8, 20);
         console.setPreferredSize(new Dimension(300, 260));
         console.setLayout(new BoxLayout(console, BoxLayout.Y_AXIS));
-//        console.add(new JLabel("Khuyen Cao"));
-//        console.add(new JLabel("Trang Ha"));
-//        console.add(new JLabel("Quyen Hoang"));
-//        console.add(new JLabel("Hung Hong"));
-//        console.add(new JLabel("Huy Tran"));
-//        console.add(new JLabel("Hello world"));
         console.disable();
         vertical = new JScrollPane(console);
         vertical.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         add(vertical);
 	}
 
-	public void testAdd() {
-	    console.add(new JLabel("hello"));
-    }
-
+    /**
+     * add a word to the word panel
+     * @param string word
+     */
 	public void addToWordPanel(String string) {
         JLabel label = new JLabel(string);
         label.setFont(label.getFont().deriveFont(18f));
@@ -47,11 +42,14 @@ public class WordPanel extends JPanel {
 	    saveState.addNewWordState(string);
     }
 	
+    /**
+     * Get the word list state
+     */
 	public void loadWordListState(){
 		ArrayList<String> wordList = saveState.getWordListState();
-		if (wordList != null){
+		if (wordList != null) {
 			console.removeAll();
-			for (int i = 0; i < wordList.size(); i++){
+			for (int i = 0; i < wordList.size(); i++) {
 				JLabel label = new JLabel(wordList.get(i));
 				label.setFont(label.getFont().deriveFont(18f));
 				console.add(label);

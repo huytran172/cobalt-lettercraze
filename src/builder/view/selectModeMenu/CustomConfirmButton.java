@@ -17,29 +17,12 @@ import javax.swing.event.SwingPropertyChangeSupport;
 
 import builder.view.editGame.GameFrame;
 
-/**
- * Class custom button
- * Redraw the level button in the menu screen
- * @author LUL
- */
-
 public class CustomConfirmButton extends JButton implements ActionListener {
-	// Remove later
 	int levelNum;
-	
-	//private boolean active;
 
-	// Add later
-	// private Model model;
-
-	// TODO: Retrieve data from the model to display in the button
-	// e.g current level number, number of stars
-	//	public CustomLevelButton(Model m) {
-	//	}
-	
 	/**
 	 * Constructor
-	 * Will be removed later
+	 * @param  level level index
 	 */
 	public CustomConfirmButton(int level) {
 		this.levelNum = level +1;
@@ -47,20 +30,22 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 		drawConfirmButton();
 
 	}
-	
-		/**
-		 * Draw the button
-		 */
-		private void drawConfirmButton() {
-			setVerticalTextPosition(SwingConstants.TOP);
-			setHorizontalTextPosition(SwingConstants.CENTER);
-			setIconTextGap(30);
-		    setPreferredSize(new Dimension(100, 100));
-			setText("OK!");
-		}
-	
-		
 
+	/**
+	 * Draw the button
+	 */
+	private void drawConfirmButton() {
+		setVerticalTextPosition(SwingConstants.TOP);
+		setHorizontalTextPosition(SwingConstants.CENTER);
+		setIconTextGap(30);
+	    setPreferredSize(new Dimension(100, 100));
+		setText("OK!");
+	}
+	
+	/**
+	 * select the button and open GameFrame
+	 * @param e ActionEvent
+	 */
 	public void actionPerformed(ActionEvent e) {
 		SelectModeMenuFrame currentFrame = (SelectModeMenuFrame) SwingUtilities.getRoot(this);
 		currentFrame.dispose();
@@ -70,10 +55,17 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 		
 	}
 	
+	/**
+	 * Set the level number
+	 */
 	public void setLevelNum(int l) {
 		this.levelNum = l + 1;
 	}
 	
+	/**
+	 * Get the level number
+	 * @return int
+	 */
 	public int getLevelNum() {
 		return levelNum;
 	}

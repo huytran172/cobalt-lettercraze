@@ -41,7 +41,7 @@ public class FeaturePanelTheme extends JPanel implements IFeaturePanel {
     public void decreaseWordLeft(Word word) {
         wordLeft--;
         if (wordLeft == 0) {
-            feature.setText("You win :(");
+            feature.setText("All words are found!");
             boardPanel.setBoardEnabled(false);
             boardPanel.toggleJustColorWord(word);
         }

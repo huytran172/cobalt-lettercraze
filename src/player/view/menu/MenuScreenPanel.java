@@ -14,6 +14,10 @@ public class MenuScreenPanel extends JPanel {
 	private CustomLevelButton[] btnLevel = new CustomLevelButton[16];
 	private Model m;
 
+	/**
+	 * Constructor
+	 * @param m Model
+	 */
 	MenuScreenPanel(Model m) {
 		this.m = m;
 		GridBagLayout gbl_contentPane = new GridBagLayout();
@@ -25,7 +29,6 @@ public class MenuScreenPanel extends JPanel {
 		
 		for (int i = 1; i < 16; i++) {
 			Level l = m.getLevels()[i];
-			System.out.println("dsadasdsa" + l.toString());
 			btnLevel[i] = new CustomLevelButton(l, this.m.isPreviousLevelComplete(l));
 			GridBagConstraints gbc_btnLevel = new GridBagConstraints();
 			gbc_btnLevel.insets = new Insets(20, 30, 20, 28);

@@ -8,9 +8,12 @@ import java.awt.event.MouseEvent;
 import player.models.Board;
 import player.models.Level;
 
-public class ResetBoardController extends java.awt.event.MouseAdapter{
+public class ResetBoardController extends java.awt.event.MouseAdapter {
 	protected Level level;
-
+    /**
+     * Constructor
+     * @param  level 
+     */
 	public ResetBoardController(Level level){
 		this.level = level;
 	}

@@ -1,11 +1,10 @@
 package player.view.game;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.File;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import player.models.Level;
 import player.models.Lightning;
 import player.models.Model;
@@ -16,22 +15,15 @@ import player.view.game.gamepanel.GamePanelPuzzle;
 import player.view.game.gamepanel.GamePanelTheme;
 import player.view.menu.MenuScreenFrame;
 
-/**
- * The panel where player plays the game
- * @author cobalt
- *
- */
-
 public class GameFrame extends JFrame {
-//	Model m;
-	/**
-	 * 
-	 */
-	//private static final long serialVersionUID = 1L;
-	
 	protected JPanel contentPane;
 	protected JFrame menuScreenFrame;
 
+	/**
+	 * Constructor
+	 * @param  level           level
+	 * @param  menuScreenFrame JFrame
+	 */
 	public GameFrame(Level level, JFrame menuScreenFrame) {
 		this.menuScreenFrame = menuScreenFrame;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,6 +49,11 @@ public class GameFrame extends JFrame {
 		setContentPane(contentPane);
 	}
 	
+	/**
+	 * Constructor
+	 * @param  mode String
+	 * @param  file String 
+	 */
 	public GameFrame(String mode, String file) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = 800;
@@ -81,10 +78,18 @@ public class GameFrame extends JFrame {
 		setContentPane(contentPane);
 	}
 	
+	/**
+	 * Get the menu frame
+	 * @return MenuScreenFrame
+	 */
 	public MenuScreenFrame getMenuFrame() {
 		return (MenuScreenFrame) menuScreenFrame;
 	}
 	
+	/**
+	 * Get the game frame
+	 * @return GameFrame
+	 */
 	public GameFrame getGameFrame() {
 		return (GameFrame) menuScreenFrame;
 	}

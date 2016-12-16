@@ -3,21 +3,33 @@ package player.models;
 public class Letter {
 	String s;
 	
-
+	/**
+	 * Get the string
+	 * @return String
+	 */
 	public String getS() {
 		return s;
 	}
 
+	/**
+	 * Setter
+	 */
 	public void setS(String s) {
 		this.s = s;
 	}
 
+	/**
+	 * Constructor
+	 * @param  s String
+	 */
 	public Letter(String s){
-
 		this.s = s;
 	}
 	
-	//Assign scores for each letter
+	/**
+	 * Assign score for each letter
+	 * @return int
+	 */
 	public int getScore(){
 		if (s == "e" || s == "t"){
 			return 1;

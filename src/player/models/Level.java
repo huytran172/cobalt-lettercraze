@@ -12,29 +12,16 @@ import java.io.PrintWriter;
 import player.models.score.Score;
 
 public abstract class Level {
-	Board board;
-	String stringWordsFound[];
-	boolean isComplete;
-	Dictionary dictionary;
-	int index;
+	protected Board board;
+	protected String stringWordsFound[];
+	protected boolean isComplete;
+	protected Dictionary dictionary;
+	protected int index;
+	protected int highScore;
+	protected int threshold[] = new int[3];
+
 	public int getIndex() {
 		return index;
-	}
-
-	public void setIndex(int index) {
-		this.index = index;
-	}
-
-	int highScore;
-	int threshold[] = new int[3];
-
-	/**
-	 * Constructor create a new board
-	 * @param  board board
-	 */
-	public Level(Board board) {
-		this.board = board;
-		this.dictionary = new Dictionary();
 	}
 
 	public int[] getThreshold() {
@@ -92,65 +79,6 @@ public abstract class Level {
 		return board;
 	}
 	
-/*	public void addFoundWord(Word w) {
-		this.wordsFound.push(w);
-	}
-	
-	public void removeLastFoundWord(){
-		this.wordsFound.pop();
-	}*/
-
-	void writeToFile(File f){
-		BufferedWriter outputStream = null;
-		try {
-			outputStream = new BufferedWriter(new FileWriter(f));
-			// Level number
-			outputStream.write(this.index);
-			outputStream.write("\n");
-
-			//			// Skip feature info
-			//			outputStream.readLine();
-			outputStream.write("\n");
-			// Threshold
-
-			for (int i = 0; i < 3; i++){
-				outputStream.write(threshold[i] + " ");
-			}
-			outputStream.write("\n");
-
-			// High score
-			outputStream.write(this.highScore);
-			outputStream.write("\n");
-
-			// Is Complete
-			int complete = this.isComplete ? 1 : 0;
-			outputStream.write(complete);
-			outputStream.write("\n");
-
-
-			// Board shape
-			
-			outputStream.write(this.board.toString());
-			outputStream.write("\n");
-
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (outputStream != null) {
-				try {
-					outputStream.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-
-		
-	}
-	
-//	public abstract boolean isActive();
-	
 	//Initialize a level
 	abstract void initialize();
 	
@@ -163,58 +91,9 @@ public abstract class Level {
 	
 	//Undo last move
 	public abstract boolean undo();
-//	{
-//		if (!this.board.wordsFound.empty()){
-//			Word lastWordFound = board.wordsFound.peek();
-//			
-//			
-//			
-//			//Update high score /////////////////TO-DO///////////
-//			if(this.score.getScore() == this.score.getHighScore()){
-//				this.score.getHighScoreList().pop();
-//				score.setHighScore(this.score.getHighScoreList().peek()); 
-//				
-//			};
-//			
-//			this.score.removeScore(lastWordFound);
-//			
-//			this.score.calculateStar();
-//			
-//		}
-//		return true;
-//	}
 	
 	//Update once player has found a valid word
 	public abstract void updateLevel();
-//	{
-//		
-//		if (board.updateBoard()){
-//			
-//			Word lastWordFound = board.wordsFound.peek();
-//			
-//			//Update the scores
-//			this.score.updateScore(lastWordFound);
-//			this.score.updateHighScore();
-//			this.score.calculateStar();
-//			
-//			//
-//		}
-//	}
-	
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Index " + this.index); 
-		sb.append("\n"); 
-		sb.append("Threshold " + this.threshold[0] + " " + this.threshold[1] + " " + this.threshold[2]);
-		sb.append("\n"); 
-		sb.append("Highscore " + this.highScore);
-		sb.append("\n"); 
-		sb.append("Is complete " + this.isComplete);
-		sb.append("\n"); 
-		sb.append(this.board.toString());
-		return sb.toString();
-	}
 	
 	public String getType() {
 		if (this.index % 3 == 1) {

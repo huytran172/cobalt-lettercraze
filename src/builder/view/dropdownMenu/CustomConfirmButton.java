@@ -25,22 +25,11 @@ import builder.view.selectModeMenu.SelectModeMenuFrame;
  */
 
 public class CustomConfirmButton extends JButton implements ActionListener {
-	// Remove later
 	int levelNum;
-	
-	//private boolean active;
 
-	// Add later
-	// private Model model;
-
-	// TODO: Retrieve data from the model to display in the button
-	// e.g current level number, number of stars
-	//	public CustomLevelButton(Model m) {
-	//	}
-	
 	/**
-	 * Constructor
-	 * Will be removed later
+	 * Custom confirm button constructor
+	 * @param  level int
 	 */
 	public CustomConfirmButton(int level) {
 		this.levelNum = level;
@@ -49,39 +38,47 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 
 	}
 	
-		/**
-		 * Draw the button
-		 */
-		private void drawConfirmButton() {
-			setVerticalTextPosition(SwingConstants.TOP);
-			setHorizontalTextPosition(SwingConstants.CENTER);
-			setIconTextGap(30);
-		    setPreferredSize(new Dimension(100, 100));
-			setText("OK!");
-		}
+	/**
+	 * Draw the button
+	 */
+	private void drawConfirmButton() {
+		setVerticalTextPosition(SwingConstants.TOP);
+		setHorizontalTextPosition(SwingConstants.CENTER);
+		setIconTextGap(30);
+	    setPreferredSize(new Dimension(100, 100));
+		setText("OK!");
+	}
 	
-		
-
+	/**
+	 * Action of the button
+	 * @param e ActionEvent
+	 */
 	public void actionPerformed(ActionEvent e) {
 		DropMenuFrame currentFrame = (DropMenuFrame) SwingUtilities.getRoot(this);
 		currentFrame.dispose();
 	
 		if (this.levelNum == 0){
-		SelectModeMenuFrame smFrame = new SelectModeMenuFrame();
-		smFrame.setVisible(true);
+			SelectModeMenuFrame smFrame = new SelectModeMenuFrame();
+			smFrame.setVisible(true);
 		}
-		else{
-		GameFrame gframe = new GameFrame(this.levelNum, false);
-		gframe.setVisible(true);
+		else {
+			GameFrame gframe = new GameFrame(this.levelNum, false);
+			gframe.setVisible(true);
 		}
 		
 	}
 	
+	/**
+	 * setter
+	 */
 	public void setLevelNum(int l) {
 		System.out.println("SETLEVEL" + this.levelNum);
 		this.levelNum = l;
 	}
 	
+	/**
+	 * getter
+	 */
 	public int getLevelNum() {
 		return levelNum;
 	}

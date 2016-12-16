@@ -1,38 +1,37 @@
 package player.view.game;
 
 import javax.swing.GroupLayout;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import player.models.Level;
 import player.models.score.Score;
-import player.view.game.submitbutton.CustomSubmitButton;
 
 public class InfoPanel extends JPanel {
 	protected Score score;
-
 	protected Level level;
 	protected JLabel highScore;
 	protected JLabel highScoreNumLabel;
 	protected int highScoreNum;
-
 	protected JLabel currentScore;
 	protected JLabel scoreNumLabel;
 	protected int scoreNum;
-
 	protected StarPanel star1;
 	protected StarPanel star2;
 	protected StarPanel star3;
-
 	protected WordPanel wordsFound;
 
-
+	/**
+	 * Constructor
+	 * @param  l Level
+	 */
 	public InfoPanel(Level l){
 		this.setLevel(l);
 		initialize();
 	}
 
+	/**
+	 * Initialize the info panel
+	 */
 	private void initialize() {
 		 setBounds(660, 170, 260, 300);
 		 //setBackground(Color.lightGray);
@@ -103,6 +102,7 @@ public class InfoPanel extends JPanel {
 			setLayout(groupLayout);
 	}
 
+	// GETTER AND SETTER FOR THE CLASS
 	public StarPanel getStar1() {
 		return star1;
 	}

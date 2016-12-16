@@ -2,8 +2,6 @@ package player.models;
 
 import java.util.*;
 
-import player.controller.Listener;
-
 /**
  * Supports listeners for changes.
  * 
@@ -183,19 +181,19 @@ public class Board implements Iterable<Square> {
 
 	private Word activeWord = null;
 	
-	/** Listeners. */
-	private ArrayList<Listener> listeners = new ArrayList<Listener>();
-	
-	/** Add a listener. */
-	public void addListener(Listener list) {
-		listeners.add(list);
-	}
-	
-	/** Remove a listener. */
-	public void removeListener(Listener list) {
-		listeners.remove(list);
-	}
-	
+//	/** Listeners. */
+//	private ArrayList<Listener> listeners = new ArrayList<Listener>();
+//	
+//	/** Add a listener. */
+//	public void addListener(Listener list) {
+//		listeners.add(list);
+//	}
+//	
+//	/** Remove a listener. */
+//	public void removeListener(Listener list) {
+//		listeners.remove(list);
+//	}
+//	
 //	/** 
 //	 * Reset board to state encoded by memento
 //	 * 
@@ -234,18 +232,18 @@ public class Board implements Iterable<Square> {
 		return squares.get(rowIndex);
 	}
 
-	/** 
-	 * Notify all listeners.
-	 * 
-	 * During this event, no new changes can happen.
-	 */
-	public void notifyListeners() {
-		synchronized (listeners) {
-			for (Listener list : listeners) {
-				list.update();
-			}
-		}
-	}
+//	/** 
+//	 * Notify all listeners.
+//	 * 
+//	 * During this event, no new changes can happen.
+//	 */
+//	public void notifyListeners() {
+//		synchronized (listeners) {
+//			for (Listener list : listeners) {
+//				list.update();
+//			}
+//		}
+//	}
 
 	public void toggleSquare(Square s) {
 		s.toggleSelect();
@@ -379,6 +377,10 @@ public class Board implements Iterable<Square> {
 		}
 	}
 
+	/**
+	 * Get squarelist
+	 * @return ArrayList<Square>
+	 */
 	public ArrayList<Square> getSquareList() {
 		return squares;
 	}

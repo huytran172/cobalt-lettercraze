@@ -21,6 +21,13 @@ public class CustomUndoButton extends JButton implements ActionListener {
     private InfoPanel infoPanel;
     private IFeaturePanel featurePanel;
     
+    /**
+     * Constructor
+     * @param  level        Level
+     * @param  boardPanel   BoardPanel
+     * @param  infoPanel    InfoPanel
+     * @param  featurePanel IFeaturePanel
+     */
     public CustomUndoButton(Level level, BoardPanel boardPanel, InfoPanel infoPanel, IFeaturePanel featurePanel) {
         this.level = level;
         this.infoPanel = infoPanel;
@@ -32,6 +39,10 @@ public class CustomUndoButton extends JButton implements ActionListener {
         addActionListener(this);
     }
 
+    /**
+     * Undo the move
+     * @param e ActionEvent
+     */
 	public void actionPerformed(ActionEvent e) {
 		board.loadSquareState();
         wordPanel.loadWordListState();
@@ -39,7 +50,5 @@ public class CustomUndoButton extends JButton implements ActionListener {
         boardPanel.reputLetter();
         boardPanel.repaint();
         wordPanel.repaint();
-//        gamePanel.getBoardPanel().getParent().repaint();
-//        SwingUtilities.getRoot(this).repaint();
     }
 }

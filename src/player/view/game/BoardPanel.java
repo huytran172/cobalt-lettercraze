@@ -32,15 +32,9 @@ public class BoardPanel extends JPanel {
 	 */
 	public BoardPanel(Board board) {
 		this.board = board;
-		//this.addMouseListener(new BoardController());
-		//this.addMouseMotionListener(new BoardController());
-
 		GridLayout gridLayout = new GridLayout(6, 6, 10, 10);
-		//GridBagLayout gridLayout = new GridBagLayout();
 		setLayout(gridLayout);
-
 		squareModels = board.getSquareList();
-
 		for (int i = 0; i < 36; i++) {
 			squarePanels[i] = new SquarePanel(squareModels.get(i));
 			squarePanels[i].addMouseListener(new BoardController(squarePanels[i], squareModels.get(i), this, board));
@@ -48,6 +42,10 @@ public class BoardPanel extends JPanel {
 		}
 	}
 
+	/**
+	 * Deselect the active word
+	 * @param word Word
+	 */
 	public void deselectWord(Word word) {
 		ArrayList<Square> wordSquares = word.getSquares();
 		int index;
@@ -58,6 +56,10 @@ public class BoardPanel extends JPanel {
 		}
 	}
 
+	/**
+	 * toggle the color of the word
+	 * @param word Word
+	 */
 	public void toggleJustColorWord(Word word) {
 		ArrayList<Square> wordSquares = word.getSquares();
 		int index;
@@ -67,6 +69,9 @@ public class BoardPanel extends JPanel {
 		}
 	}
 
+	/**
+	 * Redraw and revalidate the square panels
+	 */
 	public void reputLetter() {
 		for (int i = 0; i < squarePanels.length; i++) {
 			squarePanels[i].putLetter();
@@ -75,6 +80,10 @@ public class BoardPanel extends JPanel {
 		}
 	}
 
+	/**
+	 * Set the board enabled
+	 * @param b boolean
+	 */
 	public void setBoardEnabled(Boolean b) {
 		for (int i = 0; i < squarePanels.length; i++) {
 			squarePanels[i].setSquareEnable(b);
@@ -83,8 +92,11 @@ public class BoardPanel extends JPanel {
 		}
 	}
 
+	/**
+	 * Get the board
+	 * @return Board
+	 */
 	public Board getBoard() {
-		// TODO Auto-generated method stub
 		return this.board;
 	}
 }

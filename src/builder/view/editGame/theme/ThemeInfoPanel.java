@@ -105,6 +105,7 @@ public class ThemeInfoPanel extends JPanel {
 
 	}
 
+	// GETTERS AND SETTERS
 	public JTextField getTextField() {
 		return textField;
 	}

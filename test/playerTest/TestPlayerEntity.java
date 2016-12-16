@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import junit.framework.TestCase;
-import player.controller.Listener;
 import player.models.Board;
 import player.models.Dictionary;
 import player.models.Letter;
@@ -117,11 +115,11 @@ public class TestPlayerEntity extends TestCase {
 		word.addSquareToWord(s);
 		//assertFalse(b.updateActiveWord(s));
 		b.initialize();
-		Listener list = null;
-		b.addListener(list);
-		b.removeListener(list);
+//		Listener list = null;
+//		b.addListener(list);
+//		b.removeListener(list);
 		b.toggleSquare(s);
-		b.notifyListeners();
+//		b.notifyListeners();
 		b.setActiveWord(word);
 		b.iterator();
 		b.size();
@@ -172,42 +170,42 @@ public class TestPlayerEntity extends TestCase {
 	}
 	
 	public void testLightning(){
-	File f = new File("../cobalt-lettercraze/levels/Level11.txt");
-	Lightning lightning = new Lightning(f);
-	assertTrue(lightning.endLevel());
-	assertFalse(lightning.reset());
-	assertTrue(lightning.undo());
-	lightning.initialize();
-	assertEquals(lightning.getType(), "lightning");
-	lightning.setIndex(2);
-	assertEquals(lightning.getIndex(), 2);
-	lightning.getThreshold();
-	lightning.getBoard();
-	//lightning.writeToFile(f);
-	lightning.toString();
-	//lightning.getScore();
-	//System.out.println(lightning.getTime());
-}
+		File f = new File("../cobalt-lettercraze/levels/Level11.txt");
+		Lightning lightning = new Lightning(f);
+		assertTrue(lightning.endLevel());
+		assertFalse(lightning.reset());
+		assertTrue(lightning.undo());
+		lightning.initialize();
+		assertEquals(lightning.getType(), "lightning");
+		lightning.setIndex(2);
+		assertEquals(lightning.getIndex(), 2);
+		lightning.getThreshold();
+		lightning.getBoard();
+		//lightning.writeToFile(f);
+		lightning.toString();
+		//lightning.getScore();
+		//System.out.println(lightning.getTime());
+	}
 
-public void testPuzzle(){
-	File f = new File("../cobalt-lettercraze/levels/Level1.txt");
-	Puzzle puzzle = new Puzzle(f);
-	assertTrue(puzzle.endLevel());
-	assertFalse(puzzle.reset());
-	assertTrue(puzzle.undo());
-	puzzle.initialize();
-	assertEquals(puzzle.getType(), "puzzle");
-}
+	public void testPuzzle(){
+		File f = new File("../cobalt-lettercraze/levels/Level1.txt");
+		Puzzle puzzle = new Puzzle(f);
+		assertTrue(puzzle.endLevel());
+		assertFalse(puzzle.reset());
+		assertTrue(puzzle.undo());
+		puzzle.initialize();
+		assertEquals(puzzle.getType(), "puzzle");
+	}
 
-public void testTheme(){
-	File f = new File("../cobalt-lettercraze/levels/Level3.txt");
-	Theme theme = new Theme(f);
-	assertTrue(theme.endLevel());
-	assertFalse(theme.reset());
-	assertTrue(theme.undo());
-	theme.initialize();
-	assertEquals(theme.getType(), "theme");
-}
+	public void testTheme(){
+		File f = new File("../cobalt-lettercraze/levels/Level3.txt");
+		Theme theme = new Theme(f);
+		assertTrue(theme.endLevel());
+		assertFalse(theme.reset());
+		assertTrue(theme.undo());
+		theme.initialize();
+		assertEquals(theme.getType(), "theme");
+	}
 
 	
 	public void testWord(){

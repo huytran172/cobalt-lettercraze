@@ -63,8 +63,6 @@ public class WinGameFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
             	WinGameFrame currentFrame = (WinGameFrame) SwingUtilities.getRoot(btnYay);
         		currentFrame.dispose();
-//        		MenuScreenFrame frame = new MenuScreenFrame();
-//				frame.setVisible(true);
             }
         });
 	}

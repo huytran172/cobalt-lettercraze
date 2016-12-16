@@ -10,6 +10,13 @@ import player.view.game.featurePanel.FeaturePanelPuzzle;
 public class PuzzleSubmitButton extends CustomSubmitButton {
 	FeaturePanelPuzzle featurePanelPuzzle;
 
+	/**
+	 * Constructor
+	 * @param  l Level
+	 * @param  b BoardPanel
+	 * @param  i InfoPanel
+	 * @param  f FeaturePanelPuzzle
+	 */
 	public PuzzleSubmitButton(Level l, BoardPanel b, InfoPanel i, FeaturePanelPuzzle f) {
 		super(l, b, i);
 		this.featurePanelPuzzle = f;

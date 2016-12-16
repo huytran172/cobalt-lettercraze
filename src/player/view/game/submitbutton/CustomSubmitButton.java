@@ -28,6 +28,12 @@ public abstract class CustomSubmitButton extends JButton implements ActionListen
     protected Score score;
     protected int star;
 
+    /**
+     * Custome submit button constructor
+     * @param  l          Level
+     * @param  boardPanel BoardPanel
+     * @param  infoPanel  InfoPanel
+     */
     public CustomSubmitButton(Level l, BoardPanel boardPanel, InfoPanel infoPanel) {
         this.level = l;
         this.wordPanel = infoPanel.getWordsFound();
@@ -42,19 +48,6 @@ public abstract class CustomSubmitButton extends JButton implements ActionListen
     }
 
     public abstract void actionPerformed(ActionEvent e);
-//    public void actionPerformed(ActionEvent e) {
-//        GamePanel gamePanel = (GamePanel) infoPanel.getParent();
-//        word = board.getTempWord();
-//        if (word.validWord()) {
-//			this.updateScore(word);
-//        	System.out.println("SCORE " + this.score.getScore());
-//            wordPanel.addToWordPanel(word.getWordString());
-//            word.clearWord();
-//            board.updateBoard();
-//            board.fillEmptySquares();
-//            gamePanel.getBoardPanel().reputLetter();
-//        }
-//
     
     /**
      * Update current score

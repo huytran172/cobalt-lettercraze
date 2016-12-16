@@ -86,7 +86,6 @@ public class TestPlayerView extends TestCase{
 	
 	public void testWordPanel(){
 		WordPanel wp = new WordPanel();
-		wp.testAdd();
 		wp.addToWordPanel("color");
 		wp.loadWordListState();
 		wp.clearWordPanel();

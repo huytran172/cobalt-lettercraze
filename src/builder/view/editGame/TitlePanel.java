@@ -23,20 +23,6 @@ public class TitlePanel extends JPanel{
 	 */
 	public TitlePanel(String mode) {
 		this.mode = mode;
-		//this.currentGameFrame = currentGameFrame;		
-		
-//		JButton btnBack = new JButton("Back");
-//		add(btnBack);
-//		btnBack.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//            	GameFrame currentFrame = (GameFrame) SwingUtilities.getRoot(btnBack);
-//        		currentFrame.dispose();
-//        		MenuScreenFrame frame = new MenuScreenFrame();
-//				frame.setVisible(true);
-//            }
-//        });
-		
 		label = new JLabel();
 		label.setText("Mode: " + mode);
 		label.setFont(new Font(label.getFont().getName(), Font.PLAIN, 30));

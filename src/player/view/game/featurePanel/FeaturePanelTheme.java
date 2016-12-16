@@ -26,6 +26,11 @@ public class FeaturePanelTheme extends JPanel implements IFeaturePanel {
         initFeatureLabel();
     }
 
+    public void reInit() {
+        wordLeft = themeLevel.getWordsToFind().length;
+        feature.setText("Theme: " + themeTitle);
+    }
+
     public void initFeatureLabel() {
         feature = new JLabel();
         feature.setText("Theme: " + themeTitle);

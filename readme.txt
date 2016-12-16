@@ -20,7 +20,7 @@ least one star on the first level. To know how to play each mode, click to the "
 
 -When playing the game, you choose words on the Board as you would in Boggle, by clicking to the letter squares to form words and click 
 “Submit” to choose that word. If the word you formed is valid, it will be added to the list of "Words found" and your score will be 
-increment. 
+increment. If you choose the an invalid word, the submit request will be cancelled.
 
 -Click "Undo" to undo any move that you've done, the current score will be decremented to before the moves were made (Undo button is not 
 valid in a Lightning Level).  

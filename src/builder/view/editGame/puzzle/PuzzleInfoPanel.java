@@ -69,18 +69,18 @@ public class PuzzleInfoPanel extends JPanel {
 		textField_3.setColumns(10);
 		
 		JButton btnPreview = new JButton("Preview");
-		btnPreview.setBounds(6, 380, 76, 29);
+		btnPreview.setBounds(0, 380, 80, 30);
 		btnPreview.addActionListener(new PreviewPuzzleController(this, b));
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");
-		btnSave.setBounds(77, 380, 67, 29);
+		btnSave.setBounds(80, 380, 80, 30);
 		btnSave.addActionListener(new SavePuzzleController(this, b, levelNum, add));
 
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");
-		btnQuit.setBounds(168, 380, 67, 29);
+		btnQuit.setBounds(160, 380, 80, 30);
 		add(btnQuit);
 		btnQuit.addActionListener(new ActionListener() {
             @Override

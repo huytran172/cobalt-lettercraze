@@ -184,9 +184,9 @@ public class InfoPanel extends JPanel {
 		saveState.addLastScore(score);
 	}
 
-	public void retrieveLastScore() {
+	public int retrieveLastScore() {
 		int lastScore = saveState.getLastScore();
-		this.setScoreNum(lastScore);
+		return lastScore;
 	}
 
 	public int getScoreNum() {

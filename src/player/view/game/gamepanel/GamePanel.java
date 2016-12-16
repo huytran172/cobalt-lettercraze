@@ -29,7 +29,7 @@ public abstract class GamePanel extends JPanel{
 	    
 	    infoPanel = new InfoPanel(level);
 	    add(infoPanel);
-	    infoPanel.setBounds(480, 100, 280, 420);
+	    infoPanel.setBounds(480, 100, 280, 350);
     }
 
     public BoardPanel getBoardPanel() {

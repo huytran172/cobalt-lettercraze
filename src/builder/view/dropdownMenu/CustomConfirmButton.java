@@ -33,8 +33,6 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 	 */
 	public CustomConfirmButton(int level) {
 		this.levelNum = level;
-		System.out.println("SETLEVEL" + this.levelNum);
-
 		addActionListener(this);
 		drawConfirmButton();
 

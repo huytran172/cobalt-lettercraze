@@ -37,6 +37,7 @@ public class PuzzleGamePanel extends JPanel {
 	 * @param  levelNum int
 	 * @param  add      boolean
 	 */
+
 	public PuzzleGamePanel(int levelNum, boolean add){
 		this.setLayout(null);
 		Board b = new Board();
@@ -51,4 +52,6 @@ public class PuzzleGamePanel extends JPanel {
 	    add(titlePanel);
 	    titlePanel.setBounds(40, 20, 600, 60);
 	}
+
+	
 }

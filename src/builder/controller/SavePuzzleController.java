@@ -20,6 +20,16 @@ import player.models.Board;
 public class SavePuzzleController implements ActionListener {
 	PuzzleInfoPanel application;     /** Application we have control over. */
 	Board b;
+	public int getLevelNum() {
+		return levelNum;
+	}
+
+
+	public boolean isAdd() {
+		return add;
+	}
+
+
 	int levelNum;
 	boolean add;
 	
@@ -35,7 +45,7 @@ public class SavePuzzleController implements ActionListener {
 	 * Create a new name for the freshly created level
 	 * @return
 	 */
-	int levelName(){
+	public int levelName(){
 		
 		File[] files = new File("../cobalt-lettercraze/levelsBuilderMade/").listFiles();
 
@@ -86,7 +96,6 @@ public class SavePuzzleController implements ActionListener {
 
 		try {
 			//Create new file
-			System.out.println("CONTROLLER" + levelNum);
 			if (add) {
 				String name = String.format("../cobalt-lettercraze/levelsBuilderMade/Level%d.txt", levelName());
 				File file = new File(name);

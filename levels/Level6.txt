@@ -1,6 +1,6 @@
 6
-Color Red Green 
-4 6 12 
+Animals Cat dog lion tiger goat 
+2 3 5
 0
 0
 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 

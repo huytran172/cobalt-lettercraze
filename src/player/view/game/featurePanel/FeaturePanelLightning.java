@@ -55,7 +55,7 @@ public class FeaturePanelLightning extends JPanel implements IFeaturePanel {
                     feature.setText("Timer: " + (maxTime - counter)
                             + " seconds left");
                 } else {
-                    feature.setText("You lose hahahahahaha");
+                    feature.setText("Time's Up!");
                     boardPanel.setBoardEnabled(false);
                 }
 

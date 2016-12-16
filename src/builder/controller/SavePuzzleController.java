@@ -21,12 +21,13 @@ public class SavePuzzleController implements ActionListener {
 	PuzzleInfoPanel application;     /** Application we have control over. */
 	Board b;
 	int levelNum;
+	boolean add;
 	
-	public SavePuzzleController(PuzzleInfoPanel app, Board b, int levelNum) {
+	public SavePuzzleController(PuzzleInfoPanel app, Board b, int levelNum, boolean add) {
 		this.application = app;
 		this.b = b;
 		this.levelNum = levelNum;
-
+		this.add = add;
 	}
 	
 	
@@ -86,7 +87,7 @@ public class SavePuzzleController implements ActionListener {
 		try {
 			//Create new file
 			System.out.println("CONTROLLER" + levelNum);
-			if (levelNum == 0) {
+			if (add) {
 				String name = String.format("../cobalt-lettercraze/levelsBuilderMade/Level%d.txt", levelName());
 				File file = new File(name);
 				//file.getParentFile().mkdirs();

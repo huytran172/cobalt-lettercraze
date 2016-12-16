@@ -25,7 +25,7 @@ public class PuzzleInfoPanel extends JPanel {
 	 * Create the panel.
 	 * @param levelNum 
 	 */
-	public PuzzleInfoPanel(Board b, int levelNum) {
+	public PuzzleInfoPanel(Board b, int levelNum, boolean add) {
 		setLayout(null);
 		
 		JLabel label = new JLabel("");
@@ -75,7 +75,7 @@ public class PuzzleInfoPanel extends JPanel {
 		
 		JButton btnSave = new JButton("Save");
 		btnSave.setBounds(77, 380, 67, 29);
-		btnSave.addActionListener(new SavePuzzleController(this, b, levelNum));
+		btnSave.addActionListener(new SavePuzzleController(this, b, levelNum, add));
 
 		add(btnSave);
 		

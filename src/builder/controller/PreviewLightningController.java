@@ -9,17 +9,18 @@ import java.util.ArrayList;
 import javax.swing.JTextField;
 
 import builder.view.BuilderApplication;
+import builder.view.editGame.lightning.LightningInfoPanel;
 import builder.view.editGame.puzzle.PuzzleGamePanel;
 import builder.view.editGame.puzzle.PuzzleInfoPanel;
 import player.models.Board;
 import player.view.game.GameFrame;
 
 public class PreviewLightningController implements ActionListener {
-	PuzzleInfoPanel application;     /** Application we have control over. */
+	LightningInfoPanel application;     /** Application we have control over. */
 	Board b;
 	int levelNum;
 	
-	public PreviewLightningController(PuzzleInfoPanel app, Board b) {
+	public PreviewLightningController(LightningInfoPanel app, Board b) {
 		this.application = app;
 		this.b = b;
 

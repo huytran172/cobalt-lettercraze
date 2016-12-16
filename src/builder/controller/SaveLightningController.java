@@ -22,11 +22,13 @@ public class SaveLightningController implements ActionListener {
 	LightningInfoPanel application;     /** Application we have control over. */
 	Board b;
 	int levelNum;
+	boolean add;
 	
-	public SaveLightningController(LightningInfoPanel app, Board b, int levelNum) {
+	public SaveLightningController(LightningInfoPanel app, Board b, int levelNum, boolean add) {
 		this.application = app;
 		this.b = b;
 		this.levelNum = levelNum;
+		this.add = add;
 	}
 	
 	/**
@@ -85,7 +87,7 @@ int levelName(){
 		try {
 			//Create new file
 
-			if (levelNum == 1) {
+			if (add) {
 
 				String name = String.format("../cobalt-lettercraze/levelsBuilderMade/Level%d.txt", levelName());
 				File file = new File(name);

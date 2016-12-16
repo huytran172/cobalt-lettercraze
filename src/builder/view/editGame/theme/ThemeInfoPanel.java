@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import builder.controller.PreviewThemeController;
 import builder.controller.SaveThemeController;
 import builder.view.dropdownMenu.DropMenuFrame;
 import builder.view.editGame.GameFrame;
@@ -25,8 +26,9 @@ public class ThemeInfoPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 * @param levelNum 
+	 * @param add 
 	 */
-	public ThemeInfoPanel(Board b, int levelNum) {
+	public ThemeInfoPanel(Board b, int levelNum, boolean add) {
 		setLayout(null);
 		
 		JLabel label = new JLabel("");
@@ -80,11 +82,12 @@ public class ThemeInfoPanel extends JPanel {
 		
 		JButton btnPreview = new JButton("Preview");
 		btnPreview.setBounds(6, 369, 91, 29);
+		btnPreview.addActionListener(new PreviewThemeController(this,b));
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");
 		btnSave.setBounds(108, 369, 61, 29);
-		btnSave.addActionListener(new SaveThemeController(this,b,levelNum));
+		btnSave.addActionListener(new SaveThemeController(this,b,levelNum,add));
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");

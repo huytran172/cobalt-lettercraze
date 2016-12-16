@@ -19,7 +19,7 @@ public class GameFrame extends JFrame {
 	
 	private JPanel contentPane;
 
-	public GameFrame(int levelNum) {
+	public GameFrame(int levelNum, boolean add) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = 800;
 	    int height = 600;
@@ -28,19 +28,15 @@ public class GameFrame extends JFrame {
 	    int y = (screen.height-height)/2;
 	    setBounds(x,y,width,height);	
 		if (levelNum%3 == 1){
-			contentPane = new PuzzleGamePanel(levelNum);
+			contentPane = new PuzzleGamePanel(levelNum, add);
 		}
 		else if (levelNum%3 == 2){
-			contentPane = new LightningGamePanel(levelNum);
+			contentPane = new LightningGamePanel(levelNum, add);
 		}
 		else if (levelNum%3 == 0){
-			contentPane = new ThemeGamePanel(levelNum);
+			contentPane = new ThemeGamePanel(levelNum, add);
 		}
-//		
-//		else {
-//			contentPane = new PuzzleGamePanel(levelNum);
-//		}
-	
+		
 		setContentPane(contentPane);
 	}
 

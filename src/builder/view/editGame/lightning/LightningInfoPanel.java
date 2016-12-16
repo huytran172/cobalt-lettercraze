@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import builder.controller.PreviewLightningController;
+import builder.controller.PreviewPuzzleController;
 import builder.controller.SaveLightningController;
 import builder.view.dropdownMenu.DropMenuFrame;
 import builder.view.editGame.GameFrame;
@@ -56,7 +58,7 @@ public class LightningInfoPanel extends JPanel {
 	 * Create the panel.
 	 * @param level 
 	 */
-	public LightningInfoPanel(Board b, int level) {
+	public LightningInfoPanel(Board b, int level, boolean add) {
 		setLayout(null);
 		
 		JLabel label = new JLabel("");
@@ -101,11 +103,12 @@ public class LightningInfoPanel extends JPanel {
 		
 		JButton btnPreview = new JButton("Preview");
 		btnPreview.setBounds(6, 380, 91, 29);
+		btnPreview.addActionListener(new PreviewLightningController(this, b));
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");
 		btnSave.setBounds(98, 380, 67, 29);
-		btnSave.addActionListener(new SaveLightningController(this, b, level));
+		btnSave.addActionListener(new SaveLightningController(this, b, level, add));
 		add(btnSave);
 		
 		JButton btnQuit = new JButton("Quit");

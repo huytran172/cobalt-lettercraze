@@ -19,7 +19,7 @@ public class LightningGamePanel extends JPanel {
 	JPanel infoPanel;
 	JPanel starPanel;
 	
-	public LightningGamePanel(int level){
+	public LightningGamePanel(int level, boolean add){
 		
 		this.setLayout(null);
 
@@ -30,7 +30,7 @@ public class LightningGamePanel extends JPanel {
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
 	    
-	    infoPanel = new LightningInfoPanel(b, level);
+	    infoPanel = new LightningInfoPanel(b, level, add);
 	    add(infoPanel);
 	    infoPanel.setBounds(480, 100, 280, 420);
 	    

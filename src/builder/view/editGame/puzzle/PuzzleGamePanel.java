@@ -29,7 +29,7 @@ public class PuzzleGamePanel extends JPanel {
 	JPanel infoPanel;
 	//JPanel starPanel;
 	
-	public PuzzleGamePanel(int levelNum){
+	public PuzzleGamePanel(int levelNum, boolean add){
 		
 		this.setLayout(null);
 		
@@ -40,7 +40,7 @@ public class PuzzleGamePanel extends JPanel {
 	    boardPanel.setBounds(40, 100, 420, 420);
 	    //boardPanel.setBackground(Color.blue);
 	    
-	    infoPanel = new PuzzleInfoPanel(b, levelNum);
+	    infoPanel = new PuzzleInfoPanel(b, levelNum, add);
 	    add(infoPanel);
 	    infoPanel.setBounds(480, 100, 280, 420);
 	    

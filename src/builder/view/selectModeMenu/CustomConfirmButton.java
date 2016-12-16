@@ -42,7 +42,7 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 	 * Will be removed later
 	 */
 	public CustomConfirmButton(int level) {
-		this.levelNum = level;
+		this.levelNum = level +1;
 		addActionListener(this);
 		drawConfirmButton();
 
@@ -65,7 +65,7 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 		SelectModeMenuFrame currentFrame = (SelectModeMenuFrame) SwingUtilities.getRoot(this);
 		currentFrame.dispose();
 	
-		GameFrame gframe = new GameFrame(this.levelNum);
+		GameFrame gframe = new GameFrame(this.levelNum, true);
 		gframe.setVisible(true);
 		
 	}

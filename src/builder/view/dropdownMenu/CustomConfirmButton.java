@@ -44,7 +44,7 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 	 */
 	public CustomConfirmButton(int level) {
 		this.levelNum = level;
-		System.out.println("SETLEVELCONSTRUCTOR" + this.levelNum);
+		System.out.println("SETLEVEL" + this.levelNum);
 
 		addActionListener(this);
 		drawConfirmButton();
@@ -73,7 +73,7 @@ public class CustomConfirmButton extends JButton implements ActionListener {
 		smFrame.setVisible(true);
 		}
 		else{
-		GameFrame gframe = new GameFrame(this.levelNum);
+		GameFrame gframe = new GameFrame(this.levelNum, false);
 		gframe.setVisible(true);
 		}
 		

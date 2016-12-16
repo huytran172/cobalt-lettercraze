@@ -57,6 +57,15 @@ public class BoardPanel extends JPanel {
 		}
 	}
 
+	public void selectWord(Word word) {
+		ArrayList<Square> wordSquares = word.getSquares();
+		int index;
+		for (int i = 0; i < wordSquares.size(); i++) {
+			index = squareModels.indexOf(wordSquares.get(i));
+			squarePanels[index].enableColor(true);
+		}
+	}
+
 	public void reputLetter() {
 		for (int i = 0; i < squarePanels.length; i++) {
 			squarePanels[i].putLetter();

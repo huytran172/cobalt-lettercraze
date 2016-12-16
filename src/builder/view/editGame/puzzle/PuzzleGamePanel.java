@@ -55,8 +55,5 @@ public class PuzzleGamePanel extends JPanel {
 
 	}
 
-	public PuzzleInfoPanel getInfoPanel() {
-		// TODO Auto-generated method stub
-		return this.infoPanel;
-	}
+	
 }

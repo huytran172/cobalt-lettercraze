@@ -13,58 +13,59 @@ public class InfoPanel extends JPanel {
 	protected Level level;
 	protected JLabel highScore;
 	protected JLabel currentScore;
-	protected JLabel thisHighScore;
-	protected JLabel thisScore;
+	protected JLabel highScoreNum;
+	protected JLabel scoreNum;
 
 	protected StarPanel star1;
 	protected StarPanel star2;
 	protected StarPanel star3;
-	
+
 	protected WordPanel wordsFound;
 
 	protected JButton quit;
 
-	
+
 	public InfoPanel(Level l){
 		this.setLevel(l);
 		initialize();
 	}
-	
+
 	private void initialize() {
 		 setBounds(660, 170, 260, 510);
 		 //setBackground(Color.lightGray);
-		 
-		 setHighScore(new JLabel("High score"));
-		 getHighScore().setFont(getHighScore().getFont().deriveFont(18.0f));
-		 
-		 //TO DO: FETCH HIGH SCORE FROM TEXT FILE
-		 setThisHighScore(new JLabel("0"));
-		 getThisHighScore().setFont(getThisHighScore().getFont().deriveFont(18.0f));
-		 setCurrentScore(new JLabel("Score"));
-		 getCurrentScore().setFont(getHighScore().getFont().deriveFont(18.0f));
-		 setThisScore(new JLabel("0"));
-		 getThisScore().setFont(getThisScore().getFont().deriveFont(18.0f));
+
+		setHighScore(new JLabel("High score"));
+		getHighScore().setFont(getHighScore().getFont().deriveFont(18.0f));
+		highScoreNum = new JLabel();
+		setHighScoreNum(0);
+		getHighScoreNum().setFont(getHighScoreNum().getFont().deriveFont(18.0f));
+
+		setCurrentScore(new JLabel("Score"));
+		getCurrentScore().setFont(getHighScore().getFont().deriveFont(18.0f));
+		scoreNum = new JLabel();
+		setScoreNum(0);
+		getScoreNum().setFont(getScoreNum().getFont().deriveFont(18.0f));
 
 		 setStar1(new StarPanel(1, 0));
 		 setStar2(new StarPanel(2, 0));
 		 setStar3(new StarPanel(3, 0));
-		 
+
 		 setWordsFound(new WordPanel());
 
 		 setQuit(new JButton ("Skip"));
 
 		 GroupLayout groupLayout = new GroupLayout(this);
-		 
+
 		 groupLayout.setVerticalGroup(
 				 groupLayout.createSequentialGroup()
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addGroup(groupLayout.createParallelGroup()
 								 .addComponent(getHighScore(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-								 .addComponent(getThisHighScore(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+								 .addComponent(getHighScoreNum(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
 						 //.addGap(18)
 						 .addGroup(groupLayout.createParallelGroup()
 								 .addComponent(getCurrentScore(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-								 .addComponent(getThisScore(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+								 .addComponent(getScoreNum(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
 						 //.addComponent(currentScore, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getStar1(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getStar2(), GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
@@ -78,16 +79,16 @@ public class InfoPanel extends JPanel {
 
 				 .addGroup(groupLayout.createParallelGroup()
 						 .addComponent(getQuit(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)));
-		 
+
 		 groupLayout.setHorizontalGroup(
-				 
+
 				 groupLayout.createParallelGroup()
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addComponent(getHighScore(), GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(getThisHighScore(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						 .addComponent(getHighScoreNum(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addComponent(getCurrentScore(), GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-						 .addComponent(getThisScore(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+						 .addComponent(getScoreNum(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
 				 //.addComponent(currentScore, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
 				 //.addComponent(progressbar, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getStar1(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
@@ -96,7 +97,7 @@ public class InfoPanel extends JPanel {
 				 .addComponent(getWordsFound(), GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()
 						 .addComponent(getQuit(), GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)));
-			
+
 			setLayout(groupLayout);
 	}
 
@@ -128,36 +129,12 @@ public class InfoPanel extends JPanel {
 		return currentScore;
 	}
 
-	public JLabel getThisHighScore() {
-		return thisHighScore;
-	}
-
-	public JLabel getThisScore() {
-		return thisScore;
-	}
-
 	public JButton getQuit() {
 		return quit;
 	}
 
-	public void setThisHighScore(JLabel thisHighScore) {
-		this.thisHighScore = thisHighScore;
-	}
-
 	public void setLevel(Level level) {
 		this.level = level;
-	}
-
-	public void setHighScore(JLabel highScore) {
-		this.highScore = highScore;
-	}
-
-	public void setCurrentScore(JLabel currentScore) {
-		this.currentScore = currentScore;
-	}
-
-	public void setThisScore(JLabel thisScore) {
-		this.thisScore = thisScore;
 	}
 
 	public void setStar1(StarPanel star1) {
@@ -178,6 +155,30 @@ public class InfoPanel extends JPanel {
 
 	public void setQuit(JButton quit) {
 		this.quit = quit;
+	}
+
+	public JLabel getHighScoreNum() {
+		return highScoreNum;
+	}
+
+	public JLabel getScoreNum() {
+		return scoreNum;
+	}
+
+	public void setHighScore(JLabel highScore) {
+		this.highScore = highScore;
+	}
+
+	public void setCurrentScore(JLabel currentScore) {
+		this.currentScore = currentScore;
+	}
+
+	public void setHighScoreNum(int input) {
+		this.highScoreNum.setText("" + input);
+	}
+
+	public void setScoreNum(int input) {
+		this.scoreNum.setText("" + input);
 	}
 
 }

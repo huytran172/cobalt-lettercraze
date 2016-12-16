@@ -43,6 +43,7 @@ public class BoardController extends MouseAdapter {
 			System.out.print(board.getSquareList().indexOf(square));
 			System.out.print(" " + board.getTempWord().getWordString());
 			System.out.print("\n");
+			System.out.println("state: " + square.isEnabled());
 		}
     }
 }

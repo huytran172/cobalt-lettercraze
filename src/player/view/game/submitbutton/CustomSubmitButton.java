@@ -8,7 +8,6 @@ import player.view.game.BoardPanel;
 import player.view.game.InfoPanel;
 import player.view.game.StarPanel;
 import player.view.game.WordPanel;
-import player.view.game.featurePanel.FeaturePanel;
 import player.view.game.gamepanel.GamePanel;
 
 import javax.swing.*;

@@ -21,8 +21,6 @@ public class InfoPanel extends JPanel {
 	
 	protected WordPanel wordsFound;
 
-	protected CustomResetButton reset;
-	protected CustomUndoButton undo;
 	protected JButton quit;
 
 	
@@ -52,8 +50,6 @@ public class InfoPanel extends JPanel {
 		 
 		 setWordsFound(new WordPanel());
 
-		 reset = new CustomResetButton(getLevel(), this);
-		 undo = new CustomUndoButton(getLevel(), wordsFound, this);
 		 setQuit(new JButton ("Skip"));
 
 		 GroupLayout groupLayout = new GroupLayout(this);
@@ -77,14 +73,9 @@ public class InfoPanel extends JPanel {
 						 .addContainerGap(0, 0))
 				 .addComponent(getWordsFound(), GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
 
-				 .addGap(60)
-				 .addGroup(groupLayout.createParallelGroup()
-						 .addComponent(getReset(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						 )
 				 .addGap(8)
 
 				 .addGroup(groupLayout.createParallelGroup()
-						 .addComponent(getUndo(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getQuit(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)));
 		 
 		 groupLayout.setHorizontalGroup(
@@ -103,9 +94,6 @@ public class InfoPanel extends JPanel {
 				 .addComponent(getStar3(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getWordsFound(), GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
 				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(getReset(), GroupLayout.PREFERRED_SIZE, this.getWidth()/2, GroupLayout.PREFERRED_SIZE))
-				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(getUndo(), GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)
 						 .addComponent(getQuit(), GroupLayout.PREFERRED_SIZE, this.getWidth()/2,GroupLayout.PREFERRED_SIZE)));
 			
 			setLayout(groupLayout);
@@ -147,14 +135,6 @@ public class InfoPanel extends JPanel {
 		return thisScore;
 	}
 
-	public JButton getReset() {
-		return reset;
-	}
-
-	public JButton getUndo() {
-		return undo;
-	}
-
 	public JButton getQuit() {
 		return quit;
 	}
@@ -193,14 +173,6 @@ public class InfoPanel extends JPanel {
 
 	public void setWordsFound(WordPanel wordsFound) {
 		this.wordsFound = wordsFound;
-	}
-
-	public void setReset(CustomResetButton reset) {
-		this.reset = reset;
-	}
-
-	public void setUndo(CustomUndoButton undo) {
-		this.undo = undo;
 	}
 
 	public void setQuit(JButton quit) {

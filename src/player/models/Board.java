@@ -389,7 +389,9 @@ public class Board implements Iterable<Square> {
 		ArrayList<String> stringList = saveState.getLastSquareState();
 		if (stringList != null){
 			for (int i = 0; i < 36; i++){
-				this.squares.get(i).getLetter().setS(stringList.get(i));
+				if (squares.get(i).isEnabled){
+					squares.get(i).getLetter().setS(stringList.get(i));
+				}
 			}
 		} else System.out.println("No more save state can be loaded!");
 	}

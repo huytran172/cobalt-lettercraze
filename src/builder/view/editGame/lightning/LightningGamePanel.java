@@ -18,9 +18,9 @@ public class LightningGamePanel extends JPanel {
 	JPanel titlePanel;
 	JPanel infoPanel;
 	JPanel starPanel;
-
+	
 	public LightningGamePanel(int level){
-
+		
 		this.setLayout(null);
 /*
 		Board b = new Board();

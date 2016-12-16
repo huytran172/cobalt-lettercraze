@@ -8,29 +8,14 @@ import player.models.Lightning;
 import player.models.LightningTimer;
 
 public class testLightning extends TestCase {
-	public void testLightning(){
-		File f = new File("../cobalt-lettercraze/levels/Level11.txt");
-		Lightning lightning = new Lightning(f);
-		assertTrue(lightning.endLevel());
-		assertFalse(lightning.reset());
-		assertTrue(lightning.undo());
-		lightning.initialize();
-		assertEquals(lightning.getType(), "lightning");
-		lightning.setIndex(2);
-		assertEquals(lightning.getIndex(), 2);
-		System.out.print(lightning.getThreshold());
-		System.out.println(lightning.getBoard());
-		lightning.getScore();
-		//lightning.writeToFile(f);
-		lightning.toString();
-		assertEquals(lightning.getTime(), 56);
-	}
-	
-	public void testLightningTimer(){
-		LightningTimer lt = new LightningTimer();
-		//lt.createAndShowUI();
-		lt.showNextPanel();
-		lt.main(null);
-		
-		}
+	public void testInitializeLightning() {
+        File f = new File("../cobalt-lettercraze/testLevel/level2.txt");
+        Lightning p = new Lightning(f);
+        assertEquals(p.getTime(), 30);
+        assertEquals(p.getThreshold()[0], 4);
+        assertEquals(p.getThreshold()[1], 6);
+        assertEquals(p.getThreshold()[2], 12);
+        assertEquals(p.getIndex(), 2);
+        assertEquals(p.getType(), "lightning");
+    }
 }

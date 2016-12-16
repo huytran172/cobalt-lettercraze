@@ -9,37 +9,56 @@ import player.models.Square;
 import player.models.Word;
 
 public class testBoard extends TestCase {
-	public void testBoard(){
+	public void testInitializeGeneralBoard() {
 		Board b = new Board();
-		Letter a = new Letter("A");
-		Square s = new Square(a, 0, 0, false);
-		Square s1 = new Square(a, 1, 1, true);
-		Word word = new Word(new ArrayList<Square>());
-		word.addSquareToWord(s);
-		//assertFalse(b.updateActiveWord(s));
 		b.initialize();
-		b.setActiveWord(word);
-		b.iterator();
-		b.size();
-		b.getSquare(0, 0);
-		//assertEquals(b.getSquare(0, 0), s);
-		b.get(0);
-		assertFalse(b.updateActiveWord(s));
-		assertTrue(b.updateBoard());
-		assertTrue(b.fillEmptySquares());
-		assertTrue(b.resetBoard());
-		b.getSquare(0, 0);
-		b.getSquare(1, 1);
 		b.getSquareList();
-		b.getTempWord();
-		b.renewTempWord();
-		assertTrue(b.addSquareToTempWord(s1));
-		b.toString();
-		b.undo();
-		
-		b.initialize("");
-		b.initialize("", null);
-		//b.updateBoard();
-		
+		assertEquals(b.getSquare(0, 0), b.getSquareList().get(0));
+		assertEquals(b.getSquareList().size(), 36);
 	}
+
+	public void testInitializeBoardWithShape() {
+		Board b = new Board();
+		String boardShape = "1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0";
+		b.initialize(boardShape);
+		assertEquals(b.getSquare(0, 0), b.getSquareList().get(0));
+		assertEquals(b.getSquareList().size(), 36);
+	}
+
+	public void testInitializeBoardWithShapeAndWords() {
+		Board b = new Board();
+		String boardShape = "1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0";
+		String themeAndWords[] = new String[] { "Color", "Red", "Green"};
+		b.initialize(boardShape, themeAndWords);
+		assertEquals(b.getSquare(0, 0), b.getSquareList().get(0));
+		assertEquals(b.getSquareList().size(), 36);
+		assertEquals(b.getSquare(0, 0).getLetter().getS(), "R");
+		assertEquals(b.getSquare(0, 1).getLetter().getS(), "E");
+		assertEquals(b.getSquare(0, 2).getLetter().getS(), "D");
+		assertEquals(b.getSquare(0, 3).getLetter().getS(), "G");
+		assertEquals(b.getSquare(0, 4).getLetter().getS(), "R");
+		assertEquals(b.getSquare(0, 5).getLetter().getS(), "E");
+		assertEquals(b.getSquare(1, 5).getLetter().getS(), "E");
+		assertEquals(b.getSquare(2, 5).getLetter().getS(), "N");
+	}
+
+	public void testGetSet() {
+		Board b = new Board();
+		b.initialize();
+		b.setActiveWord(new Word(new ArrayList<Square>()));
+		assertEquals(b.size(), b.getSquareList().size());
+		assertEquals(b.get(0), b.getSquareList().get(0));
+	}
+
+	public void testToggle() {
+		Board b = new Board();
+		b.initialize();
+		b.toggleSquare(b.getSquareList().get(1));
+		assertTrue(b.getSquareList().get(1).isEnabled());
+	}
+
+	public void testUpdateActiveWord() {
+
+	}
+
 }

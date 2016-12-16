@@ -7,4 +7,5 @@ public interface IFeaturePanel {
 
 	void increaseWordLeft();
 	void decreaseWordLeft();
+	int getWordLeft();
 }

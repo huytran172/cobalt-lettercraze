@@ -36,6 +36,8 @@ public class CustomUndoButton extends JButton implements ActionListener {
     }
 
 	public void actionPerformed(ActionEvent e) {
+		board.renewTempWord();
+        boardPanel.setBoardEnabled(true);
 		board.loadSquareState();
         wordPanel.loadWordListState();
         featurePanel.increaseWordLeft();

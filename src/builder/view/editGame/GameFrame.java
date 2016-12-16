@@ -28,17 +28,19 @@ public class GameFrame extends JFrame {
 	    int y = (screen.height-height)/2;
 	    setBounds(x,y,width,height);	
 		if (levelNum%3 == 1){
-			contentPane = new PuzzleGamePanel();
+			contentPane = new PuzzleGamePanel(levelNum);
 		}
 		else if (levelNum%3 == 2){
-			contentPane = new LightningGamePanel();
+			contentPane = new LightningGamePanel(levelNum);
 		}
 		else if (levelNum%3 == 0){
-			contentPane = new ThemeGamePanel();
+			contentPane = new ThemeGamePanel(levelNum);
 		}
-		else{
-			contentPane = new PuzzleGamePanel();
+		
+		else {
+			contentPane = new PuzzleGamePanel(levelNum);
 		}
+	
 		setContentPane(contentPane);
 	}
 

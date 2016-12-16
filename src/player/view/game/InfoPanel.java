@@ -22,8 +22,6 @@ public class InfoPanel extends JPanel {
 
 	protected WordPanel wordsFound;
 
-	protected JButton quit;
-
 
 	public InfoPanel(Level l){
 		this.setLevel(l);
@@ -52,8 +50,6 @@ public class InfoPanel extends JPanel {
 
 		 setWordsFound(new WordPanel());
 
-		 setQuit(new JButton ("Skip"));
-
 		 GroupLayout groupLayout = new GroupLayout(this);
 
 		 groupLayout.setVerticalGroup(
@@ -77,8 +73,7 @@ public class InfoPanel extends JPanel {
 
 				 .addGap(8)
 
-				 .addGroup(groupLayout.createParallelGroup()
-						 .addComponent(getQuit(), GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)));
+				 .addGroup(groupLayout.createParallelGroup()));
 
 		 groupLayout.setHorizontalGroup(
 
@@ -95,8 +90,7 @@ public class InfoPanel extends JPanel {
 				 .addComponent(getStar2(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getStar3(), GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
 				 .addComponent(getWordsFound(), GroupLayout.PREFERRED_SIZE, this.getWidth(), GroupLayout.PREFERRED_SIZE)
-				 .addGroup(groupLayout.createSequentialGroup()
-						 .addComponent(getQuit(), GroupLayout.PREFERRED_SIZE, this.getWidth(),GroupLayout.PREFERRED_SIZE)));
+				 .addGroup(groupLayout.createSequentialGroup()));
 
 			setLayout(groupLayout);
 	}
@@ -129,10 +123,6 @@ public class InfoPanel extends JPanel {
 		return currentScore;
 	}
 
-	public JButton getQuit() {
-		return quit;
-	}
-
 	public void setLevel(Level level) {
 		this.level = level;
 	}
@@ -151,10 +141,6 @@ public class InfoPanel extends JPanel {
 
 	public void setWordsFound(WordPanel wordsFound) {
 		this.wordsFound = wordsFound;
-	}
-
-	public void setQuit(JButton quit) {
-		this.quit = quit;
 	}
 
 	public JLabel getHighScoreNum() {

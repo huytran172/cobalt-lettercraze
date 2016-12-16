@@ -9,6 +9,7 @@ public class QuickSaveState {
 	protected ArrayList<ArrayList<String>> squareStateList = new ArrayList<ArrayList<String>>();
 	protected ArrayList<Integer> scoreList = new ArrayList<Integer>();
 	protected ArrayList<String> wordList = new ArrayList<String>();
+	protected ArrayList<Integer> enableList = new ArrayList<Integer>();
 	
 	public void addNewSquareState(ArrayList<Square> squares){
 		ArrayList<String> stringList = new ArrayList<String>();
@@ -26,14 +27,23 @@ public class QuickSaveState {
 		} else return null;
 	}
 	
-	public void addNewWordState(String string){
+	public void addFixedEnableList(boolean b) {
+		if (b) enableList.add(1);
+		else enableList.add(0);
+	}
+	
+	public void addNewWordState(String string) {
 		wordList.add(string);
 	}
 	
-	public ArrayList<String> getWordListState(){
+	public ArrayList<String> getWordListState() {
 		if (wordList.size() > 0) {
 			wordList.remove(wordList.size() - 1);
 			return wordList;
 		} else return null;
+	}
+	
+	public ArrayList<Integer> getFixedEnableList() {
+		return enableList;
 	}
 }

@@ -45,7 +45,7 @@ public class FeaturePanelLightning extends JPanel implements IFeaturePanel {
                             + " seconds left");
                 } else {
                     feature.setText("You lose hahahahahaha");
-                    boardPanel.hideBoard();
+                    boardPanel.setBoardEnabled(false);
                 }
 
             }
@@ -63,5 +63,11 @@ public class FeaturePanelLightning extends JPanel implements IFeaturePanel {
 	public void decreaseWordLeft() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getWordLeft() {
+		// TODO Auto-generated method stub
+		return -1;
 	}
 }

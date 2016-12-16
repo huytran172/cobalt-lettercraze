@@ -31,15 +31,15 @@ public class GamePanelTheme extends GamePanel {
 
 		btnSubmit = new ThemeSubmitButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
 		add(btnSubmit);
-		btnSubmit.setBounds(60, 65, 100, 30);
+		btnSubmit.setBounds(480, 490, 100, 30);
 		
 		btnReset = new CustomResetButton(level, this.boardPanel);
 		add(btnReset);
-		btnReset.setBounds(160, 65, 100, 30);
+		btnReset.setBounds(580, 490, 100, 30);
 		
 		btnUndo = new CustomUndoButton(level, this.boardPanel, this.infoPanel, this.featurePanel);
 		add(btnUndo);
-		btnUndo.setBounds(260, 65, 100, 30);
+		btnUndo.setBounds(680, 490, 100, 30);
 	}
 
 	@Override

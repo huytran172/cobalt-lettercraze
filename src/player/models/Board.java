@@ -393,7 +393,10 @@ public class Board implements Iterable<Square> {
 				if (squares.get(i).isEnabled){
 					squares.get(i).getLetter().setS(stringList.get(i));
 				}
+				
+				System.out.print(squares.get(i).getLetter().getS());
 			}
+			System.out.println("");
 		} else System.out.println("No more save state can be loaded!");
 	}
 }

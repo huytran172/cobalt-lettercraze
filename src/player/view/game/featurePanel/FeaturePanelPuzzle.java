@@ -33,7 +33,7 @@ public class FeaturePanelPuzzle extends JPanel implements IFeaturePanel {
         wordLeft--;
         feature.setText("Remaining words: " + wordLeft);
         if (wordLeft == 0) {
-            boardPanel.hideBoard();
+            boardPanel.setBoardEnabled(false);
         }
     }
     
@@ -43,7 +43,11 @@ public class FeaturePanelPuzzle extends JPanel implements IFeaturePanel {
         }
         feature.setText("Remaining words: " + wordLeft);
         if (wordLeft != 0) {
-            boardPanel.showBoard();
+        	boardPanel.setBoardEnabled(true);
         }
+    }
+    
+    public int getWordLeft() {
+    	return wordLeft;
     }
 }

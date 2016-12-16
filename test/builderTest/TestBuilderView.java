@@ -11,7 +11,7 @@ import player.models.Letter;
 import player.models.Square;
 
 public class TestBuilderView extends TestCase{
-/*	BuilderApplication blc = new BuilderApplication();
+	BuilderApplication blc = new BuilderApplication();
 
 	public void testSetUp(){
 		blc.main(null);
@@ -54,5 +54,5 @@ public class TestBuilderView extends TestCase{
 		sp.toggleColor();
 		assertTrue(sp.isEnable());
 		
-	}*/
+	}
 }

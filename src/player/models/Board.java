@@ -291,6 +291,15 @@ public class Board implements Iterable<Square> {
 		return sb.toString();
 	}
 	
+	public String toStringForBuilder() {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < 36; i++) {
+			sb.append(this.squares.get(i).isSelected() ? 1 : 0);
+			sb.append(" ");
+		}
+		return sb.toString();
+	}
+	
 	/**
 	 * Update Board: Call when a move is recently made and
 	 * squares move up to fill empty spaces

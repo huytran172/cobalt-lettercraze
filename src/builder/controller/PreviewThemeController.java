@@ -58,7 +58,7 @@ public class PreviewThemeController implements ActionListener {
 		try {
 			//Create new file
 				
-			String name = "../cobalt-lettercraze/levelsBuilderMade/Level%d.txt";
+			String name = "../cobalt-lettercraze/tempFile/temp.txt";
 			File file = new File(name);
 			//file.getParentFile().mkdirs();
 
@@ -92,7 +92,7 @@ public class PreviewThemeController implements ActionListener {
 		    writer.println(0);
 		    
 		    //Board visibility
-		    writer.println(b.toString());
+		    writer.println(b.toStringForBuilder());
 		    writer.close();
 		    
 			

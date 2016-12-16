@@ -104,7 +104,7 @@ public class PreviewPuzzleController implements ActionListener {
 				writer.println(0);
 
 				//Board visibility
-				writer.println(b.toString());
+				writer.println(b.toStringForBuilder());
 				writer.close();
 			
 			

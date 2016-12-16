@@ -29,7 +29,7 @@ public class PuzzleSubmitButton extends CustomSubmitButton {
 			word.clearWord();
 			board.updateBoard();
 			board.fillEmptySquares();
-			featurePanelPuzzle.decreaseWordLeft();
+			featurePanelPuzzle.decreaseWordLeft(word);
 		}
 		updateInterface();
 	}

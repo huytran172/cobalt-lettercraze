@@ -1,6 +1,7 @@
 package player.view.game.featurePanel;
 
 import player.models.Lightning;
+import player.models.Word;
 import player.view.game.BoardPanel;
 
 import javax.swing.*;
@@ -60,7 +61,7 @@ public class FeaturePanelLightning extends JPanel implements IFeaturePanel {
 	}
 
 	@Override
-	public void decreaseWordLeft() {
+	public void decreaseWordLeft(Word word) {
 		// TODO Auto-generated method stub
 		
 	}

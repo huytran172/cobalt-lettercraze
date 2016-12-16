@@ -80,6 +80,16 @@ public class SquarePanel extends JPanel {
 					this.setBackground(Color.WHITE);
 				}
 			}
+
+			public void enableColor(boolean state) {
+				if (state) {
+					this.square.select();
+					this.setBackground(Color.gray);
+				} else {
+					this.square.deselect();
+					this.setBackground(Color.white);
+				}
+			}
 			
 			public void setSquareEnable(Boolean b) {
 				if (b) this.setBackground(Color.WHITE);

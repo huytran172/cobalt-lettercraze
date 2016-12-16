@@ -1,6 +1,7 @@
 package player.view.game.featurePanel;
 
 import player.models.Theme;
+import player.models.Word;
 import player.view.game.BoardPanel;
 
 import javax.swing.*;
@@ -32,11 +33,12 @@ public class FeaturePanelTheme extends JPanel implements IFeaturePanel {
         add(feature);
     }
 
-    public void decreaseWordLeft() {
+    public void decreaseWordLeft(Word word) {
         wordLeft--;
         if (wordLeft == 0) {
             feature.setText("You win :(");
             boardPanel.setBoardEnabled(false);
+            boardPanel.deselectWord(word);
         }
     }
     

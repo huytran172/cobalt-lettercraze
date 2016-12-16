@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-import builder.controller.PreviewController;
+import builder.controller.PreviewPuzzleController;
 import builder.controller.SavePuzzleController;
 import builder.view.dropdownMenu.DropMenuFrame;
 import builder.view.editGame.GameFrame;
@@ -69,9 +69,8 @@ public class PuzzleInfoPanel extends JPanel {
 		textField_3.setColumns(10);
 		
 		JButton btnPreview = new JButton("Preview");
-
 		btnPreview.setBounds(6, 380, 76, 29);
-		btnPreview.addActionListener(new PreviewController());
+		btnPreview.addActionListener(new PreviewPuzzleController(this, b));
 		add(btnPreview);
 		
 		JButton btnSave = new JButton("Save");

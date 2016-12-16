@@ -49,7 +49,7 @@ public class TestBuilderView extends TestCase{
 		CustomConfirmButton btnNewButton = new CustomConfirmButton(0);
 		SelectModeMenuFrame smf = new SelectModeMenuFrame();
 		smf.main(null);
-		
+
 		CustomConfirmButton puzzle = new CustomConfirmButton(0);
 		assertEquals(puzzle.getLevelNum(),1);
 		
@@ -103,6 +103,8 @@ public class TestBuilderView extends TestCase{
 		
 		GameFrame gftheme = new GameFrame(3, true);
 	}
+
+
 	
 	public void testSquarePanel(){
 		Letter a = new Letter("a");

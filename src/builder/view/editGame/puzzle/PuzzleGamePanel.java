@@ -29,6 +29,10 @@ public class PuzzleGamePanel extends JPanel {
 	PuzzleInfoPanel infoPanel;
 	//JPanel starPanel;
 	
+	public PuzzleInfoPanel getInfoPanel() {
+		return infoPanel;
+	}
+
 	public PuzzleGamePanel(int levelNum, boolean add){
 		
 		this.setLayout(null);

@@ -104,13 +104,6 @@ public class TestBuilderView extends TestCase{
 		GameFrame gftheme = new GameFrame(3, true);
 
 	}
-	
-	public void testEditGameGUI(){
-		GameFrame gf1 = new GameFrame(1, true);
-		GameFrame gf2 = new GameFrame(2, true);
-		GameFrame gf3 = new GameFrame(3, true);
-
-	}
 
 	
 	public void testSquarePanel(){

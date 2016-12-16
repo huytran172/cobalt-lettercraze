@@ -37,6 +37,7 @@ public class CustomResetButton extends JButton implements ActionListener{
     
 	@Override
 	public void actionPerformed(ActionEvent e) {
+        board.renewTempWord();
         boardPanel.setBoardEnabled(true);
         if (mode.equals("theme")) {
             board.clearBoard();

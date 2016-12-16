@@ -36,6 +36,7 @@ public class TitlePanel extends JPanel{
 				menuFrame.repaint();
 				currentFrame.dispose();
 				l.printToFile();
+				l.getScore().setScore(0);
 			}
 		});
 

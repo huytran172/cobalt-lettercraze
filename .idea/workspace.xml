@@ -2,11 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d358ff0-50f3-4169-bb73-f11d96cbbbe2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/game/CustomResetButton.java" afterPath="$PROJECT_DIR$/src/player/view/game/CustomResetButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/game/InfoPanel.java" afterPath="$PROJECT_DIR$/src/player/view/game/InfoPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/game/submitbutton/LightningSubmitButton.java" afterPath="$PROJECT_DIR$/src/player/view/game/submitbutton/LightningSubmitButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/game/submitbutton/PuzzleSubmitButton.java" afterPath="$PROJECT_DIR$/src/player/view/game/submitbutton/PuzzleSubmitButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/game/submitbutton/ThemeSubmitButton.java" afterPath="$PROJECT_DIR$/src/player/view/game/submitbutton/ThemeSubmitButton.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/controller/PreviewController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/controller/controller_demo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/BuilderApplication$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/BuilderApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/dropdownMenu/CustomConfirmButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/dropdownMenu/DropMenuFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/dropdownMenu/DropMenuFrame$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/dropdownMenu/DropMenuFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/editGame/BoardPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/editGame/GameFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/editGame/SquarePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/editGame/puzzle/PuzzleGamePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/editGame/theme/ThemeGamePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/selectModeMenu/CustomConfirmButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/selectModeMenu/SelectModeMenuFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/selectModeMenu/SelectModeMenuFrame$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/selectModeMenu/SelectModeMenuFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/splash/BuilderSplashPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/builder/view/splash/BuilderSplashWindow.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/demo/ReadFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/controller/BoardController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/controller/LightningController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/controller/Move.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/controller/StartLevelController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/controller/UndoController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/controller/ViewMenuController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/controller/controller_demo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/StringFileIterator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/Menu$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/Menu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/game/GameFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/game/featurePanel/FeaturePanel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/game/featurePanel/FeaturePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/game/gamepanel/GamePanelPuzzle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/CustomHelpButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/HelpFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/MenuScreenPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/splash/SplashScreenPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/cobalt-lettercraze/builderTest/TestBuilderView.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/cobalt-lettercraze/playerTest/TestPlayerEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/cobalt-lettercraze/playerTest/TestPlayerView.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/player/view/menu/CustomLevelButton.class" afterPath="$PROJECT_DIR$/bin/player/view/menu/CustomLevelButton.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Board.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Board.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Level.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Level.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Model.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Model.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Square.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/Square.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/score/Score.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/models/score/Score.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/PlayerApplication$1.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/PlayerApplication$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/PlayerApplication.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/PlayerApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/WinGameFrame$2.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/WinGameFrame$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/game/TitlePanel$1.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/game/TitlePanel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/CustomLevelButton.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/CustomLevelButton.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/HelpPanel$1.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/HelpPanel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/MenuScreenFrame.class" afterPath="$PROJECT_DIR$/out/production/cobalt-lettercraze/player/view/menu/MenuScreenFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/game/GameFrame.java" afterPath="$PROJECT_DIR$/src/player/view/game/GameFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/game/TitlePanel.java" afterPath="$PROJECT_DIR$/src/player/view/game/TitlePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/view/menu/CustomLevelButton.java" afterPath="$PROJECT_DIR$/src/player/view/menu/CustomLevelButton.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +84,8 @@
       <file leaf-file-name="InfoPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/player/view/game/InfoPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+            <state relative-caret-position="975">
+              <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
               <folding>
                 <element signature="e#7874#7875#0" expanded="true" />
                 <element signature="e#7923#7924#0" expanded="true" />
@@ -41,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LightningSubmitButton.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LightningSubmitButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/player/view/game/submitbutton/LightningSubmitButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+            <state relative-caret-position="525">
+              <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,15 +106,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/player/models/score/Score.java">
+      <file leaf-file-name="TitlePanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/player/view/game/TitlePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+            <state relative-caret-position="575">
+              <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
               <folding>
-                <element signature="e#987#988#0" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
+                <marker date="1481848071889" expanded="true" signature="1024:1112" ph="//..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomLevelButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/player/view/menu/CustomLevelButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2075">
+              <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuScreenPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/player/view/menu/MenuScreenPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PreviewController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/builder/controller/PreviewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,7 +151,7 @@
       <file leaf-file-name="PuzzleSubmitButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/player/view/game/submitbutton/PuzzleSubmitButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
+            <state relative-caret-position="525">
               <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
               <folding />
             </state>
@@ -79,8 +161,8 @@
       <file leaf-file-name="ThemeSubmitButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/player/view/game/submitbutton/ThemeSubmitButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="26" column="54" lean-forward="true" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+            <state relative-caret-position="525">
+              <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,8 +173,8 @@
       <file leaf-file-name="CustomSubmitButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/player/view/game/submitbutton/CustomSubmitButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+            <state relative-caret-position="475">
+              <caret line="33" column="51" lean-forward="false" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -205,8 +287,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -263,37 +346,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cobalt-lettercraze" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cobalt-lettercraze" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="player" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="submitbutton" />
+              <option name="myItemId" value="menu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,13 +384,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../qthoang_BritishSquare" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -687,13 +739,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28995433" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28995433" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23287672" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23287672" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -726,20 +778,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="417" column="0" lean-forward="false" selection-start-line="417" selection-start-column="0" selection-end-line="417" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dictionary/WordTable.sort">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/player/models/Dictionary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -751,9 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="875">
           <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -761,9 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -772,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="282" column="4" lean-forward="false" selection-start-line="282" selection-start-column="4" selection-end-line="282" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -780,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
           <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="181" column="10" lean-forward="false" selection-start-line="181" selection-start-column="10" selection-end-line="181" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,13 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/view/menu/CustomLevelButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -868,19 +889,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/view/game/TitlePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="24" column="56" lean-forward="true" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/player/view/game/featurePanel/FeaturePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="42" column="8" lean-forward="false" selection-start-line="42" selection-start-column="8" selection-end-line="43" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
           <caret line="48" column="17" lean-forward="false" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,9 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="27" column="57" lean-forward="false" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -956,7 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
           <caret line="42" column="11" lean-forward="true" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,7 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,10 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding>
-            <element signature="e#1928#1929#0" expanded="true" />
-            <element signature="e#1953#1954#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -997,7 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,7 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1142">
           <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,7 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
           <caret line="69" column="46" lean-forward="false" selection-start-line="69" selection-start-column="46" selection-end-line="69" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1021,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
           <caret line="89" column="19" lean-forward="false" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,22 +1033,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="33" column="48" lean-forward="false" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/player/view/game/submitbutton/CustomSubmitButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+        <state relative-caret-position="475">
+          <caret line="33" column="51" lean-forward="false" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/player/view/game/InfoPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+        <state relative-caret-position="975">
+          <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
           <folding>
             <element signature="e#7874#7875#0" expanded="true" />
             <element signature="e#7923#7924#0" expanded="true" />
@@ -1061,7 +1057,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/player/view/game/submitbutton/PuzzleSubmitButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
+        <state relative-caret-position="525">
           <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
           <folding />
         </state>
@@ -1069,8 +1065,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/player/view/game/submitbutton/ThemeSubmitButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="54" lean-forward="true" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+        <state relative-caret-position="525">
+          <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1081,20 +1077,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/player/view/game/submitbutton/LightningSubmitButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        <state relative-caret-position="525">
+          <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/view/game/TitlePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding>
+            <marker date="1481848071889" expanded="true" signature="1024:1112" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/view/menu/CustomLevelButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2075">
+          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/view/menu/MenuScreenPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/builder/controller/PreviewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>

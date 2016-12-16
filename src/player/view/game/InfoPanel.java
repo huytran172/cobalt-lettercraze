@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import player.models.Level;
+import player.models.QuickSaveState;
 import player.models.score.Score;
 import player.view.game.submitbutton.CustomSubmitButton;
 
@@ -26,7 +27,7 @@ public class InfoPanel extends JPanel {
 	protected StarPanel star3;
 
 	protected WordPanel wordsFound;
-
+	protected QuickSaveState saveState = new QuickSaveState();
 
 	public InfoPanel(Level l){
 		this.setLevel(l);
@@ -177,6 +178,15 @@ public class InfoPanel extends JPanel {
 
 	public int getHighScoreNum() {
 		return highScoreNum;
+	}
+
+	public void saveCurrentScore(int score) {
+		saveState.addLastScore(score);
+	}
+
+	public void retrieveLastScore() {
+		int lastScore = saveState.getLastScore();
+		this.setScoreNum(lastScore);
 	}
 
 	public int getScoreNum() {
